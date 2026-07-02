@@ -1,0 +1,604 @@
+{
+  "printers": [
+    {
+      "name": "Bambu Lab H2S",
+      "brand": "Bambu Lab",
+      "slug": "bambu-lab-h2s",
+      "image": "https://static.wixstatic.com/media/09f9cc_b1f2a6dea9194d7cb09e2ebc38f1ae82~mv2.png",
+      "scores": {
+        "overall": 8.81,
+        "print_quality": 9.4,
+        "speed": 8.7,
+        "ease_of_use": 8.3,
+        "reliability": 9.1,
+        "value": 6.2,
+        "software": 8.8,
+        "build_volume": 8.6,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "340x320x340mm",
+        "nozzle_temp": "350C",
+        "bed_temp": "65C heated chamber",
+        "filament": ["PLA", "PETG", "ABS", "ASA", "PC", "PPA", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null,
+        "resolution": "< 50 μm"
+      },
+      "price": null,
+      "price_range": "premium",
+      "buy_url": "https://us.store.bambulab.com/products/h2s"
+    },
+    {
+      "name": "Bambu Lab P2S",
+      "brand": "Bambu Lab",
+      "slug": "bambu-lab-p2s",
+      "image": "https://static.wixstatic.com/media/09f9cc_f6ca408c39d44473b291c26e7d1ac3dc~mv2.png",
+      "scores": {
+        "overall": 8.75,
+        "print_quality": 9.2,
+        "speed": 9.0,
+        "ease_of_use": 8.6,
+        "reliability": 8.8,
+        "value": 7.8,
+        "software": 8.3,
+        "build_volume": 6.8,
+        "noise": 6.8,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "256x256x256mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
+        "connectivity": "WiFi, Ethernet, USB",
+        "weight": null,
+        "max_speed": "600mm/s"
+      },
+      "price": 445,
+      "price_range": "mid",
+      "buy_url": "https://us.store.bambulab.com/products/p2s"
+    },
+    {
+      "name": "Bambu Lab H2D",
+      "brand": "Bambu Lab",
+      "slug": "bambu-lab-h2d",
+      "image": "https://static.wixstatic.com/media/09f9cc_e09b495562964aa28340fd3365e45f5f~mv2.png",
+      "scores": {
+        "overall": 8.72,
+        "print_quality": 9.3,
+        "speed": 8.6,
+        "ease_of_use": 8.2,
+        "reliability": 9.0,
+        "value": 6.5,
+        "software": 8.5,
+        "build_volume": 8.6,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "280x280x280mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": null,
+      "price_range": "premium",
+      "buy_url": null
+    },
+    {
+      "name": "Bambu Lab P1S",
+      "brand": "Bambu Lab",
+      "slug": "bambu-lab-p1s",
+      "image": "https://static.wixstatic.com/media/09f9cc_3c4e6ca2561347cbb46b13e6fc36ea7f~mv2.png",
+      "scores": {
+        "overall": 8.62,
+        "print_quality": 9.0,
+        "speed": 8.8,
+        "ease_of_use": 8.5,
+        "reliability": 8.6,
+        "value": 8.5,
+        "software": 8.2,
+        "build_volume": 7.0,
+        "noise": 7.0,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "256x256x256mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 399,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Original Prusa MK4S",
+      "brand": "Prusa Research",
+      "slug": "original-prusa-mk4s",
+      "image": "https://static.wixstatic.com/media/09f9cc_f8d36860b596435bbba54ec6e3179567~mv2.png",
+      "scores": {
+        "overall": 8.52,
+        "print_quality": 8.6,
+        "speed": 7.6,
+        "ease_of_use": 8.6,
+        "reliability": 9.6,
+        "value": 7.2,
+        "software": 9.6,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "250x210x220mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "120C",
+        "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
+        "connectivity": "USB, WiFi",
+        "weight": null
+      },
+      "price": 799,
+      "price_range": "mid",
+      "buy_url": "https://www.prusa3d.com/product/original-prusa-mk4s-3d-printer-kit-5/"
+    },
+    {
+      "name": "Prusa Core One L",
+      "brand": "Prusa Research",
+      "slug": "prusa-core-one-l",
+      "image": "https://static.wixstatic.com/media/09f9cc_54230943c6fc468ba3b832fee20eed15~mv2.png",
+      "scores": {
+        "overall": 8.47,
+        "print_quality": 9.0,
+        "speed": 8.0,
+        "ease_of_use": 7.8,
+        "reliability": 9.2,
+        "value": 5.8,
+        "software": 8.8,
+        "build_volume": 6.0,
+        "noise": 6.0,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "280x280x280mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "ASA"],
+        "connectivity": "USB, WiFi",
+        "weight": null
+      },
+      "price": null,
+      "price_range": "premium",
+      "buy_url": null
+    },
+    {
+      "name": "Prusa Core One+",
+      "brand": "Prusa Research",
+      "slug": "prusa-core-one-plus",
+      "image": "https://static.wixstatic.com/media/09f9cc_9d6b16ea9f3c4f19a18a10cfe9d8711b~mv2.png",
+      "scores": {
+        "overall": 8.43,
+        "print_quality": 8.8,
+        "speed": 7.8,
+        "ease_of_use": 8.0,
+        "reliability": 9.2,
+        "value": 6.5,
+        "software": 9.0,
+        "build_volume": 6.2,
+        "noise": 6.2,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "210x210x210mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "ASA"],
+        "connectivity": "USB, WiFi",
+        "weight": null
+      },
+      "price": null,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Ultimaker S5",
+      "brand": "Ultimaker",
+      "slug": "ultimaker-s5",
+      "image": "https://static.wixstatic.com/media/09f9cc_af04d10353fe4bb4bacae6a265e7ca47~mv2.png",
+      "scores": {
+        "overall": 8.41,
+        "print_quality": 9.0,
+        "speed": 6.8,
+        "ease_of_use": 8.6,
+        "reliability": 9.2,
+        "value": 4.0,
+        "software": 9.0,
+        "build_volume": 6.0,
+        "noise": 6.0,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "330x240x300mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "110C",
+        "filament": ["PLA", "ABS", "Nylon"],
+        "connectivity": "Ethernet, WiFi",
+        "weight": null
+      },
+      "price": null,
+      "price_range": "premium",
+      "buy_url": null
+    },
+    {
+      "name": "Prusa Original XL",
+      "brand": "Prusa Research",
+      "slug": "prusa-original-xl",
+      "image": "https://static.wixstatic.com/media/09f9cc_2167768778f644bf89e99074ed624297~mv2.png",
+      "scores": {
+        "overall": 8.41,
+        "print_quality": 9.0,
+        "speed": 8.0,
+        "ease_of_use": 7.6,
+        "reliability": 9.0,
+        "value": 5.5,
+        "software": 8.6,
+        "build_volume": 6.0,
+        "noise": 6.0,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "360x360x360mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "120C",
+        "filament": ["PLA", "PETG", "ABS", "ASA"],
+        "connectivity": "USB, Ethernet",
+        "weight": null
+      },
+      "price": 3999,
+      "price_range": "premium",
+      "buy_url": null
+    },
+    {
+      "name": "Bambu Lab A1",
+      "brand": "Bambu Lab",
+      "slug": "bambu-lab-a1",
+      "image": "https://static.wixstatic.com/media/09f9cc_d15eff370bff43269290ef62689952c3~mv2.png",
+      "scores": {
+        "overall": 8.22,
+        "print_quality": 8.5,
+        "speed": 8.2,
+        "ease_of_use": 9.0,
+        "reliability": 8.2,
+        "value": 9.0,
+        "software": 7.8,
+        "build_volume": 7.5,
+        "noise": 7.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "256x256x256mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 199,
+      "price_range": "budget",
+      "buy_url": null
+    },
+    {
+      "name": "Ultimaker S3",
+      "brand": "Ultimaker",
+      "slug": "ultimaker-s3",
+      "image": "https://static.wixstatic.com/media/09f9cc_14f7966d590548319ee48f906227d6e0~mv2.png",
+      "scores": {
+        "overall": 8.21,
+        "print_quality": 8.6,
+        "speed": 6.6,
+        "ease_of_use": 8.6,
+        "reliability": 9.0,
+        "value": 4.5,
+        "software": 9.0,
+        "build_volume": 6.0,
+        "noise": 6.0,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "243x220x200mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "ABS", "Nylon"],
+        "connectivity": "Ethernet, WiFi",
+        "weight": null
+      },
+      "price": null,
+      "price_range": "premium",
+      "buy_url": null
+    },
+    {
+      "name": "Flashforge Adventurer 5M Pro",
+      "brand": "FlashForge",
+      "slug": "flashforge-adventurer-5m-pro",
+      "image": "https://static.wixstatic.com/media/09f9cc_af04d10353fe4bb4bacae6a265e7ca47~mv2.png",
+      "scores": {
+        "overall": 8.03,
+        "print_quality": 8.2,
+        "speed": 8.0,
+        "ease_of_use": 8.6,
+        "reliability": 8.2,
+        "value": 8.0,
+        "software": 7.5,
+        "build_volume": 7.2,
+        "noise": 7.2,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "242x242x242mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "110C",
+        "filament": ["PLA", "ABS", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 599,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Creality K1 Max",
+      "brand": "Creality",
+      "slug": "creality-k1-max",
+      "image": "https://static.wixstatic.com/media/09f9cc_588b96e7f43942d8a8902343bb87c0cd~mv2.webp",
+      "scores": {
+        "overall": 8.0,
+        "print_quality": 8.5,
+        "speed": 8.8,
+        "ease_of_use": 7.6,
+        "reliability": 7.6,
+        "value": 7.6,
+        "software": 7.6,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "300x300x300mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 499,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Prusa Mini",
+      "brand": "Prusa Research",
+      "slug": "prusa-mini",
+      "image": "https://static.wixstatic.com/media/09f9cc_3bf6ca3a1c2c4e758268a38b9b3673cc~mv2.png",
+      "scores": {
+        "overall": 7.97,
+        "print_quality": 8.0,
+        "speed": 7.0,
+        "ease_of_use": 8.6,
+        "reliability": 9.0,
+        "value": 8.2,
+        "software": 9.0,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "180x180x180mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS", "ASA"],
+        "connectivity": "USB, WiFi",
+        "weight": "5kg"
+      },
+      "price": 349,
+      "price_range": "budget",
+      "buy_url": null
+    },
+    {
+      "name": "Bambu Lab A1 Mini",
+      "brand": "Bambu Lab",
+      "slug": "bambu-lab-a1-mini",
+      "image": null,
+      "scores": {
+        "overall": 7.88,
+        "print_quality": 8.0,
+        "speed": 7.8,
+        "ease_of_use": 9.0,
+        "reliability": 7.8,
+        "value": 9.5,
+        "software": 7.5,
+        "build_volume": 7.5,
+        "noise": 7.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "165x165x165mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 169,
+      "price_range": "budget",
+      "buy_url": null
+    },
+    {
+      "name": "Flashforge Adventurer 5M",
+      "brand": "FlashForge",
+      "slug": "flashforge-adventurer-5m",
+      "image": null,
+      "scores": {
+        "overall": 7.84,
+        "print_quality": 8.0,
+        "speed": 8.0,
+        "ease_of_use": 8.5,
+        "reliability": 8.0,
+        "value": 8.5,
+        "software": 7.5,
+        "build_volume": 7.0,
+        "noise": 7.0,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "242x242x242mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "110C",
+        "filament": ["PLA", "ABS", "TPU"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 499,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Creality K2 Plus Combo",
+      "brand": "Creality",
+      "slug": "creality-k2-plus-combo",
+      "image": null,
+      "scores": {
+        "overall": 7.74,
+        "print_quality": 8.3,
+        "speed": 8.3,
+        "ease_of_use": 7.5,
+        "reliability": 7.5,
+        "value": 7.5,
+        "software": 7.0,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "300x300x300mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 449,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Elegoo Neptune 4 Max",
+      "brand": "Elegoo",
+      "slug": "elegoo-neptune-4-max",
+      "image": null,
+      "scores": {
+        "overall": 7.71,
+        "print_quality": 8.2,
+        "speed": 8.0,
+        "ease_of_use": 7.5,
+        "reliability": 7.8,
+        "value": 8.0,
+        "software": 7.0,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "420x420x500mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 279,
+      "price_range": "budget",
+      "buy_url": null
+    },
+    {
+      "name": "Creality K2 Combo",
+      "brand": "Creality",
+      "slug": "creality-k2-combo",
+      "image": null,
+      "scores": {
+        "overall": 7.57,
+        "print_quality": 8.0,
+        "speed": 8.0,
+        "ease_of_use": 7.5,
+        "reliability": 7.2,
+        "value": 8.5,
+        "software": 7.0,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "300x300x300mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 349,
+      "price_range": "mid",
+      "buy_url": null
+    },
+    {
+      "name": "Elegoo Centauri Carbon",
+      "brand": "Elegoo",
+      "slug": "elegoo-centauri-carbon",
+      "image": null,
+      "scores": {
+        "overall": 7.56,
+        "print_quality": 7.8,
+        "speed": 7.6,
+        "ease_of_use": 7.8,
+        "reliability": 7.6,
+        "value": 8.8,
+        "software": 7.0,
+        "build_volume": 6.5,
+        "noise": 6.5,
+        "multicolor": null
+      },
+      "specs": {
+        "build_volume": "220x220x220mm",
+        "nozzle_temp": "300C",
+        "bed_temp": "100C",
+        "filament": ["PLA", "PETG", "ABS"],
+        "connectivity": "WiFi, USB",
+        "weight": null
+      },
+      "price": 249,
+      "price_range": "budget",
+      "buy_url": null
+    }
+  ],
+  "metadata": {
+    "source": "3dranker.com",
+    "scraped_date": "2026-07-01",
+    "printers_count": 20,
+    "note": "Data compiled from 3dranker.com main ranking page. Individual printer pages had minimal detail; supplemental specs gathered from official manufacturer pages and web search. Prices are approximate market rates where available.",
+    "score_fields": [
+      "overall",
+      "print_quality",
+      "speed",
+      "ease_of_use",
+      "reliability",
+      "value",
+      "software",
+      "build_volume",
+      "noise",
+      "multicolor"
+    ]
+  }
+}
