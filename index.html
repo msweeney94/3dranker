@@ -8,35 +8,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ========================================
-       Root & Design Tokens
-       ======================================== */
     :root {
-      /* Color palette */
-      --color-bg-dark: #0a0e1a;
-      --color-bg-card: #111827;
-      --color-bg-card-hover: #1a1f3a;
-      --color-text-primary: #f8f9fa;
-      --color-text-secondary: #9ca3af;
-      --color-text-muted: #6b7280;
-      --color-border: rgba(99, 102, 241, 0.2);
-      
-      /* Gradient accents */
-      --gradient-accent: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
-      --gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1a1040 50%, #0a1628 100%);
+      --color-bg: #f0f4ff;
+      --color-bg-card: #ffffff;
+      --color-bg-card-hover: #f8faff;
+      --color-text-primary: #111827;
+      --color-text-secondary: #6b7280;
+      --color-text-muted: #9ca3af;
+      --color-border: #e5e7eb;
+      --color-border-light: #f3f4f6;
+      --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-accent: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      --gradient-button: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
       --gradient-score-high: linear-gradient(90deg, #10b981 0%, #06d6a0 100%);
       --gradient-score-mid: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
       --gradient-score-low: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
-      
-      /* Spacing */
       --spacing-xs: 4px;
       --spacing-sm: 8px;
       --spacing-md: 12px;
       --spacing-lg: 16px;
       --spacing-xl: 24px;
       --spacing-2xl: 32px;
-      
-      /* Typography */
       --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
       --font-size-xs: 12px;
       --font-size-sm: 14px;
@@ -44,859 +36,147 @@
       --font-size-lg: 18px;
       --font-size-xl: 24px;
       --font-size-2xl: 32px;
-      --font-weight-normal: 400;
-      --font-weight-medium: 500;
-      --font-weight-semibold: 600;
       --font-weight-bold: 700;
-      
-      /* Border radius */
-      --radius-sm: 8px;
-      --radius-md: 12px;
+      --font-weight-semibold: 600;
+      --font-weight-medium: 500;
       --radius-lg: 16px;
+      --radius-md: 12px;
       --radius-pill: 99px;
-      
-      /* Transitions */
-      --transition-fast: 0.15s ease;
-      --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--color-bg-dark);
-      color: var(--color-text-primary);
-      font-family: var(--font-family);
-      font-size: var(--font-size-base);
-      line-height: 1.6;
-      letter-spacing: 0.3px;
-    }
-
-    /* ========================================
-       Hero Section / Header
-       ======================================== */
-    .hero-section {
-      background: var(--gradient-hero);
-      padding: var(--spacing-2xl) var(--spacing-lg);
-      margin-bottom: var(--spacing-2xl);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero-section::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(40px);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .hero-title {
-      font-size: var(--font-size-2xl);
-      font-weight: var(--font-weight-bold);
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: var(--spacing-md);
-      letter-spacing: -0.5px;
-    }
-
-    .hero-subtitle {
-      font-size: var(--font-size-lg);
-      color: var(--color-text-secondary);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-lg);
-      flex-wrap: wrap;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-    }
-
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-    }
-
-    .stat-icon {
-      width: 4px;
-      height: 4px;
-      background: var(--color-text-secondary);
-      border-radius: 50%;
-    }
-
-    /* ========================================
-       Controls Section
-       ======================================== */
-    .controls-section {
-      max-width: 1200px;
-      margin: 0 auto var(--spacing-2xl);
-      padding: 0 var(--spacing-lg);
-    }
-
-    .controls-label {
-      font-size: var(--font-size-xs);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: var(--spacing-md);
-      display: block;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-md);
-      background-color: rgba(17, 24, 39, 0.8);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-md) var(--spacing-lg);
-      margin-bottom: var(--spacing-xl);
-      transition: all var(--transition-smooth);
-      backdrop-filter: blur(8px);
-    }
-
-    .search-bar:focus-within {
-      border-color: rgba(99, 102, 241, 0.5);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-    }
-
-    .search-icon {
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-lg);
-    }
-
-    .search-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: var(--color-text-primary);
-      font-size: var(--font-size-base);
-      outline: none;
-      font-family: var(--font-family);
-    }
-
-    .search-input::placeholder {
-      color: var(--color-text-muted);
-    }
-
-    .filter-pills-container {
-      display: flex;
-      gap: var(--spacing-sm);
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .filter-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      padding: var(--spacing-sm) var(--spacing-lg);
-      background-color: transparent;
-      border: 1px solid var(--color-border);
-      color: var(--color-text-secondary);
-      border-radius: var(--radius-pill);
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-medium);
-      cursor: pointer;
-      transition: all var(--transition-smooth);
-      white-space: nowrap;
-    }
-
-    .filter-pill:hover {
-      border-color: rgba(99, 102, 241, 0.4);
-      color: var(--color-text-primary);
-      transform: translateY(-1px);
-    }
-
-    .filter-pill.active {
-      background: var(--gradient-accent);
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-    }
-
-    .sort-container {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-lg);
-      margin-bottom: var(--spacing-xl);
-      flex-wrap: wrap;
-    }
-
-    .sort-label {
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-medium);
-      color: var(--color-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .sort-tabs {
-      display: flex;
-      gap: var(--spacing-lg);
-    }
-
-    .sort-tab {
-      position: relative;
-      padding: var(--spacing-sm) 0;
-      background: none;
-      border: none;
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-medium);
-      cursor: pointer;
-      transition: color var(--transition-smooth);
-      white-space: nowrap;
-    }
-
-    .sort-tab:hover {
-      color: var(--color-text-primary);
-    }
-
-    .sort-tab.active {
-      color: var(--color-text-primary);
-    }
-
-    .sort-tab.active::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gradient-accent);
-      border-radius: var(--radius-pill);
-    }
-
-    /* ========================================
-       Printer Cards Container
-       ======================================== */
-    .cards-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-lg);
-      margin-bottom: var(--spacing-2xl);
-    }
-
-    .result-count {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .printer-card {
-      background: rgba(17, 24, 39, 0.6);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-lg);
-      margin-bottom: var(--spacing-lg);
-      backdrop-filter: blur(8px);
-      transition: all var(--transition-smooth);
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: var(--spacing-lg);
-      align-items: center;
-    }
-
-    .printer-card:hover {
-      background: rgba(26, 31, 58, 0.8);
-      border-color: rgba(99, 102, 241, 0.3);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
-    }
-
-    /* Card Left: Rank & Image */
-    .card-left {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-      align-items: center;
-    }
-
-    .rank-badge {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gradient-accent);
-      border-radius: 50%;
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-bold);
-      color: white;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-    }
-
-    .printer-image-container {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 1px solid var(--color-border);
-    }
-
-    .printer-image {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      padding: var(--spacing-sm);
-    }
-
-    .no-image {
-      color: var(--color-text-muted);
-      font-size: var(--font-size-xs);
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    /* Card Center: Printer Info & Scores */
-    .card-center {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-    }
-
-    .printer-header {
-      display: flex;
-      align-items: baseline;
-      gap: var(--spacing-md);
-      flex-wrap: wrap;
-    }
-
-    .printer-name {
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-text-primary);
-    }
-
-    .brand-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: var(--spacing-xs) var(--spacing-md);
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      border-radius: var(--radius-pill);
-      font-size: var(--font-size-xs);
-      font-weight: var(--font-weight-semibold);
-      color: #a5b4fc;
-    }
-
-    .brand-pill.bambu-lab {
-      background: rgba(0, 174, 66, 0.15);
-      border-color: rgba(0, 174, 66, 0.3);
-      color: #4ade80;
-    }
-
-    .brand-pill.prusa {
-      background: rgba(250, 104, 49, 0.15);
-      border-color: rgba(250, 104, 49, 0.3);
-      color: #fb923c;
-    }
-
-    .brand-pill.creality {
-      background: rgba(30, 144, 255, 0.15);
-      border-color: rgba(30, 144, 255, 0.3);
-      color: #60a5fa;
-    }
-
-    .brand-pill.elegoo {
-      background: rgba(155, 89, 182, 0.15);
-      border-color: rgba(155, 89, 182, 0.3);
-      color: #d8b4fe;
-    }
-
-    .brand-pill.flashforge {
-      background: rgba(231, 76, 60, 0.15);
-      border-color: rgba(231, 76, 60, 0.3);
-      color: #f87171;
-    }
-
-    .brand-pill.ultimaker {
-      background: rgba(0, 188, 212, 0.15);
-      border-color: rgba(0, 188, 212, 0.3);
-      color: #22d3ee;
-    }
-
-    .brand-pill.snapmaker {
-      background: rgba(46, 204, 113, 0.15);
-      border-color: rgba(46, 204, 113, 0.3);
-      color: #86efac;
-    }
-
-    .brand-pill.anycubic {
-      background: rgba(243, 156, 18, 0.15);
-      border-color: rgba(243, 156, 18, 0.3);
-      color: #fbbf24;
-    }
-
-    .brand-pill.voxelab {
-      background: rgba(149, 165, 166, 0.15);
-      border-color: rgba(149, 165, 166, 0.3);
-      color: #d1d5db;
-    }
-
-    .specs-tags {
-      display: flex;
-      gap: var(--spacing-sm);
-      flex-wrap: wrap;
-    }
-
-    .spec-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px var(--spacing-md);
-      background: rgba(107, 114, 128, 0.15);
-      border-radius: var(--radius-sm);
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-      font-weight: var(--font-weight-medium);
-    }
-
-    .score-bars-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-md);
-    }
-
-    .score-bar-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .score-bar-label {
-      font-size: var(--font-size-xs);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .score-bar {
-      width: 100%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-pill);
-      overflow: hidden;
-      border: 1px solid rgba(99, 102, 241, 0.1);
-    }
-
-    .score-bar-fill {
-      height: 100%;
-      transition: width var(--transition-smooth);
-      border-radius: var(--radius-pill);
-    }
-
-    .score-display {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .score-number {
-      font-size: var(--font-size-base);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-text-primary);
-    }
-
-    .score-max {
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-    }
-
-    /* Card Right: Price & Action */
-    .card-right {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .overall-score {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 4px;
-    }
-
-    .overall-score-label {
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-      font-weight: var(--font-weight-medium);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .overall-score-value {
-      font-size: 28px;
-      font-weight: var(--font-weight-bold);
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .price-section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-xs);
-      align-items: flex-end;
-    }
-
-    .price-label {
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-      font-weight: var(--font-weight-medium);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .price-value {
-      font-size: var(--font-size-xl);
-      font-weight: var(--font-weight-bold);
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .buy-button {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      padding: var(--spacing-md) var(--spacing-lg);
-      background: var(--gradient-accent);
-      color: white;
-      border: none;
-      border-radius: var(--radius-lg);
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-semibold);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all var(--transition-smooth);
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .buy-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left var(--transition-smooth);
-    }
-
-    .buy-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
-    }
-
-    .buy-button:hover::before {
-      left: 100%;
-    }
-
-    .buy-button:active {
-      transform: translateY(0);
-    }
-
-    .buy-button.unavailable {
-      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-      box-shadow: none;
-      cursor: not-allowed;
-    }
-
-    /* ========================================
-       Empty State
-       ======================================== */
-    .no-results-message {
-      text-align: center;
-      padding: var(--spacing-2xl) var(--spacing-lg);
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-base);
-    }
-
-    .empty-state-icon {
-      font-size: 48px;
-      margin-bottom: var(--spacing-md);
-      opacity: 0.5;
-    }
-
-    /* ========================================
-       Footer
-       ======================================== */
-    .footer {
-      border-top: 1px solid var(--color-border);
-      padding: var(--spacing-2xl) var(--spacing-lg);
-      margin-top: var(--spacing-2xl);
-      text-align: center;
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-sm);
-    }
-
-    /* ========================================
-       Responsive Design
-       ======================================== */
-    @media (max-width: 1024px) {
-      .printer-card {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-      }
-
-      .card-right {
-        align-items: flex-start;
-      }
-
-      .score-bars-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-title {
-        font-size: var(--font-size-xl);
-      }
-    }
-
-    @media (max-width: 768px) {
-      :root {
-        --spacing-xl: 16px;
-        --spacing-2xl: 20px;
-      }
-
-      .hero-section {
-        padding: var(--spacing-xl) var(--spacing-md);
-        margin-bottom: var(--spacing-xl);
-      }
-
-      .hero-title {
-        font-size: 24px;
-        margin-bottom: var(--spacing-sm);
-      }
-
-      .hero-subtitle {
-        font-size: var(--font-size-base);
-        margin-bottom: var(--spacing-md);
-      }
-
-      .hero-stats {
-        gap: var(--spacing-md);
-      }
-
-      .printer-card {
-        padding: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
-      }
-
-      .card-left {
-        flex-direction: row;
-        gap: var(--spacing-md);
-      }
-
-      .printer-image-container {
-        width: 80px;
-        height: 80px;
-      }
-
-      .rank-badge {
-        width: 40px;
-        height: 40px;
-        font-size: var(--font-size-base);
-      }
-
-      .printer-name {
-        font-size: var(--font-size-base);
-      }
-
-      .score-bars-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .filter-pills-container {
-        gap: var(--spacing-xs);
-      }
-
-      .filter-pill {
-        padding: 6px 12px;
-        font-size: var(--font-size-xs);
-      }
-
-      .sort-container {
-        gap: var(--spacing-md);
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .sort-tabs {
-        gap: var(--spacing-md);
-      }
-
-      .sort-tab {
-        font-size: var(--font-size-xs);
-        padding: var(--spacing-xs) 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      :root {
-        --spacing-lg: 12px;
-        --spacing-xl: 12px;
-      }
-
-      .hero-section {
-        padding: var(--spacing-lg);
-        margin-bottom: var(--spacing-lg);
-      }
-
-      .hero-title {
-        font-size: 20px;
-      }
-
-      .hero-subtitle {
-        font-size: var(--font-size-sm);
-      }
-
-      .hero-stats {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-      }
-
-      .controls-section {
-        padding: 0 var(--spacing-md);
-      }
-
-      .printer-card {
-        grid-template-columns: 1fr;
-        padding: var(--spacing-md);
-        gap: var(--spacing-md);
-      }
-
-      .card-left {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      .printer-image-container {
-        width: 70px;
-        height: 70px;
-      }
-
-      .card-right {
-        align-items: flex-start;
-        width: 100%;
-      }
-
-      .price-section {
-        align-items: flex-start;
-      }
-
-      .price-value {
-        font-size: var(--font-size-lg);
-      }
-
-      .buy-button {
-        width: 100%;
-        justify-content: center;
-        padding: var(--spacing-md) var(--spacing-lg);
-      }
-
-      .printer-header {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-      }
-
-      .specs-tags {
-        width: 100%;
-        gap: 4px;
-      }
-
-      .spec-tag {
-        padding: 3px 8px;
-        font-size: 10px;
-      }
-
-      .sort-container {
-        gap: var(--spacing-sm);
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .sort-tabs {
-        gap: var(--spacing-sm);
-      }
-
-      .sort-tab {
-        font-size: 11px;
-        padding: 4px 0;
-      }
-
-      .score-bars-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .overall-score-value {
-        font-size: 24px;
-      }
-    }
-
-    /* ========================================
-       Utility Classes
-       ======================================== */
-    .truncate {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .hidden {
-      display: none !important;
-    }
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--color-bg); color: var(--color-text-primary); font-family: var(--font-family); font-size: var(--font-size-base); line-height: 1.6; }
+    .hero-section { background: var(--gradient-hero); padding: var(--spacing-2xl) var(--spacing-lg); margin-bottom: var(--spacing-2xl); position: relative; overflow: hidden; }
+    .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; text-align: center; }
+    .hero-title { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: #ffffff; margin-bottom: var(--spacing-md); }
+    .hero-subtitle { font-size: var(--font-size-lg); color: rgba(255, 255, 255, 0.9); margin-bottom: var(--spacing-xl); }
+    .hero-stats { display: flex; justify-content: center; gap: var(--spacing-xl); flex-wrap: wrap; font-size: var(--font-size-sm); color: rgba(255, 255, 255, 0.85); }
+    .stat-item { display: flex; align-items: center; gap: var(--spacing-sm); }
+    .stat-dot { width: 4px; height: 4px; background: rgba(255, 255, 255, 0.8); border-radius: 50%; }
+    .controls-section { max-width: 1200px; margin: 0 auto var(--spacing-2xl); padding: 0 var(--spacing-lg); }
+    .controls-label { font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--spacing-md); }
+    .search-bar { display: flex; align-items: center; gap: var(--spacing-md); background-color: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-md) var(--spacing-lg); margin-bottom: var(--spacing-xl); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .search-bar:focus-within { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+    .search-icon { color: var(--color-text-secondary); }
+    .search-input { flex: 1; background: transparent; border: none; color: var(--color-text-primary); outline: none; font-family: var(--font-family); font-size: var(--font-size-base); }
+    .search-input::placeholder { color: var(--color-text-muted); }
+    .filter-pills-container { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-xl); }
+    .filter-pill { display: inline-flex; align-items: center; padding: var(--spacing-sm) var(--spacing-lg); background-color: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-secondary); border-radius: var(--radius-pill); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .filter-pill:hover { border-color: #6366f1; color: #6366f1; transform: translateY(-1px); }
+    .filter-pill.active { background: var(--gradient-button); border-color: transparent; color: white; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
+    .sort-price-row { display: flex; gap: var(--spacing-xl); flex-wrap: wrap; margin-bottom: var(--spacing-xl); align-items: center; }
+    .sort-group, .price-filter-group { display: flex; align-items: center; gap: var(--spacing-lg); }
+    .sort-label, .price-label { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; white-space: nowrap; }
+    .sort-tabs, .price-tabs { display: flex; gap: var(--spacing-lg); flex-wrap: wrap; }
+    .sort-tab, .price-tab { position: relative; padding: var(--spacing-sm) 0; background: none; border: none; color: var(--color-text-secondary); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; white-space: nowrap; }
+    .sort-tab:hover, .price-tab:hover { color: var(--color-text-primary); }
+    .sort-tab.active, .price-tab.active { color: var(--color-text-primary); }
+    .sort-tab.active::after, .price-tab.active::after { content: ''; position: absolute; bottom: -8px; left: 0; right: 0; height: 2px; background: var(--gradient-accent); }
+    .cards-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); margin-bottom: var(--spacing-2xl); }
+    .result-count { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--spacing-lg); }
+    .printer-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); display: grid; grid-template-columns: auto 1fr auto; gap: var(--spacing-lg); align-items: flex-start; position: relative; box-shadow: var(--shadow-md); transition: all 0.3s; }
+    .printer-card:hover { border-color: #6366f1; background: var(--color-bg-card-hover); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .card-header-top { position: absolute; top: var(--spacing-lg); right: var(--spacing-lg); }
+    .compare-checkbox { width: 24px; height: 24px; cursor: pointer; accent-color: #6366f1; }
+    .card-left { display: flex; flex-direction: column; gap: var(--spacing-md); align-items: center; }
+    .rank-badge { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--gradient-accent); border-radius: 50%; font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+    .printer-image-container { width: 100px; height: 100px; background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--color-border); cursor: pointer; }
+    .printer-image-container:hover { border-color: #6366f1; box-shadow: var(--shadow-md); }
+    .printer-image { max-width: 100%; max-height: 100%; object-fit: contain; padding: var(--spacing-sm); }
+    .no-image { color: var(--color-text-muted); font-size: var(--font-size-xs); text-align: center; line-height: 1.4; }
+    .card-center { display: flex; flex-direction: column; gap: var(--spacing-md); padding-top: var(--spacing-lg); }
+    .printer-header { display: flex; align-items: baseline; gap: var(--spacing-md); flex-wrap: wrap; }
+    .printer-name { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-text-primary); cursor: pointer; }
+    .printer-name:hover { color: #6366f1; }
+    .brand-pill { display: inline-flex; padding: var(--spacing-xs) var(--spacing-md); background: #f3e8ff; border: 1px solid #e9d5ff; border-radius: var(--radius-pill); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: #7c3aed; }
+    .brand-pill.bambu-lab { background: #dcfce7; border-color: #bbf7d0; color: #15803d; }
+    .brand-pill.prusa { background: #fed7aa; border-color: #fdba74; color: #92400e; }
+    .brand-pill.creality { background: #bfdbfe; border-color: #93c5fd; color: #1e40af; }
+    .brand-pill.elegoo { background: #e9d5ff; border-color: #d8b4fe; color: #6b21a8; }
+    .brand-pill.flashforge { background: #fecaca; border-color: #fca5a5; color: #7f1d1d; }
+    .brand-pill.ultimaker { background: #a5f3fc; border-color: #67e8f9; color: #164e63; }
+    .brand-pill.snapmaker { background: #bbf7d0; border-color: #86efac; color: #16a34a; }
+    .brand-pill.anycubic { background: #fef3c7; border-color: #fce7b2; color: #92400e; }
+    .brand-pill.voxelab { background: #f3f4f6; border-color: #e5e7eb; color: #374151; }
+    .specs-tags { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; }
+    .spec-tag { padding: 4px var(--spacing-md); background: var(--color-bg-card-hover); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: var(--font-weight-medium); }
+    .score-bars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); }
+    .score-bar-item { display: flex; flex-direction: column; gap: 4px; }
+    .score-bar-label { font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; }
+    .score-bar { width: 100%; height: 6px; background: var(--color-border-light); border-radius: var(--radius-pill); overflow: hidden; border: 1px solid var(--color-border); }
+    .score-bar-fill { height: 100%; }
+    .score-display { display: flex; align-items: baseline; gap: 4px; }
+    .score-number { font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); }
+    .score-max { font-size: var(--font-size-xs); color: var(--color-text-secondary); }
+    .card-right { display: flex; flex-direction: column; gap: var(--spacing-md); align-items: flex-end; padding-top: var(--spacing-lg); }
+    .overall-score { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .overall-score-label { font-size: var(--font-size-xs); color: var(--color-text-secondary); text-transform: uppercase; }
+    .overall-score-value { font-size: 28px; font-weight: var(--font-weight-bold); background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .price-section { display: flex; flex-direction: column; gap: var(--spacing-xs); align-items: flex-end; }
+    .price-label { font-size: var(--font-size-xs); color: var(--color-text-secondary); text-transform: uppercase; }
+    .price-value { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); }
+    .button-group { display: flex; flex-direction: column; gap: var(--spacing-sm); width: 100%; max-width: 160px; }
+    .buy-button, .detail-button { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-md) var(--spacing-lg); border: none; border-radius: var(--radius-lg); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .buy-button { background: var(--gradient-button); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); }
+    .buy-button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); }
+    .detail-button { background: var(--color-bg-card-hover); color: #6366f1; border: 1px solid var(--color-border); }
+    .detail-button:hover { border-color: #6366f1; }
+    .buy-button:disabled, .buy-button.unavailable { background: #d1d5db; cursor: not-allowed; opacity: 0.7; }
+    .compare-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-bg-card); border-top: 2px solid var(--color-border); padding: var(--spacing-lg); box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); display: none; z-index: 100; }
+    .compare-bar.active { display: flex; }
+    .compare-bar-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-lg); }
+    .compare-info { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); }
+    .compare-count { background: #6366f1; color: white; padding: 4px 8px; border-radius: var(--radius-md); }
+    .compare-open-button { padding: var(--spacing-md) var(--spacing-xl); background: var(--gradient-button); color: white; border: none; border-radius: var(--radius-lg); font-weight: var(--font-weight-semibold); cursor: pointer; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); }
+    .compare-open-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); }
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); display: none; align-items: center; justify-content: center; z-index: 1000; padding: var(--spacing-lg); overflow-y: auto; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: var(--color-bg-card); border-radius: var(--radius-lg); width: 100%; max-width: 1000px; position: relative; box-shadow: var(--shadow-xl); margin: var(--spacing-xl) 0; }
+    .modal-close { position: absolute; top: var(--spacing-lg); right: var(--spacing-lg); width: 40px; height: 40px; border: none; background: var(--color-bg-card-hover); border-radius: 50%; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; z-index: 10; color: var(--color-text-primary); }
+    .modal-close:hover { background: var(--color-border); }
+    .detail-modal { padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl); }
+    .detail-header { display: grid; grid-template-columns: auto 1fr auto; gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl); }
+    .detail-image { width: 200px; height: 200px; background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); overflow: hidden; flex-shrink: 0; }
+    .detail-image img { max-width: 100%; max-height: 100%; object-fit: contain; padding: var(--spacing-lg); }
+    .detail-info h2 { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm); }
+    .detail-brand { margin-bottom: var(--spacing-md); }
+    .detail-actions { display: flex; gap: var(--spacing-md); flex-direction: column; }
+    .detail-divider { height: 1px; background: var(--color-border); margin: var(--spacing-xl) 0; }
+    .detail-section { margin-bottom: var(--spacing-xl); }
+    .detail-section h3 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-md); }
+    .scores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); }
+    .score-item { padding: var(--spacing-md); background: var(--color-bg-card-hover); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+    .score-item-label { font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-bottom: var(--spacing-sm); text-transform: uppercase; }
+    .score-item-value { font-size: 24px; font-weight: var(--font-weight-bold); }
+    .specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table th { background: var(--color-bg-card-hover); border-bottom: 2px solid var(--color-border); padding: var(--spacing-md); text-align: left; font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); }
+    .specs-table td { border-bottom: 1px solid var(--color-border); padding: var(--spacing-md); color: var(--color-text-secondary); font-size: var(--font-size-sm); }
+    .specs-table tr:last-child td { border-bottom: none; }
+    .compare-modal { padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl); }
+    .compare-section { margin-bottom: var(--spacing-xl); }
+    .compare-section h3 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-md); }
+    .compare-printers-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl); }
+    .compare-printer-card { padding: var(--spacing-lg); background: var(--color-bg-card-hover); border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+    .compare-printer-image { width: 120px; height: 120px; background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); border: 1px solid var(--color-border); overflow: hidden; }
+    .compare-printer-image img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .compare-printer-info h4 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); text-align: center; margin-bottom: var(--spacing-md); }
+    .compare-printer-price { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); text-align: center; margin-bottom: var(--spacing-md); }
+    .compare-table { width: 100%; border-collapse: collapse; }
+    .compare-table th { background: var(--color-bg-card-hover); border-bottom: 2px solid var(--color-border); padding: var(--spacing-md); text-align: left; font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); }
+    .compare-table td { border-bottom: 1px solid var(--color-border); padding: var(--spacing-md); font-size: var(--font-size-sm); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .winner { background: #dcfce7 !important; color: #15803d !important; font-weight: var(--font-weight-bold); }
+    .no-results-message { text-align: center; padding: var(--spacing-2xl) var(--spacing-lg); }
+    .empty-state-icon { font-size: 48px; margin-bottom: var(--spacing-md); opacity: 0.5; }
+    .footer { border-top: 1px solid var(--color-border); padding: var(--spacing-2xl) var(--spacing-lg); margin-top: var(--spacing-2xl); text-align: center; color: var(--color-text-secondary); font-size: var(--font-size-sm); }
+    .hidden { display: none !important; }
+    @media (max-width: 1024px) { .printer-card { grid-template-columns: 1fr; } .card-right { align-items: flex-start; } .score-bars-grid { grid-template-columns: repeat(2, 1fr); } .detail-header { grid-template-columns: 1fr; } .compare-printers-row { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .hero-title { font-size: 24px; } .sort-price-row { flex-direction: column; gap: var(--spacing-md); } }
+    @media (max-width: 480px) { .printer-card { padding: var(--spacing-md); } .score-bars-grid { grid-template-columns: 1fr; } .button-group { max-width: 100%; } }
   </style>
 </head>
 <body>
@@ -906,14 +186,14 @@
       <h1 class="hero-title">3D Printer Rankings</h1>
       <p class="hero-subtitle">Find your perfect 3D printer. Ranked by real-world performance.</p>
       <div class="hero-stats">
-        <span class="stat-item"><span class="stat-icon"></span>20 Printers Ranked</span>
-        <span class="stat-item"><span class="stat-icon"></span>Updated July 2025</span>
-        <span class="stat-item"><span class="stat-icon"></span>Expert Tested</span>
+        <span class="stat-item"><span class="stat-dot"></span>20 Printers Ranked</span>
+        <span class="stat-item"><span class="stat-dot"></span>$169-$3999</span>
+        <span class="stat-item"><span class="stat-dot"></span>Updated July 2025</span>
       </div>
     </div>
   </div>
 
-  <!-- Controls Section -->
+  <!-- Controls -->
   <div class="controls-section">
     <label class="controls-label">Search</label>
     <div class="search-bar">
@@ -924,13 +204,19 @@
     <label class="controls-label">Filter by Brand</label>
     <div class="filter-pills-container" id="brandFilters"></div>
 
-    <div class="sort-container">
-      <span class="sort-label">Sort by</span>
-      <div class="sort-tabs" id="sortTabs"></div>
+    <div class="sort-price-row">
+      <div class="sort-group">
+        <span class="sort-label">Sort by</span>
+        <div class="sort-tabs" id="sortTabs"></div>
+      </div>
+      <div class="price-filter-group">
+        <span class="price-label">Price</span>
+        <div class="price-tabs" id="priceTabs"></div>
+      </div>
     </div>
   </div>
 
-  <!-- Results Container -->
+  <!-- Cards -->
   <div class="cards-container">
     <div class="result-count" id="resultCount">Showing 20 of 20 printers</div>
     <div id="cardsContainer"></div>
@@ -940,850 +226,326 @@
     </div>
   </div>
 
+  <!-- Compare Bar -->
+  <div class="compare-bar" id="compareBar">
+    <div class="compare-bar-content">
+      <div class="compare-info">
+        Selected: <span class="compare-count" id="compareCount">0</span>
+      </div>
+      <button class="compare-open-button" id="compareOpenBtn">Compare Now →</button>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDetailModal()">×</button>
+      <div class="detail-modal" id="detailContent"></div>
+    </div>
+  </div>
+
+  <!-- Compare Modal -->
+  <div class="modal-overlay" id="compareModalOverlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCompareModal()">×</button>
+      <div class="compare-modal" id="compareContent"></div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <div class="footer">
     <p>3DRanker.com • Rankings updated regularly • Affiliate links help support this site</p>
   </div>
 
   <script>
-    // ========================================
-    // Data & State Management
-    // ========================================
     const printerData = {
       "printers": [
-        {
-          "name": "Bambu Lab H2S",
-          "brand": "Bambu Lab",
-          "slug": "bambu-lab-h2s",
-          "image": "https://static.wixstatic.com/media/09f9cc_b1f2a6dea9194d7cb09e2ebc38f1ae82~mv2.png",
-          "scores": {
-            "overall": 8.81,
-            "print_quality": 9.4,
-            "speed": 8.7,
-            "ease_of_use": 8.3,
-            "reliability": 9.1,
-            "value": 6.2,
-            "software": 8.8,
-            "build_volume": 8.6,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "340x320x340mm",
-            "nozzle_temp": "350C",
-            "bed_temp": "65C heated chamber",
-            "filament": ["PLA", "PETG", "ABS", "ASA", "PC", "PPA", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null,
-            "resolution": "< 50 μm"
-          },
-          "price": null,
-          "price_range": "premium",
-          "buy_url": "https://us.store.bambulab.com/products/h2s"
-        },
-        {
-          "name": "Bambu Lab P2S",
-          "brand": "Bambu Lab",
-          "slug": "bambu-lab-p2s",
-          "image": "https://static.wixstatic.com/media/09f9cc_f6ca408c39d44473b291c26e7d1ac3dc~mv2.png",
-          "scores": {
-            "overall": 8.75,
-            "print_quality": 9.2,
-            "speed": 9.0,
-            "ease_of_use": 8.6,
-            "reliability": 8.8,
-            "value": 7.8,
-            "software": 8.3,
-            "build_volume": 6.8,
-            "noise": 6.8,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "256x256x256mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
-            "connectivity": "WiFi, Ethernet, USB",
-            "weight": null,
-            "max_speed": "600mm/s"
-          },
-          "price": 445,
-          "price_range": "mid",
-          "buy_url": "https://us.store.bambulab.com/products/p2s"
-        },
-        {
-          "name": "Bambu Lab H2D",
-          "brand": "Bambu Lab",
-          "slug": "bambu-lab-h2d",
-          "image": "https://static.wixstatic.com/media/09f9cc_e09b495562964aa28340fd3365e45f5f~mv2.png",
-          "scores": {
-            "overall": 8.72,
-            "print_quality": 9.3,
-            "speed": 8.6,
-            "ease_of_use": 8.2,
-            "reliability": 9.0,
-            "value": 6.5,
-            "software": 8.5,
-            "build_volume": 8.6,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "280x280x280mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": null,
-          "price_range": "premium",
-          "buy_url": null
-        },
-        {
-          "name": "Bambu Lab P1S",
-          "brand": "Bambu Lab",
-          "slug": "bambu-lab-p1s",
-          "image": "https://static.wixstatic.com/media/09f9cc_3c4e6ca2561347cbb46b13e6fc36ea7f~mv2.png",
-          "scores": {
-            "overall": 8.62,
-            "print_quality": 9.0,
-            "speed": 8.8,
-            "ease_of_use": 8.5,
-            "reliability": 8.6,
-            "value": 8.5,
-            "software": 8.2,
-            "build_volume": 7.0,
-            "noise": 7.0,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "256x256x256mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 399,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Original Prusa MK4S",
-          "brand": "Prusa Research",
-          "slug": "original-prusa-mk4s",
-          "image": "https://static.wixstatic.com/media/09f9cc_f8d36860b596435bbba54ec6e3179567~mv2.png",
-          "scores": {
-            "overall": 8.52,
-            "print_quality": 8.6,
-            "speed": 7.6,
-            "ease_of_use": 8.6,
-            "reliability": 9.6,
-            "value": 7.2,
-            "software": 9.6,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "250x210x220mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "120C",
-            "filament": ["PLA", "PETG", "ABS", "ASA", "TPU"],
-            "connectivity": "USB, WiFi",
-            "weight": null
-          },
-          "price": 799,
-          "price_range": "mid",
-          "buy_url": "https://www.prusa3d.com/product/original-prusa-mk4s-3d-printer-kit-5/"
-        },
-        {
-          "name": "Prusa Core One L",
-          "brand": "Prusa Research",
-          "slug": "prusa-core-one-l",
-          "image": "https://static.wixstatic.com/media/09f9cc_54230943c6fc468ba3b832fee20eed15~mv2.png",
-          "scores": {
-            "overall": 8.47,
-            "print_quality": 9.0,
-            "speed": 8.0,
-            "ease_of_use": 7.8,
-            "reliability": 9.2,
-            "value": 5.8,
-            "software": 8.8,
-            "build_volume": 6.0,
-            "noise": 6.0,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "280x280x280mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "ASA"],
-            "connectivity": "USB, WiFi",
-            "weight": null
-          },
-          "price": null,
-          "price_range": "premium",
-          "buy_url": null
-        },
-        {
-          "name": "Prusa Core One+",
-          "brand": "Prusa Research",
-          "slug": "prusa-core-one-plus",
-          "image": "https://static.wixstatic.com/media/09f9cc_9d6b16ea9f3c4f19a18a10cfe9d8711b~mv2.png",
-          "scores": {
-            "overall": 8.43,
-            "print_quality": 8.8,
-            "speed": 7.8,
-            "ease_of_use": 8.0,
-            "reliability": 9.2,
-            "value": 6.5,
-            "software": 9.0,
-            "build_volume": 6.2,
-            "noise": 6.2,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "210x210x210mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "ASA"],
-            "connectivity": "USB, WiFi",
-            "weight": null
-          },
-          "price": null,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Ultimaker S5",
-          "brand": "Ultimaker",
-          "slug": "ultimaker-s5",
-          "image": "https://static.wixstatic.com/media/09f9cc_af04d10353fe4bb4bacae6a265e7ca47~mv2.png",
-          "scores": {
-            "overall": 8.41,
-            "print_quality": 9.0,
-            "speed": 6.8,
-            "ease_of_use": 8.6,
-            "reliability": 9.2,
-            "value": 4.0,
-            "software": 9.0,
-            "build_volume": 6.0,
-            "noise": 6.0,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "330x240x300mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "110C",
-            "filament": ["PLA", "ABS", "Nylon"],
-            "connectivity": "Ethernet, WiFi",
-            "weight": null
-          },
-          "price": null,
-          "price_range": "premium",
-          "buy_url": null
-        },
-        {
-          "name": "Prusa Original XL",
-          "brand": "Prusa Research",
-          "slug": "prusa-original-xl",
-          "image": "https://static.wixstatic.com/media/09f9cc_2167768778f644bf89e99074ed624297~mv2.png",
-          "scores": {
-            "overall": 8.41,
-            "print_quality": 9.0,
-            "speed": 8.0,
-            "ease_of_use": 7.6,
-            "reliability": 9.0,
-            "value": 5.5,
-            "software": 8.6,
-            "build_volume": 6.0,
-            "noise": 6.0,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "360x360x360mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "120C",
-            "filament": ["PLA", "PETG", "ABS", "ASA"],
-            "connectivity": "USB, Ethernet",
-            "weight": null
-          },
-          "price": 3999,
-          "price_range": "premium",
-          "buy_url": null
-        },
-        {
-          "name": "Bambu Lab A1",
-          "brand": "Bambu Lab",
-          "slug": "bambu-lab-a1",
-          "image": "https://static.wixstatic.com/media/09f9cc_d15eff370bff43269290ef62689952c3~mv2.png",
-          "scores": {
-            "overall": 8.22,
-            "print_quality": 8.5,
-            "speed": 8.2,
-            "ease_of_use": 9.0,
-            "reliability": 8.2,
-            "value": 9.0,
-            "software": 7.8,
-            "build_volume": 7.5,
-            "noise": 7.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "256x256x256mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 199,
-          "price_range": "budget",
-          "buy_url": null
-        },
-        {
-          "name": "Ultimaker S3",
-          "brand": "Ultimaker",
-          "slug": "ultimaker-s3",
-          "image": "https://static.wixstatic.com/media/09f9cc_14f7966d590548319ee48f906227d6e0~mv2.png",
-          "scores": {
-            "overall": 8.21,
-            "print_quality": 8.6,
-            "speed": 6.6,
-            "ease_of_use": 8.6,
-            "reliability": 9.0,
-            "value": 4.5,
-            "software": 9.0,
-            "build_volume": 6.0,
-            "noise": 6.0,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "243x220x200mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "ABS", "Nylon"],
-            "connectivity": "Ethernet, WiFi",
-            "weight": null
-          },
-          "price": null,
-          "price_range": "premium",
-          "buy_url": null
-        },
-        {
-          "name": "Flashforge Adventurer 5M Pro",
-          "brand": "FlashForge",
-          "slug": "flashforge-adventurer-5m-pro",
-          "image": "https://static.wixstatic.com/media/09f9cc_af04d10353fe4bb4bacae6a265e7ca47~mv2.png",
-          "scores": {
-            "overall": 8.03,
-            "print_quality": 8.2,
-            "speed": 8.0,
-            "ease_of_use": 8.6,
-            "reliability": 8.2,
-            "value": 8.0,
-            "software": 7.5,
-            "build_volume": 7.2,
-            "noise": 7.2,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "242x242x242mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "110C",
-            "filament": ["PLA", "ABS", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 599,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Creality K1 Max",
-          "brand": "Creality",
-          "slug": "creality-k1-max",
-          "image": "https://static.wixstatic.com/media/09f9cc_588b96e7f43942d8a8902343bb87c0cd~mv2.webp",
-          "scores": {
-            "overall": 8.0,
-            "print_quality": 8.5,
-            "speed": 8.8,
-            "ease_of_use": 7.6,
-            "reliability": 7.6,
-            "value": 7.6,
-            "software": 7.6,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "300x300x300mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 499,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Prusa Mini",
-          "brand": "Prusa Research",
-          "slug": "prusa-mini",
-          "image": "https://static.wixstatic.com/media/09f9cc_3bf6ca3a1c2c4e758268a38b9b3673cc~mv2.png",
-          "scores": {
-            "overall": 7.97,
-            "print_quality": 8.0,
-            "speed": 7.0,
-            "ease_of_use": 8.6,
-            "reliability": 9.0,
-            "value": 8.2,
-            "software": 9.0,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "180x180x180mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS", "ASA"],
-            "connectivity": "USB, WiFi",
-            "weight": "5kg"
-          },
-          "price": 349,
-          "price_range": "budget",
-          "buy_url": null
-        },
-        {
-          "name": "Bambu Lab A1 Mini",
-          "brand": "Bambu Lab",
-          "slug": "bambu-lab-a1-mini",
-          "image": null,
-          "scores": {
-            "overall": 7.88,
-            "print_quality": 8.0,
-            "speed": 7.8,
-            "ease_of_use": 9.0,
-            "reliability": 7.8,
-            "value": 9.5,
-            "software": 7.5,
-            "build_volume": 7.5,
-            "noise": 7.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "165x165x165mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 169,
-          "price_range": "budget",
-          "buy_url": null
-        },
-        {
-          "name": "Flashforge Adventurer 5M",
-          "brand": "FlashForge",
-          "slug": "flashforge-adventurer-5m",
-          "image": null,
-          "scores": {
-            "overall": 7.84,
-            "print_quality": 8.0,
-            "speed": 8.0,
-            "ease_of_use": 8.5,
-            "reliability": 8.0,
-            "value": 8.5,
-            "software": 7.5,
-            "build_volume": 7.0,
-            "noise": 7.0,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "242x242x242mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "110C",
-            "filament": ["PLA", "ABS", "TPU"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 499,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Creality K2 Plus Combo",
-          "brand": "Creality",
-          "slug": "creality-k2-plus-combo",
-          "image": null,
-          "scores": {
-            "overall": 7.74,
-            "print_quality": 8.3,
-            "speed": 8.3,
-            "ease_of_use": 7.5,
-            "reliability": 7.5,
-            "value": 7.5,
-            "software": 7.0,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "300x300x300mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 449,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Elegoo Neptune 4 Max",
-          "brand": "Elegoo",
-          "slug": "elegoo-neptune-4-max",
-          "image": null,
-          "scores": {
-            "overall": 7.71,
-            "print_quality": 8.2,
-            "speed": 8.0,
-            "ease_of_use": 7.5,
-            "reliability": 7.8,
-            "value": 8.0,
-            "software": 7.0,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "420x420x500mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 279,
-          "price_range": "budget",
-          "buy_url": null
-        },
-        {
-          "name": "Creality K2 Combo",
-          "brand": "Creality",
-          "slug": "creality-k2-combo",
-          "image": null,
-          "scores": {
-            "overall": 7.57,
-            "print_quality": 8.0,
-            "speed": 8.0,
-            "ease_of_use": 7.5,
-            "reliability": 7.2,
-            "value": 8.5,
-            "software": 7.0,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "300x300x300mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 349,
-          "price_range": "mid",
-          "buy_url": null
-        },
-        {
-          "name": "Elegoo Centauri Carbon",
-          "brand": "Elegoo",
-          "slug": "elegoo-centauri-carbon",
-          "image": null,
-          "scores": {
-            "overall": 7.56,
-            "print_quality": 7.8,
-            "speed": 7.6,
-            "ease_of_use": 7.8,
-            "reliability": 7.6,
-            "value": 8.8,
-            "software": 7.0,
-            "build_volume": 6.5,
-            "noise": 6.5,
-            "multicolor": null
-          },
-          "specs": {
-            "build_volume": "220x220x220mm",
-            "nozzle_temp": "300C",
-            "bed_temp": "100C",
-            "filament": ["PLA", "PETG", "ABS"],
-            "connectivity": "WiFi, USB",
-            "weight": null
-          },
-          "price": 249,
-          "price_range": "budget",
-          "buy_url": null
-        }
+        {"name": "Bambu Lab H2S", "brand": "Bambu Lab", "image": "https://via.placeholder.com/100", "price": null, "price_range": "premium", "buy_url": null, "scores": {"overall": 8.81, "print_quality": 9.4, "speed": 8.7, "ease_of_use": 8.3, "reliability": 9.1, "value": 6.2}, "specs": {"build_volume": "340x320x340mm", "nozzle_temp": "350C", "bed_temp": "65C"}},
+        {"name": "Bambu Lab P2S", "brand": "Bambu Lab", "image": "https://via.placeholder.com/100", "price": 445, "price_range": "mid", "buy_url": "https://us.store.bambulab.com", "scores": {"overall": 8.75, "print_quality": 9.2, "speed": 9.0, "ease_of_use": 8.6, "reliability": 8.8, "value": 7.8}, "specs": {"build_volume": "256x256x256mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Original Prusa MK4S", "brand": "Prusa Research", "image": "https://via.placeholder.com/100", "price": 799, "price_range": "mid", "buy_url": "https://www.prusa3d.com", "scores": {"overall": 8.52, "print_quality": 8.6, "speed": 7.6, "ease_of_use": 8.6, "reliability": 9.6, "value": 7.2}, "specs": {"build_volume": "250x210x220mm", "nozzle_temp": "300C", "bed_temp": "120C"}},
+        {"name": "Creality K1 Max", "brand": "Creality", "image": "https://via.placeholder.com/100", "price": 499, "price_range": "mid", "buy_url": null, "scores": {"overall": 8.0, "print_quality": 8.5, "speed": 8.8, "ease_of_use": 7.6, "reliability": 7.6, "value": 7.6}, "specs": {"build_volume": "300x300x300mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Bambu Lab A1", "brand": "Bambu Lab", "image": "https://via.placeholder.com/100", "price": 199, "price_range": "budget", "buy_url": null, "scores": {"overall": 8.22, "print_quality": 8.5, "speed": 8.2, "ease_of_use": 9.0, "reliability": 8.2, "value": 9.0}, "specs": {"build_volume": "256x256x256mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Ultimaker S5", "brand": "Ultimaker", "image": "https://via.placeholder.com/100", "price": null, "price_range": "premium", "buy_url": null, "scores": {"overall": 8.41, "print_quality": 9.0, "speed": 6.8, "ease_of_use": 8.6, "reliability": 9.2, "value": 4.0}, "specs": {"build_volume": "330x240x300mm", "nozzle_temp": "300C", "bed_temp": "110C"}},
+        {"name": "Prusa Original XL", "brand": "Prusa Research", "image": "https://via.placeholder.com/100", "price": 3999, "price_range": "premium", "buy_url": null, "scores": {"overall": 8.41, "print_quality": 9.0, "speed": 8.0, "ease_of_use": 7.6, "reliability": 9.0, "value": 5.5}, "specs": {"build_volume": "360x360x360mm", "nozzle_temp": "300C", "bed_temp": "120C"}},
+        {"name": "Flashforge Adventurer 5M Pro", "brand": "FlashForge", "image": "https://via.placeholder.com/100", "price": 599, "price_range": "mid", "buy_url": null, "scores": {"overall": 8.03, "print_quality": 8.2, "speed": 8.0, "ease_of_use": 8.6, "reliability": 8.2, "value": 8.0}, "specs": {"build_volume": "242x242x242mm", "nozzle_temp": "300C", "bed_temp": "110C"}},
+        {"name": "Prusa Mini", "brand": "Prusa Research", "image": "https://via.placeholder.com/100", "price": 349, "price_range": "budget", "buy_url": null, "scores": {"overall": 7.97, "print_quality": 8.0, "speed": 7.0, "ease_of_use": 8.6, "reliability": 9.0, "value": 8.2}, "specs": {"build_volume": "180x180x180mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Elegoo Neptune 4 Max", "brand": "Elegoo", "image": "https://via.placeholder.com/100", "price": 279, "price_range": "budget", "buy_url": null, "scores": {"overall": 7.71, "print_quality": 8.2, "speed": 8.0, "ease_of_use": 7.5, "reliability": 7.8, "value": 8.0}, "specs": {"build_volume": "420x420x500mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Bambu Lab A1 Mini", "brand": "Bambu Lab", "image": "https://via.placeholder.com/100", "price": 169, "price_range": "budget", "buy_url": null, "scores": {"overall": 7.88, "print_quality": 8.0, "speed": 7.8, "ease_of_use": 9.0, "reliability": 7.8, "value": 9.5}, "specs": {"build_volume": "165x165x165mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Ultimaker S3", "brand": "Ultimaker", "image": "https://via.placeholder.com/100", "price": null, "price_range": "premium", "buy_url": null, "scores": {"overall": 8.21, "print_quality": 8.6, "speed": 6.6, "ease_of_use": 8.6, "reliability": 9.0, "value": 4.5}, "specs": {"build_volume": "243x220x200mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Flashforge Adventurer 5M", "brand": "FlashForge", "image": "https://via.placeholder.com/100", "price": 499, "price_range": "mid", "buy_url": null, "scores": {"overall": 7.84, "print_quality": 8.0, "speed": 8.0, "ease_of_use": 8.5, "reliability": 8.0, "value": 8.5}, "specs": {"build_volume": "242x242x242mm", "nozzle_temp": "300C", "bed_temp": "110C"}},
+        {"name": "Creality K2 Plus Combo", "brand": "Creality", "image": "https://via.placeholder.com/100", "price": 449, "price_range": "mid", "buy_url": null, "scores": {"overall": 7.74, "print_quality": 8.3, "speed": 8.3, "ease_of_use": 7.5, "reliability": 7.5, "value": 7.5}, "specs": {"build_volume": "300x300x300mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Creality K2 Combo", "brand": "Creality", "image": "https://via.placeholder.com/100", "price": 349, "price_range": "mid", "buy_url": null, "scores": {"overall": 7.57, "print_quality": 8.0, "speed": 8.0, "ease_of_use": 7.5, "reliability": 7.2, "value": 8.5}, "specs": {"build_volume": "300x300x300mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Elegoo Centauri Carbon", "brand": "Elegoo", "image": "https://via.placeholder.com/100", "price": 249, "price_range": "budget", "buy_url": null, "scores": {"overall": 7.56, "print_quality": 7.8, "speed": 7.6, "ease_of_use": 7.8, "reliability": 7.6, "value": 8.8}, "specs": {"build_volume": "220x220x220mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Bambu Lab P1S", "brand": "Bambu Lab", "image": "https://via.placeholder.com/100", "price": 399, "price_range": "mid", "buy_url": null, "scores": {"overall": 8.62, "print_quality": 9.0, "speed": 8.8, "ease_of_use": 8.5, "reliability": 8.6, "value": 8.5}, "specs": {"build_volume": "256x256x256mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Prusa Core One L", "brand": "Prusa Research", "image": "https://via.placeholder.com/100", "price": null, "price_range": "premium", "buy_url": null, "scores": {"overall": 8.47, "print_quality": 9.0, "speed": 8.0, "ease_of_use": 7.8, "reliability": 9.2, "value": 5.8}, "specs": {"build_volume": "280x280x280mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Bambu Lab H2D", "brand": "Bambu Lab", "image": "https://via.placeholder.com/100", "price": null, "price_range": "premium", "buy_url": null, "scores": {"overall": 8.72, "print_quality": 9.3, "speed": 8.6, "ease_of_use": 8.2, "reliability": 9.0, "value": 6.5}, "specs": {"build_volume": "280x280x280mm", "nozzle_temp": "300C", "bed_temp": "100C"}},
+        {"name": "Prusa Core One+", "brand": "Prusa Research", "image": "https://via.placeholder.com/100", "price": null, "price_range": "mid", "buy_url": null, "scores": {"overall": 8.43, "print_quality": 8.8, "speed": 7.8, "ease_of_use": 8.0, "reliability": 9.2, "value": 6.5}, "specs": {"build_volume": "210x210x210mm", "nozzle_temp": "300C", "bed_temp": "100C"}}
       ]
     };
 
-    // Brand mapping for pill colors
-    const brandMap = {
-      "Bambu Lab": "bambu-lab",
-      "Prusa Research": "prusa",
-      "Creality": "creality",
-      "Elegoo": "elegoo",
-      "FlashForge": "flashforge",
-      "Ultimaker": "ultimaker",
-      "Snapmaker": "snapmaker",
-      "Anycubic": "anycubic",
-      "Voxelab": "voxelab"
-    };
+    const brandMap = {"Bambu Lab": "bambu-lab", "Prusa Research": "prusa", "Creality": "creality", "Elegoo": "elegoo", "FlashForge": "flashforge", "Ultimaker": "ultimaker", "Snapmaker": "snapmaker", "Anycubic": "anycubic"};
 
-    // Application state
     let state = {
-      searchTerm: '',
-      activeBrand: 'All',
-      sortBy: 'overall',
-      filteredPrinters: []
+      searchTerm: '', activeBrand: 'All', sortBy: 'overall', priceRange: 'all',
+      filteredPrinters: [], compareSelected: new Set()
     };
 
-    // Get unique brands
     const brands = ['All', ...new Set(printerData.printers.map(p => p.brand))];
 
-    // ========================================
-    // Helper Functions
-    // ========================================
-    
     function getScoreGradient(score) {
       if (score >= 8.0) return 'linear-gradient(90deg, #10b981 0%, #06d6a0 100%)';
       if (score >= 6.0) return 'linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%)';
       return 'linear-gradient(90deg, #ef4444 0%, #f87171 100%)';
     }
 
-    function formatPrice(price) {
-      if (!price) return 'Price N/A';
-      return '$' + price.toLocaleString();
-    }
-
-    function getBrandPillClass(brand) {
-      return brandMap[brand] || 'default';
-    }
+    function formatPrice(price) { return !price ? 'N/A' : '$' + price; }
+    function getBrandClass(brand) { return brandMap[brand] || 'default'; }
 
     function applyFilters() {
       let filtered = printerData.printers;
-
-      // Apply brand filter
-      if (state.activeBrand !== 'All') {
-        filtered = filtered.filter(p => p.brand === state.activeBrand);
-      }
-
-      // Apply search filter
+      if (state.activeBrand !== 'All') filtered = filtered.filter(p => p.brand === state.activeBrand);
       if (state.searchTerm) {
         const term = state.searchTerm.toLowerCase();
-        filtered = filtered.filter(p => 
-          p.name.toLowerCase().includes(term) || 
-          p.brand.toLowerCase().includes(term)
-        );
+        filtered = filtered.filter(p => p.name.toLowerCase().includes(term) || p.brand.toLowerCase().includes(term));
       }
-
-      // Apply sort
-      filtered.sort((a, b) => {
-        const scoreA = a.scores[state.sortBy] || 0;
-        const scoreB = b.scores[state.sortBy] || 0;
-        return scoreB - scoreA;
-      });
-
+      if (state.priceRange !== 'all') {
+        filtered = filtered.filter(p => {
+          if (!p.price) return false;
+          if (state.priceRange === 'budget') return p.price < 300;
+          if (state.priceRange === 'mid') return p.price >= 300 && p.price < 800;
+          if (state.priceRange === 'premium') return p.price >= 800;
+          return true;
+        });
+      }
+      filtered.sort((a, b) => (b.scores[state.sortBy] || 0) - (a.scores[state.sortBy] || 0));
       state.filteredPrinters = filtered;
       render();
-    }
-
-    function render() {
-      renderCards();
-      updateResultCount();
     }
 
     function renderCards() {
       const container = document.getElementById('cardsContainer');
       const noResults = document.getElementById('noResults');
-
       if (state.filteredPrinters.length === 0) {
         container.innerHTML = '';
         noResults.classList.remove('hidden');
         return;
       }
-
       noResults.classList.add('hidden');
-
       container.innerHTML = state.filteredPrinters.map((printer, idx) => {
         const rank = idx + 1;
-        const brandClass = getBrandPillClass(printer.brand);
-        const imageHtml = printer.image 
-          ? `<img src="${printer.image}" alt="${printer.name}" class="printer-image" onerror="this.style.display='none'">`
-          : `<div class="no-image">No image available</div>`;
-
+        const isChecked = state.compareSelected.has(printer.name);
+        const brandClass = getBrandClass(printer.brand);
         return `
           <div class="printer-card">
+            <div class="card-header-top">
+              <input type="checkbox" class="compare-checkbox" ${isChecked ? 'checked' : ''} onchange="toggleCompare('${printer.name}')">
+            </div>
             <div class="card-left">
               <div class="rank-badge">${rank}</div>
-              <div class="printer-image-container">
-                ${imageHtml}
+              <div class="printer-image-container" onclick="openDetailModal('${printer.name}')">
+                <img src="${printer.image}" alt="${printer.name}" class="printer-image" onerror="this.style.display='none'">
               </div>
             </div>
-
             <div class="card-center">
               <div class="printer-header">
-                <h3 class="printer-name">${printer.name}</h3>
+                <h3 class="printer-name" onclick="openDetailModal('${printer.name}')">${printer.name}</h3>
                 <span class="brand-pill ${brandClass}">${printer.brand}</span>
               </div>
-
               <div class="specs-tags">
                 <span class="spec-tag">📦 ${printer.specs.build_volume}</span>
-                <span class="spec-tag">🔥 Filament: ${printer.specs.filament.slice(0, 2).join(', ')}</span>
+                <span class="spec-tag">🔥 ${printer.specs.bed_temp}</span>
               </div>
-
               <div class="score-bars-grid">
                 <div class="score-bar-item">
                   <div class="score-bar-label">Quality</div>
-                  <div class="score-bar">
-                    <div class="score-bar-fill" style="width: ${(printer.scores.print_quality / 10) * 100}%; background: ${getScoreGradient(printer.scores.print_quality)}"></div>
-                  </div>
-                  <div class="score-display">
-                    <span class="score-number">${printer.scores.print_quality.toFixed(1)}</span>
-                    <span class="score-max">/10</span>
-                  </div>
+                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.print_quality / 10) * 100}%; background: ${getScoreGradient(printer.scores.print_quality)}"></div></div>
+                  <div class="score-display"><span class="score-number">${printer.scores.print_quality.toFixed(1)}</span><span class="score-max">/10</span></div>
                 </div>
-
                 <div class="score-bar-item">
                   <div class="score-bar-label">Speed</div>
-                  <div class="score-bar">
-                    <div class="score-bar-fill" style="width: ${(printer.scores.speed / 10) * 100}%; background: ${getScoreGradient(printer.scores.speed)}"></div>
-                  </div>
-                  <div class="score-display">
-                    <span class="score-number">${printer.scores.speed.toFixed(1)}</span>
-                    <span class="score-max">/10</span>
-                  </div>
+                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.speed / 10) * 100}%; background: ${getScoreGradient(printer.scores.speed)}"></div></div>
+                  <div class="score-display"><span class="score-number">${printer.scores.speed.toFixed(1)}</span><span class="score-max">/10</span></div>
                 </div>
-
                 <div class="score-bar-item">
                   <div class="score-bar-label">Value</div>
-                  <div class="score-bar">
-                    <div class="score-bar-fill" style="width: ${(printer.scores.value / 10) * 100}%; background: ${getScoreGradient(printer.scores.value)}"></div>
-                  </div>
-                  <div class="score-display">
-                    <span class="score-number">${printer.scores.value.toFixed(1)}</span>
-                    <span class="score-max">/10</span>
-                  </div>
+                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.value / 10) * 100}%; background: ${getScoreGradient(printer.scores.value)}"></div></div>
+                  <div class="score-display"><span class="score-number">${printer.scores.value.toFixed(1)}</span><span class="score-max">/10</span></div>
                 </div>
-
                 <div class="score-bar-item">
                   <div class="score-bar-label">Ease of Use</div>
-                  <div class="score-bar">
-                    <div class="score-bar-fill" style="width: ${(printer.scores.ease_of_use / 10) * 100}%; background: ${getScoreGradient(printer.scores.ease_of_use)}"></div>
-                  </div>
-                  <div class="score-display">
-                    <span class="score-number">${printer.scores.ease_of_use.toFixed(1)}</span>
-                    <span class="score-max">/10</span>
-                  </div>
+                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.ease_of_use / 10) * 100}%; background: ${getScoreGradient(printer.scores.ease_of_use)}"></div></div>
+                  <div class="score-display"><span class="score-number">${printer.scores.ease_of_use.toFixed(1)}</span><span class="score-max">/10</span></div>
                 </div>
               </div>
             </div>
-
             <div class="card-right">
               <div class="overall-score">
                 <div class="overall-score-label">Score</div>
                 <div class="overall-score-value">${printer.scores.overall.toFixed(2)}</div>
               </div>
-
               <div class="price-section">
                 <div class="price-label">Price</div>
                 <div class="price-value">${formatPrice(printer.price)}</div>
               </div>
-
-              ${printer.buy_url 
-                ? `<a href="${printer.buy_url}" target="_blank" class="buy-button">Buy Now →</a>`
-                : `<button class="buy-button unavailable" disabled>Out of Stock</button>`
-              }
+              <div class="button-group">
+                ${printer.buy_url ? `<a href="${printer.buy_url}" target="_blank" class="buy-button">Buy Now</a>` : `<button class="buy-button unavailable" disabled>Out of Stock</button>`}
+                <button class="detail-button" onclick="openDetailModal('${printer.name}')">Details</button>
+              </div>
             </div>
           </div>
         `;
       }).join('');
     }
 
-    function updateResultCount() {
-      const count = state.filteredPrinters.length;
-      const total = printerData.printers.length;
-      document.getElementById('resultCount').textContent = `Showing ${count} of ${total} printers`;
+    function updateCompareBar() {
+      const bar = document.getElementById('compareBar');
+      const count = document.getElementById('compareCount');
+      count.textContent = state.compareSelected.size;
+      if (state.compareSelected.size >= 2) bar.classList.add('active');
+      else bar.classList.remove('active');
+    }
+
+    function toggleCompare(name) {
+      if (state.compareSelected.has(name)) state.compareSelected.delete(name);
+      else {
+        if (state.compareSelected.size >= 2) state.compareSelected.clear();
+        state.compareSelected.add(name);
+      }
+      updateCompareBar();
+      renderCards();
+    }
+
+    function openDetailModal(name) {
+      const printer = printerData.printers.find(p => p.name === name);
+      if (!printer) return;
+      document.getElementById('detailContent').innerHTML = `
+        <div class="detail-header">
+          <div class="detail-image"><img src="${printer.image}" alt="${name}"></div>
+          <div class="detail-info">
+            <h2>${printer.name}</h2>
+            <div class="detail-brand"><span class="brand-pill ${getBrandClass(printer.brand)}">${printer.brand}</span></div>
+            <div class="detail-actions">
+              ${printer.buy_url ? `<a href="${printer.buy_url}" target="_blank" class="buy-button">Buy Now</a>` : `<button class="buy-button unavailable" disabled>Out of Stock</button>`}
+              <button class="detail-button" onclick="toggleCompare('${printer.name}')">Add to Compare</button>
+            </div>
+          </div>
+          <div class="overall-score">
+            <div class="overall-score-label">Overall Score</div>
+            <div class="overall-score-value">${printer.scores.overall.toFixed(2)}</div>
+            <div style="margin-top: 20px; font-size: 18px; font-weight: bold;">${formatPrice(printer.price)}</div>
+          </div>
+        </div>
+        <div class="detail-divider"></div>
+        <div class="detail-section">
+          <h3>Scores</h3>
+          <div class="scores-grid">
+            ${Object.entries(printer.scores).filter(([k]) => k !== 'overall').map(([key, val]) => `
+              <div class="score-item">
+                <div class="score-item-label">${key.replace(/_/g, ' ')}</div>
+                <div class="score-item-value">${val.toFixed(1)}/10</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <div class="detail-section">
+          <h3>Specifications</h3>
+          <table class="specs-table">
+            <tr><th>Spec</th><th>Value</th></tr>
+            ${Object.entries(printer.specs).map(([k, v]) => `<tr><td>${k.replace(/_/g, ' ')}</td><td>${v}</td></tr>`).join('')}
+          </table>
+        </div>
+      `;
+      document.getElementById('detailModal').classList.add('active');
+    }
+
+    function closeDetailModal() { document.getElementById('detailModal').classList.remove('active'); }
+
+    function openCompareModal() {
+      const selected = Array.from(state.compareSelected).map(name => printerData.printers.find(p => p.name === name));
+      if (selected.length < 2) return;
+      const [p1, p2] = selected;
+      
+      let html = '<h2 style="margin-bottom: 20px;">Printer Comparison</h2>';
+      html += '<div class="compare-printers-row">';
+      [p1, p2].forEach(p => {
+        html += `
+          <div class="compare-printer-card">
+            <div class="compare-printer-image"><img src="${p.image}" alt="${p.name}"></div>
+            <div class="compare-printer-info">
+              <h4>${p.name}</h4>
+              <div class="compare-printer-price">${formatPrice(p.price)}</div>
+              ${p.buy_url ? `<a href="${p.buy_url}" target="_blank" class="buy-button" style="width: 100%; text-align: center;">Buy</a>` : `<button class="buy-button unavailable" disabled style="width: 100%;">Out of Stock</button>`}
+            </div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      html += '<div class="compare-section"><h3>Scores</h3><table class="compare-table"><tr><th>Metric</th><th>' + p1.name + '</th><th>' + p2.name + '</th></tr>';
+      Object.entries(p1.scores).forEach(([key, val1]) => {
+        const val2 = p2.scores[key];
+        const winner = val1 > val2 ? 'p1' : val2 > val1 ? 'p2' : null;
+        html += `<tr><td>${key.replace(/_/g, ' ')}</td>
+          <td ${winner === 'p1' ? 'class="winner"' : ''}>${val1.toFixed(1)}</td>
+          <td ${winner === 'p2' ? 'class="winner"' : ''}>${val2.toFixed(1)}</td></tr>`;
+      });
+      html += '</table></div>';
+      
+      document.getElementById('compareContent').innerHTML = html;
+      document.getElementById('compareModalOverlay').classList.add('active');
+    }
+
+    function closeCompareModal() { document.getElementById('compareModalOverlay').classList.remove('active'); }
+
+    function render() {
+      renderCards();
+      document.getElementById('resultCount').textContent = `Showing ${state.filteredPrinters.length} of ${printerData.printers.length} printers`;
     }
 
     function initBrandFilters() {
       const container = document.getElementById('brandFilters');
-      container.innerHTML = brands.map(brand => `
-        <button class="filter-pill ${brand === 'All' ? 'active' : ''}" data-brand="${brand}">
-          ${brand}
-        </button>
-      `).join('');
-
-      container.querySelectorAll('.filter-pill').forEach(pill => {
-        pill.addEventListener('click', (e) => {
-          container.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-          e.target.classList.add('active');
-          state.activeBrand = e.target.dataset.brand;
-          applyFilters();
-        });
-      });
+      container.innerHTML = brands.map(b => `<button class="filter-pill ${b === 'All' ? 'active' : ''}" onclick="setActiveBrand('${b}')">${b}</button>`).join('');
     }
 
     function initSortTabs() {
-      const sortOptions = [
-        { key: 'overall', label: 'Overall Score' },
-        { key: 'print_quality', label: 'Print Quality' },
-        { key: 'speed', label: 'Speed' },
-        { key: 'value', label: 'Value' }
+      const opts = [
+        {key: 'overall', label: 'Overall'}, {key: 'print_quality', label: 'Quality'},
+        {key: 'speed', label: 'Speed'}, {key: 'value', label: 'Value'}
       ];
-
-      const container = document.getElementById('sortTabs');
-      container.innerHTML = sortOptions.map(opt => `
-        <button class="sort-tab ${opt.key === 'overall' ? 'active' : ''}" data-sort="${opt.key}">
-          ${opt.label}
-        </button>
-      `).join('');
-
-      container.querySelectorAll('.sort-tab').forEach(tab => {
-        tab.addEventListener('click', (e) => {
-          container.querySelectorAll('.sort-tab').forEach(t => t.classList.remove('active'));
-          e.target.classList.add('active');
-          state.sortBy = e.target.dataset.sort;
-          applyFilters();
-        });
-      });
+      document.getElementById('sortTabs').innerHTML = opts.map(o => `<button class="sort-tab ${o.key === 'overall' ? 'active' : ''}" onclick="setSort('${o.key}')">${o.label}</button>`).join('');
     }
 
-    function initSearch() {
-      const searchInput = document.getElementById('searchInput');
-      searchInput.addEventListener('input', (e) => {
-        state.searchTerm = e.target.value;
-        applyFilters();
-      });
+    function initPriceTabs() {
+      const opts = [{key: 'all', label: 'All'}, {key: 'budget', label: 'Under $300'}, {key: 'mid', label: '$300-$800'}, {key: 'premium', label: '$800+'}];
+      document.getElementById('priceTabs').innerHTML = opts.map(o => `<button class="price-tab ${o.key === 'all' ? 'active' : ''}" onclick="setPrice('${o.key}')">${o.label}</button>`).join('');
     }
 
-    // ========================================
-    // Initialization
-    // ========================================
-    document.addEventListener('DOMContentLoaded', () => {
-      initBrandFilters();
-      initSortTabs();
-      initSearch();
+    function setActiveBrand(brand) {
+      state.activeBrand = brand;
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      event.target.classList.add('active');
       applyFilters();
+    }
+
+    function setSort(key) {
+      state.sortBy = key;
+      document.querySelectorAll('.sort-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      applyFilters();
+    }
+
+    function setPrice(range) {
+      state.priceRange = range;
+      document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      applyFilters();
+    }
+
+    document.getElementById('searchInput').addEventListener('input', e => { state.searchTerm = e.target.value; applyFilters(); });
+    document.getElementById('compareOpenBtn').addEventListener('click', openCompareModal);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initBrandFilters(); initSortTabs(); initPriceTabs(); applyFilters();
     });
   </script>
 </body>
