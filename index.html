@@ -3,527 +3,521 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Printer Rankings | 3DRanker.com</title>
+  <title>3DRanker — Find Your Perfect 3D Printer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --color-bg: #f0f4ff;
-      --color-bg-card: #ffffff;
-      --color-bg-card-hover: #f8faff;
-      --color-text-primary: #111827;
-      --color-text-secondary: #6b7280;
-      --color-text-muted: #9ca3af;
-      --color-border: #e5e7eb;
-      --color-border-light: #f3f4f6;
-      --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-accent: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-      --gradient-button: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-      --gradient-score-high: linear-gradient(90deg, #10b981 0%, #06d6a0 100%);
-      --gradient-score-mid: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
-      --gradient-score-low: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
-      --spacing-xs: 4px;
-      --spacing-sm: 8px;
-      --spacing-md: 12px;
-      --spacing-lg: 16px;
-      --spacing-xl: 24px;
-      --spacing-2xl: 32px;
-      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-      --font-size-xs: 12px;
-      --font-size-sm: 14px;
-      --font-size-base: 15px;
-      --font-size-lg: 18px;
-      --font-size-xl: 24px;
-      --font-size-2xl: 32px;
-      --font-weight-bold: 700;
-      --font-weight-semibold: 600;
-      --font-weight-medium: 500;
-      --radius-lg: 16px;
-      --radius-md: 12px;
-      --radius-pill: 99px;
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    :root{
+      --bg:#f7f8fc;--bg-card:#fff;--bg-sub:#f1f3f9;
+      --border:#e4e7f0;--focus:#6366f1;
+      --t1:#0f1117;--t2:#4b5563;--t3:#9ca3af;
+      --ind:#6366f1;--ind-d:#4f46e5;--ind-l:#eef2ff;
+      --grad-brand:linear-gradient(135deg,#6366f1,#8b5cf6);
+      --grad-hero:linear-gradient(135deg,#1e1b4b 0%,#312e81 40%,#4c1d95 100%);
+      --grad-g:linear-gradient(90deg,#10b981,#34d399);
+      --grad-a:linear-gradient(90deg,#f59e0b,#fbbf24);
+      --grad-r:linear-gradient(90deg,#f43f5e,#fb7185);
+      --sh-sm:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+      --sh-md:0 4px 12px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
+      --sh-lg:0 12px 32px rgba(0,0,0,.12),0 4px 8px rgba(0,0,0,.06);
+      --sh-xl:0 24px 48px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.08);
+      --sh-b:0 8px 24px rgba(99,102,241,.35);
+      --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;--r-pill:999px;
+      --max-w:1200px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background-color: var(--color-bg); color: var(--color-text-primary); font-family: var(--font-family); font-size: var(--font-size-base); line-height: 1.6; }
-    .hero-section { background: var(--gradient-hero); padding: var(--spacing-2xl) var(--spacing-lg); margin-bottom: var(--spacing-2xl); position: relative; overflow: hidden; }
-    .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%); pointer-events: none; }
-    .hero-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; text-align: center; }
-    .hero-title { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: #ffffff; margin-bottom: var(--spacing-md); }
-    .hero-subtitle { font-size: var(--font-size-lg); color: rgba(255, 255, 255, 0.9); margin-bottom: var(--spacing-xl); }
-    .hero-stats { display: flex; justify-content: center; gap: var(--spacing-xl); flex-wrap: wrap; font-size: var(--font-size-sm); color: rgba(255, 255, 255, 0.85); }
-    .stat-item { display: flex; align-items: center; gap: var(--spacing-sm); }
-    .stat-dot { width: 4px; height: 4px; background: rgba(255, 255, 255, 0.8); border-radius: 50%; }
-    .controls-section { max-width: 1200px; margin: 0 auto var(--spacing-2xl); padding: 0 var(--spacing-lg); }
-    .controls-label { font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--spacing-md); }
-    .search-bar { display: flex; align-items: center; gap: var(--spacing-md); background-color: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-md) var(--spacing-lg); margin-bottom: var(--spacing-xl); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-    .search-bar:focus-within { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
-    .search-icon { color: var(--color-text-secondary); }
-    .search-input { flex: 1; background: transparent; border: none; color: var(--color-text-primary); outline: none; font-family: var(--font-family); font-size: var(--font-size-base); }
-    .search-input::placeholder { color: var(--color-text-muted); }
-    .filter-pills-container { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-xl); }
-    .filter-pill { display: inline-flex; align-items: center; padding: var(--spacing-sm) var(--spacing-lg); background-color: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-secondary); border-radius: var(--radius-pill); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
-    .filter-pill:hover { border-color: #6366f1; color: #6366f1; transform: translateY(-1px); }
-    .filter-pill.active { background: var(--gradient-button); border-color: transparent; color: white; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
-    .sort-price-row { display: flex; gap: var(--spacing-xl); flex-wrap: wrap; margin-bottom: var(--spacing-xl); align-items: center; }
-    .sort-group, .price-filter-group { display: flex; align-items: center; gap: var(--spacing-lg); }
-    .sort-label, .price-label { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; white-space: nowrap; }
-    .sort-tabs, .price-tabs { display: flex; gap: var(--spacing-lg); flex-wrap: wrap; }
-    .sort-tab, .price-tab { position: relative; padding: var(--spacing-sm) 0; background: none; border: none; color: var(--color-text-secondary); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; white-space: nowrap; }
-    .sort-tab:hover, .price-tab:hover { color: var(--color-text-primary); }
-    .sort-tab.active, .price-tab.active { color: var(--color-text-primary); }
-    .sort-tab.active::after, .price-tab.active::after { content: ''; position: absolute; bottom: -8px; left: 0; right: 0; height: 2px; background: var(--gradient-accent); }
-    .cards-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); margin-bottom: var(--spacing-2xl); }
-    .result-count { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--spacing-lg); }
-    .printer-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); display: grid; grid-template-columns: auto 1fr auto; gap: var(--spacing-lg); align-items: flex-start; position: relative; box-shadow: var(--shadow-md); transition: all 0.3s; }
-    .printer-card:hover { border-color: #6366f1; background: var(--color-bg-card-hover); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .card-header-top { position: absolute; top: var(--spacing-lg); right: var(--spacing-lg); }
-    .compare-checkbox { width: 24px; height: 24px; cursor: pointer; accent-color: #6366f1; }
-    .card-left { display: flex; flex-direction: column; gap: var(--spacing-md); align-items: center; }
-    .rank-badge { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--gradient-accent); border-radius: 50%; font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
-    .printer-image-container { width: 100px; height: 100px; background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--color-border); cursor: pointer; }
-    .printer-image-container:hover { border-color: #6366f1; box-shadow: var(--shadow-md); }
-    .printer-image { max-width: 100%; max-height: 100%; object-fit: contain; padding: var(--spacing-sm); }
-    .no-image { color: var(--color-text-muted); font-size: var(--font-size-xs); text-align: center; line-height: 1.4; }
-    .card-center { display: flex; flex-direction: column; gap: var(--spacing-md); padding-top: var(--spacing-lg); }
-    .printer-header { display: flex; align-items: baseline; gap: var(--spacing-md); flex-wrap: wrap; }
-    .printer-name { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-text-primary); cursor: pointer; }
-    .printer-name:hover { color: #6366f1; }
-    .brand-pill { display: inline-flex; padding: var(--spacing-xs) var(--spacing-md); background: #f3e8ff; border: 1px solid #e9d5ff; border-radius: var(--radius-pill); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: #7c3aed; }
-    .brand-pill.bambu-lab { background: #dcfce7; border-color: #bbf7d0; color: #15803d; }
-    .brand-pill.prusa { background: #fed7aa; border-color: #fdba74; color: #92400e; }
-    .brand-pill.creality { background: #bfdbfe; border-color: #93c5fd; color: #1e40af; }
-    .brand-pill.elegoo { background: #e9d5ff; border-color: #d8b4fe; color: #6b21a8; }
-    .brand-pill.flashforge { background: #fecaca; border-color: #fca5a5; color: #7f1d1d; }
-    .brand-pill.ultimaker { background: #a5f3fc; border-color: #67e8f9; color: #164e63; }
-    .brand-pill.snapmaker { background: #bbf7d0; border-color: #86efac; color: #16a34a; }
-    .brand-pill.anycubic { background: #fef3c7; border-color: #fce7b2; color: #92400e; }
-    .brand-pill.voxelab { background: #f3f4f6; border-color: #e5e7eb; color: #374151; }
-    .specs-tags { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; }
-    .spec-tag { padding: 4px var(--spacing-md); background: var(--color-bg-card-hover); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: var(--font-weight-medium); }
-    .score-bars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); }
-    .score-bar-item { display: flex; flex-direction: column; gap: 4px; }
-    .score-bar-label { font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; }
-    .score-bar { width: 100%; height: 6px; background: var(--color-border-light); border-radius: var(--radius-pill); overflow: hidden; border: 1px solid var(--color-border); }
-    .score-bar-fill { height: 100%; }
-    .score-display { display: flex; align-items: baseline; gap: 4px; }
-    .score-number { font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); }
-    .score-max { font-size: var(--font-size-xs); color: var(--color-text-secondary); }
-    .card-right { display: flex; flex-direction: column; gap: var(--spacing-md); align-items: flex-end; padding-top: var(--spacing-lg); }
-    .overall-score { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-    .overall-score-label { font-size: var(--font-size-xs); color: var(--color-text-secondary); text-transform: uppercase; }
-    .overall-score-value { font-size: 28px; font-weight: var(--font-weight-bold); background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .price-section { display: flex; flex-direction: column; gap: var(--spacing-xs); align-items: flex-end; }
-    .price-label { font-size: var(--font-size-xs); color: var(--color-text-secondary); text-transform: uppercase; }
-    .price-value { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); }
-    .button-group { display: flex; flex-direction: column; gap: var(--spacing-sm); width: 100%; max-width: 160px; }
-    .buy-button, .detail-button { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-md) var(--spacing-lg); border: none; border-radius: var(--radius-lg); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); cursor: pointer; text-decoration: none; transition: all 0.2s; }
-    .buy-button { background: var(--gradient-button); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); }
-    .buy-button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); }
-    .detail-button { background: var(--color-bg-card-hover); color: #6366f1; border: 1px solid var(--color-border); }
-    .detail-button:hover { border-color: #6366f1; }
-    .buy-button:disabled, .buy-button.unavailable { background: #d1d5db; cursor: not-allowed; opacity: 0.7; }
-    .compare-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-bg-card); border-top: 2px solid var(--color-border); padding: var(--spacing-lg); box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); display: none; z-index: 100; }
-    .compare-bar.active { display: flex; }
-    .compare-bar-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-lg); }
-    .compare-info { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); }
-    .compare-count { background: #6366f1; color: white; padding: 4px 8px; border-radius: var(--radius-md); }
-    .compare-open-button { padding: var(--spacing-md) var(--spacing-xl); background: var(--gradient-button); color: white; border: none; border-radius: var(--radius-lg); font-weight: var(--font-weight-semibold); cursor: pointer; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); }
-    .compare-open-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); }
-    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); display: none; align-items: center; justify-content: center; z-index: 1000; padding: var(--spacing-lg); overflow-y: auto; }
-    .modal-overlay.active { display: flex; }
-    .modal-content { background: var(--color-bg-card); border-radius: var(--radius-lg); width: 100%; max-width: 1000px; position: relative; box-shadow: var(--shadow-xl); margin: var(--spacing-xl) 0; }
-    .modal-close { position: absolute; top: var(--spacing-lg); right: var(--spacing-lg); width: 40px; height: 40px; border: none; background: var(--color-bg-card-hover); border-radius: 50%; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; z-index: 10; color: var(--color-text-primary); }
-    .modal-close:hover { background: var(--color-border); }
-    .detail-modal { padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl); }
-    .detail-header { display: grid; grid-template-columns: auto 1fr auto; gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl); }
-    .detail-image { width: 200px; height: 200px; background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); overflow: hidden; flex-shrink: 0; }
-    .detail-image img { max-width: 100%; max-height: 100%; object-fit: contain; padding: var(--spacing-lg); }
-    .detail-info h2 { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm); }
-    .detail-brand { margin-bottom: var(--spacing-md); }
-    .detail-actions { display: flex; gap: var(--spacing-md); flex-direction: column; }
-    .detail-divider { height: 1px; background: var(--color-border); margin: var(--spacing-xl) 0; }
-    .detail-section { margin-bottom: var(--spacing-xl); }
-    .detail-section h3 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-md); }
-    .scores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); }
-    .score-item { padding: var(--spacing-md); background: var(--color-bg-card-hover); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
-    .score-item-label { font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-bottom: var(--spacing-sm); text-transform: uppercase; }
-    .score-item-value { font-size: 24px; font-weight: var(--font-weight-bold); }
-    .specs-table { width: 100%; border-collapse: collapse; }
-    .specs-table th { background: var(--color-bg-card-hover); border-bottom: 2px solid var(--color-border); padding: var(--spacing-md); text-align: left; font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); }
-    .specs-table td { border-bottom: 1px solid var(--color-border); padding: var(--spacing-md); color: var(--color-text-secondary); font-size: var(--font-size-sm); }
-    .specs-table tr:last-child td { border-bottom: none; }
-    .compare-modal { padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl); }
-    .compare-section { margin-bottom: var(--spacing-xl); }
-    .compare-section h3 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-md); }
-    .compare-printers-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl); }
-    .compare-printer-card { padding: var(--spacing-lg); background: var(--color-bg-card-hover); border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
-    .compare-printer-image { width: 120px; height: 120px; background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); border: 1px solid var(--color-border); overflow: hidden; }
-    .compare-printer-image img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .compare-printer-info h4 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); text-align: center; margin-bottom: var(--spacing-md); }
-    .compare-printer-price { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); text-align: center; margin-bottom: var(--spacing-md); }
-    .compare-table { width: 100%; border-collapse: collapse; }
-    .compare-table th { background: var(--color-bg-card-hover); border-bottom: 2px solid var(--color-border); padding: var(--spacing-md); text-align: left; font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); }
-    .compare-table td { border-bottom: 1px solid var(--color-border); padding: var(--spacing-md); font-size: var(--font-size-sm); }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .winner { background: #dcfce7 !important; color: #15803d !important; font-weight: var(--font-weight-bold); }
-    .no-results-message { text-align: center; padding: var(--spacing-2xl) var(--spacing-lg); }
-    .empty-state-icon { font-size: 48px; margin-bottom: var(--spacing-md); opacity: 0.5; }
-    .footer { border-top: 1px solid var(--color-border); padding: var(--spacing-2xl) var(--spacing-lg); margin-top: var(--spacing-2xl); text-align: center; color: var(--color-text-secondary); font-size: var(--font-size-sm); }
-    .hidden { display: none !important; }
-    @media (max-width: 1024px) { .printer-card { grid-template-columns: 1fr; } .card-right { align-items: flex-start; } .score-bars-grid { grid-template-columns: repeat(2, 1fr); } .detail-header { grid-template-columns: 1fr; } .compare-printers-row { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) { .hero-title { font-size: 24px; } .sort-price-row { flex-direction: column; gap: var(--spacing-md); } }
-    @media (max-width: 480px) { .printer-card { padding: var(--spacing-md); } .score-bars-grid { grid-template-columns: 1fr; } .button-group { max-width: 100%; } }
+    body{background:var(--bg);color:var(--t1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo{font-size:18px;font-weight:800;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px;text-decoration:none}
+    .nav-tag{font-size:13px;color:var(--t3);display:none}
+    @media(min-width:600px){.nav-tag{display:block}}
+    .nav-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:var(--ind-l);color:var(--ind-d);border-radius:var(--r-pill);font-size:12px;font-weight:600;white-space:nowrap}
+
+    /* HERO */
+    .hero{background:var(--grad-hero);padding:64px 24px 56px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 120%,rgba(99,102,241,.3),transparent 60%),radial-gradient(ellipse 40% 60% at 90% -10%,rgba(139,92,246,.25),transparent 55%);pointer-events:none}
+    .hero-inner{position:relative;max-width:var(--max-w);margin:0 auto}
+    .hero-eye{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-pill);font-size:12px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+    .hero-title{font-size:clamp(28px,5vw,52px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:16px}
+    .hero-title span{background:linear-gradient(135deg,#a5b4fc,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,.75);max-width:520px;margin-bottom:32px}
+    .hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+    .hero-stat{display:flex;flex-direction:column;gap:2px}
+    .hero-stat-n{font-size:22px;font-weight:800;color:#fff;line-height:1}
+    .hero-stat-l{font-size:12px;color:rgba(255,255,255,.6);font-weight:500}
+    .hero-stat-div{width:1px;background:rgba(255,255,255,.2);align-self:stretch}
+
+    /* MAIN */
+    .main{max-width:var(--max-w);margin:0 auto;padding:32px 24px}
+
+    /* CONTROLS */
+    .ctrl-panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-xl);padding:20px 24px;margin-bottom:24px;box-shadow:var(--sh-sm)}
+    .ctrl-top{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+    .srch-wrap{flex:1;min-width:200px;position:relative;display:flex;align-items:center}
+    .srch-ico{position:absolute;left:14px;color:var(--t3);pointer-events:none;font-size:16px}
+    .srch-inp{width:100%;padding:10px 14px 10px 40px;background:var(--bg-sub);border:1.5px solid transparent;border-radius:var(--r-md);font-family:inherit;font-size:14px;color:var(--t1);outline:none;transition:border-color .2s,box-shadow .2s}
+    .srch-inp::placeholder{color:var(--t3)}
+    .srch-inp:focus{border-color:var(--focus);box-shadow:0 0 0 3px rgba(99,102,241,.12);background:#fff}
+    .ctrl-row{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+    .ctrl-grp{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .ctrl-lbl{font-size:12px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;white-space:nowrap;margin-right:2px}
+    .seg-btn{padding:6px 14px;border:1.5px solid var(--border);background:transparent;color:var(--t2);border-radius:var(--r-pill);font-size:13px;font-weight:500;cursor:pointer;transition:all .18s;white-space:nowrap;font-family:inherit}
+    .seg-btn:hover{border-color:var(--ind);color:var(--ind)}
+    .seg-btn.active{background:var(--grad-brand);border-color:transparent;color:#fff;box-shadow:var(--sh-b)}
+    .div-v{width:1px;height:20px;background:var(--border)}
+    .brand-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+
+    /* RESULTS */
+    .res-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .res-cnt{font-size:13px;color:var(--t3);font-weight:500}
+    .card-list{display:flex;flex-direction:column;gap:12px}
+
+    /* CARD */
+    .pcard{background:var(--bg-card);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:20px;display:grid;grid-template-columns:52px 88px 1fr auto;gap:16px;align-items:center;box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s,border-color .2s}
+    .pcard:hover{transform:translateY(-2px);box-shadow:var(--sh-md);border-color:var(--ind)}
+    .rank-col{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .rank-n{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--r-md);font-size:14px;font-weight:800;background:var(--bg-sub);color:var(--t2)}
+    .rank-n.top{background:var(--grad-brand);color:#fff;box-shadow:0 4px 12px rgba(99,102,241,.3)}
+    .cmp-cb{width:18px;height:18px;accent-color:var(--ind);cursor:pointer}
+    .img-col{width:88px;height:88px;background:linear-gradient(135deg,#f1f3f9,#eef0fa);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;cursor:pointer;transition:border-color .2s}
+    .img-col:hover{border-color:var(--ind)}
+    .img-col img{max-width:100%;max-height:100%;object-fit:contain;padding:6px}
+    .info-col{display:flex;flex-direction:column;gap:8px;min-width:0}
+    .card-tr{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .pname{font-size:16px;font-weight:700;color:var(--t1);cursor:pointer;transition:color .15s}
+    .pname:hover{color:var(--ind)}
+    .btag{display:inline-flex;align-items:center;padding:2px 9px;border-radius:var(--r-pill);font-size:11px;font-weight:700;white-space:nowrap}
+    .bt-bambu-lab{background:#dcfce7;color:#15803d}
+    .bt-prusa-research{background:#ffedd5;color:#c2410c}
+    .bt-creality{background:#dbeafe;color:#1d4ed8}
+    .bt-elegoo{background:#f3e8ff;color:#7e22ce}
+    .bt-anycubic{background:#fef3c7;color:#b45309}
+    .bt-flashforge{background:#ffe4e6;color:#be123c}
+    .bt-snapmaker{background:#d1fae5;color:#065f46}
+    .bt-ultimaker{background:#cffafe;color:#0e7490}
+    .bt-raise3d{background:#e0e7ff;color:#3730a3}
+    .bt-artillery{background:#fce7f3;color:#9d174d}
+    .bt-sovol{background:#f3f4f6;color:#374151}
+    .bt-voxelab{background:#f0fdf4;color:#166534}
+    .bt-default{background:#f3f4f6;color:#374151}
+    .specs-row{display:flex;gap:8px;flex-wrap:wrap}
+    .schip{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;background:var(--bg-sub);border:1px solid var(--border);border-radius:var(--r-sm);font-size:12px;color:var(--t2);font-weight:500}
+    .mini-scores{display:flex;gap:16px;flex-wrap:wrap}
+    .ms{display:flex;flex-direction:column;gap:3px;min-width:52px}
+    .ms-l{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.4px}
+    .ms-bw{height:5px;background:var(--border);border-radius:var(--r-pill);overflow:hidden}
+    .ms-bf{height:100%;border-radius:var(--r-pill)}
+    .ms-v{font-size:11px;font-weight:700;color:var(--t2)}
+    .act-col{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+    .score-box{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 14px;background:var(--ind-l);border-radius:var(--r-md);border:1px solid rgba(99,102,241,.2)}
+    .score-n{font-size:22px;font-weight:800;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+    .score-l{font-size:10px;font-weight:700;color:var(--ind);text-transform:uppercase;letter-spacing:.4px}
+    .ptag{font-size:17px;font-weight:800;color:var(--t1);letter-spacing:-.3px}
+    .pcat{font-size:11px;font-weight:600;padding:2px 8px;border-radius:var(--r-pill)}
+    .pc-budget{background:#dcfce7;color:#15803d}
+    .pc-mid{background:#dbeafe;color:#1d4ed8}
+    .pc-premium{background:#f3e8ff;color:#7e22ce}
+    .card-btns{display:flex;gap:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;border-radius:var(--r-md);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:none;transition:all .18s;border:none;white-space:nowrap}
+    .btn-p{background:var(--grad-brand);color:#fff;box-shadow:0 4px 12px rgba(99,102,241,.25)}
+    .btn-p:hover{box-shadow:var(--sh-b);transform:translateY(-1px)}
+    .btn-g{background:var(--bg-sub);color:var(--ind);border:1.5px solid var(--border)}
+    .btn-g:hover{border-color:var(--ind);background:var(--ind-l)}
+    .btn:disabled,.btn.off{background:#e5e7eb;color:var(--t3);box-shadow:none;cursor:not-allowed;transform:none}
+
+    /* COMPARE BAR */
+    .cmp-bar{position:fixed;bottom:0;left:0;right:0;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);z-index:300;background:#fff;border-top:2px solid var(--ind);box-shadow:0 -8px 32px rgba(0,0,0,.12);padding:16px 24px}
+    .cmp-bar.show{transform:translateY(0)}
+    .cmp-bar-in{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .cmp-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--grad-brand);color:#fff;border-radius:var(--r-pill);font-size:14px;font-weight:700}
+    .cmp-names{font-size:13px;color:var(--t2)}
+    .cmp-bar-r{display:flex;gap:8px}
+
+    /* MODALS */
+    .moverlay{position:fixed;inset:0;background:rgba(15,17,23,.6);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;z-index:1000;padding:24px 16px;overflow-y:auto}
+    .moverlay.open{display:flex}
+    .mbox{background:var(--bg-card);border-radius:var(--r-xl);width:100%;max-width:820px;position:relative;box-shadow:var(--sh-xl);margin:auto;animation:minIn .25s cubic-bezier(.16,1,.3,1)}
+    @keyframes minIn{from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:none}}
+    .mhdr{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+    .mtitle{font-size:18px;font-weight:700}
+    .mclose{width:36px;height:36px;border-radius:var(--r-md);border:1.5px solid var(--border);background:transparent;cursor:pointer;font-size:18px;color:var(--t2);display:flex;align-items:center;justify-content:center;transition:background .15s;font-family:inherit}
+    .mclose:hover{background:var(--bg-sub)}
+    .mbody{padding:24px}
+
+    /* DETAIL */
+    .d-hero{display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap}
+    .d-img{width:160px;height:160px;background:var(--bg-sub);border-radius:var(--r-lg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+    .d-img img{max-width:100%;max-height:100%;object-fit:contain;padding:10px}
+    .d-meta{flex:1}
+    .d-name{font-size:22px;font-weight:800;margin-bottom:8px}
+    .d-sp{display:flex;gap:16px;align-items:center;margin:16px 0;flex-wrap:wrap}
+    .big-s{font-size:36px;font-weight:900;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+    .big-sl{font-size:12px;color:var(--t3);font-weight:600;margin-top:2px}
+    .big-p{font-size:28px;font-weight:800;color:var(--t1)}
+    .d-acts{display:flex;gap:8px;flex-wrap:wrap}
+    .msec{margin-bottom:24px}
+    .msec-t{font-size:13px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px}
+    .sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+    .stile{padding:12px 16px;background:var(--bg-sub);border-radius:var(--r-md);border:1px solid var(--border)}
+    .stile-l{font-size:11px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+    .stile-bw{height:4px;background:var(--border);border-radius:var(--r-pill);overflow:hidden;margin-bottom:4px}
+    .stile-bf{height:100%;border-radius:var(--r-pill)}
+    .stile-v{font-size:16px;font-weight:800;color:var(--t1)}
+    .spg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+    .spitem{padding:12px 16px;background:var(--bg-sub);border-radius:var(--r-md);border:1px solid var(--border)}
+    .spitem-l{font-size:11px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
+    .spitem-v{font-size:14px;font-weight:700;color:var(--t1)}
+
+    /* COMPARE TABLE */
+    .cg{display:grid;grid-template-columns:140px 1fr 1fr;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+    .cg-head{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px;background:var(--bg-sub);border-bottom:2px solid var(--border)}
+    .cg-head.lbl{background:transparent;border-right:1px solid var(--border);font-size:12px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;justify-content:flex-end;padding-bottom:12px}
+    .cg-img{width:72px;height:72px;background:var(--bg-card);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .cg-img img{max-width:100%;max-height:100%;object-fit:contain;padding:6px}
+    .cg-name{font-size:13px;font-weight:700;text-align:center}
+    .cg-price{font-size:16px;font-weight:800}
+    .cg-cell{padding:10px 16px;font-size:14px;border-bottom:1px solid var(--border);display:flex;align-items:center}
+    .cg-cell.lbl{font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.3px;border-right:1px solid var(--border)}
+    .cg-cell.win{background:#f0fdf4;color:#15803d;font-weight:700}
+    .last-row .cg-cell{border-bottom:none}
+
+    /* EMPTY */
+    .empty{text-align:center;padding:64px 24px;color:var(--t3)}
+    .empty-ico{font-size:48px;margin-bottom:16px;opacity:.6}
+    .empty-t{font-size:18px;font-weight:700;color:var(--t2);margin-bottom:8px}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:32px 24px;margin-top:32px;text-align:center;color:var(--t3);font-size:13px}
+
+    .hidden{display:none!important}
+    @media(max-width:860px){
+      .pcard{grid-template-columns:44px 72px 1fr;grid-template-rows:auto auto}
+      .act-col{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap;justify-content:flex-start;gap:12px}
+    }
+    @media(max-width:600px){
+      .pcard{grid-template-columns:44px 1fr;padding:16px}
+      .img-col{display:none}
+      .cg{grid-template-columns:90px 1fr 1fr}
+      .hero{padding:32px 16px}
+    }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">3D Printer Rankings</h1>
-      <p class="hero-subtitle">Find your perfect 3D printer. Ranked by real-world performance.</p>
-      <div class="hero-stats">
-        <span class="stat-item"><span class="stat-dot"></span>33 Printers Ranked</span>
-        <span class="stat-item"><span class="stat-dot"></span>$189-$4990</span>
-        <span class="stat-item"><span class="stat-dot"></span>Updated July 2026</span>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">3DRanker</a>
+    <span class="nav-tag">Find your perfect 3D printer</span>
+    <span class="nav-badge">🖨️ 33 Printers</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eye">✦ 2026 Edition</div>
+    <h1 class="hero-title">The Best 3D Printers,<br><span>Ranked.</span></h1>
+    <p class="hero-sub">Expert scores across print quality, speed, reliability, and value — so you can buy with confidence.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-n">33</div><div class="hero-stat-l">Printers Ranked</div></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><div class="hero-stat-n">$189</div><div class="hero-stat-l">Starting From</div></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><div class="hero-stat-n">10</div><div class="hero-stat-l">Score Categories</div></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><div class="hero-stat-n">Jul 2026</div><div class="hero-stat-l">Last Updated</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <div class="ctrl-panel">
+    <div class="ctrl-top">
+      <div class="srch-wrap">
+        <span class="srch-ico">🔍</span>
+        <input type="text" id="searchInput" class="srch-inp" placeholder="Search printers, brands…">
       </div>
     </div>
-  </div>
-
-  <!-- Controls -->
-  <div class="controls-section">
-    <label class="controls-label">Search</label>
-    <div class="search-bar">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="searchInput" class="search-input" placeholder="Search by printer name...">
-    </div>
-
-    <label class="controls-label">Filter by Brand</label>
-    <div class="filter-pills-container" id="brandFilters"></div>
-
-    <div class="sort-price-row">
-      <div class="sort-group">
-        <span class="sort-label">Sort by</span>
-        <div class="sort-tabs" id="sortTabs"></div>
+    <div class="ctrl-row">
+      <div class="ctrl-grp">
+        <span class="ctrl-lbl">Sort</span>
+        <div id="sortTabs" style="display:flex;gap:6px;flex-wrap:wrap"></div>
       </div>
-      <div class="price-filter-group">
-        <span class="price-label">Price</span>
-        <div class="price-tabs" id="priceTabs"></div>
+      <div class="div-v"></div>
+      <div class="ctrl-grp">
+        <span class="ctrl-lbl">Price</span>
+        <div id="priceTabs" style="display:flex;gap:6px;flex-wrap:wrap"></div>
       </div>
     </div>
+    <div class="brand-row" id="brandFilters"></div>
   </div>
 
-  <!-- Cards -->
-  <div class="cards-container">
-    <div class="result-count" id="resultCount">Showing 20 of 20 printers</div>
-    <div id="cardsContainer"></div>
-    <div id="noResults" class="no-results-message hidden">
-      <div class="empty-state-icon">🔍</div>
-      <p>No printers found matching your criteria.</p>
+  <div class="res-hdr">
+    <span class="res-cnt" id="resultCount">Loading…</span>
+  </div>
+
+  <div class="card-list" id="cardsContainer"></div>
+  <div id="noResults" class="empty hidden">
+    <div class="empty-ico">🔍</div>
+    <div class="empty-t">No printers found</div>
+    <div>Try adjusting your search or filters.</div>
+  </div>
+</main>
+
+<div class="cmp-bar" id="cmpBar">
+  <div class="cmp-bar-in">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="cmp-chip">⚖️ <span id="cmpCount">0</span> selected</div>
+      <span class="cmp-names" id="cmpNames"></span>
+    </div>
+    <div class="cmp-bar-r">
+      <button class="btn btn-g" onclick="clearCmp()">Clear</button>
+      <button class="btn btn-p" id="cmpOpenBtn">Compare →</button>
     </div>
   </div>
+</div>
 
-  <!-- Compare Bar -->
-  <div class="compare-bar" id="compareBar">
-    <div class="compare-bar-content">
-      <div class="compare-info">
-        Selected: <span class="compare-count" id="compareCount">0</span>
-      </div>
-      <button class="compare-open-button" id="compareOpenBtn">Compare Now →</button>
+<div class="moverlay" id="detailModal" onclick="bgClose(event,'detailModal')">
+  <div class="mbox">
+    <div class="mhdr">
+      <span class="mtitle" id="dTitle">Details</span>
+      <button class="mclose" onclick="closeM('detailModal')">✕</button>
     </div>
+    <div class="mbody" id="dBody"></div>
   </div>
+</div>
 
-  <!-- Detail Modal -->
-  <div class="modal-overlay" id="detailModal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeDetailModal()">×</button>
-      <div class="detail-modal" id="detailContent"></div>
+<div class="moverlay" id="cmpModal" onclick="bgClose(event,'cmpModal')">
+  <div class="mbox" style="max-width:900px">
+    <div class="mhdr">
+      <span class="mtitle">Comparison</span>
+      <button class="mclose" onclick="closeM('cmpModal')">✕</button>
     </div>
+    <div class="mbody" id="cmpBody"></div>
   </div>
+</div>
 
-  <!-- Compare Modal -->
-  <div class="modal-overlay" id="compareModalOverlay">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeCompareModal()">×</button>
-      <div class="compare-modal" id="compareContent"></div>
-    </div>
-  </div>
+<footer>3DRanker.com &nbsp;·&nbsp; Rankings updated regularly &nbsp;·&nbsp; Affiliate links help support this site</footer>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>3DRanker.com • Rankings updated regularly • Affiliate links help support this site</p>
-  </div>
+<script>
+const DATA = {"printers":[{"name":"Bambu Lab H2S","brand":"Bambu Lab","slug":"bambu-lab-h2s","image":"https://via.placeholder.com/100","price":1099,"price_range":"premium","buy_url":null,"scores":{"overall":8.81,"print_quality":9.4,"speed":8.7,"ease_of_use":8.3,"reliability":9.1,"value":6.2},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab P2S","brand":"Bambu Lab","slug":"bambu-lab-p2s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.75,"print_quality":9.2,"speed":9.0,"ease_of_use":8.6,"reliability":8.8,"value":7.8},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab H2D","brand":"Bambu Lab","slug":"bambu-lab-h2d","image":"https://via.placeholder.com/100","price":2199,"price_range":"premium","buy_url":null,"scores":{"overall":8.72,"print_quality":9.3,"speed":8.6,"ease_of_use":8.2,"reliability":9.0,"value":6.5},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab P1S","brand":"Bambu Lab","slug":"bambu-lab-p1s","image":"https://via.placeholder.com/100","price":649,"price_range":"mid","buy_url":null,"scores":{"overall":8.62,"print_quality":9.0,"speed":8.8,"ease_of_use":8.5,"reliability":8.6,"value":8.5},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab A1","brand":"Bambu Lab","slug":"bambu-lab-a1","image":"https://via.placeholder.com/100","price":299,"price_range":"budget","buy_url":null,"scores":{"overall":8.22,"print_quality":8.5,"speed":8.2,"ease_of_use":9.0,"reliability":8.2,"value":9.0},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"80C"}},{"name":"Bambu Lab A1 Mini","brand":"Bambu Lab","slug":"bambu-lab-a1-mini","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.88,"print_quality":8.0,"speed":7.8,"ease_of_use":9.0,"reliability":7.8,"value":9.5},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"300C","bed_temp":"80C"}},{"name":"Prusa MK4S","brand":"Prusa Research","slug":"prusa-mk4s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.52,"print_quality":8.6,"speed":7.6,"ease_of_use":8.6,"reliability":9.6,"value":7.2},"specs":{"build_volume":"250x210x210mm","nozzle_temp":"310C","bed_temp":"110C"}},{"name":"Prusa Core One L","brand":"Prusa Research","slug":"prusa-core-one-l","image":"https://via.placeholder.com/100","price":1899,"price_range":"premium","buy_url":null,"scores":{"overall":8.47,"print_quality":9.0,"speed":8.0,"ease_of_use":7.8,"reliability":9.2,"value":5.8},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"310C","bed_temp":"120C"}},{"name":"Prusa Core One+","brand":"Prusa Research","slug":"prusa-core-one-plus","image":"https://via.placeholder.com/100","price":1299,"price_range":"premium","buy_url":null,"scores":{"overall":8.43,"print_quality":8.8,"speed":7.8,"ease_of_use":8.0,"reliability":9.2,"value":6.5},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"310C","bed_temp":"120C"}},{"name":"Prusa Original XL","brand":"Prusa Research","slug":"prusa-original-xl","image":"https://via.placeholder.com/100","price":2499,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":8.0,"ease_of_use":7.6,"reliability":9.0,"value":5.5},"specs":{"build_volume":"330x330x330mm","nozzle_temp":"310C","bed_temp":"120C"}},{"name":"Prusa Mini+","brand":"Prusa Research","slug":"prusa-mini-plus","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.97,"print_quality":8.0,"speed":7.0,"ease_of_use":8.6,"reliability":9.0,"value":8.2},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"310C","bed_temp":"100C"}},{"name":"Ultimaker S5","brand":"Ultimaker","slug":"ultimaker-s5","image":"https://via.placeholder.com/100","price":4990,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":6.8,"ease_of_use":8.6,"reliability":9.2,"value":4.0},"specs":{"build_volume":"330x240x300mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Ultimaker S3","brand":"Ultimaker","slug":"ultimaker-s3","image":"https://via.placeholder.com/100","price":3499,"price_range":"premium","buy_url":null,"scores":{"overall":8.21,"print_quality":8.6,"speed":6.6,"ease_of_use":8.6,"reliability":9.0,"value":4.5},"specs":{"build_volume":"243x213x200mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality K1 Max","brand":"Creality","slug":"creality-k1-max","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":8.0,"print_quality":8.5,"speed":8.8,"ease_of_use":7.6,"reliability":7.6,"value":7.6},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality K2 Combo","brand":"Creality","slug":"creality-k2-combo","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":7.57,"print_quality":8.0,"speed":8.0,"ease_of_use":7.5,"reliability":7.2,"value":8.5},"specs":{"build_volume":"260x260x260mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality K2 Plus Combo","brand":"Creality","slug":"creality-k2-plus-combo","image":"https://via.placeholder.com/100","price":999,"price_range":"premium","buy_url":null,"scores":{"overall":7.74,"print_quality":8.3,"speed":8.3,"ease_of_use":7.5,"reliability":7.5,"value":7.5},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality Ender 3 V3 SE","brand":"Creality","slug":"creality-ender-3-v3-se","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.31,"print_quality":7.6,"speed":7.2,"ease_of_use":7.6,"reliability":7.2,"value":9.5},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Elegoo Neptune 4 Max","brand":"Elegoo","slug":"elegoo-neptune-4-max","image":"https://via.placeholder.com/100","price":279,"price_range":"budget","buy_url":null,"scores":{"overall":7.71,"print_quality":8.2,"speed":8.0,"ease_of_use":7.5,"reliability":7.8,"value":8.0},"specs":{"build_volume":"320x320x320mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Elegoo Neptune 3 Pro","brand":"Elegoo","slug":"elegoo-neptune-3-pro","image":"https://via.placeholder.com/100","price":229,"price_range":"budget","buy_url":null,"scores":{"overall":7.39,"print_quality":7.6,"speed":7.2,"ease_of_use":7.8,"reliability":7.5,"value":9.0},"specs":{"build_volume":"235x235x280mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Elegoo Centauri Carbon","brand":"Elegoo","slug":"elegoo-centauri-carbon","image":"https://via.placeholder.com/100","price":319,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.6,"ease_of_use":7.8,"reliability":7.6,"value":8.8},"specs":{"build_volume":"235x235x280mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Anycubic Kobra 2","brand":"Anycubic","slug":"anycubic-kobra-2","image":"https://via.placeholder.com/100","price":259,"price_range":"budget","buy_url":null,"scores":{"overall":7.41,"print_quality":7.6,"speed":7.8,"ease_of_use":7.8,"reliability":7.3,"value":9.0},"specs":{"build_volume":"250x250x260mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Anycubic Kobra X","brand":"Anycubic","slug":"anycubic-kobra-x","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.07,"print_quality":7.2,"speed":7.0,"ease_of_use":7.2,"reliability":7.0,"value":8.8},"specs":{"build_volume":"400x400x400mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Anycubic Kobra 3 Combo","brand":"Anycubic","slug":"anycubic-kobra-3-combo","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.35,"print_quality":7.5,"speed":7.8,"ease_of_use":7.4,"reliability":7.2,"value":9.2},"specs":{"build_volume":"250x250x260mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"FlashForge Adventurer 5M Pro","brand":"FlashForge","slug":"flashforge-adventurer-5m-pro","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":8.03,"print_quality":8.2,"speed":8.0,"ease_of_use":8.6,"reliability":8.2,"value":8.0},"specs":{"build_volume":"245x220x220mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"FlashForge Adventurer 5M","brand":"FlashForge","slug":"flashforge-adventurer-5m","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.84,"print_quality":8.0,"speed":8.0,"ease_of_use":8.5,"reliability":8.0,"value":8.5},"specs":{"build_volume":"245x220x220mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Snapmaker J1s IDEX","brand":"Snapmaker","slug":"snapmaker-j1s-idex","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.8,"value":6.5},"specs":{"build_volume":"230x250x250mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Snapmaker Artisan 3-in-1","brand":"Snapmaker","slug":"snapmaker-artisan-3-in-1","image":"https://via.placeholder.com/100","price":1999,"price_range":"premium","buy_url":null,"scores":{"overall":7.24,"print_quality":7.6,"speed":6.6,"ease_of_use":7.0,"reliability":7.6,"value":5.5},"specs":{"build_volume":"200x200x200mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Snapmaker U1","brand":"Snapmaker","slug":"snapmaker-u1","image":"https://via.placeholder.com/100","price":899,"price_range":"premium","buy_url":null,"scores":{"overall":7.54,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.6,"value":6.8},"specs":{"build_volume":"200x200x200mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Voxelab Aquila S2","brand":"Voxelab","slug":"voxelab-aquila-s2","image":"https://via.placeholder.com/100","price":189,"price_range":"budget","buy_url":null,"scores":{"overall":6.92,"print_quality":7.2,"speed":7.0,"ease_of_use":7.0,"reliability":6.8,"value":8.8},"specs":{"build_volume":"245x245x260mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Raise3D Pro3","brand":"Raise3D","slug":"raise3d-pro3","image":"https://via.placeholder.com/100","price":3999,"price_range":"premium","buy_url":null,"scores":{"overall":7.8,"print_quality":8.2,"speed":7.5,"ease_of_use":7.8,"reliability":8.0,"value":6.5},"specs":{"build_volume":"300x200x200mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Artillery Sidewinder X3","brand":"Artillery","slug":"artillery-sidewinder-x3","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.5,"print_quality":7.8,"speed":8.2,"ease_of_use":7.4,"reliability":7.2,"value":8.8},"specs":{"build_volume":"300x300x400mm","nozzle_temp":"280C","bed_temp":"110C"}},{"name":"Sovol SV06","brand":"Sovol","slug":"sovol-sv06","image":"https://via.placeholder.com/100","price":249,"price_range":"budget","buy_url":null,"scores":{"overall":7.3,"print_quality":7.5,"speed":7.8,"ease_of_use":7.2,"reliability":7.0,"value":9.0},"specs":{"build_volume":"250x250x270mm","nozzle_temp":"280C","bed_temp":"100C"}},{"name":"Sovol SV08","brand":"Sovol","slug":"sovol-sv08","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":7.4,"print_quality":7.6,"speed":8.0,"ease_of_use":7.2,"reliability":7.2,"value":8.5},"specs":{"build_volume":"350x350x400mm","nozzle_temp":"280C","bed_temp":"100C"}}]};
 
-  <script>
-    const printerData = {"printers":[{"name":"Bambu Lab H2S","brand":"Bambu Lab","slug":"bambu-lab-h2s","image":"https://via.placeholder.com/100","price":1099,"price_range":"premium","buy_url":null,"scores":{"overall":8.81,"print_quality":9.4,"speed":8.7,"ease_of_use":8.3,"reliability":9.1,"value":6.2},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab P2S","brand":"Bambu Lab","slug":"bambu-lab-p2s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.75,"print_quality":9.2,"speed":9.0,"ease_of_use":8.6,"reliability":8.8,"value":7.8},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab H2D","brand":"Bambu Lab","slug":"bambu-lab-h2d","image":"https://via.placeholder.com/100","price":2199,"price_range":"premium","buy_url":null,"scores":{"overall":8.72,"print_quality":9.3,"speed":8.6,"ease_of_use":8.2,"reliability":9.0,"value":6.5},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab P1S","brand":"Bambu Lab","slug":"bambu-lab-p1s","image":"https://via.placeholder.com/100","price":649,"price_range":"mid","buy_url":null,"scores":{"overall":8.62,"print_quality":9.0,"speed":8.8,"ease_of_use":8.5,"reliability":8.6,"value":8.5},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Bambu Lab A1","brand":"Bambu Lab","slug":"bambu-lab-a1","image":"https://via.placeholder.com/100","price":299,"price_range":"budget","buy_url":null,"scores":{"overall":8.22,"print_quality":8.5,"speed":8.2,"ease_of_use":9.0,"reliability":8.2,"value":9.0},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300C","bed_temp":"80C"}},{"name":"Bambu Lab A1 Mini","brand":"Bambu Lab","slug":"bambu-lab-a1-mini","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.88,"print_quality":8.0,"speed":7.8,"ease_of_use":9.0,"reliability":7.8,"value":9.5},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"300C","bed_temp":"80C"}},{"name":"Prusa MK4S","brand":"Prusa Research","slug":"prusa-mk4s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.52,"print_quality":8.6,"speed":7.6,"ease_of_use":8.6,"reliability":9.6,"value":7.2},"specs":{"build_volume":"250x210x210mm","nozzle_temp":"310C","bed_temp":"110C"}},{"name":"Prusa Core One L","brand":"Prusa Research","slug":"prusa-core-one-l","image":"https://via.placeholder.com/100","price":1899,"price_range":"premium","buy_url":null,"scores":{"overall":8.47,"print_quality":9.0,"speed":8.0,"ease_of_use":7.8,"reliability":9.2,"value":5.8},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"310C","bed_temp":"120C"}},{"name":"Prusa Core One+","brand":"Prusa Research","slug":"prusa-core-one-plus","image":"https://via.placeholder.com/100","price":1299,"price_range":"premium","buy_url":null,"scores":{"overall":8.43,"print_quality":8.8,"speed":7.8,"ease_of_use":8.0,"reliability":9.2,"value":6.5},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"310C","bed_temp":"120C"}},{"name":"Prusa Original XL","brand":"Prusa Research","slug":"prusa-original-xl","image":"https://via.placeholder.com/100","price":2499,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":8.0,"ease_of_use":7.6,"reliability":9.0,"value":5.5},"specs":{"build_volume":"330x330x330mm","nozzle_temp":"310C","bed_temp":"120C"}},{"name":"Prusa Mini+","brand":"Prusa Research","slug":"prusa-mini-plus","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.97,"print_quality":8.0,"speed":7.0,"ease_of_use":8.6,"reliability":9.0,"value":8.2},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"310C","bed_temp":"100C"}},{"name":"Ultimaker S5","brand":"Ultimaker","slug":"ultimaker-s5","image":"https://via.placeholder.com/100","price":4990,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":6.8,"ease_of_use":8.6,"reliability":9.2,"value":4.0},"specs":{"build_volume":"330x240x300mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Ultimaker S3","brand":"Ultimaker","slug":"ultimaker-s3","image":"https://via.placeholder.com/100","price":3499,"price_range":"premium","buy_url":null,"scores":{"overall":8.21,"print_quality":8.6,"speed":6.6,"ease_of_use":8.6,"reliability":9.0,"value":4.5},"specs":{"build_volume":"243x213x200mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality K1 Max","brand":"Creality","slug":"creality-k1-max","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":8.0,"print_quality":8.5,"speed":8.8,"ease_of_use":7.6,"reliability":7.6,"value":7.6},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality K2 Combo","brand":"Creality","slug":"creality-k2-combo","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":7.57,"print_quality":8.0,"speed":8.0,"ease_of_use":7.5,"reliability":7.2,"value":8.5},"specs":{"build_volume":"260x260x260mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality K2 Plus Combo","brand":"Creality","slug":"creality-k2-plus-combo","image":"https://via.placeholder.com/100","price":999,"price_range":"premium","buy_url":null,"scores":{"overall":7.74,"print_quality":8.3,"speed":8.3,"ease_of_use":7.5,"reliability":7.5,"value":7.5},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Creality Ender 3 V3 SE","brand":"Creality","slug":"creality-ender-3-v3-se","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.31,"print_quality":7.6,"speed":7.2,"ease_of_use":7.6,"reliability":7.2,"value":9.5},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Elegoo Neptune 4 Max","brand":"Elegoo","slug":"elegoo-neptune-4-max","image":"https://via.placeholder.com/100","price":279,"price_range":"budget","buy_url":null,"scores":{"overall":7.71,"print_quality":8.2,"speed":8.0,"ease_of_use":7.5,"reliability":7.8,"value":8.0},"specs":{"build_volume":"320x320x320mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Elegoo Neptune 3 Pro","brand":"Elegoo","slug":"elegoo-neptune-3-pro","image":"https://via.placeholder.com/100","price":229,"price_range":"budget","buy_url":null,"scores":{"overall":7.39,"print_quality":7.6,"speed":7.2,"ease_of_use":7.8,"reliability":7.5,"value":9.0},"specs":{"build_volume":"235x235x280mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Elegoo Centauri Carbon","brand":"Elegoo","slug":"elegoo-centauri-carbon","image":"https://via.placeholder.com/100","price":319,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.6,"ease_of_use":7.8,"reliability":7.6,"value":8.8},"specs":{"build_volume":"235x235x280mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Anycubic Kobra 2","brand":"Anycubic","slug":"anycubic-kobra-2","image":"https://via.placeholder.com/100","price":259,"price_range":"budget","buy_url":null,"scores":{"overall":7.41,"print_quality":7.6,"speed":7.8,"ease_of_use":7.8,"reliability":7.3,"value":9.0},"specs":{"build_volume":"250x250x260mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Anycubic Kobra X","brand":"Anycubic","slug":"anycubic-kobra-x","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.07,"print_quality":7.2,"speed":7.0,"ease_of_use":7.2,"reliability":7.0,"value":8.8},"specs":{"build_volume":"400x400x400mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Anycubic Kobra 3 Combo","brand":"Anycubic","slug":"anycubic-kobra-3-combo","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.35,"print_quality":7.5,"speed":7.8,"ease_of_use":7.4,"reliability":7.2,"value":9.2},"specs":{"build_volume":"250x250x260mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"FlashForge Adventurer 5M Pro","brand":"FlashForge","slug":"flashforge-adventurer-5m-pro","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":8.03,"print_quality":8.2,"speed":8.0,"ease_of_use":8.6,"reliability":8.2,"value":8.0},"specs":{"build_volume":"245x220x220mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"FlashForge Adventurer 5M","brand":"FlashForge","slug":"flashforge-adventurer-5m","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.84,"print_quality":8.0,"speed":8.0,"ease_of_use":8.5,"reliability":8.0,"value":8.5},"specs":{"build_volume":"245x220x220mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Snapmaker J1s IDEX","brand":"Snapmaker","slug":"snapmaker-j1s-idex","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.8,"value":6.5},"specs":{"build_volume":"230x250x250mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Snapmaker Artisan 3-in-1","brand":"Snapmaker","slug":"snapmaker-artisan-3-in-1","image":"https://via.placeholder.com/100","price":1999,"price_range":"premium","buy_url":null,"scores":{"overall":7.24,"print_quality":7.6,"speed":6.6,"ease_of_use":7.0,"reliability":7.6,"value":5.5},"specs":{"build_volume":"200x200x200mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Snapmaker U1","brand":"Snapmaker","slug":"snapmaker-u1","image":"https://via.placeholder.com/100","price":899,"price_range":"premium","buy_url":null,"scores":{"overall":7.54,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.6,"value":6.8},"specs":{"build_volume":"200x200x200mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Voxelab Aquila S2","brand":"Voxelab","slug":"voxelab-aquila-s2","image":"https://via.placeholder.com/100","price":189,"price_range":"budget","buy_url":null,"scores":{"overall":6.92,"print_quality":7.2,"speed":7.0,"ease_of_use":7.0,"reliability":6.8,"value":8.8},"specs":{"build_volume":"245x245x260mm","nozzle_temp":"260C","bed_temp":"100C"}},{"name":"Raise3D Pro3","brand":"Raise3D","slug":"raise3d-pro3","image":"https://via.placeholder.com/100","price":3999,"price_range":"premium","buy_url":null,"scores":{"overall":7.8,"print_quality":8.2,"speed":7.5,"ease_of_use":7.8,"reliability":8.0,"value":6.5},"specs":{"build_volume":"300x200x200mm","nozzle_temp":"300C","bed_temp":"120C"}},{"name":"Artillery Sidewinder X3","brand":"Artillery","slug":"artillery-sidewinder-x3","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.5,"print_quality":7.8,"speed":8.2,"ease_of_use":7.4,"reliability":7.2,"value":8.8},"specs":{"build_volume":"300x300x400mm","nozzle_temp":"280C","bed_temp":"110C"}},{"name":"Sovol SV06","brand":"Sovol","slug":"sovol-sv06","image":"https://via.placeholder.com/100","price":249,"price_range":"budget","buy_url":null,"scores":{"overall":7.3,"print_quality":7.5,"speed":7.8,"ease_of_use":7.2,"reliability":7.0,"value":9.0},"specs":{"build_volume":"250x250x270mm","nozzle_temp":"280C","bed_temp":"100C"}},{"name":"Sovol SV08","brand":"Sovol","slug":"sovol-sv08","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":7.4,"print_quality":7.6,"speed":8.0,"ease_of_use":7.2,"reliability":7.2,"value":8.5},"specs":{"build_volume":"350x350x400mm","nozzle_temp":"280C","bed_temp":"100C"}}]};
+const S = {search:'',brand:'All',sort:'overall',price:'all',filtered:[],cmp:new Set()};
 
-    const brandMap = {"Bambu Lab": "bambu-lab", "Prusa Research": "prusa", "Creality": "creality", "Elegoo": "elegoo", "FlashForge": "flashforge", "Ultimaker": "ultimaker", "Snapmaker": "snapmaker", "Anycubic": "anycubic"};
+function bSlug(b){return b.toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-')}
+function sc(s){return s>=8?'var(--grad-g)':s>=6?'var(--grad-a)':'var(--grad-r)'}
+function fmt(p){return p?'$'+p.toLocaleString():'N/A'}
+function cap(s){return s.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}
+function pcls(r){return r==='budget'?'pc-budget':r==='mid'?'pc-mid':'pc-premium'}
+function plbl(r){return r==='budget'?'Budget':r==='mid'?'Mid-range':'Premium'}
 
-    let state = {
-      searchTerm: '', activeBrand: 'All', sortBy: 'overall', priceRange: 'all',
-      filteredPrinters: [], compareSelected: new Set()
-    };
-
-    const brands = ['All', ...new Set(printerData.printers.map(p => p.brand))];
-
-    function getScoreGradient(score) {
-      if (score >= 8.0) return 'linear-gradient(90deg, #10b981 0%, #06d6a0 100%)';
-      if (score >= 6.0) return 'linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%)';
-      return 'linear-gradient(90deg, #ef4444 0%, #f87171 100%)';
-    }
-
-    function formatPrice(price) { return !price ? 'N/A' : '$' + price; }
-    function getBrandClass(brand) { return brandMap[brand] || 'default'; }
-
-    function applyFilters() {
-      let filtered = printerData.printers;
-      if (state.activeBrand !== 'All') filtered = filtered.filter(p => p.brand === state.activeBrand);
-      if (state.searchTerm) {
-        const term = state.searchTerm.toLowerCase();
-        filtered = filtered.filter(p => p.name.toLowerCase().includes(term) || p.brand.toLowerCase().includes(term));
-      }
-      if (state.priceRange !== 'all') {
-        filtered = filtered.filter(p => {
-          if (!p.price) return false;
-          if (state.priceRange === 'budget') return p.price < 300;
-          if (state.priceRange === 'mid') return p.price >= 300 && p.price < 800;
-          if (state.priceRange === 'premium') return p.price >= 800;
-          return true;
-        });
-      }
-      filtered.sort((a, b) => (b.scores[state.sortBy] || 0) - (a.scores[state.sortBy] || 0));
-      state.filteredPrinters = filtered;
-      render();
-    }
-
-    function renderCards() {
-      const container = document.getElementById('cardsContainer');
-      const noResults = document.getElementById('noResults');
-      if (state.filteredPrinters.length === 0) {
-        container.innerHTML = '';
-        noResults.classList.remove('hidden');
-        return;
-      }
-      noResults.classList.add('hidden');
-      container.innerHTML = state.filteredPrinters.map((printer, idx) => {
-        const rank = idx + 1;
-        const isChecked = state.compareSelected.has(printer.name);
-        const brandClass = getBrandClass(printer.brand);
-        return `
-          <div class="printer-card">
-            <div class="card-header-top">
-              <input type="checkbox" class="compare-checkbox" ${isChecked ? 'checked' : ''} onchange="toggleCompare('${printer.name}')">
-            </div>
-            <div class="card-left">
-              <div class="rank-badge">${rank}</div>
-              <div class="printer-image-container" onclick="openDetailModal('${printer.name}')">
-                <img src="${printer.image}" alt="${printer.name}" class="printer-image" onerror="this.style.display='none'">
-              </div>
-            </div>
-            <div class="card-center">
-              <div class="printer-header">
-                <h3 class="printer-name" onclick="openDetailModal('${printer.name}')">${printer.name}</h3>
-                <span class="brand-pill ${brandClass}">${printer.brand}</span>
-              </div>
-              <div class="specs-tags">
-                <span class="spec-tag">📦 ${printer.specs.build_volume}</span>
-                <span class="spec-tag">🔥 ${printer.specs.bed_temp}</span>
-              </div>
-              <div class="score-bars-grid">
-                <div class="score-bar-item">
-                  <div class="score-bar-label">Quality</div>
-                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.print_quality / 10) * 100}%; background: ${getScoreGradient(printer.scores.print_quality)}"></div></div>
-                  <div class="score-display"><span class="score-number">${printer.scores.print_quality.toFixed(1)}</span><span class="score-max">/10</span></div>
-                </div>
-                <div class="score-bar-item">
-                  <div class="score-bar-label">Speed</div>
-                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.speed / 10) * 100}%; background: ${getScoreGradient(printer.scores.speed)}"></div></div>
-                  <div class="score-display"><span class="score-number">${printer.scores.speed.toFixed(1)}</span><span class="score-max">/10</span></div>
-                </div>
-                <div class="score-bar-item">
-                  <div class="score-bar-label">Value</div>
-                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.value / 10) * 100}%; background: ${getScoreGradient(printer.scores.value)}"></div></div>
-                  <div class="score-display"><span class="score-number">${printer.scores.value.toFixed(1)}</span><span class="score-max">/10</span></div>
-                </div>
-                <div class="score-bar-item">
-                  <div class="score-bar-label">Ease of Use</div>
-                  <div class="score-bar"><div class="score-bar-fill" style="width: ${(printer.scores.ease_of_use / 10) * 100}%; background: ${getScoreGradient(printer.scores.ease_of_use)}"></div></div>
-                  <div class="score-display"><span class="score-number">${printer.scores.ease_of_use.toFixed(1)}</span><span class="score-max">/10</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="card-right">
-              <div class="overall-score">
-                <div class="overall-score-label">Score</div>
-                <div class="overall-score-value">${printer.scores.overall.toFixed(2)}</div>
-              </div>
-              <div class="price-section">
-                <div class="price-label">Price</div>
-                <div class="price-value">${formatPrice(printer.price)}</div>
-              </div>
-              <div class="button-group">
-                ${printer.buy_url ? `<a href="${printer.buy_url}" target="_blank" class="buy-button">Buy Now</a>` : `<button class="buy-button unavailable" disabled>Out of Stock</button>`}
-                <button class="detail-button" onclick="openDetailModal('${printer.name}')">Details</button>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function updateCompareBar() {
-      const bar = document.getElementById('compareBar');
-      const count = document.getElementById('compareCount');
-      count.textContent = state.compareSelected.size;
-      if (state.compareSelected.size >= 2) bar.classList.add('active');
-      else bar.classList.remove('active');
-    }
-
-    function toggleCompare(name) {
-      if (state.compareSelected.has(name)) state.compareSelected.delete(name);
-      else {
-        if (state.compareSelected.size >= 2) state.compareSelected.clear();
-        state.compareSelected.add(name);
-      }
-      updateCompareBar();
-      renderCards();
-    }
-
-    function openDetailModal(name) {
-      const printer = printerData.printers.find(p => p.name === name);
-      if (!printer) return;
-      document.getElementById('detailContent').innerHTML = `
-        <div class="detail-header">
-          <div class="detail-image"><img src="${printer.image}" alt="${name}"></div>
-          <div class="detail-info">
-            <h2>${printer.name}</h2>
-            <div class="detail-brand"><span class="brand-pill ${getBrandClass(printer.brand)}">${printer.brand}</span></div>
-            <div class="detail-actions">
-              ${printer.buy_url ? `<a href="${printer.buy_url}" target="_blank" class="buy-button">Buy Now</a>` : `<button class="buy-button unavailable" disabled>Out of Stock</button>`}
-              <button class="detail-button" onclick="toggleCompare('${printer.name}')">Add to Compare</button>
-            </div>
-          </div>
-          <div class="overall-score">
-            <div class="overall-score-label">Overall Score</div>
-            <div class="overall-score-value">${printer.scores.overall.toFixed(2)}</div>
-            <div style="margin-top: 20px; font-size: 18px; font-weight: bold;">${formatPrice(printer.price)}</div>
-          </div>
-        </div>
-        <div class="detail-divider"></div>
-        <div class="detail-section">
-          <h3>Scores</h3>
-          <div class="scores-grid">
-            ${Object.entries(printer.scores).filter(([k]) => k !== 'overall').map(([key, val]) => `
-              <div class="score-item">
-                <div class="score-item-label">${key.replace(/_/g, ' ')}</div>
-                <div class="score-item-value">${val.toFixed(1)}/10</div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-        <div class="detail-section">
-          <h3>Specifications</h3>
-          <table class="specs-table">
-            <tr><th>Spec</th><th>Value</th></tr>
-            ${Object.entries(printer.specs).map(([k, v]) => `<tr><td>${k.replace(/_/g, ' ')}</td><td>${v}</td></tr>`).join('')}
-          </table>
-        </div>
-      `;
-      document.getElementById('detailModal').classList.add('active');
-    }
-
-    function closeDetailModal() { document.getElementById('detailModal').classList.remove('active'); }
-
-    function openCompareModal() {
-      const selected = Array.from(state.compareSelected).map(name => printerData.printers.find(p => p.name === name));
-      if (selected.length < 2) return;
-      const [p1, p2] = selected;
-      
-      let html = '<h2 style="margin-bottom: 20px;">Printer Comparison</h2>';
-      html += '<div class="compare-printers-row">';
-      [p1, p2].forEach(p => {
-        html += `
-          <div class="compare-printer-card">
-            <div class="compare-printer-image"><img src="${p.image}" alt="${p.name}"></div>
-            <div class="compare-printer-info">
-              <h4>${p.name}</h4>
-              <div class="compare-printer-price">${formatPrice(p.price)}</div>
-              ${p.buy_url ? `<a href="${p.buy_url}" target="_blank" class="buy-button" style="width: 100%; text-align: center;">Buy</a>` : `<button class="buy-button unavailable" disabled style="width: 100%;">Out of Stock</button>`}
-            </div>
-          </div>
-        `;
-      });
-      html += '</div>';
-      
-      html += '<div class="compare-section"><h3>Scores</h3><table class="compare-table"><tr><th>Metric</th><th>' + p1.name + '</th><th>' + p2.name + '</th></tr>';
-      Object.entries(p1.scores).forEach(([key, val1]) => {
-        const val2 = p2.scores[key];
-        const winner = val1 > val2 ? 'p1' : val2 > val1 ? 'p2' : null;
-        html += `<tr><td>${key.replace(/_/g, ' ')}</td>
-          <td ${winner === 'p1' ? 'class="winner"' : ''}>${val1.toFixed(1)}</td>
-          <td ${winner === 'p2' ? 'class="winner"' : ''}>${val2.toFixed(1)}</td></tr>`;
-      });
-      html += '</table></div>';
-      
-      document.getElementById('compareContent').innerHTML = html;
-      document.getElementById('compareModalOverlay').classList.add('active');
-    }
-
-    function closeCompareModal() { document.getElementById('compareModalOverlay').classList.remove('active'); }
-
-    function render() {
-      renderCards();
-      document.getElementById('resultCount').textContent = `Showing ${state.filteredPrinters.length} of ${printerData.printers.length} printers`;
-    }
-
-    function initBrandFilters() {
-      const container = document.getElementById('brandFilters');
-      container.innerHTML = brands.map(b => `<button class="filter-pill ${b === 'All' ? 'active' : ''}" onclick="setActiveBrand('${b}')">${b}</button>`).join('');
-    }
-
-    function initSortTabs() {
-      const opts = [
-        {key: 'overall', label: 'Overall'}, {key: 'print_quality', label: 'Quality'},
-        {key: 'speed', label: 'Speed'}, {key: 'value', label: 'Value'}
-      ];
-      document.getElementById('sortTabs').innerHTML = opts.map(o => `<button class="sort-tab ${o.key === 'overall' ? 'active' : ''}" onclick="setSort('${o.key}')">${o.label}</button>`).join('');
-    }
-
-    function initPriceTabs() {
-      const opts = [{key: 'all', label: 'All'}, {key: 'budget', label: 'Under $300'}, {key: 'mid', label: '$300-$800'}, {key: 'premium', label: '$800+'}];
-      document.getElementById('priceTabs').innerHTML = opts.map(o => `<button class="price-tab ${o.key === 'all' ? 'active' : ''}" onclick="setPrice('${o.key}')">${o.label}</button>`).join('');
-    }
-
-    function setActiveBrand(brand) {
-      state.activeBrand = brand;
-      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-      event.target.classList.add('active');
-      applyFilters();
-    }
-
-    function setSort(key) {
-      state.sortBy = key;
-      document.querySelectorAll('.sort-tab').forEach(t => t.classList.remove('active'));
-      event.target.classList.add('active');
-      applyFilters();
-    }
-
-    function setPrice(range) {
-      state.priceRange = range;
-      document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
-      event.target.classList.add('active');
-      applyFilters();
-    }
-
-    document.getElementById('searchInput').addEventListener('input', e => { state.searchTerm = e.target.value; applyFilters(); });
-    document.getElementById('compareOpenBtn').addEventListener('click', openCompareModal);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      initBrandFilters(); initSortTabs(); initPriceTabs(); applyFilters();
+function applyFilters(){
+  let list=DATA.printers.slice();
+  if(S.brand!=='All')list=list.filter(p=>p.brand===S.brand);
+  if(S.search){const t=S.search.toLowerCase();list=list.filter(p=>p.name.toLowerCase().includes(t)||p.brand.toLowerCase().includes(t))}
+  if(S.price!=='all'){
+    list=list.filter(p=>{
+      if(!p.price)return false;
+      if(S.price==='budget')return p.price<300;
+      if(S.price==='mid')return p.price>=300&&p.price<800;
+      if(S.price==='premium')return p.price>=800;
+      return true;
     });
-  </script>
+  }
+  list.sort((a,b)=>(b.scores[S.sort]||0)-(a.scores[S.sort]||0));
+  S.filtered=list;
+  render();
+}
+
+function renderCards(){
+  const c=document.getElementById('cardsContainer');
+  const nr=document.getElementById('noResults');
+  if(!S.filtered.length){c.innerHTML='';nr.classList.remove('hidden');return}
+  nr.classList.add('hidden');
+  c.innerHTML=S.filtered.map((p,i)=>{
+    const r=i+1,bc='bt-'+bSlug(p.brand),chk=S.cmp.has(p.name);
+    const miniScoreKeys=['print_quality','speed','value','ease_of_use'];
+    const miniHTML=miniScoreKeys.map(k=>{
+      const v=p.scores[k]||0;
+      return `<div class="ms"><div class="ms-l">${cap(k)}</div><div class="ms-bw"><div class="ms-bf" style="width:${v*10}%;background:${sc(v)}"></div></div><div class="ms-v">${v.toFixed(1)}</div></div>`;
+    }).join('');
+    return `<div class="pcard">
+      <div class="rank-col">
+        <div class="rank-n ${r<=3?'top':''}">${r}</div>
+        <input type="checkbox" class="cmp-cb" ${chk?'checked':''} onchange="toggleCmp('${p.name.replace(/'/g,"\\'")}')">
+      </div>
+      <div class="img-col" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">
+        <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'">
+      </div>
+      <div class="info-col">
+        <div class="card-tr">
+          <span class="pname" onclick="openDetail('${p.name.replace(/'/g,"\\'")}'">${p.name}</span>
+          <span class="btag ${bc}">${p.brand}</span>
+        </div>
+        <div class="specs-row">
+          <span class="schip">📦 ${p.specs.build_volume}</span>
+          <span class="schip">🌡️ ${p.specs.bed_temp}</span>
+          ${p.price_range?`<span class="pcat ${pcls(p.price_range)}">${plbl(p.price_range)}</span>`:''}
+        </div>
+        <div class="mini-scores">${miniHTML}</div>
+      </div>
+      <div class="act-col">
+        <div class="score-box"><div class="score-n">${p.scores.overall.toFixed(2)}</div><div class="score-l">Score</div></div>
+        <div class="ptag">${fmt(p.price)}</div>
+        <div class="card-btns">
+          ${p.buy_url?`<a href="${p.buy_url}" target="_blank" class="btn btn-p">Buy</a>`:`<button class="btn btn-p off" disabled>Buy</button>`}
+          <button class="btn btn-g" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">Details</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function updateCmpBar(){
+  const bar=document.getElementById('cmpBar');
+  document.getElementById('cmpCount').textContent=S.cmp.size;
+  const names=[...S.cmp].join(' vs ');
+  document.getElementById('cmpNames').textContent=names.length>60?names.slice(0,57)+'…':names;
+  S.cmp.size>=1?bar.classList.add('show'):bar.classList.remove('show');
+}
+
+function toggleCmp(name){
+  if(S.cmp.has(name)){S.cmp.delete(name)}
+  else{if(S.cmp.size>=2)S.cmp.clear();S.cmp.add(name)}
+  updateCmpBar();renderCards();
+}
+
+function clearCmp(){S.cmp.clear();updateCmpBar();renderCards()}
+
+function openDetail(name){
+  const p=DATA.printers.find(x=>x.name===name);if(!p)return;
+  document.getElementById('dTitle').textContent=p.name;
+  const scoreKeys=Object.entries(p.scores).filter(([k])=>k!=='overall');
+  document.getElementById('dBody').innerHTML=`
+    <div class="d-hero">
+      <div class="d-img"><img src="${p.image}" alt="${p.name}"></div>
+      <div class="d-meta">
+        <div class="d-name">${p.name}</div>
+        <span class="btag bt-${bSlug(p.brand)}">${p.brand}</span>
+        <div class="d-sp">
+          <div><div class="big-s">${p.scores.overall.toFixed(2)}</div><div class="big-sl">Overall Score</div></div>
+          <div><div class="big-p">${fmt(p.price)}</div><div class="big-sl">${plbl(p.price_range||'')}</div></div>
+        </div>
+        <div class="d-acts">
+          ${p.buy_url?`<a href="${p.buy_url}" target="_blank" class="btn btn-p">Buy Now</a>`:`<button class="btn btn-p off" disabled>Buy Now</button>`}
+          <button class="btn btn-g" onclick="toggleCmp('${p.name.replace(/'/g,"\\'")}');closeM('detailModal')">+ Compare</button>
+        </div>
+      </div>
+    </div>
+    <div class="msec">
+      <div class="msec-t">Scores</div>
+      <div class="sg">${scoreKeys.map(([k,v])=>`
+        <div class="stile">
+          <div class="stile-l">${cap(k)}</div>
+          <div class="stile-bw"><div class="stile-bf" style="width:${v*10}%;background:${sc(v)}"></div></div>
+          <div class="stile-v">${v.toFixed(1)}<span style="font-size:12px;color:var(--t3)">/10</span></div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div class="msec">
+      <div class="msec-t">Specifications</div>
+      <div class="spg">${Object.entries(p.specs).map(([k,v])=>`
+        <div class="spitem"><div class="spitem-l">${cap(k)}</div><div class="spitem-v">${v}</div></div>`).join('')}
+      </div>
+    </div>`;
+  document.getElementById('detailModal').classList.add('open');
+}
+
+function openCmp(){
+  const sel=[...S.cmp].map(n=>DATA.printers.find(p=>p.name===n)).filter(Boolean);
+  if(sel.length<2)return;
+  const [a,b]=sel;
+  const allKeys=Object.keys(a.scores);
+  const rows=allKeys.map(k=>{
+    const av=a.scores[k],bv=b.scores[k];
+    const aw=av>bv?'win':'',bw=bv>av?'win':'';
+    return `<div class="cg-cell lbl">${cap(k)}</div>
+      <div class="cg-cell ${aw}">${av.toFixed(2)}</div>
+      <div class="cg-cell ${bw}">${bv.toFixed(2)}</div>`;
+  });
+  // Wrap last 3 cells in last-row class
+  const rowsHTML = rows.map((r,i)=>{
+    if(i===rows.length-1) return `<div class="last-row" style="display:contents">${r}</div>`;
+    return r;
+  }).join('');
+  document.getElementById('cmpBody').innerHTML=`
+    <div class="cg">
+      <div class="cg-head lbl">Metric</div>
+      <div class="cg-head">
+        <div class="cg-img"><img src="${a.image}" alt="${a.name}"></div>
+        <div class="cg-name">${a.name}</div>
+        <div class="cg-price">${fmt(a.price)}</div>
+        ${a.buy_url?`<a href="${a.buy_url}" target="_blank" class="btn btn-p" style="font-size:12px;padding:6px 12px">Buy</a>`:''}
+      </div>
+      <div class="cg-head">
+        <div class="cg-img"><img src="${b.image}" alt="${b.name}"></div>
+        <div class="cg-name">${b.name}</div>
+        <div class="cg-price">${fmt(b.price)}</div>
+        ${b.buy_url?`<a href="${b.buy_url}" target="_blank" class="btn btn-p" style="font-size:12px;padding:6px 12px">Buy</a>`:''}
+      </div>
+      ${rowsHTML}
+    </div>`;
+  document.getElementById('cmpModal').classList.add('open');
+}
+
+function closeM(id){document.getElementById(id).classList.remove('open')}
+function bgClose(e,id){if(e.target.id===id)closeM(id)}
+
+function render(){
+  renderCards();
+  document.getElementById('resultCount').textContent=`Showing ${S.filtered.length} of ${DATA.printers.length} printers`;
+}
+
+// Init controls
+function initBrands(){
+  const brands=['All',...new Set(DATA.printers.map(p=>p.brand))];
+  document.getElementById('brandFilters').innerHTML=brands.map(b=>
+    `<button class="seg-btn ${b==='All'?'active':''}" onclick="setBrand(this,'${b}')">${b}</button>`
+  ).join('');
+}
+function initSort(){
+  const opts=[{k:'overall',l:'Overall'},{k:'print_quality',l:'Quality'},{k:'speed',l:'Speed'},{k:'value',l:'Value'},{k:'reliability',l:'Reliability'}];
+  document.getElementById('sortTabs').innerHTML=opts.map(o=>
+    `<button class="seg-btn ${o.k==='overall'?'active':''}" onclick="setSort(this,'${o.k}')">${o.l}</button>`
+  ).join('');
+}
+function initPrice(){
+  const opts=[{k:'all',l:'All'},{k:'budget',l:'Under $300'},{k:'mid',l:'$300–$800'},{k:'premium',l:'$800+'}];
+  document.getElementById('priceTabs').innerHTML=opts.map(o=>
+    `<button class="seg-btn ${o.k==='all'?'active':''}" onclick="setPrice(this,'${o.k}')">${o.l}</button>`
+  ).join('');
+}
+
+function setBrand(el,b){
+  S.brand=b;
+  document.querySelectorAll('#brandFilters .seg-btn').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');applyFilters();
+}
+function setSort(el,k){
+  S.sort=k;
+  document.querySelectorAll('#sortTabs .seg-btn').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');applyFilters();
+}
+function setPrice(el,k){
+  S.price=k;
+  document.querySelectorAll('#priceTabs .seg-btn').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');applyFilters();
+}
+
+document.getElementById('searchInput').addEventListener('input',e=>{S.search=e.target.value;applyFilters()});
+document.getElementById('cmpOpenBtn').addEventListener('click',openCmp);
+
+initBrands();initSort();init
+Price();applyFilters();
+</script>
 </body>
 </html>
