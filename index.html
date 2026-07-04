@@ -59,7 +59,7 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .clear-btn{font-size:12px;color:var(--gold-d);cursor:pointer;background:none;border:none;font-family:inherit;display:none}
 .clear-btn.show{display:inline}
 .card-list{display:flex;flex-direction:column;gap:8px}
-.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:12px 14px;display:grid;grid-template-columns:40px 64px 1fr auto;gap:10px;align-items:center;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s}
+.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:8px 10px;display:grid;grid-template-columns:32px 56px 1fr auto;gap:8px;align-items:center;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s}
 .pcard:hover{border-color:var(--gold-d);box-shadow:var(--shadow);transform:translateY(-1px)}
 .pcard.top3{border-color:rgba(201,168,76,.25)}
 .pcard.top3:hover{border-color:var(--gold)}
@@ -85,15 +85,21 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .bt-elegoo{background:rgba(140,80,200,.08);color:#6030a0;border-color:rgba(140,80,200,.15)}
 [data-theme="dark"] .bt-elegoo{color:#c090e8}
 .bt-anycubic,.bt-flashforge,.bt-snapmaker,.bt-ultimaker,.bt-raise3d,.bt-artillery,.bt-sovol,.bt-voxelab{background:var(--bg3);color:var(--t2);border-color:var(--border)}
-.schips{display:flex;gap:4px;flex-wrap:wrap}
-.schip{display:inline-flex;align-items:center;gap:2px;padding:2px 6px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);font-size:11px;color:var(--t2);font-weight:500;white-space:nowrap}
-.fbadges{display:flex;gap:3px;flex-wrap:wrap}
+.schips{display:flex;gap:3px;flex-wrap:wrap;margin-top:2px}
+.schip{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);font-size:10px;color:var(--t2);font-weight:500;white-space:nowrap}
+.fbadges{display:flex;gap:3px;flex-wrap:nowrap;overflow:hidden;margin-top:2px}
+.fbadge .b-lbl{display:none}
+@media(min-width:520px){.fbadge .b-lbl{display:inline}}
+.fbadge .b-ico{font-size:13px}
+.schip-speed{display:none}
+@media(min-width:440px){.schip-speed{display:inline-flex}}
 .fbadge{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;border-radius:var(--r-pill);font-size:10px;font-weight:700;white-space:nowrap;background:var(--bg4);color:var(--t3);border:1px solid var(--border)}
 .fbadge.on{background:rgba(201,168,76,.08);color:var(--gold-d);border-color:rgba(201,168,76,.2)}
 [data-theme="dark"] .fbadge.on{color:var(--gold-l)}
 .fbadge.on-g{background:rgba(76,175,106,.08);color:#2d8a50;border-color:rgba(76,175,106,.15)}
 [data-theme="dark"] .fbadge.on-g{color:#7dd494}
-.sbars{display:none;gap:8px;flex-wrap:wrap}
+.sbars{display:none;display:none;gap:8px;flex-wrap:wrap}
+@media(min-width:600px){.sbars{display:flex}}
 .sbar{display:flex;flex-direction:column;gap:2px;min-width:44px}
 .sb-lbl{font-size:9px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.3px}
 .sb-track{height:3px;background:var(--border);border-radius:var(--r-pill);overflow:hidden}
@@ -535,19 +541,19 @@ function renderCards(){
   empty.classList.add('hidden');
   list.innerHTML=S.filtered.map((p,i)=>{
     const rank=i+1,top=rank<=3,chk=S.cmp.has(p.name),bc='bt-'+bSlug(p.brand),f=p.features||{};
-    const all=[
-      f.enclosure||p.specs.enclosure==='Yes'?'<span class="fbadge on">📦 Enclosed</span>':'',
-      f.open_source?'<span class="fbadge on-g">🔓 Open Source</span>':'',
-      f.camera?'<span class="fbadge on">📷 Camera</span>':'',
-      f.ai_detection?'<span class="fbadge on">🤖 AI</span>':'',
-      f.air_filter?'<span class="fbadge on">💨 Air Filter</span>':'',
-      f.multi_color?'<span class="fbadge on">🎨 Multi-Color</span>':'',
-      f.silent_mode?'<span class="fbadge on">🔇 Silent</span>':'',
-    ].filter(Boolean);
+    const badges=[
+      f.enclosure||p.specs.enclosure==='Yes'?['📦','Enclosed']:'',
+      f.multi_color?['🎨','Colors']:'',
+      f.camera?['📷','Camera']:'',
+      f.ai_detection?['🤖','AI']:'',
+      f.air_filter?['💨','Filter']:'',
+      f.open_source?['🔓','Open']:'',
+      f.silent_mode?['🔇','Silent']:'',
+    ].filter(Boolean).slice(0,4).map(([ico,lbl])=>`<span class="fbadge on"><span class="b-ico">${ico}</span><span class="b-lbl">${lbl}</span></span>`).join('');
     return `
     <div class="pcard${top?' top3':''}${rank===1?' rank-1':''}" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">
       <div class="rank-col">
-        <div class="rank-crown">👑</div>
+        ${top?'<div class="rank-crown">👑</div>':''}
         <div class="rank-num">${rank}</div>
         <input type="checkbox" class="cmp-cb"${chk?' checked':''} onclick="event.stopPropagation()" onchange="toggleCmp('${p.name.replace(/'/g,"\\'")}')">
       </div>
@@ -557,9 +563,9 @@ function renderCards(){
         <div class="schips">
           <span class="schip">📐 ${p.specs.build_volume}</span>
           <span class="schip">🌡️ ${p.specs.nozzle_temp}</span>
-          <span class="schip">⚡ ${p.specs.max_speed||'—'}</span>
+          <span class="schip schip-speed">⚡ ${p.specs.max_speed||'—'}</span>
         </div>
-        <div class="fbadges">${all.slice(0,6).join('')}</div>
+        <div class="fbadges">${badges}</div>
         <div class="sbars">
           ${['print_quality','speed','ease_of_use','reliability','value'].map(k=>`
           <div class="sbar">
@@ -578,7 +584,6 @@ function renderCards(){
     </div>`;
   }).join('');
 }
-
 function openDetail(name){
   const p=DATA.printers.find(x=>x.name===name);if(!p)return;
   const f=p.features||{};
