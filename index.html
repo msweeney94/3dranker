@@ -303,60 +303,6 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 </nav>
 <div class="page active" id="pageRankings">
 <div class="layout">
-  <div class="controls">
-    <div class="search-wrap">
-      <span style="color:var(--t3);font-size:13px">🔍</span>
-      <input type="text" id="searchInp" class="search-inp" placeholder="Search printers…">
-    </div>
-    <div class="dd-wrap" id="ddBrand">
-      <button class="dd-btn" onclick="toggleDd('ddBrand')"><span id="ddBrandLbl">Brand</span><span class="dd-dot"></span><span class="arr">▼</span></button>
-      <div class="dd-menu" id="ddBrandMenu"></div>
-    </div>
-    <div class="dd-wrap" id="ddSort">
-      <button class="dd-btn" onclick="toggleDd('ddSort')"><span id="ddSortLbl">Sort: Overall</span><span class="arr">▼</span></button>
-      <div class="dd-menu" id="ddSortMenu">
-        <div class="dd-item sel" data-sort="overall" onclick="setSort('overall','Overall')">Overall Score <span>✓</span></div>
-        <div class="dd-item" data-sort="print_quality" onclick="setSort('print_quality','Quality')">Print Quality</div>
-        <div class="dd-item" data-sort="speed" onclick="setSort('speed','Speed')">Speed</div>
-        <div class="dd-item" data-sort="ease_of_use" onclick="setSort('ease_of_use','Ease of Use')">Ease of Use</div>
-        <div class="dd-item" data-sort="reliability" onclick="setSort('reliability','Reliability')">Reliability</div>
-        <div class="dd-item" data-sort="value" onclick="setSort('value','Value')">Value for Money</div>
-        <div class="dd-div"></div>
-        <div class="dd-item" data-sort="price_asc" onclick="setSort('price_asc','Price ↑')">Price: Low → High</div>
-        <div class="dd-item" data-sort="price_desc" onclick="setSort('price_desc','Price ↓')">Price: High → Low</div>
-      </div>
-    </div>
-    <div class="dd-wrap" id="ddPrice">
-      <button class="dd-btn" onclick="toggleDd('ddPrice')"><span id="ddPriceLbl">Price</span><span class="dd-dot"></span><span class="arr">▼</span></button>
-      <div class="dd-menu" id="ddPriceMenu">
-        <div class="dd-item sel" data-p="all" onclick="setPrice('all','Price')">All Prices <span>✓</span></div>
-        <div class="dd-item" data-p="budget" onclick="setPrice('budget','Under $300')">Budget — Under $300</div>
-        <div class="dd-item" data-p="mid" onclick="setPrice('mid','$300–$800')">Mid-range $300–$800</div>
-        <div class="dd-item" data-p="premium" onclick="setPrice('premium','$800+')">Premium $800+</div>
-      </div>
-    </div>
-    <div class="dd-wrap" id="ddFeat">
-      <button class="dd-btn" onclick="toggleDd('ddFeat')"><span id="ddFeatLbl">Features</span><span class="dd-dot" id="featDot" style="display:none"></span><span class="arr">▼</span></button>
-      <div class="dd-menu" style="min-width:220px" id="ddFeatMenu">
-        <div class="dd-sec">Printer Type</div>
-        <div class="feat-row" id="feat-enclosure" onclick="toggleFeat('enclosure')"><div class="feat-left"><span>📦</span>Enclosed</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-open_source" onclick="toggleFeat('open_source')"><div class="feat-left"><span>🔓</span>Open Source</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-direct_drive" onclick="toggleFeat('direct_drive')"><div class="feat-left"><span>⚙️</span>Direct Drive</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-multi_color" onclick="toggleFeat('multi_color')"><div class="feat-left"><span>🎨</span>Multi-Color</div><div class="ftoggle"></div></div>
-        <div class="dd-sec">Smart Features</div>
-        <div class="feat-row" id="feat-camera" onclick="toggleFeat('camera')"><div class="feat-left"><span>📷</span>Built-in Camera</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-ai_detection" onclick="toggleFeat('ai_detection')"><div class="feat-left"><span>🤖</span>AI Detection</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-air_filter" onclick="toggleFeat('air_filter')"><div class="feat-left"><span>💨</span>Air Filtration</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-silent_mode" onclick="toggleFeat('silent_mode')"><div class="feat-left"><span>🔇</span>Silent Mode</div><div class="ftoggle"></div></div>
-        <div class="dd-sec">Reliability</div>
-        <div class="feat-row" id="feat-filament_runout" onclick="toggleFeat('filament_runout')"><div class="feat-left"><span>🧵</span>Filament Runout</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-power_recovery" onclick="toggleFeat('power_recovery')"><div class="feat-left"><span>⚡</span>Power Recovery</div><div class="ftoggle"></div></div>
-      </div>
-    </div>
-  </div>
-  <div class="results-bar">
-    <span class="res-count" id="resCount">Showing 40 printers</span>
-    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear filters</button>
   </div>
   <div class="card-list" id="cardList"></div>
   <div id="emptyState" class="empty-state hidden"><div class="empty-ico">🔍</div><div class="empty-title">No printers found</div><div class="empty-sub">Try adjusting your filters.</div></div>
@@ -404,8 +350,6 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
     </div>
   </div>
   <div class="results-bar">
-    <span class="res-count" id="filResCount">Showing 10 brands</span>
-    <button class="clear-btn" id="filClearBtn" onclick="clearFilFilters()" style="display:none">Clear filters</button>
   </div>
   <div id="filList"></div>
 </div>
