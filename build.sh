@@ -9,8 +9,8 @@ cat > index.html << 'HTML'
 html.light-mode{--bg:var(--light-bg);--bg2:var(--light-bg2);--bg3:var(--light-bg3);--bg4:var(--light-bg4);--t1:var(--light-t1);--t2:var(--light-t2);--t3:var(--light-t3);--border:#d9d1c8;--border2:#cfc4ba)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;transition:background .3s,color .3s}
-.nav{position:sticky;top:0;z-index:200;background:rgba(17,17,16,.95);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:16px;padding:0 24px;height:56px}
+.nav{position:sticky;top:0;left:0;right:0;width:100%;z-index:200;background:rgba(17,17,16,.95);border-bottom:1px solid var(--border);box-sizing:border-box}
+.nav-inner{width:100%;max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:16px;padding:0 24px;height:56px;box-sizing:border-box}
 .nav-logo{font-size:18px;font-weight:800;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
 .nav-spacer{flex:1}
 .nav-count{font-size:12px;color:var(--t3)}
