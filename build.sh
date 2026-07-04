@@ -3,7 +3,7 @@
 
 cat > index.html << 'EOF'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,12 @@ html.light {
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--bg); color: var(--t1); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6; }
-.nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(15,14,13,.95); border-bottom: 1px solid var(--border); z-index: 1000; }
+.nav { position: fixed; top: 0; left: 0; right: 0; background: var(--bg2); border-bottom: 1px solid var(--border); z-index: 1000; }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 60px; display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box; }
 .nav-logo { font-size: 18px; font-weight: 800; color: var(--gold); text-decoration: none; }
 .nav-menu { flex: 1; position: relative; }
 .nav-btn { background: none; border: none; color: var(--t1); cursor: pointer; font-size: 18px; padding: 8px 12px; }
-.nav-dropdown { position: absolute; top: 100%; right: 0; background: rgba(26,23,20,.98); border: 1px solid var(--border); border-radius: 8px; min-width: 160px; display: none; z-index: 2000; margin-top: 4px; }
+.nav-dropdown { position: absolute; top: 100%; right: 0; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; min-width: 160px; display: none; z-index: 2000; margin-top: 4px; box-shadow: 0 4px 12px rgba(0,0,0,.15); }
 .nav-dropdown.show { display: block; }
 .nav-item { display: block; width: 100%; text-align: left; background: none; border: none; padding: 12px 16px; color: var(--t1); cursor: pointer; font-weight: 600; border-bottom: 1px solid var(--border); }
 .nav-item:last-child { border-bottom: none; }
@@ -79,7 +79,7 @@ body { background: var(--bg); color: var(--t1); font-family: -apple-system, Blin
         <button class="nav-item" onclick="showPage('filament'); toggleMenu()">🧵 Filament</button>
       </div>
     </div>
-    <button class="nav-btn" onclick="toggleTheme()" title="Toggle theme">☀️</button>
+    <button class="nav-btn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
   </div>
 </nav>
 
@@ -151,12 +151,15 @@ function showPage(page) {
 
 function toggleTheme() {
   document.documentElement.classList.toggle('light');
-  localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+  const isLight = document.documentElement.classList.contains('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  document.querySelector('.nav-btn[title="Toggle theme"]').textContent = isLight ? '🌙' : '☀️';
 }
 
-// Load theme preference
-if (localStorage.getItem('theme') === 'light') {
-  document.documentElement.classList.add('light');
+// Load theme preference — light is default
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.documentElement.classList.remove('light');
 }
 
 // Render rankings
