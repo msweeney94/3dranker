@@ -215,6 +215,42 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .empty-sub{font-size:12px;color:var(--t3)}
 .hidden{display:none!important}
 .footer{border-top:1px solid var(--border);padding:18px 14px;text-align:center;color:var(--t3);font-size:11px}
+
+.fil-controls{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.fil-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px 16px;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s;margin-bottom:8px}
+.fil-card:hover{border-color:var(--gold-d);box-shadow:var(--shadow);transform:translateY(-1px)}
+.fil-card.top3{border-color:rgba(201,168,76,.25)}
+.fil-card.top3:hover{border-color:var(--gold)}
+.fil-grid{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center}
+@media(min-width:680px){.fil-grid{grid-template-columns:40px 60px 1fr auto;gap:14px}}
+.fil-rank{font-size:17px;font-weight:800;color:var(--t3);text-align:center;line-height:1}
+.fil-card.top3 .fil-rank{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fil-logo{font-size:28px;text-align:center;display:none}
+@media(min-width:680px){.fil-logo{display:block}}
+.fil-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+.fil-name{font-size:14px;font-weight:800;color:var(--t1)}
+.fil-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.fil-origin{font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--r-pill);background:var(--bg3);border:1px solid var(--border);color:var(--t3)}
+.fil-rfid{font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--r-pill)}
+.fil-rfid.yes{background:rgba(201,168,76,.08);color:var(--gold-d);border:1px solid rgba(201,168,76,.2)}
+[data-theme="dark"] .fil-rfid.yes{color:var(--gold-l)}
+.fil-rfid.no{background:var(--bg3);color:var(--t3);border:1px solid var(--border)}
+.fil-spool{font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--r-pill);background:var(--bg3);border:1px solid var(--border);color:var(--t2)}
+.fil-mats{display:flex;gap:3px;flex-wrap:wrap;margin-top:2px}
+.mat-tag{font-size:10px;font-weight:600;padding:1px 5px;border-radius:var(--r-sm);background:var(--bg4);color:var(--t3);border:1px solid var(--border)}
+.mat-tag.premium{background:rgba(140,80,200,.08);color:#6030a0;border-color:rgba(140,80,200,.15)}
+[data-theme="dark"] .mat-tag.premium{color:#c090e8}
+.fil-sbars{display:none;gap:7px;flex-wrap:wrap;margin-top:4px}
+@media(min-width:680px){.fil-sbars{display:flex}}
+.fil-act{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.fil-score-box{display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 11px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);border-radius:var(--r-md)}
+.fil-price{font-size:12px;color:var(--t2);font-weight:600;white-space:nowrap}
+.fil-price span{font-size:15px;font-weight:800;color:var(--t1)}
+
+/* Filament detail modal extras */
+.notes-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:12px;font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:4px}
+.mat-grid{display:flex;gap:5px;flex-wrap:wrap}
+
 </style>
 </head>
 <body>
@@ -224,6 +260,7 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
     <div class="nav-tabs">
       <button class="nav-tab active" id="tabRankings" onclick="showPage('rankings')">🏆 Rankings</button>
       <button class="nav-tab" id="tabCompare" onclick="showPage('compare')">⚖️ Compare</button>
+      <button class="nav-tab" id="tabFilament" onclick="showPage('filament')">🧵 Filament</button>
     </div>
     <div class="nav-spacer"></div>
     <span class="nav-count" id="navCount">40 printers</span>
@@ -298,6 +335,48 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
   <div id="compareTable"></div>
 </div>
 </div>
+
+<div class="page" id="pageFilament">
+<div class="layout">
+  <div style="margin-bottom:16px">
+    <h2 style="font-size:18px;font-weight:800;color:var(--t1);margin-bottom:3px">🧵 Filament Brand Rankings</h2>
+    <p style="font-size:12px;color:var(--t2)">Ranked by overall quality, consistency, dryness, spool quality, value, and material range. Expanding to per-filament rankings soon.</p>
+  </div>
+  <div class="fil-controls">
+    <div class="search-wrap" style="max-width:220px">
+      <span style="color:var(--t3);font-size:13px">🔍</span>
+      <input type="text" id="filSearch" class="search-inp" placeholder="Search brands…" oninput="applyFilFilters()">
+    </div>
+    <div class="dd-wrap" id="ddFilSort">
+      <button class="dd-btn" onclick="toggleDd('ddFilSort')"><span id="ddFilSortLbl">Sort: Overall</span><span class="arr">▼</span></button>
+      <div class="dd-menu" id="ddFilSortMenu">
+        <div class="dd-item sel" data-fsort="overall" onclick="setFilSort('overall','Overall')">Overall <span>✓</span></div>
+        <div class="dd-item" data-fsort="print_quality" onclick="setFilSort('print_quality','Print Quality')">Print Quality</div>
+        <div class="dd-item" data-fsort="consistency" onclick="setFilSort('consistency','Consistency')">Consistency</div>
+        <div class="dd-item" data-fsort="dryness" onclick="setFilSort('dryness','Dryness')">Out-of-box Dryness</div>
+        <div class="dd-item" data-fsort="spool_quality" onclick="setFilSort('spool_quality','Spool Quality')">Spool Quality</div>
+        <div class="dd-item" data-fsort="value" onclick="setFilSort('value','Value')">Value for Money</div>
+        <div class="dd-item" data-fsort="material_range" onclick="setFilSort('material_range','Material Range')">Material Range</div>
+        <div class="dd-div"></div>
+        <div class="dd-item" data-fsort="price_asc" onclick="setFilSort('price_asc','Price ↑')">Price: Low → High</div>
+      </div>
+    </div>
+    <div class="dd-wrap" id="ddFilFeat">
+      <button class="dd-btn" onclick="toggleDd('ddFilFeat')"><span>Features</span><span class="dd-dot" id="filFeatDot" style="display:none"></span><span class="arr">▼</span></button>
+      <div class="dd-menu" style="min-width:200px">
+        <div class="feat-row" id="filfeat-rfid" onclick="toggleFilFeat('rfid')"><div class="feat-left"><span>📡</span>RFID Support</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="filfeat-eco_spool" onclick="toggleFilFeat('eco_spool')"><div class="feat-left"><span>♻️</span>Eco Spool (Cardboard)</div><div class="ftoggle"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="results-bar">
+    <span class="res-count" id="filResCount">Showing 10 brands</span>
+    <button class="clear-btn" id="filClearBtn" onclick="clearFilFilters()" style="display:none">Clear filters</button>
+  </div>
+  <div id="filList"></div>
+</div>
+</div>
+
 <div class="cmpbar" id="cmpBar">
   <div class="cmpbar-in">
     <div style="display:flex;align-items:center;gap:9px">
@@ -353,6 +432,7 @@ function showPage(p){
   document.getElementById('page'+p[0].toUpperCase()+p.slice(1)).classList.add('active');
   document.getElementById('tab'+p[0].toUpperCase()+p.slice(1)).classList.add('active');
   if(p==='compare')renderComparePage();
+  if(p==='filament')applyFilFilters();
 }
 
 function bSlug(b){return b.toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-')}
@@ -638,6 +718,126 @@ function bgClose(e,id){if(e.target.id===id)closeM(id);}
 document.getElementById('searchInp').addEventListener('input',e=>{S.search=e.target.value;applyFilters();});
 initBrandDd();
 applyFilters();
+
+
+const FDATA = {"brands":[{"slug":"bambu-lab","name":"Bambu Lab","logo":"\ud83d\udfe7","founded":2022,"origin":"China","scores":{"overall":9.1,"print_quality":9.5,"consistency":9.4,"dryness":9.2,"spool_quality":9.0,"value":7.5,"material_range":8.5},"avg_price_pla":24.99,"rfid":true,"spool_material":"Cardboard","materials":["PLA","PETG","ABS","ASA","TPU","PA","PC","PVA","PLA-CF","PETG-CF","PA-CF","PPS"],"notes":"Optimized for Bambu printers. RFID tags for auto-detection. Exceptional out-of-box dryness with sealed packaging. Cardboard spools are eco-friendly."},{"slug":"polymaker","name":"Polymaker","logo":"\ud83d\udd35","founded":2014,"origin":"China","scores":{"overall":9.0,"print_quality":9.2,"consistency":9.3,"dryness":8.8,"spool_quality":9.2,"value":8.5,"material_range":9.5},"avg_price_pla":22.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PA","PC","PVA","PLA-CF","PETG-CF","PA-CF","PEEK","PEI","PPS","PLA-ESD"],"notes":"Industry-leading material range. PolyLite and PolySonic lines are community favorites. Excellent consistency and tight diameter tolerances. Hygroguard vacuum bags."},{"slug":"prusament","name":"Prusament","logo":"\ud83d\udfe0","founded":2019,"origin":"Czech Republic","scores":{"overall":8.9,"print_quality":9.3,"consistency":9.5,"dryness":8.5,"spool_quality":9.0,"value":7.8,"material_range":7.5},"avg_price_pla":24.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PA","PC","PETG-CF","PA-CF","Resin"],"notes":"Gold standard for consistency \u2014 each spool has a QR code with measured diameter data. Made in EU. Slightly limited material range but exceptional quality on what they offer."},{"slug":"overture","name":"Overture","logo":"\u26aa","founded":2018,"origin":"China","scores":{"overall":8.2,"print_quality":8.4,"consistency":8.3,"dryness":7.8,"spool_quality":8.0,"value":9.2,"material_range":8.0},"avg_price_pla":16.99,"rfid":false,"spool_material":"Cardboard","materials":["PLA","PETG","ABS","ASA","TPU","PLA-CF","PETG-CF","Resin"],"notes":"Excellent value. Cardboard spools. Very popular on Amazon. Consistent diameter. Good out-of-box results, especially PLA and PETG."},{"slug":"hatchbox","name":"Hatchbox","logo":"\ud83d\udfe4","founded":2013,"origin":"USA","scores":{"overall":8.1,"print_quality":8.3,"consistency":8.4,"dryness":7.6,"spool_quality":8.2,"value":9.0,"material_range":7.2},"avg_price_pla":18.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PLA+","Wood","Metal Fill"],"notes":"Long-time community staple. Reliable PLA. US-based support. Limited high-performance materials. Plastic spools. Solid value."},{"slug":"esun","name":"eSUN","logo":"\ud83d\udfe2","founded":2002,"origin":"China","scores":{"overall":8.0,"print_quality":8.1,"consistency":8.2,"dryness":7.5,"spool_quality":7.8,"value":9.3,"material_range":9.2},"avg_price_pla":15.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PA","PC","PVA","PEEK","PEI","Wood","Metal Fill","Silk"],"notes":"Massive material selection. One of the oldest filament manufacturers. Budget-friendly. ABS and specialty materials are a strong point. Inconsistent dryness on arrival."},{"slug":"sunlu","name":"Sunlu","logo":"\ud83d\udfe1","founded":2013,"origin":"China","scores":{"overall":7.8,"print_quality":7.9,"consistency":7.8,"dryness":7.0,"spool_quality":7.5,"value":9.5,"material_range":8.5},"avg_price_pla":13.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PA","Silk","Wood","Metal Fill","PLA+"],"notes":"World's largest filament producer by volume. Very budget-friendly. Highly variable quality control. Popular for non-critical prints. Dry storage recommended before use."},{"slug":"inland","name":"Inland (Micro Center)","logo":"\ud83d\udd34","founded":2015,"origin":"USA","scores":{"overall":7.9,"print_quality":8.0,"consistency":8.1,"dryness":7.5,"spool_quality":7.8,"value":9.4,"material_range":7.5},"avg_price_pla":14.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PLA+","Silk"],"notes":"Micro Center house brand. Excellent value, especially in-store. Reliable PLA and PETG. Limited specialty materials. Good choice for high-volume printing on a budget."},{"slug":"kexcelled","name":"Kexcelled (Tinmorry)","logo":"\ud83d\udfe3","founded":2017,"origin":"China","scores":{"overall":8.3,"print_quality":8.6,"consistency":8.7,"dryness":8.0,"spool_quality":8.2,"value":8.8,"material_range":7.8},"avg_price_pla":18.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","PLA-CF","PETG-CF","Silk"],"notes":"Highly regarded in the community especially for PETG. Very tight diameter tolerances. Excellent print quality for the price."},{"slug":"elegoo","name":"Elegoo Filament","logo":"\ud83d\udfe4","founded":2015,"origin":"China","scores":{"overall":7.7,"print_quality":7.9,"consistency":7.8,"dryness":7.4,"spool_quality":7.6,"value":9.1,"material_range":7.2},"avg_price_pla":15.99,"rfid":false,"spool_material":"Plastic","materials":["PLA","PETG","ABS","ASA","TPU","Silk","PLA+"],"notes":"Solid budget option, especially for Elegoo printer owners. Good PLA quality. Limited high-performance options. Better known for resin than FDM filament."}]};
+const FS = {search:'', sort:'overall', features:{}, filtered:[]};
+
+const PREMIUM_MATS = ['PC','PA','PEEK','PEI','PPS','PLA-CF','PETG-CF','PA-CF','PPS-CF'];
+
+function applyFilFilters(){
+  let list = FDATA.brands.slice();
+  const q = document.getElementById('filSearch').value.toLowerCase();
+  if(q) list = list.filter(b => b.name.toLowerCase().includes(q));
+  if(FS.features.rfid) list = list.filter(b => b.rfid);
+  if(FS.features.eco_spool) list = list.filter(b => b.spool_material === 'Cardboard');
+  if(FS.sort === 'price_asc') list.sort((a,b) => a.avg_price_pla - b.avg_price_pla);
+  else list.sort((a,b) => (b.scores[FS.sort]||0) - (a.scores[FS.sort]||0));
+  FS.filtered = list;
+  renderFilCards();
+  document.getElementById('filResCount').textContent = 'Showing ' + list.length + ' brands';
+  const hasF = q || Object.values(FS.features).some(Boolean);
+  document.getElementById('filClearBtn').style.display = hasF ? 'inline' : 'none';
+}
+
+function setFilSort(k, l){
+  FS.sort = k;
+  document.getElementById('ddFilSortLbl').textContent = 'Sort: ' + l;
+  document.querySelectorAll('#ddFilSortMenu .dd-item').forEach(el => {
+    const s = el.dataset.fsort === k;
+    el.classList.toggle('sel', s);
+    el.innerHTML = s ? el.textContent.replace(' ✓','') + ' <span>✓</span>' : el.textContent.replace(' ✓','');
+  });
+  closeAllDd(); applyFilFilters();
+}
+
+function toggleFilFeat(k){
+  FS.features[k] = !FS.features[k];
+  document.getElementById('filfeat-'+k).classList.toggle('on', FS.features[k]);
+  const any = Object.values(FS.features).some(Boolean);
+  document.getElementById('filFeatDot').style.display = any ? 'block' : 'none';
+  applyFilFilters();
+}
+
+function clearFilFilters(){
+  FS.search=''; FS.sort='overall'; FS.features={};
+  document.getElementById('filSearch').value='';
+  document.getElementById('ddFilSortLbl').textContent='Sort: Overall';
+  document.querySelectorAll('[id^="filfeat-"]').forEach(r=>r.classList.remove('on'));
+  applyFilFilters();
+}
+
+function renderFilCards(){
+  const container = document.getElementById('filList');
+  if(!FS.filtered.length){ container.innerHTML = '<div class="empty-state"><div class="empty-ico">🧵</div><div class="empty-title">No brands found</div></div>'; return; }
+  container.innerHTML = FS.filtered.map((b,i) => {
+    const rank = i+1, top = rank<=3;
+    const matTags = b.materials.map(m => `<span class="mat-tag${PREMIUM_MATS.includes(m)?' premium':''}">${m}</span>`).join('');
+    return `
+    <div class="fil-card${top?' top3':''}" onclick="openFilDetail('${b.slug}')">
+      <div class="fil-grid">
+        <div class="fil-rank">${rank}</div>
+        <div class="fil-logo">${b.logo}</div>
+        <div class="fil-info">
+          <div class="fil-name">${b.name}</div>
+          <div class="fil-meta">
+            <span class="fil-origin">🌍 ${b.origin}</span>
+            <span class="fil-rfid ${b.rfid?'yes':'no'}">${b.rfid?'📡 RFID':'No RFID'}</span>
+            <span class="fil-spool">${b.spool_material==='Cardboard'?'♻️':'🪣'} ${b.spool_material} Spool</span>
+          </div>
+          <div class="fil-mats">${matTags}</div>
+          <div class="fil-sbars">
+            ${['print_quality','consistency','dryness','spool_quality','value','material_range'].map(k=>`
+            <div class="sbar">
+              <div class="sb-lbl">${k==='print_quality'?'Quality':k==='material_range'?'Range':k==='spool_quality'?'Spool':cap(k)}</div>
+              <div class="sb-track"><div class="sb-fill" style="width:${b.scores[k]*10}%;background:${sc(b.scores[k])}"></div></div>
+              <div class="sb-val">${b.scores[k].toFixed(1)}</div>
+            </div>`).join('')}
+          </div>
+        </div>
+        <div class="fil-act">
+          <div class="fil-score-box">
+            <div class="score-val">${b.scores.overall.toFixed(1)}</div>
+            <div class="score-lbl">Score</div>
+          </div>
+          <div class="fil-price">PLA from<br><span>$${b.avg_price_pla.toFixed(2)}</span></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openFilDetail(slug){
+  const b = FDATA.brands.find(x => x.slug === slug); if(!b) return;
+  const matTags = b.materials.map(m => `<span class="mat-tag${PREMIUM_MATS.includes(m)?' premium':''}">${m}</span>`).join('');
+  document.getElementById('detailTitle').textContent = b.name + ' Filament';
+  document.getElementById('detailBody').innerHTML = `
+    <div class="dhero">
+      <div class="dimg" style="font-size:48px;background:var(--bg3)">${b.logo}</div>
+      <div class="dmeta">
+        <div class="dname">${b.name}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0">
+          <span class="fil-origin">🌍 ${b.origin}</span>
+          <span class="fil-rfid ${b.rfid?'yes':'no'}">${b.rfid?'📡 RFID Tags':'No RFID'}</span>
+          <span class="fil-spool">${b.spool_material==='Cardboard'?'♻️':'🪣'} ${b.spool_material} Spool</span>
+          <span class="fil-origin">Est. ${b.founded}</span>
+        </div>
+        <div class="dscore-row">
+          <div><div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px">Overall</div><div class="dbig-score">${b.scores.overall.toFixed(1)}</div></div>
+          <div><div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px">PLA from</div><div class="dbig-price">$${b.avg_price_pla}</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="msec"><div class="msec-title">Scores</div><div class="scores-grid">
+      ${Object.entries(b.scores).map(([k,v])=>`<div class="stile"><div class="st-lbl">${cap(k)}</div><div class="st-bar"><div class="st-fill" style="width:${v*10}%;background:${sc(v)}"></div></div><div class="st-val">${v.toFixed(1)}</div></div>`).join('')}
+    </div></div>
+    <div class="msec"><div class="msec-title">Materials Supported</div><div class="mat-grid">${matTags}</div></div>
+    <div class="msec"><div class="msec-title">Notes</div><div class="notes-box">${b.notes}</div></div>
+  `;
+  document.getElementById('detailModal').classList.add('open');
+}
+
+applyFilFilters();
 
 </script>
 </body>
