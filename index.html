@@ -422,11 +422,7 @@ const S={search:'',brand:'All',sort:'overall',price:'all',features:{},filtered:[
 let cmpSlots=[null,null,null,null],pickerIdx=0;
 
 
-(function(){
-  const t=localStorage.getItem('3dr-theme')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-  document.getElementById('themeBtn').textContent=t==='dark'?'🌙':'☀️';
-})();
+;
 
 function showPage(p){
   document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
