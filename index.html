@@ -1,324 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3DRanker — Find Your Perfect 3D Printer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    :root{
-      --bg:#f7f8fc;--bg-card:#fff;--bg-sub:#f1f3f9;
-      --border:#e4e7f0;--focus:#6366f1;
-      --t1:#0f1117;--t2:#4b5563;--t3:#9ca3af;
-      --ind:#6366f1;--ind-d:#4f46e5;--ind-l:#eef2ff;
-      --grad-brand:linear-gradient(135deg,#6366f1,#8b5cf6);
-      --grad-hero:linear-gradient(135deg,#1e1b4b 0%,#312e81 40%,#4c1d95 100%);
-      --grad-g:linear-gradient(90deg,#10b981,#34d399);
-      --grad-a:linear-gradient(90deg,#f59e0b,#fbbf24);
-      --grad-r:linear-gradient(90deg,#f43f5e,#fb7185);
-      --sh-sm:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
-      --sh-md:0 4px 12px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
-      --sh-lg:0 12px 32px rgba(0,0,0,.12),0 4px 8px rgba(0,0,0,.06);
-      --sh-xl:0 24px 48px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.08);
-      --sh-b:0 8px 24px rgba(99,102,241,.35);
-      --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;--r-pill:999px;
-      --max-w:1200px;
-    }
-    body{background:var(--bg);color:var(--t1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3DRanker — Best 3D Printers Ranked</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:       #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dim:   #a07830;
+  --gold-pale:  #f5e9c8;
+  --bg:         #111110;
+  --bg2:        #1a1917;
+  --bg3:        #222120;
+  --bg4:        #2c2b29;
+  --border:     #333230;
+  --border2:    #3d3c3a;
+  --t1:         #f0ece4;
+  --t2:         #a09890;
+  --t3:         #6b6560;
+  --pastel-green:  #b8d4b0;
+  --pastel-amber:  #d4c08c;
+  --pastel-red:    #d4a0a0;
+  --pastel-blue:   #a0b8d4;
+  --pastel-purple: #c0b0d4;
+  --max-w: 1200px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+  --shadow: 0 4px 24px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
+  --grad-gold: linear-gradient(135deg, #c9a84c, #e8c97a);
+  --grad-green: linear-gradient(90deg, #6dbb6d, #a0d4a0);
+  --grad-amber: linear-gradient(90deg, #c9a84c, #e8c97a);
+  --grad-red:   linear-gradient(90deg, #c46060, #d48080);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--t1); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
 
-    /* NAV */
-    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .nav-logo{font-size:18px;font-weight:800;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px;text-decoration:none}
-    .nav-tag{font-size:13px;color:var(--t3);display:none}
-    @media(min-width:600px){.nav-tag{display:block}}
-    .nav-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:var(--ind-l);color:var(--ind-d);border-radius:var(--r-pill);font-size:12px;font-weight:600;white-space:nowrap}
+/* ── NAV ─────────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(17,17,16,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center; gap: 32px;
+  padding: 0 24px; height: 56px;
+}
+.nav-logo {
+  font-size: 18px; font-weight: 800; letter-spacing: -.5px;
+  background: var(--grad-gold);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; text-decoration: none; white-space: nowrap;
+}
+.nav-tabs { display: flex; gap: 4px; }
+.nav-tab {
+  padding: 6px 16px; border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; border: none; background: none;
+  color: var(--t2); transition: all .15s;
+}
+.nav-tab:hover { color: var(--t1); background: var(--bg3); }
+.nav-tab.active { background: var(--bg4); color: var(--gold-light); }
+.nav-spacer { flex: 1; }
+.nav-count {
+  font-size: 12px; color: var(--t3); font-weight: 500;
+}
 
-    /* HERO */
-    .hero{background:var(--grad-hero);padding:64px 24px 56px;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 120%,rgba(99,102,241,.3),transparent 60%),radial-gradient(ellipse 40% 60% at 90% -10%,rgba(139,92,246,.25),transparent 55%);pointer-events:none}
-    .hero-inner{position:relative;max-width:var(--max-w);margin:0 auto}
-    .hero-eye{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-pill);font-size:12px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
-    .hero-title{font-size:clamp(28px,5vw,52px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:16px}
-    .hero-title span{background:linear-gradient(135deg,#a5b4fc,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero-sub{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,.75);max-width:520px;margin-bottom:32px}
-    .hero-stats{display:flex;gap:24px;flex-wrap:wrap}
-    .hero-stat{display:flex;flex-direction:column;gap:2px}
-    .hero-stat-n{font-size:22px;font-weight:800;color:#fff;line-height:1}
-    .hero-stat-l{font-size:12px;color:rgba(255,255,255,.6);font-weight:500}
-    .hero-stat-div{width:1px;background:rgba(255,255,255,.2);align-self:stretch}
+/* ── PAGES ────────────────────────────────────────────── */
+.page { display: none; }
+.page.active { display: block; }
 
-    /* MAIN */
-    .main{max-width:var(--max-w);margin:0 auto;padding:32px 24px}
+/* ── RANKINGS PAGE ───────────────────────────────────── */
+.rankings-layout {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 24px 24px 80px;
+}
 
-    /* CONTROLS */
-    .ctrl-panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-xl);padding:20px 24px;margin-bottom:24px;box-shadow:var(--sh-sm)}
-    .ctrl-top{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-    .srch-wrap{flex:1;min-width:200px;position:relative;display:flex;align-items:center}
-    .srch-ico{position:absolute;left:14px;color:var(--t3);pointer-events:none;font-size:16px}
-    .srch-inp{width:100%;padding:10px 14px 10px 40px;background:var(--bg-sub);border:1.5px solid transparent;border-radius:var(--r-md);font-family:inherit;font-size:14px;color:var(--t1);outline:none;transition:border-color .2s,box-shadow .2s}
-    .srch-inp::placeholder{color:var(--t3)}
-    .srch-inp:focus{border-color:var(--focus);box-shadow:0 0 0 3px rgba(99,102,241,.12);background:#fff}
-    .ctrl-row{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-    .ctrl-grp{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-    .ctrl-lbl{font-size:12px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;white-space:nowrap;margin-right:2px}
-    .seg-btn{padding:6px 14px;border:1.5px solid var(--border);background:transparent;color:var(--t2);border-radius:var(--r-pill);font-size:13px;font-weight:500;cursor:pointer;transition:all .18s;white-space:nowrap;font-family:inherit}
-    .seg-btn:hover{border-color:var(--ind);color:var(--ind)}
-    .seg-btn.active{background:var(--grad-brand);border-color:transparent;color:#fff;box-shadow:var(--sh-b)}
-    .div-v{width:1px;height:20px;background:var(--border)}
-    .brand-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+/* Controls bar */
+.controls {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  align-items: center; margin-bottom: 20px;
+}
+.search-wrap {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 0 14px;
+  flex: 1; min-width: 200px; max-width: 320px;
+  transition: border-color .15s;
+}
+.search-wrap:focus-within { border-color: var(--gold-dim); }
+.search-icon { color: var(--t3); font-size: 14px; flex-shrink: 0; }
+.search-inp {
+  background: none; border: none; outline: none;
+  color: var(--t1); font-family: inherit; font-size: 13px;
+  width: 100%; padding: 9px 0;
+}
+.search-inp::placeholder { color: var(--t3); }
 
-    /* RESULTS */
-    .res-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-    .res-cnt{font-size:13px;color:var(--t3);font-weight:500}
-    .card-list{display:flex;flex-direction:column;gap:12px}
+/* Dropdowns */
+.dd-wrap { position: relative; }
+.dd-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  color: var(--t2); font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap; transition: all .15s;
+  font-family: inherit;
+}
+.dd-btn:hover, .dd-btn.open { border-color: var(--gold-dim); color: var(--t1); }
+.dd-btn .arrow { font-size: 10px; transition: transform .2s; }
+.dd-btn.open .arrow { transform: rotate(180deg); }
+.dd-btn .active-indicator {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); display: none;
+}
+.dd-btn.has-value .active-indicator { display: block; }
+.dd-menu {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+  min-width: 180px; z-index: 100; overflow: hidden;
+  display: none;
+}
+.dd-menu.open { display: block; }
+.dd-section-label {
+  padding: 10px 14px 4px; font-size: 10px;
+  font-weight: 700; color: var(--t3);
+  text-transform: uppercase; letter-spacing: .6px;
+}
+.dd-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 14px; font-size: 13px; color: var(--t2);
+  cursor: pointer; transition: background .1s;
+}
+.dd-item:hover { background: var(--bg3); color: var(--t1); }
+.dd-item.selected { color: var(--gold-light); font-weight: 600; }
+.dd-item .check { color: var(--gold); font-size: 12px; }
+.dd-divider { height: 1px; background: var(--border); margin: 4px 0; }
 
-    /* CARD */
-    .pcard{background:var(--bg-card);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:20px;display:grid;grid-template-columns:52px 88px 1fr auto;gap:16px;align-items:center;box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s,border-color .2s}
-    .pcard:hover{transform:translateY(-2px);box-shadow:var(--sh-md);border-color:var(--ind)}
-    .rank-col{display:flex;flex-direction:column;align-items:center;gap:8px}
-    .rank-n{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--r-md);font-size:14px;font-weight:800;background:var(--bg-sub);color:var(--t2)}
-    .rank-n.top{background:var(--grad-brand);color:#fff;box-shadow:0 4px 12px rgba(99,102,241,.3)}
-    .cmp-cb{width:18px;height:18px;accent-color:var(--ind);cursor:pointer}
-    .img-col{width:88px;height:88px;background:linear-gradient(135deg,#f1f3f9,#eef0fa);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;cursor:pointer;transition:border-color .2s}
-    .img-col:hover{border-color:var(--ind)}
-    .img-col img{max-width:100%;max-height:100%;object-fit:contain;padding:6px}
-    .info-col{display:flex;flex-direction:column;gap:8px;min-width:0}
-    .card-tr{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-    .pname{font-size:16px;font-weight:700;color:var(--t1);cursor:pointer;transition:color .15s}
-    .pname:hover{color:var(--ind)}
-    .btag{display:inline-flex;align-items:center;padding:2px 9px;border-radius:var(--r-pill);font-size:11px;font-weight:700;white-space:nowrap}
-    .bt-bambu-lab{background:#dcfce7;color:#15803d}
-    .bt-prusa-research{background:#ffedd5;color:#c2410c}
-    .bt-creality{background:#dbeafe;color:#1d4ed8}
-    .bt-elegoo{background:#f3e8ff;color:#7e22ce}
-    .bt-anycubic{background:#fef3c7;color:#b45309}
-    .bt-flashforge{background:#ffe4e6;color:#be123c}
-    .bt-snapmaker{background:#d1fae5;color:#065f46}
-    .bt-ultimaker{background:#cffafe;color:#0e7490}
-    .bt-raise3d{background:#e0e7ff;color:#3730a3}
-    .bt-artillery{background:#fce7f3;color:#9d174d}
-    .bt-sovol{background:#f3f4f6;color:#374151}
-    .bt-voxelab{background:#f0fdf4;color:#166534}
-    .bt-default{background:#f3f4f6;color:#374151}
-    .specs-row{display:flex;gap:8px;flex-wrap:wrap}
-    .schip{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;background:var(--bg-sub);border:1px solid var(--border);border-radius:var(--r-sm);font-size:12px;color:var(--t2);font-weight:500}
-    .mini-scores{display:flex;gap:16px;flex-wrap:wrap}
-    .ms{display:flex;flex-direction:column;gap:3px;min-width:52px}
-    .ms-l{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.4px}
-    .ms-bw{height:5px;background:var(--border);border-radius:var(--r-pill);overflow:hidden}
-    .ms-bf{height:100%;border-radius:var(--r-pill)}
-    .ms-v{font-size:11px;font-weight:700;color:var(--t2)}
-    .act-col{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
-    .score-box{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 14px;background:var(--ind-l);border-radius:var(--r-md);border:1px solid rgba(99,102,241,.2)}
-    .score-n{font-size:22px;font-weight:800;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-    .score-l{font-size:10px;font-weight:700;color:var(--ind);text-transform:uppercase;letter-spacing:.4px}
-    .ptag{font-size:17px;font-weight:800;color:var(--t1);letter-spacing:-.3px}
-    .pcat{font-size:11px;font-weight:600;padding:2px 8px;border-radius:var(--r-pill)}
-    .pc-budget{background:#dcfce7;color:#15803d}
-    .pc-mid{background:#dbeafe;color:#1d4ed8}
-    .pc-premium{background:#f3e8ff;color:#7e22ce}
-    .card-btns{display:flex;gap:8px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;border-radius:var(--r-md);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:none;transition:all .18s;border:none;white-space:nowrap}
-    .btn-p{background:var(--grad-brand);color:#fff;box-shadow:0 4px 12px rgba(99,102,241,.25)}
-    .btn-p:hover{box-shadow:var(--sh-b);transform:translateY(-1px)}
-    .btn-g{background:var(--bg-sub);color:var(--ind);border:1.5px solid var(--border)}
-    .btn-g:hover{border-color:var(--ind);background:var(--ind-l)}
-    .btn:disabled,.btn.off{background:#e5e7eb;color:var(--t3);box-shadow:none;cursor:not-allowed;transform:none}
+/* Feature filters */
+.feature-dd-menu { min-width: 240px; }
+.feat-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 14px; cursor: pointer; transition: background .1s;
+}
+.feat-row:hover { background: var(--bg3); }
+.feat-row-left { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--t1); }
+.feat-icon { font-size: 15px; width: 20px; text-align: center; }
+.feat-toggle {
+  width: 32px; height: 18px; background: var(--bg4);
+  border-radius: var(--r-pill); border: 1px solid var(--border2);
+  position: relative; transition: background .2s;
+  flex-shrink: 0;
+}
+.feat-toggle::after {
+  content: ''; position: absolute;
+  width: 12px; height: 12px; background: var(--t3);
+  border-radius: 50%; top: 2px; left: 2px;
+  transition: transform .2s, background .2s;
+}
+.feat-row.on .feat-toggle { background: var(--gold-dim); border-color: var(--gold); }
+.feat-row.on .feat-toggle::after { transform: translateX(14px); background: var(--gold-light); }
 
-    /* COMPARE BAR */
-    .cmp-bar{position:fixed;bottom:0;left:0;right:0;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);z-index:300;background:#fff;border-top:2px solid var(--ind);box-shadow:0 -8px 32px rgba(0,0,0,.12);padding:16px 24px}
-    .cmp-bar.show{transform:translateY(0)}
-    .cmp-bar-in{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .cmp-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--grad-brand);color:#fff;border-radius:var(--r-pill);font-size:14px;font-weight:700}
-    .cmp-names{font-size:13px;color:var(--t2)}
-    .cmp-bar-r{display:flex;gap:8px}
+/* Results header */
+.results-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.result-count { font-size: 12px; color: var(--t3); font-weight: 500; }
+.clear-btn {
+  font-size: 12px; color: var(--gold-dim); cursor: pointer;
+  background: none; border: none; font-family: inherit;
+  display: none;
+}
+.clear-btn.show { display: inline; }
 
-    /* MODALS */
-    .moverlay{position:fixed;inset:0;background:rgba(15,17,23,.6);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;z-index:1000;padding:24px 16px;overflow-y:auto}
-    .moverlay.open{display:flex}
-    .mbox{background:var(--bg-card);border-radius:var(--r-xl);width:100%;max-width:820px;position:relative;box-shadow:var(--sh-xl);margin:auto;animation:minIn .25s cubic-bezier(.16,1,.3,1)}
-    @keyframes minIn{from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:none}}
-    .mhdr{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
-    .mtitle{font-size:18px;font-weight:700}
-    .mclose{width:36px;height:36px;border-radius:var(--r-md);border:1.5px solid var(--border);background:transparent;cursor:pointer;font-size:18px;color:var(--t2);display:flex;align-items:center;justify-content:center;transition:background .15s;font-family:inherit}
-    .mclose:hover{background:var(--bg-sub)}
-    .mbody{padding:24px}
+/* ── PRINTER CARD ────────────────────────────────────── */
+.card-list { display: flex; flex-direction: column; gap: 10px; }
 
-    /* DETAIL */
-    .d-hero{display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap}
-    .d-img{width:160px;height:160px;background:var(--bg-sub);border-radius:var(--r-lg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
-    .d-img img{max-width:100%;max-height:100%;object-fit:contain;padding:10px}
-    .d-meta{flex:1}
-    .d-name{font-size:22px;font-weight:800;margin-bottom:8px}
-    .d-sp{display:flex;gap:16px;align-items:center;margin:16px 0;flex-wrap:wrap}
-    .big-s{font-size:36px;font-weight:900;background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-    .big-sl{font-size:12px;color:var(--t3);font-weight:600;margin-top:2px}
-    .big-p{font-size:28px;font-weight:800;color:var(--t1)}
-    .d-acts{display:flex;gap:8px;flex-wrap:wrap}
-    .msec{margin-bottom:24px}
-    .msec-t{font-size:13px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px}
-    .sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
-    .stile{padding:12px 16px;background:var(--bg-sub);border-radius:var(--r-md);border:1px solid var(--border)}
-    .stile-l{font-size:11px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
-    .stile-bw{height:4px;background:var(--border);border-radius:var(--r-pill);overflow:hidden;margin-bottom:4px}
-    .stile-bf{height:100%;border-radius:var(--r-pill)}
-    .stile-v{font-size:16px;font-weight:800;color:var(--t1)}
-    .spg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-    .spitem{padding:12px 16px;background:var(--bg-sub);border-radius:var(--r-md);border:1px solid var(--border)}
-    .spitem-l{font-size:11px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
-    .spitem-v{font-size:14px;font-weight:700;color:var(--t1)}
+.pcard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 52px 88px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  cursor: pointer;
+  position: relative;
+}
+.pcard:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 32px rgba(0,0,0,.5);
+}
+.pcard.top3 { border-color: rgba(201,168,76,.3); }
+.pcard.top3:hover { border-color: var(--gold); }
 
-    /* COMPARE TABLE */
-    .cg{display:grid;grid-template-columns:140px 1fr 1fr;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
-    .cg-head{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px;background:var(--bg-sub);border-bottom:2px solid var(--border)}
-    .cg-head.lbl{background:transparent;border-right:1px solid var(--border);font-size:12px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;justify-content:flex-end;padding-bottom:12px}
-    .cg-img{width:72px;height:72px;background:var(--bg-card);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .cg-img img{max-width:100%;max-height:100%;object-fit:contain;padding:6px}
-    .cg-name{font-size:13px;font-weight:700;text-align:center}
-    .cg-price{font-size:16px;font-weight:800}
-    .cg-cell{padding:10px 16px;font-size:14px;border-bottom:1px solid var(--border);display:flex;align-items:center}
-    .cg-cell.lbl{font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.3px;border-right:1px solid var(--border)}
-    .cg-cell.win{background:#f0fdf4;color:#15803d;font-weight:700}
-    .last-row .cg-cell{border-bottom:none}
+/* Rank col */
+.rank-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.rank-num {
+  font-size: 20px; font-weight: 800; line-height: 1;
+  color: var(--t3);
+}
+.pcard.top3 .rank-num {
+  background: var(--grad-gold);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.rank-crown { font-size: 14px; display: none; }
+.pcard.rank-1 .rank-crown { display: block; }
+.cmp-cb {
+  width: 16px; height: 16px;
+  accent-color: var(--gold); cursor: pointer;
+}
 
-    /* EMPTY */
-    .empty{text-align:center;padding:64px 24px;color:var(--t3)}
-    .empty-ico{font-size:48px;margin-bottom:16px;opacity:.6}
-    .empty-t{font-size:18px;font-weight:700;color:var(--t2);margin-bottom:8px}
+/* Image col */
+.img-col {
+  width: 88px; height: 88px;
+  background: var(--bg3); border-radius: var(--r-md);
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.img-col img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 8px; }
 
-    /* FOOTER */
-    footer{border-top:1px solid var(--border);padding:32px 24px;margin-top:32px;text-align:center;color:var(--t3);font-size:13px}
+/* Info col */
+.info-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.printer-name {
+  font-size: 15px; font-weight: 700; color: var(--t1);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.brand-tag {
+  padding: 2px 8px; border-radius: var(--r-pill);
+  font-size: 11px; font-weight: 700; white-space: nowrap;
+  border: 1px solid transparent;
+}
+.bt-bambu-lab    { background: rgba(109,187,109,.15); color: var(--pastel-green); border-color: rgba(109,187,109,.25); }
+.bt-prusa        { background: rgba(212,192,140,.15); color: var(--pastel-amber); border-color: rgba(212,192,140,.25); }
+.bt-creality     { background: rgba(160,184,212,.15); color: var(--pastel-blue);  border-color: rgba(160,184,212,.25); }
+.bt-elegoo       { background: rgba(192,176,212,.15); color: var(--pastel-purple);border-color: rgba(192,176,212,.25); }
+.bt-anycubic     { background: rgba(212,192,140,.12); color: #c8b06e;             border-color: rgba(212,192,140,.2); }
+.bt-flashforge   { background: rgba(212,160,160,.15); color: var(--pastel-red);   border-color: rgba(212,160,160,.25); }
+.bt-snapmaker    { background: rgba(109,187,109,.12); color: #8ec88e;             border-color: rgba(109,187,109,.2); }
+.bt-ultimaker    { background: rgba(160,184,212,.12); color: #8ab0cc;             border-color: rgba(160,184,212,.2); }
+.bt-raise3d      { background: rgba(192,176,212,.12); color: #b0a0cc;             border-color: rgba(192,176,212,.2); }
+.bt-artillery    { background: rgba(212,160,160,.12); color: #c09090;             border-color: rgba(212,160,160,.2); }
+.bt-sovol        { background: rgba(160,160,160,.1);  color: #a0a0a0;             border-color: rgba(160,160,160,.2); }
+.bt-voxelab      { background: rgba(160,160,160,.1);  color: #b0a888;             border-color: rgba(160,160,160,.2); }
+.bt-default      { background: var(--bg4); color: var(--t2); }
 
-    .hidden{display:none!important}
-    @media(max-width:860px){
-      .pcard{grid-template-columns:44px 72px 1fr;grid-template-rows:auto auto}
-      .act-col{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap;justify-content:flex-start;gap:12px}
-    }
-    @media(max-width:600px){
-      .pcard{grid-template-columns:44px 1fr;padding:16px}
-      .img-col{display:none}
-      .cg{grid-template-columns:90px 1fr 1fr}
-      .hero{padding:32px 16px}
-    }
-  </style>
+/* Spec chips row */
+.spec-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.spec-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: var(--r-sm); font-size: 11px; color: var(--t2);
+  font-weight: 500; white-space: nowrap;
+}
+.spec-chip .chip-icon { font-size: 12px; }
+
+/* Feature badges */
+.feat-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+.fbadge {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 7px; border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 700; white-space: nowrap;
+  background: var(--bg4); color: var(--t3);
+  border: 1px solid var(--border);
+}
+.fbadge.on { background: rgba(201,168,76,.12); color: var(--gold); border-color: rgba(201,168,76,.3); }
+.fbadge.on-green { background: rgba(109,187,109,.12); color: var(--pastel-green); border-color: rgba(109,187,109,.3); }
+
+/* Score mini bars */
+.score-mini-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.score-mini { display: flex; flex-direction: column; gap: 3px; min-width: 56px; }
+.sm-label { font-size: 10px; font-weight: 700; color: var(--t3); text-transform: uppercase; letter-spacing: .3px; }
+.sm-bar { height: 4px; background: var(--border); border-radius: var(--r-pill); overflow: hidden; }
+.sm-fill { height: 100%; border-radius: var(--r-pill); }
+.sm-val { font-size: 11px; font-weight: 700; color: var(--t2); }
+
+/* Actions col */
+.actions-col {
+  display: flex; flex-direction: column; align-items: flex-end;
+  gap: 8px; flex-shrink: 0;
+}
+.score-box {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 10px 14px;
+  background: rgba(201,168,76,.08);
+  border: 1px solid rgba(201,168,76,.2);
+  border-radius: var(--r-md);
+}
+.score-val {
+  font-size: 24px; font-weight: 800; line-height: 1;
+  background: var(--grad-gold);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.score-lbl { font-size: 10px; font-weight: 700; color: var(--gold-dim); text-transform: uppercase; letter-spacing: .4px; }
+.price-val { font-size: 16px; font-weight: 800; color: var(--t1); }
+.price-range-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 7px;
+  border-radius: var(--r-pill);
+}
+.pr-budget  { background: rgba(109,187,109,.15); color: var(--pastel-green); }
+.pr-mid     { background: rgba(201,168,76,.15);  color: var(--pastel-amber); }
+.pr-premium { background: rgba(192,176,212,.15); color: var(--pastel-purple); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px 16px; border-radius: var(--r-md);
+  font-size: 12px; font-weight: 700; font-family: inherit;
+  cursor: pointer; text-decoration: none; transition: all .15s;
+  border: none; white-space: nowrap;
+}
+.btn-gold {
+  background: var(--grad-gold); color: #1a1200;
+  box-shadow: 0 2px 12px rgba(201,168,76,.3);
+}
+.btn-gold:hover { box-shadow: 0 4px 20px rgba(201,168,76,.5); transform: translateY(-1px); }
+.btn-ghost {
+  background: var(--bg3); color: var(--t2);
+  border: 1px solid var(--border2);
+}
+.btn-ghost:hover { border-color: var(--gold-dim); color: var(--gold-light); }
+.btn:disabled { background: var(--bg4); color: var(--t3); cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* ── COMPARE BAR ──────────────────────────────────────── */
+.cmp-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+  z-index: 300;
+  background: var(--bg2);
+  border-top: 1px solid var(--gold-dim);
+  box-shadow: 0 -8px 40px rgba(0,0,0,.6);
+  padding: 14px 24px;
+}
+.cmp-bar.show { transform: translateY(0); }
+.cmp-bar-in { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.cmp-left { display: flex; align-items: center; gap: 12px; }
+.cmp-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; background: rgba(201,168,76,.15);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--r-pill); font-size: 13px; font-weight: 700; color: var(--gold-light);
+}
+.cmp-names { font-size: 12px; color: var(--t2); max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cmp-right { display: flex; gap: 8px; }
+
+/* ── MODALS ───────────────────────────────────────────── */
+.moverlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(6px);
+  display: none; align-items: flex-start;
+  justify-content: center; z-index: 500;
+  padding: 40px 16px; overflow-y: auto;
+}
+.moverlay.open { display: flex; }
+.mbox {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--r-xl); width: 100%;
+  max-width: 780px; position: relative;
+  box-shadow: var(--shadow-lg); margin: auto;
+  animation: mIn .22s cubic-bezier(.16,1,.3,1);
+}
+@keyframes mIn {
+  from { opacity: 0; transform: scale(.96) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.mhead {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 22px; border-bottom: 1px solid var(--border);
+}
+.mhead-title { font-size: 16px; font-weight: 700; color: var(--t1); }
+.mclose {
+  width: 32px; height: 32px; border-radius: var(--r-md);
+  border: 1px solid var(--border); background: var(--bg3);
+  color: var(--t2); cursor: pointer; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .15s;
+}
+.mclose:hover { border-color: var(--gold-dim); color: var(--gold-light); }
+.mbody { padding: 22px; }
+
+/* Detail modal */
+.detail-hero { display: flex; gap: 22px; margin-bottom: 22px; flex-wrap: wrap; }
+.detail-img {
+  width: 140px; height: 140px; flex-shrink: 0;
+  background: var(--bg3); border-radius: var(--r-lg);
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.detail-img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 12px; }
+.detail-meta { flex: 1; }
+.detail-name { font-size: 20px; font-weight: 800; color: var(--t1); margin-bottom: 8px; }
+.detail-score-row { display: flex; align-items: center; gap: 16px; margin: 12px 0; flex-wrap: wrap; }
+.detail-big-score {
+  font-size: 40px; font-weight: 900; line-height: 1;
+  background: var(--grad-gold);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.detail-big-price { font-size: 26px; font-weight: 800; color: var(--t1); }
+.detail-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+
+.msection { margin-bottom: 20px; }
+.msection-title {
+  font-size: 11px; font-weight: 700; color: var(--t3);
+  text-transform: uppercase; letter-spacing: .6px;
+  margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.scores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); gap: 8px; }
+.score-tile {
+  padding: 10px 12px; background: var(--bg3);
+  border-radius: var(--r-md); border: 1px solid var(--border);
+}
+.st-label { font-size: 10px; font-weight: 700; color: var(--t3); text-transform: uppercase; letter-spacing: .3px; margin-bottom: 4px; }
+.st-bar { height: 4px; background: var(--border); border-radius: var(--r-pill); overflow: hidden; margin-bottom: 4px; }
+.st-fill { height: 100%; border-radius: var(--r-pill); }
+.st-val { font-size: 16px; font-weight: 800; color: var(--t1); }
+.specs-grid2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 8px; }
+.spec-tile {
+  padding: 10px 12px; background: var(--bg3);
+  border-radius: var(--r-md); border: 1px solid var(--border);
+}
+.spt-label { font-size: 10px; font-weight: 700; color: var(--t3); text-transform: uppercase; letter-spacing: .3px; margin-bottom: 3px; }
+.spt-val { font-size: 13px; font-weight: 600; color: var(--t1); }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 8px; }
+.feat-tile {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 12px; border-radius: var(--r-md);
+  border: 1px solid var(--border); background: var(--bg3);
+}
+.feat-tile.yes { background: rgba(109,187,109,.08); border-color: rgba(109,187,109,.25); }
+.feat-tile.no  { opacity: .5; }
+.feat-tile-icon { font-size: 16px; }
+.feat-tile-text { font-size: 12px; font-weight: 600; color: var(--t2); }
+.feat-tile.yes .feat-tile-text { color: var(--pastel-green); }
+
+/* ── COMPARE PAGE ─────────────────────────────────────── */
+.compare-layout {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 24px 24px 80px;
+}
+.compare-header { margin-bottom: 20px; }
+.compare-header h2 { font-size: 20px; font-weight: 800; color: var(--t1); margin-bottom: 4px; }
+.compare-header p { font-size: 13px; color: var(--t2); }
+
+.compare-slots {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 12px; margin-bottom: 24px;
+}
+.compare-slot {
+  background: var(--bg2); border: 2px dashed var(--border2);
+  border-radius: var(--r-lg); padding: 20px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 10px; min-height: 160px; transition: border-color .15s;
+}
+.compare-slot.filled { border-style: solid; border-color: var(--gold-dim); }
+.compare-slot.empty { cursor: pointer; }
+.compare-slot.empty:hover { border-color: var(--t3); }
+.slot-img {
+  width: 80px; height: 80px; background: var(--bg3);
+  border-radius: var(--r-md); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.slot-img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 8px; }
+.slot-name { font-size: 13px; font-weight: 700; color: var(--t1); text-align: center; }
+.slot-price { font-size: 15px; font-weight: 800; color: var(--gold-light); }
+.slot-remove {
+  background: none; border: 1px solid var(--border2);
+  color: var(--t3); border-radius: var(--r-md);
+  padding: 4px 10px; cursor: pointer; font-size: 11px;
+  font-family: inherit; transition: all .15s;
+}
+.slot-remove:hover { border-color: var(--pastel-red); color: var(--pastel-red); }
+.slot-placeholder { color: var(--t3); font-size: 13px; text-align: center; }
+.slot-plus { font-size: 28px; color: var(--border2); }
+
+.cmp-table-wrap { overflow-x: auto; }
+.cmp-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--bg2); border-radius: var(--r-lg);
+  overflow: hidden; border: 1px solid var(--border);
+}
+.cmp-table th {
+  background: var(--bg3); padding: 12px 16px;
+  text-align: center; font-size: 12px; font-weight: 700;
+  color: var(--t2); border-bottom: 1px solid var(--border);
+}
+.cmp-table th.row-head { text-align: left; color: var(--t3); font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+.cmp-table td {
+  padding: 11px 16px; border-bottom: 1px solid var(--border);
+  text-align: center; font-size: 13px; color: var(--t2);
+}
+.cmp-table td.row-head {
+  text-align: left; font-weight: 600; color: var(--t3);
+  font-size: 12px; text-transform: uppercase; letter-spacing: .3px;
+  background: var(--bg3);
+}
+.cmp-table tr:last-child td { border-bottom: none; }
+.cmp-table td.winner {
+  background: rgba(109,187,109,.1); color: var(--pastel-green);
+  font-weight: 700;
+}
+.cmp-table td.loser { color: var(--t3); }
+.cmp-section-row td {
+  background: var(--bg3); font-size: 11px; font-weight: 700;
+  color: var(--t3); text-transform: uppercase; letter-spacing: .5px;
+  padding: 8px 16px; border-top: 1px solid var(--border);
+}
+.cmp-picker-modal .mbox { max-width: 900px; }
+.picker-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 8px; max-height: 60vh; overflow-y: auto;
+  padding-right: 4px;
+}
+.picker-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 12px;
+  cursor: pointer; transition: all .15s;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.picker-card:hover { border-color: var(--gold-dim); }
+.picker-card.selected { border-color: var(--gold); background: rgba(201,168,76,.08); }
+.picker-name { font-size: 12px; font-weight: 700; color: var(--t1); }
+.picker-price { font-size: 12px; color: var(--gold-light); font-weight: 600; }
+.picker-score { font-size: 11px; color: var(--t3); }
+
+/* ── EMPTY STATE ──────────────────────────────────────── */
+.empty-state { text-align: center; padding: 80px 24px; }
+.empty-icon { font-size: 48px; margin-bottom: 12px; opacity: .4; }
+.empty-title { font-size: 18px; font-weight: 700; color: var(--t2); margin-bottom: 6px; }
+.empty-sub { font-size: 13px; color: var(--t3); }
+
+/* ── FOOTER ───────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border); padding: 24px;
+  text-align: center; color: var(--t3); font-size: 12px;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 860px) {
+  .pcard { grid-template-columns: 44px 72px 1fr; grid-template-rows: auto auto; }
+  .actions-col { grid-column: 1/-1; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; }
+}
+@media (max-width: 600px) {
+  .pcard { grid-template-columns: 44px 1fr; padding: 12px 14px; }
+  .img-col { display: none; }
+  .controls { gap: 6px; }
+  .rankings-layout, .compare-layout { padding: 16px 14px 80px; }
+}
+.hidden { display: none !important; }
+</style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#">3DRanker</a>
-    <span class="nav-tag">Find your perfect 3D printer</span>
-    <span class="nav-badge">🖨️ 33 Printers</span>
+    <div class="nav-tabs">
+      <button class="nav-tab active" id="tabRankings" onclick="showPage('rankings')">🏆 Rankings</button>
+      <button class="nav-tab" id="tabCompare" onclick="showPage('compare')">⚖️ Compare</button>
+    </div>
+    <div class="nav-spacer"></div>
+    <span class="nav-count" id="navCount">33 printers</span>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eye">✦ 2026 Edition</div>
-    <h1 class="hero-title">The Best 3D Printers,<br><span>Ranked.</span></h1>
-    <p class="hero-sub">Expert scores across print quality, speed, reliability, and value — so you can buy with confidence.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-n">33</div><div class="hero-stat-l">Printers Ranked</div></div>
-      <div class="hero-stat-div"></div>
-      <div class="hero-stat"><div class="hero-stat-n">$189</div><div class="hero-stat-l">Starting From</div></div>
-      <div class="hero-stat-div"></div>
-      <div class="hero-stat"><div class="hero-stat-n">10</div><div class="hero-stat-l">Score Categories</div></div>
-      <div class="hero-stat-div"></div>
-      <div class="hero-stat"><div class="hero-stat-n">Jul 2026</div><div class="hero-stat-l">Last Updated</div></div>
-    </div>
-  </div>
-</section>
+<!-- ═══════════════════════════════════════════════════════
+     RANKINGS PAGE
+═══════════════════════════════════════════════════════ -->
+<div class="page active" id="pageRankings">
+<div class="rankings-layout">
 
-<main class="main">
-  <div class="ctrl-panel">
-    <div class="ctrl-top">
-      <div class="srch-wrap">
-        <span class="srch-ico">🔍</span>
-        <input type="text" id="searchInput" class="srch-inp" placeholder="Search printers, brands…">
+  <!-- Controls -->
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInp" class="search-inp" placeholder="Search printers or brands…">
+    </div>
+
+    <!-- Brand dropdown -->
+    <div class="dd-wrap" id="ddBrand">
+      <button class="dd-btn" onclick="toggleDd('ddBrand')">
+        <span id="ddBrandLabel">Brand</span>
+        <span class="active-indicator"></span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dd-menu" id="ddBrandMenu"></div>
+    </div>
+
+    <!-- Sort dropdown -->
+    <div class="dd-wrap" id="ddSort">
+      <button class="dd-btn" onclick="toggleDd('ddSort')">
+        <span id="ddSortLabel">Sort: Overall</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dd-menu" id="ddSortMenu">
+        <div class="dd-item selected" data-sort="overall" onclick="setSort('overall','Overall Score')">Overall Score <span class="check">✓</span></div>
+        <div class="dd-item" data-sort="print_quality" onclick="setSort('print_quality','Print Quality')">Print Quality</div>
+        <div class="dd-item" data-sort="speed" onclick="setSort('speed','Speed')">Speed</div>
+        <div class="dd-item" data-sort="ease_of_use" onclick="setSort('ease_of_use','Ease of Use')">Ease of Use</div>
+        <div class="dd-item" data-sort="reliability" onclick="setSort('reliability','Reliability')">Reliability</div>
+        <div class="dd-item" data-sort="value" onclick="setSort('value','Value')">Value for Money</div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" data-sort="price_asc" onclick="setSort('price_asc','Price ↑')">Price: Low to High</div>
+        <div class="dd-item" data-sort="price_desc" onclick="setSort('price_desc','Price ↓')">Price: High to Low</div>
       </div>
     </div>
-    <div class="ctrl-row">
-      <div class="ctrl-grp">
-        <span class="ctrl-lbl">Sort</span>
-        <div id="sortTabs" style="display:flex;gap:6px;flex-wrap:wrap"></div>
-      </div>
-      <div class="div-v"></div>
-      <div class="ctrl-grp">
-        <span class="ctrl-lbl">Price</span>
-        <div id="priceTabs" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+
+    <!-- Price dropdown -->
+    <div class="dd-wrap" id="ddPrice">
+      <button class="dd-btn" onclick="toggleDd('ddPrice')">
+        <span id="ddPriceLabel">Price</span>
+        <span class="active-indicator"></span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dd-menu" id="ddPriceMenu">
+        <div class="dd-item selected" data-price="all" onclick="setPrice('all','Price')">All Prices <span class="check">✓</span></div>
+        <div class="dd-item" data-price="budget" onclick="setPrice('budget','Under $300')">Budget — Under $300</div>
+        <div class="dd-item" data-price="mid" onclick="setPrice('mid','$300–$800')">Mid-range — $300–$800</div>
+        <div class="dd-item" data-price="premium" onclick="setPrice('premium','$800+')">Premium — $800+</div>
       </div>
     </div>
-    <div class="brand-row" id="brandFilters"></div>
+
+    <!-- Features dropdown -->
+    <div class="dd-wrap" id="ddFeatures">
+      <button class="dd-btn" onclick="toggleDd('ddFeatures')">
+        <span id="ddFeatLabel">Features</span>
+        <span class="active-indicator" id="featIndicator"></span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dd-menu feature-dd-menu" id="ddFeatMenu">
+        <div class="dd-section-label">Must Have</div>
+        <div class="feat-row" id="feat-open_source" onclick="toggleFeat('open_source')">
+          <div class="feat-row-left"><span class="feat-icon">🔓</span>Open Source</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-enclosure" onclick="toggleFeat('enclosure')">
+          <div class="feat-row-left"><span class="feat-icon">📦</span>Enclosed</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-direct_drive" onclick="toggleFeat('direct_drive')">
+          <div class="feat-row-left"><span class="feat-icon">⚙️</span>Direct Drive</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-multi_color" onclick="toggleFeat('multi_color')">
+          <div class="feat-row-left"><span class="feat-icon">🎨</span>Multi-Color</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="dd-section-label">Smart Features</div>
+        <div class="feat-row" id="feat-camera" onclick="toggleFeat('camera')">
+          <div class="feat-row-left"><span class="feat-icon">📷</span>Built-in Camera</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-ai_detection" onclick="toggleFeat('ai_detection')">
+          <div class="feat-row-left"><span class="feat-icon">🤖</span>AI Detection</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-air_filter" onclick="toggleFeat('air_filter')">
+          <div class="feat-row-left"><span class="feat-icon">💨</span>Air Filtration</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-silent_mode" onclick="toggleFeat('silent_mode')">
+          <div class="feat-row-left"><span class="feat-icon">🔇</span>Silent Mode</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="dd-section-label">Reliability</div>
+        <div class="feat-row" id="feat-filament_runout" onclick="toggleFeat('filament_runout')">
+          <div class="feat-row-left"><span class="feat-icon">🧵</span>Filament Runout</div>
+          <div class="feat-toggle"></div>
+        </div>
+        <div class="feat-row" id="feat-power_recovery" onclick="toggleFeat('power_recovery')">
+          <div class="feat-row-left"><span class="feat-icon">⚡</span>Power Recovery</div>
+          <div class="feat-toggle"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="res-hdr">
-    <span class="res-cnt" id="resultCount">Loading…</span>
+  <div class="results-header">
+    <span class="result-count" id="resultCount">Showing 33 printers</span>
+    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear filters</button>
   </div>
 
-  <div class="card-list" id="cardsContainer"></div>
-  <div id="noResults" class="empty hidden">
-    <div class="empty-ico">🔍</div>
-    <div class="empty-t">No printers found</div>
-    <div>Try adjusting your search or filters.</div>
+  <div class="card-list" id="cardList"></div>
+  <div id="emptyState" class="empty-state hidden">
+    <div class="empty-icon">🔍</div>
+    <div class="empty-title">No printers found</div>
+    <div class="empty-sub">Try adjusting your search or filters.</div>
   </div>
-</main>
 
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     COMPARE PAGE
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="pageCompare">
+<div class="compare-layout">
+  <div class="compare-header">
+    <h2>Compare Printers</h2>
+    <p>Select up to 4 printers to compare side by side. Click a slot to add a printer.</p>
+  </div>
+  <div class="compare-slots" id="compareSlots"></div>
+  <div id="compareTable"></div>
+</div>
+</div>
+
+<!-- COMPARE BAR (rankings page) -->
 <div class="cmp-bar" id="cmpBar">
   <div class="cmp-bar-in">
-    <div style="display:flex;align-items:center;gap:12px">
+    <div class="cmp-left">
       <div class="cmp-chip">⚖️ <span id="cmpCount">0</span> selected</div>
       <span class="cmp-names" id="cmpNames"></span>
     </div>
-    <div class="cmp-bar-r">
-      <button class="btn btn-g" onclick="clearCmp()">Clear</button>
-      <button class="btn btn-p" id="cmpOpenBtn">Compare →</button>
+    <div class="cmp-right">
+      <button class="btn btn-ghost" onclick="clearCmp()">Clear</button>
+      <button class="btn btn-gold" onclick="goToCompare()">Compare →</button>
     </div>
   </div>
 </div>
 
+<!-- DETAIL MODAL -->
 <div class="moverlay" id="detailModal" onclick="bgClose(event,'detailModal')">
   <div class="mbox">
-    <div class="mhdr">
-      <span class="mtitle" id="dTitle">Details</span>
+    <div class="mhead">
+      <span class="mhead-title" id="detailTitle">Printer Details</span>
       <button class="mclose" onclick="closeM('detailModal')">✕</button>
     </div>
-    <div class="mbody" id="dBody"></div>
+    <div class="mbody" id="detailBody"></div>
   </div>
 </div>
 
-<div class="moverlay" id="cmpModal" onclick="bgClose(event,'cmpModal')">
-  <div class="mbox" style="max-width:900px">
-    <div class="mhdr">
-      <span class="mtitle">Comparison</span>
-      <button class="mclose" onclick="closeM('cmpModal')">✕</button>
+<!-- PICKER MODAL (for compare page) -->
+<div class="moverlay cmp-picker-modal" id="pickerModal" onclick="bgClose(event,'pickerModal')">
+  <div class="mbox" style="max-width:860px">
+    <div class="mhead">
+      <span class="mhead-title">Select a Printer</span>
+      <button class="mclose" onclick="closeM('pickerModal')">✕</button>
     </div>
-    <div class="mbody" id="cmpBody"></div>
+    <div class="mbody">
+      <div class="search-wrap" style="max-width:100%;margin-bottom:14px">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="pickerSearch" class="search-inp" placeholder="Search…" oninput="renderPicker()">
+      </div>
+      <div class="picker-grid" id="pickerGrid"></div>
+    </div>
   </div>
 </div>
 
-<footer>3DRanker.com &nbsp;·&nbsp; Rankings updated regularly &nbsp;·&nbsp; Affiliate links help support this site</footer>
+<footer class="footer">
+  3DRanker.com &nbsp;·&nbsp; Rankings updated July 2026 &nbsp;·&nbsp; Affiliate links help support this site
+</footer>
 
 <script>
-const DATA = {"printers":[{"name":"Bambu Lab H2S","brand":"Bambu Lab","slug":"bambu-lab-h2s","image":"https://via.placeholder.com/100","price":1099,"price_range":"premium","buy_url":null,"scores":{"overall":8.81,"print_quality":9.4,"speed":8.7,"ease_of_use":8.3,"reliability":9.1,"value":6.2},"specs":{"build_volume":"340x320x340mm","nozzle_temp":"350\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (PMSM Servo)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"Yes","max_speed":"1000mm/s"}},{"name":"Bambu Lab P2S","brand":"Bambu Lab","slug":"bambu-lab-p2s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.75,"print_quality":9.2,"speed":9.0,"ease_of_use":8.6,"reliability":8.8,"value":7.8},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"500mm/s"}},{"name":"Bambu Lab H2D","brand":"Bambu Lab","slug":"bambu-lab-h2d","image":"https://via.placeholder.com/100","price":2199,"price_range":"premium","buy_url":null,"scores":{"overall":8.72,"print_quality":9.3,"speed":8.6,"ease_of_use":8.2,"reliability":9.0,"value":6.5},"specs":{"build_volume":"325x320x325mm","nozzle_temp":"350\u00b0C","bed_temp":"120\u00b0C","extruder":"Dual Direct Drive (PMSM Servo)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"Yes","max_speed":"1000mm/s"}},{"name":"Bambu Lab P1S","brand":"Bambu Lab","slug":"bambu-lab-p1s","image":"https://via.placeholder.com/100","price":649,"price_range":"mid","buy_url":null,"scores":{"overall":8.62,"print_quality":9.0,"speed":8.8,"ease_of_use":8.5,"reliability":8.6,"value":8.5},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"500mm/s"}},{"name":"Bambu Lab A1","brand":"Bambu Lab","slug":"bambu-lab-a1","image":"https://via.placeholder.com/100","price":299,"price_range":"budget","buy_url":null,"scores":{"overall":8.22,"print_quality":8.5,"speed":8.2,"ease_of_use":9.0,"reliability":8.2,"value":9.0},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300\u00b0C","bed_temp":"100\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (Auto)","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"No","max_speed":"500mm/s"}},{"name":"Bambu Lab A1 Mini","brand":"Bambu Lab","slug":"bambu-lab-a1-mini","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.88,"print_quality":8.0,"speed":7.8,"ease_of_use":9.0,"reliability":7.8,"value":9.5},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"300\u00b0C","bed_temp":"80\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (Auto)","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"No","max_speed":"500mm/s"}},{"name":"Prusa MK4S","brand":"Prusa Research","slug":"prusa-mk4s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.52,"print_quality":8.6,"speed":7.6,"ease_of_use":8.6,"reliability":9.6,"value":7.2},"specs":{"build_volume":"250x210x220mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (Nextruder)","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Optional","max_speed":"500mm/s"}},{"name":"Prusa Core One L","brand":"Prusa Research","slug":"prusa-core-one-l","image":"https://via.placeholder.com/100","price":1899,"price_range":"premium","buy_url":null,"scores":{"overall":8.47,"print_quality":9.0,"speed":8.0,"ease_of_use":7.8,"reliability":9.2,"value":5.8},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (Nextruder)","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Yes","max_speed":"600mm/s"}},{"name":"Prusa Core One+","brand":"Prusa Research","slug":"prusa-core-one-plus","image":"https://via.placeholder.com/100","price":1299,"price_range":"premium","buy_url":null,"scores":{"overall":8.43,"print_quality":8.8,"speed":7.8,"ease_of_use":8.0,"reliability":9.2,"value":6.5},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (Nextruder)","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Yes","max_speed":"600mm/s"}},{"name":"Prusa Original XL","brand":"Prusa Research","slug":"prusa-original-xl","image":"https://via.placeholder.com/100","price":2499,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":8.0,"ease_of_use":7.6,"reliability":9.0,"value":5.5},"specs":{"build_volume":"360x360x360mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Multi-tool Direct Drive","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Optional","max_speed":"500mm/s"}},{"name":"Prusa Mini+","brand":"Prusa Research","slug":"prusa-mini-plus","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.97,"print_quality":8.0,"speed":7.0,"ease_of_use":8.6,"reliability":9.0,"value":8.2},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"280\u00b0C","bed_temp":"100\u00b0C","extruder":"Bowden","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"200mm/s"}},{"name":"Ultimaker S5","brand":"Ultimaker","slug":"ultimaker-s5","image":"https://via.placeholder.com/100","price":4990,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":6.8,"ease_of_use":8.6,"reliability":9.2,"value":4.0},"specs":{"build_volume":"330x240x300mm","nozzle_temp":"280\u00b0C","bed_temp":"140\u00b0C","extruder":"Dual Bowden","auto_leveling":"Yes (Active)","filament_diameter":"2.85mm","connectivity":"Wi-Fi, Ethernet, USB","enclosure":"Yes","max_speed":"300mm/s"}},{"name":"Ultimaker S3","brand":"Ultimaker","slug":"ultimaker-s3","image":"https://via.placeholder.com/100","price":3499,"price_range":"premium","buy_url":null,"scores":{"overall":8.21,"print_quality":8.6,"speed":6.6,"ease_of_use":8.6,"reliability":9.0,"value":4.5},"specs":{"build_volume":"243x213x200mm","nozzle_temp":"280\u00b0C","bed_temp":"140\u00b0C","extruder":"Dual Bowden","auto_leveling":"Yes (Active)","filament_diameter":"2.85mm","connectivity":"Wi-Fi, Ethernet, USB","enclosure":"Yes","max_speed":"300mm/s"}},{"name":"Creality K1 Max","brand":"Creality","slug":"creality-k1-max","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":8.0,"print_quality":8.5,"speed":8.8,"ease_of_use":7.6,"reliability":7.6,"value":7.6},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"300\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (Auto)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"Yes","max_speed":"600mm/s"}},{"name":"Creality K2 Combo","brand":"Creality","slug":"creality-k2-combo","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":7.57,"print_quality":8.0,"speed":8.0,"ease_of_use":7.5,"reliability":7.2,"value":8.5},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"320\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"600mm/s"}},{"name":"Creality K2 Plus Combo","brand":"Creality","slug":"creality-k2-plus-combo","image":"https://via.placeholder.com/100","price":999,"price_range":"premium","buy_url":null,"scores":{"overall":7.74,"print_quality":8.3,"speed":8.3,"ease_of_use":7.5,"reliability":7.5,"value":7.5},"specs":{"build_volume":"400x400x400mm","nozzle_temp":"320\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"600mm/s"}},{"name":"Creality Ender 3 V3 SE","brand":"Creality","slug":"creality-ender-3-v3-se","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.31,"print_quality":7.6,"speed":7.2,"ease_of_use":7.6,"reliability":7.2,"value":9.5},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"260\u00b0C","bed_temp":"100\u00b0C","extruder":"Sprite Direct Drive","auto_leveling":"Yes (CR Touch)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"250mm/s"}},{"name":"Elegoo Neptune 4 Max","brand":"Elegoo","slug":"elegoo-neptune-4-max","image":"https://via.placeholder.com/100","price":279,"price_range":"budget","buy_url":null,"scores":{"overall":7.71,"print_quality":8.2,"speed":8.0,"ease_of_use":7.5,"reliability":7.8,"value":8.0},"specs":{"build_volume":"420x420x480mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (121-point)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"500mm/s"}},{"name":"Elegoo Neptune 3 Pro","brand":"Elegoo","slug":"elegoo-neptune-3-pro","image":"https://via.placeholder.com/100","price":229,"price_range":"budget","buy_url":null,"scores":{"overall":7.39,"print_quality":7.6,"speed":7.2,"ease_of_use":7.8,"reliability":7.5,"value":9.0},"specs":{"build_volume":"225x225x280mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (CR Touch)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"180mm/s"}},{"name":"Elegoo Centauri Carbon","brand":"Elegoo","slug":"elegoo-centauri-carbon","image":"https://via.placeholder.com/100","price":319,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.6,"ease_of_use":7.8,"reliability":7.6,"value":8.8},"specs":{"build_volume":"220x220x260mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"500mm/s"}},{"name":"Anycubic Kobra 2","brand":"Anycubic","slug":"anycubic-kobra-2","image":"https://via.placeholder.com/100","price":259,"price_range":"budget","buy_url":null,"scores":{"overall":7.41,"print_quality":7.6,"speed":7.8,"ease_of_use":7.8,"reliability":7.3,"value":9.0},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (LeviQ 2.0)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"300mm/s"}},{"name":"Anycubic Kobra X","brand":"Anycubic","slug":"anycubic-kobra-x","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.07,"print_quality":7.2,"speed":7.0,"ease_of_use":7.2,"reliability":7.0,"value":8.8},"specs":{"build_volume":"400x400x450mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (LeviQ 2.0)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"300mm/s"}},{"name":"Anycubic Kobra 3 Combo","brand":"Anycubic","slug":"anycubic-kobra-3-combo","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.35,"print_quality":7.5,"speed":7.8,"ease_of_use":7.4,"reliability":7.2,"value":9.2},"specs":{"build_volume":"250x250x260mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (LeviQ 2.0)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"300mm/s"}},{"name":"FlashForge Adventurer 5M Pro","brand":"FlashForge","slug":"flashforge-adventurer-5m-pro","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":8.03,"print_quality":8.2,"speed":8.0,"ease_of_use":8.6,"reliability":8.2,"value":8.0},"specs":{"build_volume":"220x220x220mm","nozzle_temp":"280\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive (Quick-swap)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB, LAN","enclosure":"Yes","max_speed":"600mm/s"}},{"name":"FlashForge Adventurer 5M","brand":"FlashForge","slug":"flashforge-adventurer-5m","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.84,"print_quality":8.0,"speed":8.0,"ease_of_use":8.5,"reliability":8.0,"value":8.5},"specs":{"build_volume":"220x220x220mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive (Quick-swap)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB, LAN","enclosure":"No","max_speed":"600mm/s"}},{"name":"Snapmaker J1s IDEX","brand":"Snapmaker","slug":"snapmaker-j1s-idex","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.8,"value":6.5},"specs":{"build_volume":"300x200x200mm","nozzle_temp":"300\u00b0C","bed_temp":"100\u00b0C","extruder":"Dual Direct Drive (IDEX)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"350mm/s"}},{"name":"Snapmaker Artisan 3-in-1","brand":"Snapmaker","slug":"snapmaker-artisan-3-in-1","image":"https://via.placeholder.com/100","price":1999,"price_range":"premium","buy_url":null,"scores":{"overall":7.24,"print_quality":7.6,"speed":6.6,"ease_of_use":7.0,"reliability":7.6,"value":5.5},"specs":{"build_volume":"400x400x400mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Dual Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"Optional","max_speed":"300mm/s"}},{"name":"Snapmaker U1","brand":"Snapmaker","slug":"snapmaker-u1","image":"https://via.placeholder.com/100","price":899,"price_range":"premium","buy_url":null,"scores":{"overall":7.54,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.6,"value":6.8},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"Yes","max_speed":"500mm/s"}},{"name":"Voxelab Aquila S2","brand":"Voxelab","slug":"voxelab-aquila-s2","image":"https://via.placeholder.com/100","price":189,"price_range":"budget","buy_url":null,"scores":{"overall":6.92,"print_quality":7.2,"speed":7.0,"ease_of_use":7.0,"reliability":6.8,"value":8.8},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (CR Touch)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"180mm/s"}},{"name":"Raise3D Pro3","brand":"Raise3D","slug":"raise3d-pro3","image":"https://via.placeholder.com/100","price":3999,"price_range":"premium","buy_url":null,"scores":{"overall":7.8,"print_quality":8.2,"speed":7.5,"ease_of_use":7.8,"reliability":8.0,"value":6.5},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Dual Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, Ethernet, USB","enclosure":"Yes","max_speed":"150mm/s"}},{"name":"Artillery Sidewinder X3","brand":"Artillery","slug":"artillery-sidewinder-x3","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.5,"print_quality":7.8,"speed":8.2,"ease_of_use":7.4,"reliability":7.2,"value":8.8},"specs":{"build_volume":"300x300x400mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (49-point)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"300mm/s"}},{"name":"Sovol SV06","brand":"Sovol","slug":"sovol-sv06","image":"https://via.placeholder.com/100","price":249,"price_range":"budget","buy_url":null,"scores":{"overall":7.3,"print_quality":7.5,"speed":7.8,"ease_of_use":7.2,"reliability":7.0,"value":9.0},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive (All-metal)","auto_leveling":"Yes (25-point)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"200mm/s"}},{"name":"Sovol SV08","brand":"Sovol","slug":"sovol-sv08","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":7.4,"print_quality":7.6,"speed":8.0,"ease_of_use":7.2,"reliability":7.2,"value":8.5},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"700mm/s"}}]};
+const DATA = {"printers":[{"name":"Bambu Lab H2S","brand":"Bambu Lab","slug":"bambu-lab-h2s","image":"https://via.placeholder.com/100","price":1099,"price_range":"premium","buy_url":null,"scores":{"overall":8.81,"print_quality":9.4,"speed":8.7,"ease_of_use":8.3,"reliability":9.1,"value":6.2},"specs":{"build_volume":"340x320x340mm","nozzle_temp":"350\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (PMSM Servo)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"Yes","max_speed":"1000mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Bambu Lab P2S","brand":"Bambu Lab","slug":"bambu-lab-p2s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.75,"print_quality":9.2,"speed":9.0,"ease_of_use":8.6,"reliability":8.8,"value":7.8},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Bambu Lab H2D","brand":"Bambu Lab","slug":"bambu-lab-h2d","image":"https://via.placeholder.com/100","price":2199,"price_range":"premium","buy_url":null,"scores":{"overall":8.72,"print_quality":9.3,"speed":8.6,"ease_of_use":8.2,"reliability":9.0,"value":6.5},"specs":{"build_volume":"325x320x325mm","nozzle_temp":"350\u00b0C","bed_temp":"120\u00b0C","extruder":"Dual Direct Drive (PMSM Servo)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"Yes","max_speed":"1000mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Bambu Lab P1S","brand":"Bambu Lab","slug":"bambu-lab-p1s","image":"https://via.placeholder.com/100","price":649,"price_range":"mid","buy_url":null,"scores":{"overall":8.62,"print_quality":9.0,"speed":8.8,"ease_of_use":8.5,"reliability":8.6,"value":8.5},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Bambu Lab A1","brand":"Bambu Lab","slug":"bambu-lab-a1","image":"https://via.placeholder.com/100","price":299,"price_range":"budget","buy_url":null,"scores":{"overall":8.22,"print_quality":8.5,"speed":8.2,"ease_of_use":9.0,"reliability":8.2,"value":9.0},"specs":{"build_volume":"256x256x256mm","nozzle_temp":"300\u00b0C","bed_temp":"100\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (Auto)","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"No","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Bambu Lab A1 Mini","brand":"Bambu Lab","slug":"bambu-lab-a1-mini","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.88,"print_quality":8.0,"speed":7.8,"ease_of_use":9.0,"reliability":7.8,"value":9.5},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"300\u00b0C","bed_temp":"80\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (Auto)","filament_diameter":"1.75mm","connectivity":"Wi-Fi","enclosure":"No","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Prusa MK4S","brand":"Prusa Research","slug":"prusa-mk4s","image":"https://via.placeholder.com/100","price":799,"price_range":"mid","buy_url":null,"scores":{"overall":8.52,"print_quality":8.6,"speed":7.6,"ease_of_use":8.6,"reliability":9.6,"value":7.2},"specs":{"build_volume":"250x210x220mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (Nextruder)","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Optional","max_speed":"500mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Prusa Core One L","brand":"Prusa Research","slug":"prusa-core-one-l","image":"https://via.placeholder.com/100","price":1899,"price_range":"premium","buy_url":null,"scores":{"overall":8.47,"print_quality":9.0,"speed":8.0,"ease_of_use":7.8,"reliability":9.2,"value":5.8},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (Nextruder)","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Yes","max_speed":"600mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Prusa Core One+","brand":"Prusa Research","slug":"prusa-core-one-plus","image":"https://via.placeholder.com/100","price":1299,"price_range":"premium","buy_url":null,"scores":{"overall":8.43,"print_quality":8.8,"speed":7.8,"ease_of_use":8.0,"reliability":9.2,"value":6.5},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive (Nextruder)","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Yes","max_speed":"600mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Prusa Original XL","brand":"Prusa Research","slug":"prusa-original-xl","image":"https://via.placeholder.com/100","price":2499,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":8.0,"ease_of_use":7.6,"reliability":9.0,"value":5.5},"specs":{"build_volume":"360x360x360mm","nozzle_temp":"290\u00b0C","bed_temp":"120\u00b0C","extruder":"Multi-tool Direct Drive","auto_leveling":"Yes (LoadCell)","filament_diameter":"1.75mm","connectivity":"Ethernet, Wi-Fi","enclosure":"Optional","max_speed":"500mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Prusa Mini+","brand":"Prusa Research","slug":"prusa-mini-plus","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.97,"print_quality":8.0,"speed":7.0,"ease_of_use":8.6,"reliability":9.0,"value":8.2},"specs":{"build_volume":"180x180x180mm","nozzle_temp":"280\u00b0C","bed_temp":"100\u00b0C","extruder":"Bowden","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"200mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":false,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Ultimaker S5","brand":"Ultimaker","slug":"ultimaker-s5","image":"https://via.placeholder.com/100","price":4990,"price_range":"premium","buy_url":null,"scores":{"overall":8.41,"print_quality":9.0,"speed":6.8,"ease_of_use":8.6,"reliability":9.2,"value":4.0},"specs":{"build_volume":"330x240x300mm","nozzle_temp":"280\u00b0C","bed_temp":"140\u00b0C","extruder":"Dual Bowden","auto_leveling":"Yes (Active)","filament_diameter":"2.85mm","connectivity":"Wi-Fi, Ethernet, USB","enclosure":"Yes","max_speed":"300mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":false,"filament_runout":true,"power_recovery":false,"silent_mode":false}},{"name":"Ultimaker S3","brand":"Ultimaker","slug":"ultimaker-s3","image":"https://via.placeholder.com/100","price":3499,"price_range":"premium","buy_url":null,"scores":{"overall":8.21,"print_quality":8.6,"speed":6.6,"ease_of_use":8.6,"reliability":9.0,"value":4.5},"specs":{"build_volume":"243x213x200mm","nozzle_temp":"280\u00b0C","bed_temp":"140\u00b0C","extruder":"Dual Bowden","auto_leveling":"Yes (Active)","filament_diameter":"2.85mm","connectivity":"Wi-Fi, Ethernet, USB","enclosure":"Yes","max_speed":"300mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":false,"filament_runout":true,"power_recovery":false,"silent_mode":false}},{"name":"Creality K1 Max","brand":"Creality","slug":"creality-k1-max","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":8.0,"print_quality":8.5,"speed":8.8,"ease_of_use":7.6,"reliability":7.6,"value":7.6},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"300\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (Auto)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"Yes","max_speed":"600mm/s"},"features":{"open_source":true,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Creality K2 Combo","brand":"Creality","slug":"creality-k2-combo","image":"https://via.placeholder.com/100","price":549,"price_range":"mid","buy_url":null,"scores":{"overall":7.57,"print_quality":8.0,"speed":8.0,"ease_of_use":7.5,"reliability":7.2,"value":8.5},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"320\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"600mm/s"},"features":{"open_source":true,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Creality K2 Plus Combo","brand":"Creality","slug":"creality-k2-plus-combo","image":"https://via.placeholder.com/100","price":999,"price_range":"premium","buy_url":null,"scores":{"overall":7.74,"print_quality":8.3,"speed":8.3,"ease_of_use":7.5,"reliability":7.5,"value":7.5},"specs":{"build_volume":"400x400x400mm","nozzle_temp":"320\u00b0C","bed_temp":"120\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, LAN","enclosure":"Yes","max_speed":"600mm/s"},"features":{"open_source":true,"air_filter":true,"ai_detection":true,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Creality Ender 3 V3 SE","brand":"Creality","slug":"creality-ender-3-v3-se","image":"https://via.placeholder.com/100","price":199,"price_range":"budget","buy_url":null,"scores":{"overall":7.31,"print_quality":7.6,"speed":7.2,"ease_of_use":7.6,"reliability":7.2,"value":9.5},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"260\u00b0C","bed_temp":"100\u00b0C","extruder":"Sprite Direct Drive","auto_leveling":"Yes (CR Touch)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"250mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Elegoo Neptune 4 Max","brand":"Elegoo","slug":"elegoo-neptune-4-max","image":"https://via.placeholder.com/100","price":279,"price_range":"budget","buy_url":null,"scores":{"overall":7.71,"print_quality":8.2,"speed":8.0,"ease_of_use":7.5,"reliability":7.8,"value":8.0},"specs":{"build_volume":"420x420x480mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (121-point)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Elegoo Neptune 3 Pro","brand":"Elegoo","slug":"elegoo-neptune-3-pro","image":"https://via.placeholder.com/100","price":229,"price_range":"budget","buy_url":null,"scores":{"overall":7.39,"print_quality":7.6,"speed":7.2,"ease_of_use":7.8,"reliability":7.5,"value":9.0},"specs":{"build_volume":"225x225x280mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (CR Touch)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"180mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Elegoo Centauri Carbon","brand":"Elegoo","slug":"elegoo-centauri-carbon","image":"https://via.placeholder.com/100","price":319,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.6,"ease_of_use":7.8,"reliability":7.6,"value":8.8},"specs":{"build_volume":"220x220x260mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Anycubic Kobra 2","brand":"Anycubic","slug":"anycubic-kobra-2","image":"https://via.placeholder.com/100","price":259,"price_range":"budget","buy_url":null,"scores":{"overall":7.41,"print_quality":7.6,"speed":7.8,"ease_of_use":7.8,"reliability":7.3,"value":9.0},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (LeviQ 2.0)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"300mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Anycubic Kobra X","brand":"Anycubic","slug":"anycubic-kobra-x","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.07,"print_quality":7.2,"speed":7.0,"ease_of_use":7.2,"reliability":7.0,"value":8.8},"specs":{"build_volume":"400x400x450mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (LeviQ 2.0)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"300mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Anycubic Kobra 3 Combo","brand":"Anycubic","slug":"anycubic-kobra-3-combo","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.35,"print_quality":7.5,"speed":7.8,"ease_of_use":7.4,"reliability":7.2,"value":9.2},"specs":{"build_volume":"250x250x260mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (LeviQ 2.0)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"300mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"FlashForge Adventurer 5M Pro","brand":"FlashForge","slug":"flashforge-adventurer-5m-pro","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":8.03,"print_quality":8.2,"speed":8.0,"ease_of_use":8.6,"reliability":8.2,"value":8.0},"specs":{"build_volume":"220x220x220mm","nozzle_temp":"280\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive (Quick-swap)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB, LAN","enclosure":"Yes","max_speed":"600mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":false,"camera":true,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"FlashForge Adventurer 5M","brand":"FlashForge","slug":"flashforge-adventurer-5m","image":"https://via.placeholder.com/100","price":349,"price_range":"mid","buy_url":null,"scores":{"overall":7.84,"print_quality":8.0,"speed":8.0,"ease_of_use":8.5,"reliability":8.0,"value":8.5},"specs":{"build_volume":"220x220x220mm","nozzle_temp":"260\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive (Quick-swap)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB, LAN","enclosure":"No","max_speed":"600mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":true,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Snapmaker J1s IDEX","brand":"Snapmaker","slug":"snapmaker-j1s-idex","image":"https://via.placeholder.com/100","price":499,"price_range":"mid","buy_url":null,"scores":{"overall":7.56,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.8,"value":6.5},"specs":{"build_volume":"300x200x200mm","nozzle_temp":"300\u00b0C","bed_temp":"100\u00b0C","extruder":"Dual Direct Drive (IDEX)","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"350mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Snapmaker Artisan 3-in-1","brand":"Snapmaker","slug":"snapmaker-artisan-3-in-1","image":"https://via.placeholder.com/100","price":1999,"price_range":"premium","buy_url":null,"scores":{"overall":7.24,"print_quality":7.6,"speed":6.6,"ease_of_use":7.0,"reliability":7.6,"value":5.5},"specs":{"build_volume":"400x400x400mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Dual Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"Optional","max_speed":"300mm/s"},"features":{"open_source":false,"air_filter":false,"ai_detection":false,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Snapmaker U1","brand":"Snapmaker","slug":"snapmaker-u1","image":"https://via.placeholder.com/100","price":899,"price_range":"premium","buy_url":null,"scores":{"overall":7.54,"print_quality":7.8,"speed":7.2,"ease_of_use":7.5,"reliability":7.6,"value":6.8},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"Yes","max_speed":"500mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":false,"camera":true,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}},{"name":"Voxelab Aquila S2","brand":"Voxelab","slug":"voxelab-aquila-s2","image":"https://via.placeholder.com/100","price":189,"price_range":"budget","buy_url":null,"scores":{"overall":6.92,"print_quality":7.2,"speed":7.0,"ease_of_use":7.0,"reliability":6.8,"value":8.8},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (CR Touch)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"180mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Raise3D Pro3","brand":"Raise3D","slug":"raise3d-pro3","image":"https://via.placeholder.com/100","price":3999,"price_range":"premium","buy_url":null,"scores":{"overall":7.8,"print_quality":8.2,"speed":7.5,"ease_of_use":7.8,"reliability":8.0,"value":6.5},"specs":{"build_volume":"300x300x300mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Dual Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, Ethernet, USB","enclosure":"Yes","max_speed":"150mm/s"},"features":{"open_source":false,"air_filter":true,"ai_detection":false,"camera":true,"multi_color":true,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Artillery Sidewinder X3","brand":"Artillery","slug":"artillery-sidewinder-x3","image":"https://via.placeholder.com/100","price":399,"price_range":"mid","buy_url":null,"scores":{"overall":7.5,"print_quality":7.8,"speed":8.2,"ease_of_use":7.4,"reliability":7.2,"value":8.8},"specs":{"build_volume":"300x300x400mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes (49-point)","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"300mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Sovol SV06","brand":"Sovol","slug":"sovol-sv06","image":"https://via.placeholder.com/100","price":249,"price_range":"budget","buy_url":null,"scores":{"overall":7.3,"print_quality":7.5,"speed":7.8,"ease_of_use":7.2,"reliability":7.0,"value":9.0},"specs":{"build_volume":"220x220x250mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive (All-metal)","auto_leveling":"Yes (25-point)","filament_diameter":"1.75mm","connectivity":"USB","enclosure":"No","max_speed":"200mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":false}},{"name":"Sovol SV08","brand":"Sovol","slug":"sovol-sv08","image":"https://via.placeholder.com/100","price":449,"price_range":"mid","buy_url":null,"scores":{"overall":7.4,"print_quality":7.6,"speed":8.0,"ease_of_use":7.2,"reliability":7.2,"value":8.5},"specs":{"build_volume":"350x350x350mm","nozzle_temp":"300\u00b0C","bed_temp":"110\u00b0C","extruder":"Direct Drive","auto_leveling":"Yes","filament_diameter":"1.75mm","connectivity":"Wi-Fi, USB","enclosure":"No","max_speed":"700mm/s"},"features":{"open_source":true,"air_filter":false,"ai_detection":false,"camera":false,"multi_color":false,"direct_drive":true,"filament_runout":true,"power_recovery":true,"silent_mode":true}}]};
 
-const S = {search:'',brand:'All',sort:'overall',price:'all',filtered:[],cmp:new Set()};
+// ── State ─────────────────────────────────────────────
+const S = {
+  search:'', brand:'All', sort:'overall', price:'all',
+  features:{}, filtered:[], cmp:new Set()
+};
+let compareSlots = [null,null,null,null];
+let pickerSlotIndex = 0;
 
-function bSlug(b){return b.toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-')}
-function sc(s){return s>=8?'var(--grad-g)':s>=6?'var(--grad-a)':'var(--grad-r)'}
-function fmt(p){return p?'$'+p.toLocaleString():'N/A'}
-function cap(s){return s.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}
-function pcls(r){return r==='budget'?'pc-budget':r==='mid'?'pc-mid':'pc-premium'}
-function plbl(r){return r==='budget'?'Budget':r==='mid'?'Mid-range':'Premium'}
+// ── Helpers ───────────────────────────────────────────
+function bSlug(b){return b.toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-');}
+function fmt(p){return p?'$'+p.toLocaleString():'N/A';}
+function cap(s){return s.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());}
+function scoreColor(s){
+  if(s>=8)return'var(--grad-green)';
+  if(s>=6)return'var(--grad-amber)';
+  return'var(--grad-red)';
+}
 
+// ── Page switching ────────────────────────────────────
+function showPage(p){
+  document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
+  document.getElementById('page'+p.charAt(0).toUpperCase()+p.slice(1)).classList.add('active');
+  document.getElementById('tab'+p.charAt(0).toUpperCase()+p.slice(1)).classList.add('active');
+  if(p==='compare') renderComparePage();
+}
+
+// ── Dropdowns ─────────────────────────────────────────
+function toggleDd(id){
+  const wrap=document.getElementById(id);
+  const btn=wrap.querySelector('.dd-btn');
+  const menu=wrap.querySelector('.dd-menu');
+  const isOpen=menu.classList.contains('open');
+  closeAllDd();
+  if(!isOpen){menu.classList.add('open');btn.classList.add('open');}
+}
+function closeAllDd(){
+  document.querySelectorAll('.dd-menu').forEach(m=>m.classList.remove('open'));
+  document.querySelectorAll('.dd-btn').forEach(b=>b.classList.remove('open'));
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.dd-wrap'))closeAllDd();
+});
+
+function initBrandDd(){
+  const brands=['All',...new Set(DATA.printers.map(p=>p.brand))];
+  const menu=document.getElementById('ddBrandMenu');
+  menu.innerHTML=brands.map(b=>`
+    <div class="dd-item ${b==='All'?'selected':''}" onclick="setBrand('${b.replace(/'/g,"\\'")}')">
+      ${b} ${b==='All'?'<span class="check">✓</span>':''}
+    </div>`).join('');
+}
+
+function setBrand(b){
+  S.brand=b;
+  const label=b==='All'?'Brand':b;
+  document.getElementById('ddBrandLabel').textContent=label;
+  const btn=document.querySelector('#ddBrand .dd-btn');
+  btn.classList.toggle('has-value',b!=='All');
+  document.querySelectorAll('#ddBrandMenu .dd-item').forEach(el=>{
+    const isThis=el.textContent.trim().startsWith(b);
+    el.classList.toggle('selected',isThis);
+    el.innerHTML=isThis?b+' <span class="check">✓</span>':b==='All'&&el===document.querySelector('#ddBrandMenu .dd-item')?'All <span class="check">✓</span>':el.textContent.replace(' ✓','');
+  });
+  closeAllDd(); applyFilters();
+}
+
+function setSort(key,label){
+  S.sort=key;
+  document.getElementById('ddSortLabel').textContent='Sort: '+label;
+  document.querySelectorAll('#ddSortMenu .dd-item').forEach(el=>{
+    const isThis=el.dataset.sort===key;
+    el.classList.toggle('selected',isThis);
+    el.innerHTML=isThis?el.textContent.replace(' ✓','')+' <span class="check">✓</span>':el.textContent.replace(' ✓','');
+  });
+  closeAllDd(); applyFilters();
+}
+
+function setPrice(key,label){
+  S.price=key;
+  document.getElementById('ddPriceLabel').textContent=label;
+  const btn=document.querySelector('#ddPrice .dd-btn');
+  btn.classList.toggle('has-value',key!=='all');
+  document.querySelectorAll('#ddPriceMenu .dd-item').forEach(el=>{
+    const isThis=el.dataset.price===key;
+    el.classList.toggle('selected',isThis);
+    el.innerHTML=isThis?el.textContent.replace(' ✓','')+' <span class="check">✓</span>':el.textContent.replace(' ✓','');
+  });
+  closeAllDd(); applyFilters();
+}
+
+function toggleFeat(key){
+  S.features[key]=!S.features[key];
+  const row=document.getElementById('feat-'+key);
+  row.classList.toggle('on',S.features[key]);
+  const anyOn=Object.values(S.features).some(Boolean);
+  document.getElementById('featIndicator').style.display=anyOn?'block':'none';
+  const btn=document.querySelector('#ddFeatures .dd-btn');
+  btn.classList.toggle('has-value',anyOn);
+  applyFilters();
+}
+
+// ── Filter & Sort ─────────────────────────────────────
 function applyFilters(){
   let list=DATA.printers.slice();
-  if(S.brand!=='All')list=list.filter(p=>p.brand===S.brand);
-  if(S.search){const t=S.search.toLowerCase();list=list.filter(p=>p.name.toLowerCase().includes(t)||p.brand.toLowerCase().includes(t))}
+  if(S.brand!=='All') list=list.filter(p=>p.brand===S.brand);
+  if(S.search){
+    const t=S.search.toLowerCase();
+    list=list.filter(p=>p.name.toLowerCase().includes(t)||p.brand.toLowerCase().includes(t));
+  }
   if(S.price!=='all'){
     list=list.filter(p=>{
       if(!p.price)return false;
@@ -328,196 +895,322 @@ function applyFilters(){
       return true;
     });
   }
-  list.sort((a,b)=>(b.scores[S.sort]||0)-(a.scores[S.sort]||0));
+  Object.entries(S.features).forEach(([k,v])=>{
+    if(!v)return;
+    list=list.filter(p=>{
+      if(!p.features)return false;
+      if(k==='enclosure')return p.specs.enclosure==='Yes';
+      return p.features[k]===true;
+    });
+  });
+  if(S.sort==='price_asc') list.sort((a,b)=>(a.price||9999)-(b.price||9999));
+  else if(S.sort==='price_desc') list.sort((a,b)=>(b.price||0)-(a.price||0));
+  else list.sort((a,b)=>(b.scores[S.sort]||0)-(a.scores[S.sort]||0));
   S.filtered=list;
-  render();
+  renderCards();
+  const hasFilter=S.brand!=='All'||S.search||S.price!=='all'||Object.values(S.features).some(Boolean);
+  document.getElementById('clearBtn').classList.toggle('show',hasFilter);
+  document.getElementById('resultCount').textContent=`Showing ${list.length} of ${DATA.printers.length} printers`;
+  document.getElementById('navCount').textContent=list.length+' printers';
 }
 
+function clearAll(){
+  S.search=''; S.brand='All'; S.sort='overall'; S.price='all'; S.features={};
+  document.getElementById('searchInp').value='';
+  document.getElementById('ddBrandLabel').textContent='Brand';
+  document.getElementById('ddSortLabel').textContent='Sort: Overall';
+  document.getElementById('ddPriceLabel').textContent='Price';
+  document.querySelector('#ddBrand .dd-btn').classList.remove('has-value');
+  document.querySelector('#ddPrice .dd-btn').classList.remove('has-value');
+  document.querySelector('#ddFeatures .dd-btn').classList.remove('has-value');
+  document.querySelectorAll('.feat-row').forEach(r=>r.classList.remove('on'));
+  initBrandDd(); applyFilters();
+}
+
+// ── Render Cards ──────────────────────────────────────
 function renderCards(){
-  const c=document.getElementById('cardsContainer');
-  const nr=document.getElementById('noResults');
-  if(!S.filtered.length){c.innerHTML='';nr.classList.remove('hidden');return}
-  nr.classList.add('hidden');
-  c.innerHTML=S.filtered.map((p,i)=>{
-    const r=i+1,bc='bt-'+bSlug(p.brand),chk=S.cmp.has(p.name);
-    const miniScoreKeys=['print_quality','speed','value','ease_of_use'];
-    const miniHTML=miniScoreKeys.map(k=>{
-      const v=p.scores[k]||0;
-      return `<div class="ms"><div class="ms-l">${cap(k)}</div><div class="ms-bw"><div class="ms-bf" style="width:${v*10}%;background:${sc(v)}"></div></div><div class="ms-v">${v.toFixed(1)}</div></div>`;
-    }).join('');
-    return `<div class="pcard">
+  const list=document.getElementById('cardList');
+  const empty=document.getElementById('emptyState');
+  if(!S.filtered.length){list.innerHTML='';empty.classList.remove('hidden');return;}
+  empty.classList.add('hidden');
+  list.innerHTML=S.filtered.map((p,i)=>{
+    const rank=i+1;
+    const isTop=rank<=3;
+    const chk=S.cmp.has(p.name);
+    const bc='bt-'+bSlug(p.brand);
+    const f=p.features||{};
+    const badges=[
+      f.enclosure||p.specs.enclosure==='Yes'?'<span class="fbadge on">📦 Enclosed</span>':'',
+      f.open_source?'<span class="fbadge on-green">🔓 Open Source</span>':'',
+      f.camera?'<span class="fbadge on">📷 Camera</span>':'',
+      f.ai_detection?'<span class="fbadge on">🤖 AI</span>':'',
+      f.air_filter?'<span class="fbadge on">💨 Air Filter</span>':'',
+      f.multi_color?'<span class="fbadge on">🎨 Multi-Color</span>':'',
+      f.silent_mode?'<span class="fbadge on">🔇 Silent</span>':'',
+    ].filter(Boolean).slice(0,5).join('');
+    return `
+    <div class="pcard ${isTop?'top3':''} ${rank===1?'rank-1':''}" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">
       <div class="rank-col">
-        <div class="rank-n ${r<=3?'top':''}">${r}</div>
-        <input type="checkbox" class="cmp-cb" ${chk?'checked':''} onchange="toggleCmp('${p.name.replace(/'/g,"\\'")}')">
+        <div class="rank-crown">👑</div>
+        <div class="rank-num">${rank}</div>
+        <input type="checkbox" class="cmp-cb" ${chk?'checked':''}
+          onclick="event.stopPropagation()" onchange="toggleCmp('${p.name.replace(/'/g,"\\'")}')">
       </div>
-      <div class="img-col" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">
+      <div class="img-col">
         <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'">
       </div>
       <div class="info-col">
-        <div class="card-tr">
-          <span class="pname" onclick="openDetail('${p.name.replace(/'/g,"\\'")}'">${p.name}</span>
-          <span class="btag ${bc}">${p.brand}</span>
+        <div class="card-top">
+          <span class="printer-name">${p.name}</span>
+          <span class="brand-tag ${bc}">${p.brand}</span>
         </div>
-        <div class="specs-row">
-          <span class="schip">📦 ${p.specs.build_volume}</span>
-          <span class="schip">🌡️ ${p.specs.bed_temp}</span>
-          ${p.price_range?`<span class="pcat ${pcls(p.price_range)}">${plbl(p.price_range)}</span>`:''}
+        <div class="spec-chips">
+          <span class="spec-chip"><span class="chip-icon">📐</span>${p.specs.build_volume}</span>
+          <span class="spec-chip"><span class="chip-icon">🌡️</span>${p.specs.nozzle_temp} nozzle</span>
+          <span class="spec-chip"><span class="chip-icon">🛏️</span>${p.specs.bed_temp} bed</span>
+          <span class="spec-chip"><span class="chip-icon">⚡</span>${p.specs.max_speed||'—'}</span>
+          <span class="spec-chip"><span class="chip-icon">🔌</span>${p.specs.extruder.split(' ')[0]+' '+(p.specs.extruder.includes('Drive')?'Drive':'')}</span>
         </div>
-        <div class="mini-scores">${miniHTML}</div>
+        <div class="feat-badges">${badges}</div>
+        <div class="score-mini-row">
+          ${['print_quality','speed','ease_of_use','reliability','value'].map(k=>`
+          <div class="score-mini">
+            <div class="sm-label">${k==='print_quality'?'Quality':k==='ease_of_use'?'Ease':cap(k)}</div>
+            <div class="sm-bar"><div class="sm-fill" style="width:${p.scores[k]*10}%;background:${scoreColor(p.scores[k])}"></div></div>
+            <div class="sm-val">${p.scores[k].toFixed(1)}</div>
+          </div>`).join('')}
+        </div>
       </div>
-      <div class="act-col">
-        <div class="score-box"><div class="score-n">${p.scores.overall.toFixed(2)}</div><div class="score-l">Score</div></div>
-        <div class="ptag">${fmt(p.price)}</div>
-        <div class="card-btns">
-          ${p.buy_url?`<a href="${p.buy_url}" target="_blank" class="btn btn-p">Buy</a>`:`<button class="btn btn-p off" disabled>Buy</button>`}
-          <button class="btn btn-g" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">Details</button>
+      <div class="actions-col" onclick="event.stopPropagation()">
+        <div class="score-box">
+          <div class="score-val">${p.scores.overall.toFixed(2)}</div>
+          <div class="score-lbl">Score</div>
         </div>
+        <div class="price-val">${fmt(p.price)}</div>
+        <span class="price-range-tag pr-${p.price_range}">${p.price_range}</span>
+        ${p.buy_url
+          ?`<a href="${p.buy_url}" target="_blank" class="btn btn-gold" onclick="event.stopPropagation()">Buy Now</a>`
+          :`<button class="btn btn-ghost" disabled>Out of Stock</button>`}
+        <button class="btn btn-ghost" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">Details</button>
       </div>
     </div>`;
   }).join('');
 }
 
+// ── Detail Modal ──────────────────────────────────────
+function openDetail(name){
+  const p=DATA.printers.find(x=>x.name===name);
+  if(!p)return;
+  const f=p.features||{};
+  document.getElementById('detailTitle').textContent=p.name;
+  const featItems=[
+    ['📦','Enclosed',    p.specs.enclosure==='Yes'],
+    ['🔓','Open Source', f.open_source],
+    ['📷','Camera',      f.camera],
+    ['🤖','AI Detection',f.ai_detection],
+    ['💨','Air Filter',  f.air_filter],
+    ['🎨','Multi-Color', f.multi_color],
+    ['⚙️','Direct Drive',f.direct_drive],
+    ['🔇','Silent Mode', f.silent_mode],
+    ['🧵','Filament Runout',f.filament_runout],
+    ['⚡','Power Recovery',f.power_recovery],
+  ];
+  document.getElementById('detailBody').innerHTML=`
+    <div class="detail-hero">
+      <div class="detail-img"><img src="${p.image}" alt="${p.name}"></div>
+      <div class="detail-meta">
+        <div class="detail-name">${p.name}</div>
+        <span class="brand-tag bt-${bSlug(p.brand)}">${p.brand}</span>
+        <div class="detail-score-row">
+          <div>
+            <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">Overall Score</div>
+            <div class="detail-big-score">${p.scores.overall.toFixed(2)}</div>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">Price</div>
+            <div class="detail-big-price">${fmt(p.price)}</div>
+          </div>
+        </div>
+        <div class="detail-btns">
+          ${p.buy_url?`<a href="${p.buy_url}" target="_blank" class="btn btn-gold">Buy Now</a>`:`<button class="btn btn-ghost" disabled>Out of Stock</button>`}
+          <button class="btn btn-ghost" onclick="toggleCmpFromDetail('${p.name.replace(/'/g,"\\'")}')">+ Compare</button>
+        </div>
+      </div>
+    </div>
+    <div class="msection">
+      <div class="msection-title">Scores</div>
+      <div class="scores-grid">
+        ${Object.entries(p.scores).map(([k,v])=>`
+        <div class="score-tile">
+          <div class="st-label">${cap(k)}</div>
+          <div class="st-bar"><div class="st-fill" style="width:${v*10}%;background:${scoreColor(v)}"></div></div>
+          <div class="st-val">${v.toFixed(1)}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div class="msection">
+      <div class="msection-title">Specifications</div>
+      <div class="specs-grid2">
+        ${Object.entries(p.specs).map(([k,v])=>`
+        <div class="spec-tile">
+          <div class="spt-label">${cap(k)}</div>
+          <div class="spt-val">${v}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div class="msection">
+      <div class="msection-title">Features</div>
+      <div class="features-grid">
+        ${featItems.map(([icon,label,val])=>`
+        <div class="feat-tile ${val?'yes':'no'}">
+          <span class="feat-tile-icon">${icon}</span>
+          <span class="feat-tile-text">${val?'✓':'-'} ${label}</span>
+        </div>`).join('')}
+      </div>
+    </div>
+  `;
+  document.getElementById('detailModal').classList.add('open');
+}
+
+function toggleCmpFromDetail(name){
+  toggleCmp(name);
+  closeM('detailModal');
+}
+
+// ── Compare bar ───────────────────────────────────────
+function toggleCmp(name){
+  if(S.cmp.has(name))S.cmp.delete(name);
+  else{if(S.cmp.size>=4){alert('Max 4 printers for comparison');return;}S.cmp.add(name);}
+  updateCmpBar(); renderCards();
+}
 function updateCmpBar(){
   const bar=document.getElementById('cmpBar');
   document.getElementById('cmpCount').textContent=S.cmp.size;
   const names=[...S.cmp].join(' vs ');
   document.getElementById('cmpNames').textContent=names.length>60?names.slice(0,57)+'…':names;
-  S.cmp.size>=1?bar.classList.add('show'):bar.classList.remove('show');
+  S.cmp.size>=2?bar.classList.add('show'):bar.classList.remove('show');
+}
+function clearCmp(){S.cmp.clear();updateCmpBar();renderCards();}
+function goToCompare(){
+  compareSlots=[...S.cmp].slice(0,4).map(n=>DATA.printers.find(p=>p.name===n));
+  while(compareSlots.length<4)compareSlots.push(null);
+  showPage('compare');
 }
 
-function toggleCmp(name){
-  if(S.cmp.has(name)){S.cmp.delete(name)}
-  else{if(S.cmp.size>=2)S.cmp.clear();S.cmp.add(name)}
-  updateCmpBar();renderCards();
+// ── Compare Page ──────────────────────────────────────
+function renderComparePage(){
+  renderSlots();
+  renderCompareTable();
 }
 
-function clearCmp(){S.cmp.clear();updateCmpBar();renderCards()}
-
-function openDetail(name){
-  const p=DATA.printers.find(x=>x.name===name);if(!p)return;
-  document.getElementById('dTitle').textContent=p.name;
-  const scoreKeys=Object.entries(p.scores).filter(([k])=>k!=='overall');
-  document.getElementById('dBody').innerHTML=`
-    <div class="d-hero">
-      <div class="d-img"><img src="${p.image}" alt="${p.name}"></div>
-      <div class="d-meta">
-        <div class="d-name">${p.name}</div>
-        <span class="btag bt-${bSlug(p.brand)}">${p.brand}</span>
-        <div class="d-sp">
-          <div><div class="big-s">${p.scores.overall.toFixed(2)}</div><div class="big-sl">Overall Score</div></div>
-          <div><div class="big-p">${fmt(p.price)}</div><div class="big-sl">${plbl(p.price_range||'')}</div></div>
-        </div>
-        <div class="d-acts">
-          ${p.buy_url?`<a href="${p.buy_url}" target="_blank" class="btn btn-p">Buy Now</a>`:`<button class="btn btn-p off" disabled>Buy Now</button>`}
-          <button class="btn btn-g" onclick="toggleCmp('${p.name.replace(/'/g,"\\'")}');closeM('detailModal')">+ Compare</button>
-        </div>
-      </div>
-    </div>
-    <div class="msec">
-      <div class="msec-t">Scores</div>
-      <div class="sg">${scoreKeys.map(([k,v])=>`
-        <div class="stile">
-          <div class="stile-l">${cap(k)}</div>
-          <div class="stile-bw"><div class="stile-bf" style="width:${v*10}%;background:${sc(v)}"></div></div>
-          <div class="stile-v">${v.toFixed(1)}<span style="font-size:12px;color:var(--t3)">/10</span></div>
-        </div>`).join('')}
-      </div>
-    </div>
-    <div class="msec">
-      <div class="msec-t">Specifications</div>
-      <div class="spg">${Object.entries(p.specs).map(([k,v])=>`
-        <div class="spitem"><div class="spitem-l">${cap(k)}</div><div class="spitem-v">${v}</div></div>`).join('')}
-      </div>
-    </div>`;
-  document.getElementById('detailModal').classList.add('open');
+function renderSlots(){
+  const container=document.getElementById('compareSlots');
+  container.innerHTML=compareSlots.map((p,i)=>p?`
+    <div class="compare-slot filled">
+      <div class="slot-img"><img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'"></div>
+      <div class="slot-name">${p.name}</div>
+      <div class="slot-price">${fmt(p.price)}</div>
+      <button class="slot-remove" onclick="removeSlot(${i})">✕ Remove</button>
+    </div>`:`
+    <div class="compare-slot empty" onclick="openPicker(${i})">
+      <div class="slot-plus">+</div>
+      <div class="slot-placeholder">Click to add printer</div>
+    </div>`).join('');
 }
 
-function openCmp(){
-  const sel=[...S.cmp].map(n=>DATA.printers.find(p=>p.name===n)).filter(Boolean);
-  if(sel.length<2)return;
-  const [a,b]=sel;
-  const allKeys=Object.keys(a.scores);
-  const rows=allKeys.map(k=>{
-    const av=a.scores[k],bv=b.scores[k];
-    const aw=av>bv?'win':'',bw=bv>av?'win':'';
-    return `<div class="cg-cell lbl">${cap(k)}</div>
-      <div class="cg-cell ${aw}">${av.toFixed(2)}</div>
-      <div class="cg-cell ${bw}">${bv.toFixed(2)}</div>`;
+function removeSlot(i){
+  compareSlots[i]=null;
+  renderComparePage();
+}
+
+function openPicker(slotIndex){
+  pickerSlotIndex=slotIndex;
+  document.getElementById('pickerSearch').value='';
+  renderPicker();
+  document.getElementById('pickerModal').classList.add('open');
+}
+
+function renderPicker(){
+  const q=document.getElementById('pickerSearch').value.toLowerCase();
+  const selected=new Set(compareSlots.filter(Boolean).map(p=>p.name));
+  const list=DATA.printers.filter(p=>!q||p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q));
+  document.getElementById('pickerGrid').innerHTML=list.map(p=>`
+    <div class="picker-card ${selected.has(p.name)?'selected':''}"
+         onclick="selectForSlot('${p.name.replace(/'/g,"\\'")}')">
+      <div class="picker-name">${p.name}</div>
+      <div class="picker-price">${fmt(p.price)}</div>
+      <div class="picker-score">Score: ${p.scores.overall.toFixed(2)}</div>
+    </div>`).join('');
+}
+
+function selectForSlot(name){
+  compareSlots[pickerSlotIndex]=DATA.printers.find(p=>p.name===name);
+  closeM('pickerModal');
+  renderComparePage();
+}
+
+function renderCompareTable(){
+  const active=compareSlots.filter(Boolean);
+  const container=document.getElementById('compareTable');
+  if(active.length<2){
+    container.innerHTML=`<div class="empty-state"><div class="empty-icon">⚖️</div><div class="empty-title">Add at least 2 printers</div><div class="empty-sub">Click the + slots above to get started.</div></div>`;
+    return;
+  }
+  const colW=active.length===2?'1fr 1fr':active.length===3?'repeat(3,1fr)':'repeat(4,1fr)';
+  let html=`<div class="cmp-table-wrap"><table class="cmp-table">`;
+  html+=`<thead><tr><th class="row-head">Metric</th>`;
+  active.forEach(p=>{html+=`<th>${p.name}<br><span style="font-weight:400;color:var(--t3)">${fmt(p.price)}</span></th>`;});
+  html+=`</tr></thead><tbody>`;
+  // Scores
+  html+=`<tr class="cmp-section-row"><td colspan="${active.length+1}">Scores</td></tr>`;
+  Object.keys(active[0].scores).forEach(k=>{
+    const vals=active.map(p=>p.scores[k]);
+    const maxV=Math.max(...vals);
+    const minV=Math.min(...vals);
+    html+=`<tr><td class="row-head">${cap(k)}</td>`;
+    vals.forEach(v=>{
+      const cls=v===maxV&&maxV!==minV?'winner':v===minV&&maxV!==minV?'loser':'';
+      html+=`<td class="${cls}">${v.toFixed(2)}</td>`;
+    });
+    html+=`</tr>`;
   });
-  // Wrap last 3 cells in last-row class
-  const rowsHTML = rows.map((r,i)=>{
-    if(i===rows.length-1) return `<div class="last-row" style="display:contents">${r}</div>`;
-    return r;
-  }).join('');
-  document.getElementById('cmpBody').innerHTML=`
-    <div class="cg">
-      <div class="cg-head lbl">Metric</div>
-      <div class="cg-head">
-        <div class="cg-img"><img src="${a.image}" alt="${a.name}"></div>
-        <div class="cg-name">${a.name}</div>
-        <div class="cg-price">${fmt(a.price)}</div>
-        ${a.buy_url?`<a href="${a.buy_url}" target="_blank" class="btn btn-p" style="font-size:12px;padding:6px 12px">Buy</a>`:''}
-      </div>
-      <div class="cg-head">
-        <div class="cg-img"><img src="${b.image}" alt="${b.name}"></div>
-        <div class="cg-name">${b.name}</div>
-        <div class="cg-price">${fmt(b.price)}</div>
-        ${b.buy_url?`<a href="${b.buy_url}" target="_blank" class="btn btn-p" style="font-size:12px;padding:6px 12px">Buy</a>`:''}
-      </div>
-      ${rowsHTML}
-    </div>`;
-  document.getElementById('cmpModal').classList.add('open');
+  // Specs
+  html+=`<tr class="cmp-section-row"><td colspan="${active.length+1}">Specifications</td></tr>`;
+  const specKeys=Object.keys(active[0].specs);
+  specKeys.forEach(k=>{
+    html+=`<tr><td class="row-head">${cap(k)}</td>`;
+    active.forEach(p=>{html+=`<td>${p.specs[k]||'—'}</td>`;});
+    html+=`</tr>`;
+  });
+  // Features
+  html+=`<tr class="cmp-section-row"><td colspan="${active.length+1}">Features</td></tr>`;
+  const featKeys=[
+    ['enclosure','📦 Enclosed'],['open_source','🔓 Open Source'],
+    ['camera','📷 Camera'],['ai_detection','🤖 AI Detection'],
+    ['air_filter','💨 Air Filter'],['multi_color','🎨 Multi-Color'],
+    ['direct_drive','⚙️ Direct Drive'],['silent_mode','🔇 Silent Mode'],
+    ['filament_runout','🧵 Filament Runout'],['power_recovery','⚡ Power Recovery'],
+  ];
+  featKeys.forEach(([k,label])=>{
+    html+=`<tr><td class="row-head">${label}</td>`;
+    active.forEach(p=>{
+      const has=k==='enclosure'?p.specs.enclosure==='Yes':(p.features&&p.features[k]);
+      html+=`<td style="color:${has?'var(--pastel-green)':'var(--t3)'}">${has?'✓':'✗'}</td>`;
+    });
+    html+=`</tr>`;
+  });
+  html+=`</tbody></table></div>`;
+  container.innerHTML=html;
 }
 
-function closeM(id){document.getElementById(id).classList.remove('open')}
-function bgClose(e,id){if(e.target.id===id)closeM(id)}
+// ── Modal helpers ─────────────────────────────────────
+function closeM(id){document.getElementById(id).classList.remove('open');}
+function bgClose(e,id){if(e.target.id===id)closeM(id);}
 
-function render(){
-  renderCards();
-  document.getElementById('resultCount').textContent=`Showing ${S.filtered.length} of ${DATA.printers.length} printers`;
-}
-
-// Init controls
-function initBrands(){
-  const brands=['All',...new Set(DATA.printers.map(p=>p.brand))];
-  document.getElementById('brandFilters').innerHTML=brands.map(b=>
-    `<button class="seg-btn ${b==='All'?'active':''}" onclick="setBrand(this,'${b}')">${b}</button>`
-  ).join('');
-}
-function initSort(){
-  const opts=[{k:'overall',l:'Overall'},{k:'print_quality',l:'Quality'},{k:'speed',l:'Speed'},{k:'value',l:'Value'},{k:'reliability',l:'Reliability'}];
-  document.getElementById('sortTabs').innerHTML=opts.map(o=>
-    `<button class="seg-btn ${o.k==='overall'?'active':''}" onclick="setSort(this,'${o.k}')">${o.l}</button>`
-  ).join('');
-}
-function initPrice(){
-  const opts=[{k:'all',l:'All'},{k:'budget',l:'Under $300'},{k:'mid',l:'$300–$800'},{k:'premium',l:'$800+'}];
-  document.getElementById('priceTabs').innerHTML=opts.map(o=>
-    `<button class="seg-btn ${o.k==='all'?'active':''}" onclick="setPrice(this,'${o.k}')">${o.l}</button>`
-  ).join('');
-}
-
-function setBrand(el,b){
-  S.brand=b;
-  document.querySelectorAll('#brandFilters .seg-btn').forEach(x=>x.classList.remove('active'));
-  el.classList.add('active');applyFilters();
-}
-function setSort(el,k){
-  S.sort=k;
-  document.querySelectorAll('#sortTabs .seg-btn').forEach(x=>x.classList.remove('active'));
-  el.classList.add('active');applyFilters();
-}
-function setPrice(el,k){
-  S.price=k;
-  document.querySelectorAll('#priceTabs .seg-btn').forEach(x=>x.classList.remove('active'));
-  el.classList.add('active');applyFilters();
-}
-
-document.getElementById('searchInput').addEventListener('input',e=>{S.search=e.target.value;applyFilters()});
-document.getElementById('cmpOpenBtn').addEventListener('click',openCmp);
-
-initBrands();initSort();init
-Price();applyFilters();
+// ── Init ──────────────────────────────────────────────
+document.getElementById('searchInp').addEventListener('input',e=>{S.search=e.target.value;applyFilters();});
+initBrandDd();
+applyFilters();
 </script>
 </body>
 </html>
