@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -48,6 +48,7 @@
 *{box-sizing:border-box}html,body{margin:0;padding:0}
 :root{--gold:#c9a84c;--gold-l:#e8c97a;--gold-d:#a07830;--grad-gold:linear-gradient(135deg,#c9a84c,#e8c97a);--grad-green:linear-gradient(90deg,#4caf6a,#7dd494);--grad-amber:linear-gradient(90deg,#c9a84c,#e8c97a);--grad-red:linear-gradient(90deg,#c44c4c,#d47878);--r-sm:6px;--r-md:10px;--r-lg:14px;--r-xl:20px;--r-pill:999px;--max-w:1200px}
 [data-theme="light"]{--bg:#faf8f5;--bg2:#fff;--bg3:#f3f0ea;--bg4:#e8e3d8;--border:#ddd8cc;--border2:#ccc8bc;--t1:#1a1814;--t2:#4a4640;--t3:#8a8278;--shadow:0 2px 16px rgba(0,0,0,.08);--shadow-lg:0 8px 40px rgba(0,0,0,.12)}
+[data-theme="dark"]{--bg:#0f0e0d;--bg2:#1a1714;--bg3:#242220;--bg4:#2e2a26;--border:#3a3530;--border2:#4a4540;--t1:#e8dfd5;--t2:#b8aca0;--t3:#7a6f63;--shadow:0 2px 16px rgba(0,0,0,.3);--shadow-lg:0 8px 40px rgba(0,0,0,.5)}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;min-height:100vh;transition:background .2s,color .2s;scrollbar-gutter:stable}
@@ -876,19 +877,17 @@ applyFilFilters();
 
 function toggleTheme(){
   const html=document.documentElement;
-  const isDark=html.classList.contains('light-mode');
-  html.classList.toggle('light-mode');
-  localStorage.setItem('theme',isDark?'dark':'light');
-  document.getElementById('themeBtn').textContent=isDark?'☀️':'🌙';
+  const currentTheme=html.getAttribute('data-theme');
+  const newTheme=currentTheme==='light'?'dark':'light';
+  html.setAttribute('data-theme',newTheme);
+  localStorage.setItem('theme',newTheme);
+  document.getElementById('themeBtn').textContent=newTheme==='light'?'☀️':'🌙';
 }
 
 // Initialize theme on load
-if(localStorage.getItem('theme')==='light'){
-  document.documentElement.classList.add('light-mode');
-  document.getElementById('themeBtn').textContent='☀️';
-}else{
-  document.getElementById('themeBtn').textContent='🌙';
-}
+const savedTheme=localStorage.getItem('theme')||'dark';
+document.documentElement.setAttribute('data-theme',savedTheme);
+document.getElementById('themeBtn').textContent=savedTheme==='light'?'☀️':'🌙';
 
 </script>
 </body>
