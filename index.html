@@ -20,11 +20,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .nav-tab{padding:6px 16px;border-radius:var(--r-pill);font-size:13px;font-weight:600;cursor:pointer;border:1px solid transparent;background:rgba(255,255,255,.07);color:rgba(255,255,255,.65);transition:all .15s;font-family:inherit}
 .nav-tab:hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9)}
 .nav-tab.active{background:rgba(201,168,76,.18);color:#e8c96a;border-color:rgba(201,168,76,.35)}
-[data-theme="dark"] .nav-tab.active{color:var(--gold-l)}
-
-
-
-.theme-btn:hover{border-color:var(--gold-d);color:var(--gold-d)}
 .page{display:none}.page.active{display:block}
 .layout{max-width:100%;padding:12px 14px 80px}
 .controls{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
@@ -45,7 +40,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .dd-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;font-size:13px;color:var(--t2);cursor:pointer;transition:background .1s}
 .dd-item:hover{background:var(--bg3);color:var(--t1)}
 .dd-item.sel{color:var(--gold-d);font-weight:600}
-[data-theme="dark"] .dd-item.sel{color:var(--gold-l)}
 .dd-div{height:1px;background:var(--border);margin:3px 0}
 .feat-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;cursor:pointer;transition:background .1s}
 .feat-row:hover{background:var(--bg3)}
@@ -77,13 +71,9 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .pname{font-size:13px;font-weight:700;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .btag{padding:1px 6px;border-radius:var(--r-pill);font-size:10px;font-weight:700;white-space:nowrap;border:1px solid transparent}
 .bt-bambu-lab{background:rgba(76,175,106,.1);color:#2d8a50;border-color:rgba(76,175,106,.2)}
-[data-theme="dark"] .bt-bambu-lab{color:#7dd494}
 .bt-prusa{background:rgba(201,120,30,.1);color:#8a5010;border-color:rgba(201,120,30,.2)}
-[data-theme="dark"] .bt-prusa{color:#e0a050}
 .bt-creality{background:rgba(50,120,220,.08);color:#2a5a9a;border-color:rgba(50,120,220,.15)}
-[data-theme="dark"] .bt-creality{color:#80aae8}
 .bt-elegoo{background:rgba(140,80,200,.08);color:#6030a0;border-color:rgba(140,80,200,.15)}
-[data-theme="dark"] .bt-elegoo{color:#c090e8}
 .bt-anycubic,.bt-flashforge,.bt-snapmaker,.bt-ultimaker,.bt-raise3d,.bt-artillery,.bt-sovol,.bt-voxelab{background:var(--bg3);color:var(--t2);border-color:var(--border)}
 .schips{display:flex;gap:3px;flex-wrap:wrap;margin-top:2px}
 .schip{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);font-size:10px;color:var(--t2);font-weight:500;white-space:nowrap}
@@ -95,10 +85,8 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 @media(min-width:440px){.schip-speed{display:inline-flex}}
 .fbadge{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;border-radius:var(--r-pill);font-size:10px;font-weight:700;white-space:nowrap;background:var(--bg4);color:var(--t3);border:1px solid var(--border)}
 .fbadge.on{background:rgba(201,168,76,.08);color:var(--gold-d);border-color:rgba(201,168,76,.2)}
-[data-theme="dark"] .fbadge.on{color:var(--gold-l)}
 .fbadge.on-g{background:rgba(76,175,106,.08);color:#2d8a50;border-color:rgba(76,175,106,.15)}
-[data-theme="dark"] .fbadge.on-g{color:#7dd494}
-.sbars{display:none;display:none;gap:8px;flex-wrap:wrap}
+.sbars{display:none;gap:8px;flex-wrap:wrap}
 @media(min-width:600px){.sbars{display:flex}}
 .sbar{display:flex;flex-direction:column;gap:2px;min-width:44px}
 .sb-lbl{font-size:9px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.3px}
@@ -112,11 +100,8 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .priceval{font-size:14px;font-weight:800;color:var(--t1)}
 .prtag{font-size:9px;font-weight:700;padding:2px 5px;border-radius:var(--r-pill)}
 .pr-budget{background:rgba(76,175,106,.1);color:#2d8a50}
-[data-theme="dark"] .pr-budget{color:#7dd494}
 .pr-mid{background:rgba(201,168,76,.1);color:var(--gold-d)}
-[data-theme="dark"] .pr-mid{color:var(--gold-l)}
 .pr-premium{background:rgba(140,80,200,.1);color:#6030a0}
-[data-theme="dark"] .pr-premium{color:#c090e8}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:6px 13px;border-radius:var(--r-md);font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none;transition:all .15s;border:none;white-space:nowrap}
 .btn-gold{background:var(--grad-gold);color:#1a1200;box-shadow:0 2px 8px rgba(201,168,76,.2)}
 .btn-gold:hover{box-shadow:0 4px 16px rgba(201,168,76,.35);transform:translateY(-1px)}
@@ -139,7 +124,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .cmpbar.show{transform:translateY(0)}
 .cmpbar-in{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .cmp-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 11px;background:rgba(201,168,76,.08);border:1px solid var(--gold-d);border-radius:var(--r-pill);font-size:12px;font-weight:700;color:var(--gold-d)}
-[data-theme="dark"] .cmp-chip{color:var(--gold-l);border-color:var(--gold)}
 .cmp-names{font-size:11px;color:var(--t2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}
 .moverlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;z-index:500;padding:28px 12px;overflow-y:auto}
 .moverlay.open{display:flex}
@@ -178,7 +162,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .ftile-ico{font-size:13px}
 .ftile-txt{font-size:11px;font-weight:600;color:var(--t2)}
 .ftile.yes .ftile-txt{color:#2d8a50}
-[data-theme="dark"] .ftile.yes .ftile-txt{color:#7dd494}
 .cmp-header{margin-bottom:16px}
 .cmp-header h2{font-size:18px;font-weight:800;color:var(--t1);margin-bottom:2px}
 .cmp-header p{font-size:12px;color:var(--t2)}
@@ -191,7 +174,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .slot-img img{max-width:100%;max-height:100%;object-fit:contain;padding:6px}
 .slot-name{font-size:12px;font-weight:700;color:var(--t1);text-align:center}
 .slot-price{font-size:13px;font-weight:800;color:var(--gold-d)}
-[data-theme="dark"] .slot-price{color:var(--gold-l)}
 .slot-rm{background:none;border:1px solid var(--border2);color:var(--t3);border-radius:var(--r-md);padding:3px 8px;cursor:pointer;font-size:11px;font-family:inherit;transition:all .15s}
 .slot-rm:hover{border-color:#c44c4c;color:#c44c4c}
 .slot-plus{font-size:24px;color:var(--border2)}
@@ -204,7 +186,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .cmp-tbl td.rh{text-align:left;font-weight:600;color:var(--t3);font-size:11px;text-transform:uppercase;letter-spacing:.3px;background:var(--bg3)}
 .cmp-tbl tr:last-child td{border-bottom:none}
 .cmp-tbl td.win{background:rgba(76,175,106,.07);color:#2d8a50;font-weight:700}
-[data-theme="dark"] .cmp-tbl td.win{color:#7dd494}
 .cmp-tbl td.lose{color:var(--t3)}
 .cmp-sec-row td{background:var(--bg3);font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;padding:5px 13px;border-top:1px solid var(--border)}
 .picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:6px;max-height:52vh;overflow-y:auto;padding-right:3px}
@@ -213,7 +194,6 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .pcard2.sel{border-color:var(--gold);background:rgba(201,168,76,.05)}
 .pc2-name{font-size:11px;font-weight:700;color:var(--t1)}
 .pc2-price{font-size:11px;color:var(--gold-d);font-weight:600}
-[data-theme="dark"] .pc2-price{color:var(--gold-l)}
 .pc2-score{font-size:11px;color:var(--t3)}
 .empty-state{text-align:center;padding:56px 14px}
 .empty-ico{font-size:38px;opacity:.3;margin-bottom:9px}
@@ -239,13 +219,11 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
 .fil-origin{font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--r-pill);background:var(--bg3);border:1px solid var(--border);color:var(--t3)}
 .fil-rfid{font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--r-pill)}
 .fil-rfid.yes{background:rgba(201,168,76,.08);color:var(--gold-d);border:1px solid rgba(201,168,76,.2)}
-[data-theme="dark"] .fil-rfid.yes{color:var(--gold-l)}
 .fil-rfid.no{background:var(--bg3);color:var(--t3);border:1px solid var(--border)}
 .fil-spool{font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--r-pill);background:var(--bg3);border:1px solid var(--border);color:var(--t2)}
 .fil-mats{display:flex;gap:3px;flex-wrap:wrap;margin-top:2px}
 .mat-tag{font-size:10px;font-weight:600;padding:1px 5px;border-radius:var(--r-sm);background:var(--bg4);color:var(--t3);border:1px solid var(--border)}
 .mat-tag.premium{background:rgba(140,80,200,.08);color:#6030a0;border-color:rgba(140,80,200,.15)}
-[data-theme="dark"] .mat-tag.premium{color:#c090e8}
 .fil-sbars{display:none;gap:7px;flex-wrap:wrap;margin-top:4px}
 @media(min-width:680px){.fil-sbars{display:flex}}
 .fil-act{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
@@ -328,7 +306,7 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;font-si
     </div>
   </div>
   <div class="results-bar">
-    <span class="res-count" id="resCount">Showing 35 printers</span>
+    <span class="res-count" id="resCount">Showing 40 printers</span>
     <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear filters</button>
   </div>
   <div class="card-list" id="cardList"></div>
@@ -514,7 +492,6 @@ function applyFilters(){
   const has=S.brand!=='All'||S.search||S.price!=='all'||Object.values(S.features).some(Boolean);
   document.getElementById('clearBtn').classList.toggle('show',has);
   document.getElementById('resCount').textContent=`Showing ${list.length} of ${DATA.printers.length} printers`;
-  document.getElementById('navCount').textContent=list.length+' printers';
 }
 function clearAll(){
   S.search='';S.brand='All';S.sort='overall';S.price='all';S.features={};
