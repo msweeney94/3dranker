@@ -104,8 +104,7 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 .rank-col{display:flex;flex-direction:column;align-items:center;gap:4px}
 .rank-num{font-size:17px;font-weight:800;color:var(--t3);line-height:1}
 .pcard.top3 .rank-num{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.rank-crown{font-size:11px;display:none}
-.pcard.rank-1 .rank-crown{display:block}
+.rank-medal{font-size:20px;line-height:1;margin-bottom:2px}
 .img-col{width:64px;height:64px;background:var(--bg3);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
 .img-col img{max-width:100%;max-height:100%;object-fit:contain;padding:5px}
 .img-ph{font-size:24px;opacity:.35}
@@ -571,7 +570,7 @@ function renderCards(){
     return `
     <div class="pcard${top?' top3':''}${rank===1?' rank-1':''}" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">
       <div class="rank-col">
-        ${top?'<div class="rank-crown">👑</div>':''}
+        ${rank===1?'<div class="rank-medal">🥇</div>':rank===2?'<div class="rank-medal">🥈</div>':rank===3?'<div class="rank-medal">🥉</div>':''}
         <div class="rank-num">${rank}</div>
       </div>
       <div class="img-col">${imgEl(p.image,p.name)}</div>
