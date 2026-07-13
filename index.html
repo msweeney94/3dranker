@@ -4,7 +4,7 @@
 <meta name="impact-site-verification" value="7baf84bf-8443-4636-966b-dd83015cb3f0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>3DRanker — Best 3D Printers Ranked for 2026</title>
+<title>3DRanker — Best 3D Printers 2026</title>
 <meta name="description" content="Unbiased rankings of the best 3D printers in 2026. Compare Bambu Lab, Prusa, Creality, Anycubic, Elegoo and more by speed, print quality, features, and value.">
 <meta name="keywords" content="best 3d printer 2026, 3d printer comparison, bambu lab p1s review, prusa mk4s, creality k1 max, anycubic kobra, 3d printer rankings, fdm printer guide, 3d printer buying guide">
 <meta name="robots" content="index, follow">
@@ -251,6 +251,20 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 .empty-sub{font-size:12px;color:var(--t3)}
 .hidden{display:none!important}
 .footer{border-top:1px solid var(--border);padding:18px 14px;text-align:center;color:var(--t3);font-size:11px}
+.footer-link{background:none;border:none;color:var(--gold-d);font-size:11px;font-family:inherit;cursor:pointer;text-decoration:underline;padding:0}
+.disagree-form{display:flex;flex-direction:column;gap:12px}
+.dform-row{display:flex;flex-direction:column;gap:5px}
+.dform-row label{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.4px}
+.dform-row input,.dform-row select,.dform-row textarea{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:9px 11px;color:var(--t1);font-family:inherit;font-size:13px;outline:none;transition:border-color .15s}
+.dform-row input:focus,.dform-row select:focus,.dform-row textarea:focus{border-color:var(--gold-d)}
+.dform-row textarea{resize:vertical;min-height:80px}
+.dform-submit{background:var(--grad-gold);border:none;border-radius:var(--r-md);padding:10px 16px;color:#2a1e10;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;transition:opacity .15s}
+.dform-submit:hover{opacity:.9}
+.dform-note{font-size:11px;color:var(--t3);line-height:1.5}
+.dform-success{text-align:center;padding:20px 10px}
+.dform-success-ico{font-size:34px;margin-bottom:8px}
+.dform-success-title{font-size:15px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.dform-success-sub{font-size:12px;color:var(--t2)}
 
 .fil-controls{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
 .fil-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px 16px;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s;margin-bottom:8px}
@@ -309,7 +323,7 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 </nav>
 <div class="page active" id="pageRankings">
 <div class="site-hero" style="max-width:var(--max-w);margin:0 auto;padding:22px 20px 4px;text-align:center">
-  <h1 style="font-family:'Inter',sans-serif;font-size:26px;font-weight:800;margin:0 0 6px;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">3DRanker — the one-stop shop for ranking 3D printers</h1>
+  <h1 style="font-family:'Inter',sans-serif;font-size:26px;font-weight:800;margin:0 0 6px;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">3DRanker — 3D Printer Rankings</h1>
   <p style="color:var(--t2);font-size:14px;margin:0 auto;max-width:560px">Compare models, see the rankings, and find the best printer for your budget and needs.</p>
 </div>
 <div class="layout">
@@ -439,7 +453,32 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
     </div>
   </div>
 </div>
-<footer class="footer">3DRanker.com &nbsp;·&nbsp; Updated July 2026 &nbsp;·&nbsp; Community-sourced scores</footer>
+<div class="moverlay" id="disagreeModal" onclick="bgClose(event,'disagreeModal')">
+  <div class="mbox" style="max-width:520px">
+    <div class="mhead"><span class="mhead-title">Disagree with a Ranking?</span><button class="mclose" onclick="closeM('disagreeModal')">✕</button></div>
+    <div class="mbody" id="disagreeBody">
+      <form class="disagree-form" id="disagreeForm" onsubmit="submitDisagree(event)">
+        <p class="dform-note">Tell us which ranking you think is wrong and why. We review every submission and factor in credible feedback when we next update our scores.</p>
+        <div class="dform-row">
+          <label for="dgPrinter">Printer or Brand</label>
+          <select id="dgPrinter" required>
+            <option value="">Select one…</option>
+          </select>
+        </div>
+        <div class="dform-row">
+          <label for="dgReason">Why do you disagree?</label>
+          <textarea id="dgReason" required placeholder="Explain what you think is wrong about this ranking…"></textarea>
+        </div>
+        <div class="dform-row">
+          <label for="dgEmail">Email (optional)</label>
+          <input type="email" id="dgEmail" placeholder="you@example.com">
+        </div>
+        <button type="submit" class="dform-submit">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="footer">3DRanker.com &nbsp;·&nbsp; Updated July 2026 &nbsp;·&nbsp; Community-sourced scores &nbsp;·&nbsp; <button class="footer-link" onclick="openDisagreeModal()">Disagree with a ranking?</button></footer>
 <script>
 let DATA = {printers:[]};
 let METHODOLOGY = {};
@@ -733,6 +772,36 @@ function renderCmpTable(){
 function closeM(id){document.getElementById(id).classList.remove('open');}
 function bgClose(e,id){if(e.target.id===id)closeM(id);}
 
+function populateDisagreeOptions(){
+  const sel = document.getElementById('dgPrinter');
+  if(!sel) return;
+  const printerNames = (DATA.printers || []).map(p => p.name);
+  const brandNames = (FDATA.brands || []).map(b => b.name + ' (Filament)');
+  const options = printerNames.concat(brandNames);
+  sel.innerHTML = '<option value="">Select one…</option>' + options.map(n => `<option value="${n}">${n}</option>`).join('') + '<option value="Other">Other / Not Listed</option>';
+}
+
+function openDisagreeModal(){
+  document.getElementById('disagreeModal').classList.add('open');
+}
+
+function submitDisagree(e){
+  e.preventDefault();
+  const printer = document.getElementById('dgPrinter').value;
+  const reason = document.getElementById('dgReason').value.trim();
+  const email = document.getElementById('dgEmail').value.trim();
+  if(!printer || !reason) return;
+  const subject = encodeURIComponent('Ranking Disagreement: ' + printer);
+  const body = encodeURIComponent('Printer/Brand: ' + printer + '\n\nReason:\n' + reason + '\n\nReply email: ' + (email || 'not provided'));
+  window.location.href = 'mailto:feedback@3dranker.com?subject=' + subject + '&body=' + body;
+  document.getElementById('disagreeBody').innerHTML = `
+    <div class="dform-success">
+      <div class="dform-success-ico">✅</div>
+      <div class="dform-success-title">Thanks for the feedback</div>
+      <div class="dform-success-sub">Your email app should have opened with your message pre-filled. If it did not open, email us directly at feedback@3dranker.com.</div>
+    </div>`;
+}
+
 document.getElementById('searchInp').addEventListener('input',e=>{S.search=e.target.value;applyFilters();});
 
 
@@ -863,6 +932,7 @@ fetch('data.json')
     initBrandDd();
     applyFilters();
     applyFilFilters();
+    populateDisagreeOptions();
   })
   .catch(err=>{
     console.error('Failed to load data.json:', err);
