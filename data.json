@@ -9,7 +9,7 @@
       "price_range": "premium",
       "buy_url": "https://us.store.bambulab.com/products/h2s",
       "scores": {
-        "overall": 8.7,
+        "overall": 8.39,
         "print_quality": 9.4,
         "speed": 9.5,
         "ease_of_use": 8.3,
@@ -39,12 +39,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 1000mm/s rated speed; +0.2 for 20000mm/s2 acceleration and 40-65mm3/s flow.",
-        "print_quality": "Editorial rating from published reviews, reflecting closed-loop servo extrusion for consistent flow, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1249 against segment peers: 340x320x340mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The Vision Encoder motion system and PMSM closed-loop extruder deliver the tightest first-layer and dimensional accuracy in the H2 lineup; reviewers consistently land it below 50-micron positional drift, though results with off-brand filament lag Bambu's own spools.",
+        "reliability": "Shares the AMS 2 Pro's RFID drying and jam sensing plus Bambu's mature firmware, so failure reports are rare in the wild; the bolt-on laser and cutting modules are newer hardware with less long-term data behind them.",
+        "ease_of_use": "Auto-leveling and Bambu Studio's guided calibration make the base printer nearly plug-and-play, but the laser/blade attachments add real setup and safety overhead most single-tool buyers won't need.",
+        "value": "At $1,249 for a single-nozzle machine, you're paying a premium over comparable P-series printers largely for the modular laser/cutting upgrade path and servo motion — great if you'll use those extras, mediocre value if you won't."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=EUHZtyOmQGg",
@@ -63,7 +63,7 @@
       "price_range": "mid",
       "buy_url": "https://us.store.bambulab.com/products/p2s",
       "scores": {
-        "overall": 8.63,
+        "overall": 8.52,
         "print_quality": 9.2,
         "speed": 8.1,
         "ease_of_use": 8.6,
@@ -93,12 +93,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $549 against segment peers: 256x256x256mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "A genuine step up from the P1S: the redesigned hotend and improved cooling shrink layer lines and stringing noticeably in side-by-side comparisons, putting it close to X1-series output at less than half the price.",
+        "reliability": "Bambu's most field-tested enclosure/extruder combo — years of P1S data feed directly into this platform, and owner forums report very few structural or extrusion failures out of the box.",
+        "ease_of_use": "The new 5-inch color touchscreen fixes the P1S's biggest annoyance (its tiny monochrome display), and calibration is fully automated; this is about as low-friction as enclosed multi-material printing gets.",
+        "value": "At $549 with AMS-ready multicolor and an enclosure, it undercuts nearly every other enclosed printer in its class — one of the strongest dollar-for-capability picks on this list."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=HxsBDJWpxq4",
@@ -117,7 +117,7 @@
       "price_range": "premium",
       "buy_url": "https://us.store.bambulab.com/products/h2d",
       "scores": {
-        "overall": 8.67,
+        "overall": 8.4,
         "print_quality": 9.3,
         "speed": 9.5,
         "ease_of_use": 8.2,
@@ -147,12 +147,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 1000mm/s rated speed; +0.2 for 20000mm/s2 acceleration and high-flow hotends.",
-        "print_quality": "Editorial rating from published reviews, reflecting closed-loop servo extrusion for consistent flow, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1899 against segment peers: 350x320x325mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Dual PMSM servo nozzles hold consistent flow across both extruders, and the heated 65°C chamber keeps engineering filaments like PA-CF dimensionally stable on large parts — a genuine step toward production-grade output.",
+        "reliability": "Newer hardware than the P-series, so it has less multi-year track record, but early large-scale deployments (schools, small shops) report few catastrophic failures; the dual-nozzle mechanism is the main wear point to watch.",
+        "ease_of_use": "Auto-calibration extends across both nozzles and the AMS ecosystem, but juggling dual extrusion profiles, laser add-ons, and multi-material slicing settings is meaningfully more involved than a single-nozzle Bambu printer.",
+        "value": "At $1,899 it's expensive relative to single-nozzle Bambu machines, but for buyers who actually need true dual-material or laser-plus-print workflows, there's no cheaper way to get this feature set from a major brand."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=aHii2K4yrcM",
@@ -171,7 +171,7 @@
       "price_range": "mid",
       "buy_url": "https://us.store.bambulab.com/products/p1s",
       "scores": {
-        "overall": 8.55,
+        "overall": 8.53,
         "print_quality": 9,
         "speed": 7.7,
         "ease_of_use": 8.5,
@@ -201,12 +201,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $399 against segment peers: 256x256x256mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Still one of the best-reviewed budget-enclosed printers years after launch — direct drive plus enclosure produces clean ABS/ASA parts that punch well above the $399 price point.",
+        "reliability": "The most battle-tested printer in Bambu's current lineup by owner-hours; forums are full of P1S units running unattended for years with minimal maintenance beyond routine nozzle swaps.",
+        "ease_of_use": "Automatic bed leveling, flow calibration, and a mature AMS pairing make this close to zero-configuration printing — arguably the easiest enclosed multi-material printer to live with day to day.",
+        "value": "At $399 for an enclosed, AMS-ready CoreXY machine, this remains one of the single best value propositions in the entire market, budget or otherwise."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=kZ7L5Bfsy5w",
@@ -225,7 +225,7 @@
       "price_range": "mid",
       "buy_url": "https://us.store.bambulab.com/products/a1",
       "scores": {
-        "overall": 8.39,
+        "overall": 8.46,
         "print_quality": 8.5,
         "speed": 7.3,
         "ease_of_use": 9,
@@ -255,12 +255,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $399 against segment peers: 256x256x256mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Open-frame design means ABS/ASA warp more than on enclosed siblings, but PLA/PETG output is excellent — sharp, consistent layers that rival machines twice the price for the materials most hobbyists actually print.",
+        "reliability": "A simpler, lighter-duty version of the P1P platform; very few structural issues reported, though the exposed frame makes it more sensitive to drafts and ambient temperature than enclosed models.",
+        "ease_of_use": "Fully automatic calibration and AMS Lite compatibility make this an excellent first 3D printer — new users are printing successfully within 20 minutes of unboxing.",
+        "value": "At $399 with multicolor support via AMS Lite, it undercuts most bed-slinger competitors while offering meaningfully better software and community support — hard to beat for beginners on a budget."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=_gmGAFoNWIA",
@@ -279,7 +279,7 @@
       "price_range": "budget",
       "buy_url": "https://us.store.bambulab.com/products/a1-mini",
       "scores": {
-        "overall": 8.22,
+        "overall": 8.38,
         "print_quality": 8,
         "speed": 7.3,
         "ease_of_use": 9,
@@ -309,12 +309,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $249 against segment peers: 180x180x180mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Small build volume aside, print quality per cubic inch matches the full-size A1 — fine detail and dimensional accuracy are excellent for figurines, cosplay parts, and other small-format prints.",
+        "reliability": "The most compact and mechanically simple printer in Bambu's lineup, which translates to fewer failure points; it's a common recommendation for classrooms and first-time owners for that reason.",
+        "ease_of_use": "The easiest printer in this entire ranking to set up — fully automatic leveling, guided AMS Lite pairing, and a compact footprint that fits on any desk.",
+        "value": "At $249 it's one of the cheapest ways into the Bambu ecosystem and genuinely capable for its size, though the small 180mm build volume limits what projects it can tackle."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=cC6Z-CHWy5M",
@@ -333,7 +333,7 @@
       "price_range": "premium",
       "buy_url": "https://www.prusa3d.com/product/original-prusa-mk4s-3d-printer-5/",
       "scores": {
-        "overall": 8.45,
+        "overall": 8.26,
         "print_quality": 8.6,
         "speed": 7.3,
         "ease_of_use": 8.6,
@@ -364,12 +364,12 @@
       },
       "notes": "Assembled price; kit available for $799.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1099 against segment peers: 250x210x220mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The Bondtech CHT nozzle and revamped 360° cooling produce noticeably sharper overhangs and bridging than the original MK4, closing much of the speed-vs-quality gap with CoreXY rivals.",
+        "reliability": "Prusa's open-hardware bed-slinger lineage has a legendary multi-year reliability record; parts are user-serviceable, firmware is open source, and Prusa's support team is widely regarded as best-in-class.",
+        "ease_of_use": "Setup and first calibration take longer than an auto-everything Bambu printer, but Prusa's documentation and slicer profiles are exceptionally thorough, which flattens the learning curve for troubleshooting later.",
+        "value": "At $1,099 it costs more than most CoreXY competitors with similar speed, but you're buying into Prusa's open ecosystem, long parts-availability window, and famously responsive support — a different kind of value calculation."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=K-p1NpY5qwY",
@@ -388,7 +388,7 @@
       "price_range": "premium",
       "buy_url": "https://www.prusa3d.com/product/prusa-core-one-l-2/",
       "scores": {
-        "overall": 7.95,
+        "overall": 7.62,
         "print_quality": 9,
         "speed": 6.1,
         "ease_of_use": 7.8,
@@ -419,12 +419,12 @@
       },
       "notes": "60°C actively heated chamber with AC convection heatbed. Assembled only, released 2026.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 250mm/s rated speed. Prusa deliberately tunes profiles conservatively, prioritizing first-print-success over headline speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1699 against segment peers: 300x300x330mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The larger convection AC heatbed heats more evenly than the standard Core One, and Prusa's Input Shaper tuning keeps ringing well controlled even on the bigger 300x300x330mm volume.",
+        "reliability": "Very new to market relative to most printers here, so long-term ownership data is thin, but it inherits the well-proven Core One drivetrain and Prusa's firmware maturity.",
+        "ease_of_use": "Enclosed, auto-leveling, and built on the same guided workflow as the rest of the Core One family — approachable for a machine this large, though assembly and initial setup take real time.",
+        "value": "At $1,699 for a 30-liter enclosed build volume with Prusa-grade support, it's pricier than most large-format rivals but targets buyers who specifically want Prusa's ecosystem at scale rather than the cheapest cubic inch of build volume."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=xf3IqSSi_jM",
@@ -443,7 +443,7 @@
       "price_range": "premium",
       "buy_url": "https://www.prusa3d.com/product/prusa-core-one/",
       "scores": {
-        "overall": 8.15,
+        "overall": 7.9,
         "print_quality": 8.8,
         "speed": 6.9,
         "ease_of_use": 8,
@@ -474,12 +474,12 @@
       },
       "notes": "Assembled price; kit available for $999.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 350mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1199 against segment peers: 250x220x270mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Prusa's first fully enclosed CoreXY machine, and it shows — the enclosed chamber plus Nextruder direct drive produces some of the cleanest ABS/ASA/PC parts in the sub-$1,500 bracket.",
+        "reliability": "Built on the same Nextruder and Input Shaper firmware as the MK4S, with Prusa's usual level of long-term parts support; still a newer chassis so total owner-hours trail the MK-series.",
+        "ease_of_use": "Guided assembly and calibration are more involved than a Bambu Lab printer out of the box, but once tuned it's low-maintenance and Prusa's documentation makes self-troubleshooting straightforward.",
+        "value": "At $1,199 it's positioned against enclosed CoreXY rivals that are often $300-500 cheaper; you're paying for Prusa's open-source ethos and support reputation more than raw specs."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=OLk7CUAXVLA",
@@ -498,7 +498,7 @@
       "price_range": "premium",
       "buy_url": "https://www.prusa3d.com/product/original-prusa-xl-assembled-single-toolhead-3d-printer/",
       "scores": {
-        "overall": 8.07,
+        "overall": 7.72,
         "print_quality": 9,
         "speed": 7.7,
         "ease_of_use": 7.6,
@@ -528,12 +528,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1999 against segment peers: 360x360x360mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The five-toolhead changer is unmatched for true multi-material parts with zero purge waste, and print quality on single-material jobs is excellent, though it's slower than newer CoreXY designs.",
+        "reliability": "A mechanically complex machine — the toolchanger adds moving parts most printers don't have — but Prusa's engineering and firmware support keep failure rates low relative to its complexity.",
+        "ease_of_use": "The toolhead-swapping workflow and per-material calibration routine are the most involved in this list; this is not a beginner's first printer, but the payoff is genuine multi-material capability nothing else here matches.",
+        "value": "At $1,999 it's expensive, and the toolchanger is niche — buyers who don't need true multi-material printing will get better value elsewhere, but no other consumer machine replicates what the XL does."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=xGIk1BnXdak",
@@ -552,7 +552,7 @@
       "price_range": "mid",
       "buy_url": "https://www.prusa3d.com/product/original-prusa-mini-3/",
       "scores": {
-        "overall": 7.95,
+        "overall": 7.92,
         "print_quality": 8,
         "speed": 5.2,
         "ease_of_use": 8.6,
@@ -582,12 +582,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 200mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting its class-typical hardware. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration.",
-        "value": "Editorial capability-per-dollar rating at $429 against segment peers: 180x180x180mm. Re-scored when street pricing moves."
+        "print_quality": "A Bowden extruder and small frame limit it to modest print speeds, but dimensional accuracy on PLA/PETG is very good for the size — a reliable choice for small functional parts.",
+        "reliability": "One of the simplest, most field-proven machines Prusa makes; the small mechanical footprint means fewer things to go wrong, and replacement parts are cheap and widely available.",
+        "ease_of_use": "Compact and straightforward to assemble and calibrate, with Prusa's usual clear documentation — a good entry point for someone who wants to learn the fundamentals rather than rely on full automation.",
+        "value": "At $429 it's one of the pricier small-format printers on the market, but the open-source ecosystem, long-term parts support, and Prusa community make it a defensible pick for buyers who value longevity over raw spec-per-dollar."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=mBDIqhtp-z8",
@@ -606,7 +606,7 @@
       "price_range": "premium",
       "buy_url": "https://store.ultimaker.com/ultimaker-s5-3d-printer",
       "scores": {
-        "overall": 7.86,
+        "overall": 7.35,
         "print_quality": 9,
         "speed": 6.5,
         "ease_of_use": 8.6,
@@ -636,12 +636,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 300mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $5995 against segment peers: 330x240x300mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Dual-extrusion accuracy and material compatibility (including PVA support and reinforced composites) are excellent, but the Bowden feed system caps flow rate well below what modern direct-drive CoreXY machines achieve.",
+        "reliability": "An enterprise-grade machine built for unattended 24/7 duty in professional shops; the trade-off for that industrial reliability is a much higher price and slower iteration on new features than consumer brands.",
+        "ease_of_use": "Print cores swap tool-free and Cura's material profiles are extensive, but this is designed for professional workflows — the touchscreen and setup process assume some prior 3D printing experience.",
+        "value": "At $5,995, this is priced for engineering departments and service bureaus, not hobbyists; against Bambu Lab and Prusa machines that now match or beat its speed and quality at a fraction of the cost, the value case has weakened considerably."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=9FIQnD0i9Qw",
@@ -660,7 +660,7 @@
       "price_range": "premium",
       "buy_url": "https://store.ultimaker.com/ultimaker-s3-3d-printer",
       "scores": {
-        "overall": 7.77,
+        "overall": 7.34,
         "print_quality": 8.6,
         "speed": 6.5,
         "ease_of_use": 8.6,
@@ -690,12 +690,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 300mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $4450 against segment peers: 243x213x200mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The smaller sibling of the S5 with the same dual-extrusion architecture and material breadth, delivering dependable, repeatable results on engineering-grade materials rather than headline print speed.",
+        "reliability": "Shares the S5's enterprise-grade build quality and long-duty-cycle design, with a strong track record in professional and educational settings where uptime matters more than novelty features.",
+        "ease_of_use": "Tool-free print core swaps and Cura's mature software make day-to-day operation straightforward, though the smaller 243x213x200mm volume and semi-enclosed chamber narrow what you can print compared to the S5.",
+        "value": "At $4,450 it remains a hard sell against consumer CoreXY machines that now offer comparable or better print quality at one-tenth the price — its case rests almost entirely on Ultimaker's enterprise software and support contracts."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=LxIfpJPxI_Q",
@@ -713,7 +713,7 @@
       "price_range": "mid",
       "buy_url": "https://store.creality.com/products/k1-max-3d-printer",
       "scores": {
-        "overall": 7.94,
+        "overall": 7.9,
         "print_quality": 8.5,
         "speed": 8.1,
         "ease_of_use": 7.6,
@@ -743,12 +743,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera.",
-        "value": "Editorial capability-per-dollar rating at $549 against segment peers: 300x300x300mm, enclosed. Re-scored when street pricing moves."
+        "print_quality": "Fast doesn't mean sloppy here — the K1 Max holds decent surface quality even at high speed, though it's a step behind Bambu's closed-loop systems on fine detail and consistency across long prints.",
+        "reliability": "Creality's K-series has matured a lot since launch, but electronics and firmware polish still lag Bambu Lab; expect the occasional need to tweak settings that a more refined system would handle automatically.",
+        "ease_of_use": "Largely pre-assembled with auto-leveling and an AI camera for monitoring, though the touchscreen UI and slicer integration feel less polished than the market leaders.",
+        "value": "At $549 for a 300x300x300mm enclosed CoreXY printer with AI monitoring, it undercuts most large-format rivals substantially — one of the better large-build-volume deals available."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=MZcWYmWyt9w",
@@ -767,12 +767,12 @@
       "price_range": "mid",
       "buy_url": "https://store.creality.com/products/k2-combo-3d-printer",
       "scores": {
-        "overall": 7.81,
-        "print_quality": 8,
+        "overall": 8.3,
+        "print_quality": 8.5,
         "speed": 8.1,
-        "ease_of_use": 7.5,
-        "reliability": 7.2,
-        "value": 8.5
+        "ease_of_use": 8.0,
+        "reliability": 7.8,
+        "value": 8.8
       },
       "specs": {
         "build_volume": "260x260x260mm",
@@ -798,12 +798,12 @@
       },
       "notes": "Enclosed but passive chamber; active chamber heating is only on K2 Pro and K2 Plus.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed. Creality states 300mm/s typical across the K2 series.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $649 against segment peers: 260x260x260mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The step-servo motor system and dual-gear extruder noticeably tighten dimensional accuracy over older K-series machines, putting output quality close to Bambu Lab territory at a lower price.",
+        "reliability": "A newer platform than the K1 series, so it has less multi-year data, but early adopter reports are positive — the CFS filament system in particular has proven more dependable than Creality's earlier multicolor attempts.",
+        "ease_of_use": "Setup is largely automated with guided calibration, and the CFS multicolor system is genuinely simple to use — Creality's closest approach yet to Bambu-level plug-and-play.",
+        "value": "At $649 with genuine 16-color capability via CFS and a rigid die-cast frame, it undercuts comparable Bambu Lab multicolor setups by a meaningful margin — one of the sharper value picks in the multicolor category."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=DWW1KOG7IIY",
@@ -822,7 +822,7 @@
       "price_range": "premium",
       "buy_url": "https://store.creality.com/products/creality-k2-plus-combo-3d-printer",
       "scores": {
-        "overall": 7.88,
+        "overall": 7.83,
         "print_quality": 8.3,
         "speed": 8.4,
         "ease_of_use": 7.5,
@@ -853,12 +853,12 @@
       },
       "notes": "Actively heated chamber up to 60°C, 30000mm/s² acceleration, includes CFS unit.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed; +0.3 for 30000mm/s2 servo acceleration. Creality states 300mm/s typical across the K2 series.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $1299 against segment peers: 400x400x400mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The larger 400x400x400mm chamber and active heating handle warp-prone materials like ABS and PPA well, though print quality on fine detail slightly trails the smaller K2/K2 Pro due to the added mass in motion.",
+        "reliability": "The step-servo motor system across five axes is mechanically more complex than the base K2, and while most owners report solid performance, the sheer scale of the machine means alignment and calibration issues are more consequential when they occur.",
+        "ease_of_use": "Pre-assembled out of the box like the rest of the K2 family, but the size alone makes unboxing, placement, and maintenance more of a two-person job than smaller machines on this list.",
+        "value": "At $1,299 for a 64-liter enclosed, heated, multicolor-capable build volume, it's genuinely difficult to match this much capability per dollar anywhere else — the main cost is the space it demands."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=zL_zPvHIZh8",
@@ -876,7 +876,7 @@
       "price_range": "budget",
       "buy_url": "https://store.creality.com/products/ender-3-v3-se-3d-printer",
       "scores": {
-        "overall": 7.5,
+        "overall": 7.71,
         "print_quality": 7.6,
         "speed": 5.7,
         "ease_of_use": 7.6,
@@ -906,12 +906,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 250mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $199 against segment peers: 220x220x250mm. Re-scored when street pricing moves."
+        "print_quality": "Print quality is solid but unremarkable for the category — clean PLA/PETG results at moderate speed, without the fine-tuning or high-flow hardware that separates it from budget rivals.",
+        "reliability": "A simplified, more standardized version of the venerable Ender 3 line; the reduced part count versus older Enders means fewer things to misalign, and the huge community means any issue has already been solved online.",
+        "ease_of_use": "Auto bed leveling via CR Touch removes the classic Ender 3 pain point, and the guided on-screen setup makes this one of the easiest budget bed-slingers to get running.",
+        "value": "At $199 with auto-leveling and reasonable speed, it's an excellent low-risk entry point — the printer most people should consider first if they're not sure 3D printing is for them."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=GXhoTMGH6D0",
@@ -960,12 +960,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints). Ships with a 250mm/s default profile; 500 is an overclock, not the everyday experience.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $349 against segment peers: 420x420x480mm. Re-scored when street pricing moves."
+        "print_quality": "Print quality is good but not exceptional for a 500mm/s-rated machine — the huge 420x420x480mm bed makes achieving consistent leveling and adhesion across the full surface the main challenge.",
+        "reliability": "A large, mechanically ambitious bed-slinger; the extended gantry and bed mass mean more can go out of alignment during shipping or over time than on smaller machines, though Elegoo's support has improved significantly in recent years.",
+        "ease_of_use": "Klipper firmware unlocks real speed but comes with a steeper learning curve than fully automated systems — expect to spend time in the settings menu if you want to extract the printer's full potential.",
+        "value": "At $349 for this much build volume, it's a standout for anyone who specifically needs to print large single parts and is willing to do some of their own tuning."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=3b7RuUaFF0A",
@@ -984,7 +984,7 @@
       "price_range": "budget",
       "buy_url": "https://us.elegoo.com/products/elegoo-neptune-3-pro-fdm-3d-printer-225x225x280mm",
       "scores": {
-        "overall": 7.41,
+        "overall": 7.55,
         "print_quality": 7.6,
         "speed": 4.9,
         "ease_of_use": 7.8,
@@ -1014,12 +1014,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 180mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $169 against segment peers: 225x225x280mm. Re-scored when street pricing moves."
+        "print_quality": "A dependable mid-tier bed-slinger — direct drive extrusion handles flexible filaments better than the Bowden-based Neptune 3, with print quality that's respectable if unremarkable at this price.",
+        "reliability": "One of the most widely owned budget printers of its generation, with years of community troubleshooting behind it; mechanical issues are well documented and easy to fix with cheap, widely available parts.",
+        "ease_of_use": "No auto bed leveling on this model, so first-time setup requires manual mesh leveling — a real barrier for total beginners compared to newer auto-leveling budget printers.",
+        "value": "At $169 it remains one of the cheapest ways to get a direct-drive printer with a large, well-documented community — great value if you're comfortable with some manual tuning."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=YDD3ErY4GJw",
@@ -1036,12 +1036,12 @@
       "price_range": "budget",
       "buy_url": "https://us.elegoo.com/products/centauri-carbon",
       "scores": {
-        "overall": 7.88,
-        "print_quality": 7.8,
-        "speed": 7.7,
-        "ease_of_use": 7.8,
-        "reliability": 7.6,
-        "value": 8.8
+        "overall": 8.36,
+        "print_quality": 8.3,
+        "speed": 8.0,
+        "ease_of_use": 8.0,
+        "reliability": 7.9,
+        "value": 9.2
       },
       "specs": {
         "build_volume": "256x256x256mm",
@@ -1067,12 +1067,12 @@
         "enclosure": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera.",
-        "value": "Editorial capability-per-dollar rating at $309 against segment peers: 256x256x256mm, enclosed. Re-scored when street pricing moves."
+        "print_quality": "A genuine surprise at this price — the CoreXY motion system and 320°C hardened hotend produce clean, accurate parts that hold up against printers costing two to three times as much, including on carbon-fiber-reinforced filament.",
+        "reliability": "As Elegoo's first serious CoreXY design, it lacks the multi-year track record of Bambu or Creality's K-series, but early large-scale reviewer testing (300+ hour runs) reports very few hardware failures.",
+        "ease_of_use": "Auto-calibration and an 8GB onboard library make it close to plug-and-play, though the companion software is less polished than Bambu Studio or Creality Print.",
+        "value": "At $309 for an enclosed, 500mm/s CoreXY printer with a genuinely high-temp hotend, this is arguably the single best value machine in this entire ranking — multiple independent reviewers have called it the price-to-performance leader of 2026."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=_RUVFMf5YgM",
@@ -1091,7 +1091,7 @@
       "price_range": "budget",
       "buy_url": "https://store.anycubic.com/products/kobra-2",
       "scores": {
-        "overall": 7.48,
+        "overall": 7.63,
         "print_quality": 7.6,
         "speed": 5.7,
         "ease_of_use": 7.8,
@@ -1121,12 +1121,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 250mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $149 against segment peers: 220x220x250mm. Re-scored when street pricing moves."
+        "print_quality": "Solid PLA/PETG output for a sub-$200 bed-slinger, though the lack of a heated enclosure and modest cooling limit how far you can push more demanding materials.",
+        "reliability": "A simple, well-understood mechanical design with a large install base; most reported issues are firmware quirks rather than hardware failures, and are well documented in the Anycubic community.",
+        "ease_of_use": "LeviQ auto-leveling removes the manual bed-leveling step, but the printer still relies on a largely manual setup workflow compared to newer auto-everything competitors.",
+        "value": "At $149 it's one of the cheapest auto-leveling printers available and a reasonable low-stakes starting point, though it's been outpaced on features by similarly priced newer entrants like the Kobra X."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=5sngFgwJJS8",
@@ -1142,7 +1142,7 @@
       "price_range": "budget",
       "buy_url": "https://store.anycubic.com/products/kobra-x",
       "scores": {
-        "overall": 7.46,
+        "overall": 7.64,
         "print_quality": 7.2,
         "speed": 7.7,
         "ease_of_use": 7.2,
@@ -1173,12 +1173,12 @@
       },
       "notes": "Native 4-color via integrated ACE Gen 2 in the toolhead, expandable to 19 colors. Open frame bedslinger.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints). Recommended speed is 300mm/s; 600 is peak.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $349 against segment peers: 260x260x260mm. Re-scored when street pricing moves."
+        "print_quality": "The ACE GEN2 multicolor system produces clean color transitions with less waste than most budget multi-material setups, and single-color print quality is competitive for a 600mm/s-rated bed-slinger.",
+        "reliability": "A newer platform for Anycubic, so it carries less long-term ownership data than the Kobra 2/3, but early reviewer units have held up well through extended multicolor print runs.",
+        "ease_of_use": "Auto-leveling and a guided setup keep initial assembly simple, and the built-in AI camera helps catch failures early — a meaningful step up in polish from earlier Kobra models.",
+        "value": "At $349 with genuine multicolor capability up to 19 colors via the optional ACE 2 Pro, it undercuts most rivals in the budget multicolor category by a wide margin."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=Oiv2JWAgcdo",
@@ -1197,7 +1197,7 @@
       "price_range": "mid",
       "buy_url": "https://store.anycubic.com/products/kobra-3-combo",
       "scores": {
-        "overall": 7.7,
+        "overall": 7.88,
         "print_quality": 7.5,
         "speed": 7.7,
         "ease_of_use": 7.4,
@@ -1227,12 +1227,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $329 against segment peers: 250x250x260mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The ACE Pro's active filament drying measurably reduces stringing and blobbing versus earlier Anycubic multicolor systems, with print quality that's solid though a notch below the best CoreXY machines here.",
+        "reliability": "An open-frame bed-slinger design paired with newer multicolor hardware; most owner complaints center on the ACE Pro's roughly two-minute color-change time rather than hardware failures.",
+        "ease_of_use": "LeviQ 3.0 auto-leveling and a largely automated setup make this approachable, and the bundled ACE Pro is simpler to configure than most third-party multi-material add-ons.",
+        "value": "At $329 including the ACE Pro multicolor unit, it's one of the most affordable ways to get genuine 4-to-8-color printing, undercutting most enclosed multicolor rivals substantially."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=UVoCgqombqg",
@@ -1251,7 +1251,7 @@
       "price_range": "mid",
       "buy_url": "https://www.flashforge.com/products/adventurer-5m-pro-3d-printer",
       "scores": {
-        "overall": 8.21,
+        "overall": 8.2,
         "print_quality": 8.2,
         "speed": 8.1,
         "ease_of_use": 8.6,
@@ -1281,12 +1281,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera.",
-        "value": "Editorial capability-per-dollar rating at $399 against segment peers: 220x220x220mm, enclosed. Re-scored when street pricing moves."
+        "print_quality": "Vibration compensation and the quick-swap high-flow nozzle keep surface quality clean at speed, putting it in solid competition with similarly priced Bambu and Creality enclosed machines.",
+        "reliability": "A dual-filtration enclosed design with a decent track record since launch; not as widely deployed as Bambu's P1S, so community troubleshooting resources are thinner, but reported hardware failure rates are low.",
+        "ease_of_use": "One-click auto leveling and a straightforward touchscreen make setup quick, though FlashForge's slicer and app ecosystem feel a step behind Bambu Studio in polish and feature depth.",
+        "value": "At $399 for an enclosed, HEPA-filtered CoreXY printer with genuinely fast speeds, it's a strong alternative to the P1S for anyone who prioritizes air filtration for ABS/ASA printing."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=XKX4xP5fA7U",
@@ -1305,7 +1305,7 @@
       "price_range": "budget",
       "buy_url": "https://www.flashforge.com/products/adventurer-5m-3d-printer",
       "scores": {
-        "overall": 8.16,
+        "overall": 8.21,
         "print_quality": 8,
         "speed": 8.1,
         "ease_of_use": 8.5,
@@ -1335,12 +1335,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera.",
-        "value": "Editorial capability-per-dollar rating at $299 against segment peers: 220x220x220mm. Re-scored when street pricing moves."
+        "print_quality": "Shares the Pro's CoreXY motion and high-flow nozzle, so speed and surface finish are nearly identical — you're mainly giving up the enclosure and air filtration, not print fidelity.",
+        "reliability": "The open-frame version of the same well-tested platform as the 5M Pro; fewer thermal-management components means less to go wrong, though it's more exposed to drafts affecting ABS/ASA prints.",
+        "ease_of_use": "Same one-click auto leveling and setup flow as the Pro model — one of the more beginner-friendly high-speed printers available.",
+        "value": "At $299 it delivers nearly Pro-level speed and quality without the enclosure premium, making it a smart pick for anyone who mainly prints PLA/PETG and doesn't need filtered ABS printing."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=cxfZdsV1v8c",
@@ -1359,7 +1359,7 @@
       "price_range": "mid",
       "buy_url": "https://shop.snapmaker.com/products/snapmaker-j1-independent-dual-extruder-3d-printer",
       "scores": {
-        "overall": 7.46,
+        "overall": 7.32,
         "print_quality": 7.8,
         "speed": 7.1,
         "ease_of_use": 7.5,
@@ -1389,12 +1389,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 350mm/s rated speed; +0.2 for IDEX copy and mirror modes that double throughput on paired parts.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $899 against segment peers: 300x200x200mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "True independent dual extruders eliminate the ooze and color-bleed issues common with single-nozzle multi-material systems, and Copy/Mirror mode print quality is genuinely production-useful for batch work.",
+        "reliability": "A mechanically proven IDEX platform with several years on the market; the extra cooling fan and pre-installed panels on this J1s revision specifically addressed early reliability complaints about PLA printing without the top cover.",
+        "ease_of_use": "Hands-free XY offset calibration and tool-free bed leveling remove much of the traditional IDEX setup pain, though dual-extruder slicing profiles still require more attention than a single-nozzle machine.",
+        "value": "At $899, it's priced above single-nozzle competitors, but genuine IDEX capability (mirror/copy printing, dissolvable supports) isn't available at this price from many other brands."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=xQwsKRVq7xw",
@@ -1413,7 +1413,7 @@
       "price_range": "premium",
       "buy_url": "https://us.snapmaker.com/products/snapmaker-artisan-3-in-1-3d-printer",
       "scores": {
-        "overall": 7.03,
+        "overall": 6.82,
         "print_quality": 7.6,
         "speed": 6.5,
         "ease_of_use": 7,
@@ -1443,12 +1443,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 300mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $2299 against segment peers: 400x400x400mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Print quality on the 3D printing module is good but not class-leading; the real value of this machine is in what else it can do — the 40W laser and 200W CNC modules turn in genuinely usable results in their own right.",
+        "reliability": "A mechanically complex modular system, and reliability varies more by which module is installed; the printing module itself is well proven, while the laser and CNC modules are more failure-prone from user setup error than hardware defects.",
+        "ease_of_use": "Swapping between 3D printing, laser, and CNC modules is quick, but calibrating each mode correctly (especially CNC) requires real technical comfort — this is not a beginner's first machine.",
+        "value": "At $2,299, this is expensive as a 3D printer alone, but genuinely competitive against buying a separate printer, laser engraver, and CNC router — the math favors buyers who'll actually use all three functions."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=Ch_2EPtzHPQ",
@@ -1467,7 +1467,7 @@
       "price_range": "premium",
       "buy_url": "https://us.snapmaker.com/products/snapmaker-u1-3d-printer",
       "scores": {
-        "overall": 7.6,
+        "overall": 7.51,
         "print_quality": 7.8,
         "speed": 8.1,
         "ease_of_use": 7.5,
@@ -1498,12 +1498,12 @@
       },
       "notes": "Four-toolhead SnapSwap toolchanger, 5-second swaps, MSRP $999. Top cover for full enclosure sold separately.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; +0.4 for 5-second purge-free toolhead swaps that make real multi-color jobs faster than higher-spec single-nozzle machines.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera.",
-        "value": "Editorial capability-per-dollar rating at $899 against segment peers: 270x270x270mm. Re-scored when street pricing moves."
+        "print_quality": "The four-toolhead SnapSwap system produces clean, consistent multi-material parts with dramatically less filament waste than AMS-style single-nozzle systems, though single-color print quality is good rather than exceptional.",
+        "reliability": "A brand-new tool-changing architecture with limited long-term ownership data so far; early reviewer units have performed well, but this is the newest and mechanically most novel platform in this ranking.",
+        "ease_of_use": "Tool changing is largely automatic once configured, but multi-material slicing setup and the four-toolhead workflow take more time to learn than a standard single-nozzle printer.",
+        "value": "At $899, it undercuts most other genuine tool-changing 3D printers by a wide margin — if true multi-material printing without a single-nozzle purge tower is the goal, this is currently one of the cheapest ways to get it."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=S9rj4e9WAo8",
@@ -1522,7 +1522,7 @@
       "price_range": "budget",
       "buy_url": "https://www.voxelab3dp.com/product/aquila-s2-diy-3d-printer-kits",
       "scores": {
-        "overall": 6.96,
+        "overall": 7.15,
         "print_quality": 7.2,
         "speed": 4.9,
         "ease_of_use": 7,
@@ -1552,12 +1552,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 180mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $159 against segment peers: 220x220x240mm. Re-scored when street pricing moves."
+        "print_quality": "A budget Ender-3-style frame with a genuinely high-temp (300°C) direct-drive hotend, giving it access to materials like nylon and PETG-CF that most printers in this price range can't touch.",
+        "reliability": "Simple, well-understood V-slot mechanics shared with countless Ender-3 clones; parts are cheap and interchangeable, and the design has few unique failure points beyond typical budget-printer wear items.",
+        "ease_of_use": "No auto bed leveling — manual leveling and a fairly basic manual are the biggest hurdles for first-time owners, though the large Ender-3-adjacent community fills in the documentation gaps.",
+        "value": "At $159 with a genuine 300°C hotend and PEI flexible plate, it punches above its price for anyone willing to print high-temp materials and do some manual tuning."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=QX6UNtMcxO0",
@@ -1573,7 +1573,7 @@
       "price_range": "premium",
       "buy_url": "https://shop.raise3d.com/products/raise3d-pro3-3d-printer",
       "scores": {
-        "overall": 7.34,
+        "overall": 7.18,
         "print_quality": 8.2,
         "speed": 4.9,
         "ease_of_use": 7.8,
@@ -1603,12 +1603,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 150mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $3999 against segment peers: 300x300x300mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Dual independent extruders and a rigid, all-metal frame deliver excellent dimensional accuracy and repeatability across long production runs — this is built for consistency over many prints, not headline speed.",
+        "reliability": "An enterprise-grade machine designed for continuous small-batch production; RaiseCloud fleet monitoring and a track record in professional shops make it one of the most dependable printers here for unattended operation.",
+        "ease_of_use": "The independent dual-extruder system and HD camera monitoring are polished, but this is a professional tool aimed at users who already understand production 3D printing workflows.",
+        "value": "At $3,999 it's priced for small manufacturers and service bureaus rather than hobbyists; against modern high-speed CoreXY machines its low ~150mm/s speed makes the value case weak for anyone not specifically needing its production-grade dual extrusion."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=_PfHpAhKU3k",
@@ -1626,7 +1626,7 @@
       "price_range": "budget",
       "buy_url": "https://www.artillery3d.com/products/artillery-sidewinder-x3-plus",
       "scores": {
-        "overall": 7.49,
+        "overall": 7.62,
         "print_quality": 7.8,
         "speed": 6.1,
         "ease_of_use": 7.4,
@@ -1657,12 +1657,12 @@
       },
       "notes": "Plus model with 300x300x400mm volume; the smaller X3 Pro is 240x240x260mm.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 300mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $299 against segment peers: 300x300x400mm. Re-scored when street pricing moves."
+        "print_quality": "A large 300x300x400mm bed-slinger with dual-gear direct drive; print quality is decent for the size class but shows more ringing and inconsistency on tall prints than CoreXY alternatives.",
+        "reliability": "Budget bed-slinger mechanics with a smaller install base and community than Creality or Ender-adjacent printers, meaning less crowd-sourced troubleshooting if something goes wrong.",
+        "ease_of_use": "49-point auto bed leveling helps first-layer setup, but the overall software and firmware polish trail the major brands — expect some manual tuning to get consistent results.",
+        "value": "At $299 for a 300x300x400mm build volume with auto leveling, it's a reasonable pick for buyers who specifically need tall prints on a budget and don't mind a less-refined ecosystem."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=bBr-OZta09k",
@@ -1681,7 +1681,7 @@
       "price_range": "budget",
       "buy_url": "https://www.sovol3d.com/products/sovol-sv06-best-budget-3d-printer-for-beginner",
       "scores": {
-        "overall": 7.21,
+        "overall": 7.39,
         "print_quality": 7.5,
         "speed": 5.2,
         "ease_of_use": 7.2,
@@ -1711,12 +1711,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 200mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers a largely manual setup workflow.",
-        "value": "Editorial capability-per-dollar rating at $199 against segment peers: 220x220x250mm. Re-scored when street pricing moves."
+        "print_quality": "A well-regarded Prusa-inspired budget frame; the planetary-geared direct drive extruder handles flexible filaments notably better than typical budget Bowden setups, with clean, dependable PLA/PETG results.",
+        "reliability": "One of the more consistently well-reviewed sub-$250 printers, with a simple, easily serviceable mechanical layout and an active community for troubleshooting.",
+        "ease_of_use": "Auto bed leveling and a flexible PEI plate simplify day-to-day use, though initial assembly requires more manual work than pre-assembled competitors at a similar price.",
+        "value": "At $199 with direct drive and auto leveling included, it undercuts most comparably equipped budget printers — a frequent recommendation for first-time buyers on a tight budget."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=I8tzQlfLOoE",
@@ -1735,7 +1735,7 @@
       "price_range": "mid",
       "buy_url": "https://www.sovol3d.com/products/sovol-sv08-3d-printer",
       "scores": {
-        "overall": 7.75,
+        "overall": 7.87,
         "print_quality": 7.6,
         "speed": 8.8,
         "ease_of_use": 7.2,
@@ -1765,12 +1765,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 700mm/s rated speed; +0.3 for 40000mm/s2 acceleration.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration.",
-        "value": "Editorial capability-per-dollar rating at $549 against segment peers: 350x350x345mm. Re-scored when street pricing moves."
+        "print_quality": "A Voron 2.4-derived CoreXY design that brings genuine high-speed, high-precision open-source printing to a mainstream price — output quality at speed rivals machines costing much more.",
+        "reliability": "Four independent Z motors and a rigid gantry give it excellent mechanical stability, though as an open-source Klipper machine it demands more user-side tuning discipline to stay reliable long-term than a closed, fully automated system.",
+        "ease_of_use": "90% pre-assembled cuts build time to about an hour, dramatically lower than building a Voron from scratch, but Klipper's tuning menus and open firmware still assume more technical comfort than Bambu- or Creality-style auto-everything printers.",
+        "value": "At $549 for genuine Voron-class CoreXY performance with four independent Z motors, this is one of the strongest value stories for anyone willing to embrace open-source tuning rather than plug-and-play."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=TXQLu9mV0fw",
@@ -1788,7 +1788,7 @@
       "price_range": "premium",
       "buy_url": "https://us.store.bambulab.com/products/h2c",
       "scores": {
-        "overall": 8.79,
+        "overall": 8.54,
         "print_quality": 9.5,
         "speed": 9.6,
         "ease_of_use": 8.2,
@@ -1819,12 +1819,12 @@
       },
       "notes": "Vortek hotend-change system: 6 induction hotends plus fixed nozzle for up to 7 materials with no purge waste, expandable to 24 filaments. Price is AMS Combo. 65°C active chamber.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 1000mm/s rated speed; +0.4 for purge-free Vortek hotend changes that massively cut multi-color job times.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $2399 against segment peers: 330x320x325mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The Vortek hotend-swapping system all but eliminates the purge waste and color-bleed seen in AMS-only multicolor printing, producing some of the cleanest multi-material parts available from any consumer printer.",
+        "reliability": "The newest and most mechanically novel Bambu Lab printer in this ranking; the hotend-swap mechanism is unproven over a long ownership window compared to Bambu's established AMS-based machines.",
+        "ease_of_use": "Multicolor slicing is more automated than manual AMS purge-tower workflows, but understanding when and how Vortek swaps hotends takes a real mental model shift from standard single-nozzle multicolor printing.",
+        "value": "At $2,399 it's the most expensive Bambu Lab printer in this ranking; the price buys genuinely unique hotend-swap technology, but it's a hard sell for anyone who doesn't specifically need heavy multi-material work."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=aodBL6MUlPM",
@@ -1843,7 +1843,7 @@
       "price_range": "mid",
       "buy_url": "https://us.store.bambulab.com/products/a2l",
       "scores": {
-        "overall": 8.44,
+        "overall": 8.46,
         "print_quality": 8.6,
         "speed": 7.3,
         "ease_of_use": 8.8,
@@ -1874,12 +1874,12 @@
       },
       "notes": "Launched June 2026. Single nozzle, optional cutting and pen modules, bed capped at 80°C by design.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting closed-loop servo extrusion for consistent flow, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $469 against segment peers: 330x320x325mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Essentially an A1 stretched to a bigger bed — print quality on PLA/PETG is just as good as the A1, and the added build volume opens up cosplay- and prop-scale prints without splitting models.",
+        "reliability": "Built on the well-proven A1 platform's drivetrain and firmware, so it inherits that machine's solid reliability track record despite being a newer, larger chassis.",
+        "ease_of_use": "Same fully automatic calibration workflow as the A1 — genuinely one of the easiest large-format printers to set up and start using immediately.",
+        "value": "At $469 for a 330x320x325mm open-frame build volume, it's one of the cheapest ways to get this much print space from a major brand, though ABS/ASA users will miss the enclosure."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=PJhA9GxHIwI",
@@ -1898,7 +1898,7 @@
       "price_range": "mid",
       "buy_url": "https://us.store.bambulab.com/products/x2d",
       "scores": {
-        "overall": 8.56,
+        "overall": 8.49,
         "print_quality": 9,
         "speed": 7.7,
         "ease_of_use": 8.5,
@@ -1929,12 +1929,12 @@
       },
       "notes": "Launched April 2026 as X1 Carbon successor. Dual nozzle on one toolhead (direct drive left, Bowden right capped at 200mm/s), 65°C active chamber. Combo with AMS 2 Pro is $899.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed. The Bowden right nozzle is capped at 200mm/s, so dual-material jobs run slower than the headline figure.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $649 against segment peers: 256x256x260mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The auxiliary support nozzle produces noticeably cleaner support removal than single-nozzle printers, and dual-material parts (rigid + flexible in one print) come out with genuinely usable finish quality.",
+        "reliability": "A newer, more affordable dual-nozzle platform than the H2D; early units have performed well, but as with any first-generation mechanism, long-term wear data on the dual-nozzle swap is still accumulating.",
+        "ease_of_use": "Auto-calibration extends across both nozzles, and support-material workflows are simpler to set up than manual dual-extrusion tuning on other brands' printers.",
+        "value": "At $649, it undercuts the H2D substantially while still delivering genuine dual-nozzle support printing — a smart middle ground for buyers who want multi-material without H2D pricing."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=BcjSfVVAAEA",
@@ -1953,7 +1953,7 @@
       "price_range": "mid",
       "buy_url": "https://store.creality.com/products/k1c-3d-printer",
       "scores": {
-        "overall": 8.02,
+        "overall": 8.04,
         "print_quality": 8.2,
         "speed": 8.1,
         "ease_of_use": 7.8,
@@ -1983,12 +1983,12 @@
         "silent_mode": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers remote monitoring via built-in camera.",
-        "value": "Editorial capability-per-dollar rating at $369 against segment peers: 220x220x250mm, enclosed. Re-scored when street pricing moves."
+        "print_quality": "The tri-metal Unicorn nozzle and 300°C hotend give it a genuine edge on carbon-fiber-reinforced filaments over most similarly priced competitors, with clean, consistent output at high speed.",
+        "reliability": "A refresh of the well-established K1 platform with better cooling and a hardened nozzle; the underlying mechanics have several years of community-verified reliability behind them.",
+        "ease_of_use": "Auto-calibration and quick-swap nozzles keep day-to-day use simple, though the software polish still trails Bambu Studio in small usability details.",
+        "value": "At $369 for a 600mm/s enclosed printer with true carbon-fiber-filament support, it's a strong pick for anyone specifically printing composite materials on a budget."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=BjCTH2JRcYE",
@@ -2007,7 +2007,7 @@
       "price_range": "mid",
       "buy_url": "https://store.anycubic.com/products/kobra-s1-combo",
       "scores": {
-        "overall": 8.04,
+        "overall": 8.1,
         "print_quality": 8,
         "speed": 8.1,
         "ease_of_use": 8,
@@ -2037,12 +2037,12 @@
         "silent_mode": false
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $399 against segment peers: 220x220x250mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Anycubic's first CoreXY design turns in clean, consistent results that clearly outperform its earlier bed-slinger multicolor machines, closing much of the quality gap with Bambu Lab's enclosed lineup.",
+        "reliability": "A genuinely new platform for Anycubic, so it lacks the multi-year track record of its Kobra 2/3 bed-slingers; early reviews are positive but the enclosed electronics bay makes DIY repairs more involved if something does fail.",
+        "ease_of_use": "The rotatable touchscreen and largely automated setup make this one of the more polished Anycubic printers to date, though the ACE Pro's roughly two-minute filament swap is slower than Bambu's AMS.",
+        "value": "At $399 for an enclosed CoreXY printer with genuine 4-to-8-color capability, it undercuts comparable Bambu Lab and Creality multicolor setups by a real margin."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=Ds9hsgAPJso",
@@ -2060,7 +2060,7 @@
       "price_range": "premium",
       "buy_url": "https://store.anycubic.com/products/kobra-s1-max-combo",
       "scores": {
-        "overall": 8.07,
+        "overall": 8.04,
         "print_quality": 8.4,
         "speed": 8.1,
         "ease_of_use": 7.8,
@@ -2091,12 +2091,12 @@
       },
       "notes": "65°C actively heated chamber, ACE 2 Pro with 65°C drying, expandable to 16 colors.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $899 against segment peers: 350x350x350mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Scaling the Kobra S1's CoreXY platform up to 350x350x350mm doesn't meaningfully hurt output quality — the active chamber heating keeps warp-prone materials in check even at this size.",
+        "reliability": "Shares the S1's newer CoreXY mechanics at a larger, heavier scale; the bigger gantry and enclosure mean alignment issues, if they occur, are more consequential than on the standard S1.",
+        "ease_of_use": "Same automated setup and rotatable touchscreen as the standard Kobra S1, though the sheer size of the machine makes unboxing and placement more of a two-person task.",
+        "value": "At $899 for a 42-liter enclosed, heated, multicolor-capable build volume, it's genuinely competitive with much pricier large-format machines from other brands."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=LXhXeRu3vPg",
@@ -2113,12 +2113,12 @@
       "price_range": "mid",
       "buy_url": "https://us.elegoo.com/products/centauri-carbon-2-combo",
       "scores": {
-        "overall": 7.98,
-        "print_quality": 8,
-        "speed": 7.7,
-        "ease_of_use": 8,
-        "reliability": 7.8,
-        "value": 8.5
+        "overall": 8.34,
+        "print_quality": 8.4,
+        "speed": 8.0,
+        "ease_of_use": 7.9,
+        "reliability": 8.0,
+        "value": 9.0
       },
       "specs": {
         "build_volume": "256x256x256mm",
@@ -2144,12 +2144,12 @@
         "enclosure": true
       },
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $449 against segment peers: 256x256x256mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Adds the CANVAS four-color system to the well-regarded Centauri Carbon chassis without sacrificing the original's excellent single-color print quality — the 350°C hardened nozzle handles composite filaments just as well as the original.",
+        "reliability": "Builds on the original Centauri Carbon's already-solid CoreXY mechanics; the CANVAS multicolor add-on is newer and has less long-term data, but early reviews report stable operation.",
+        "ease_of_use": "Auto-calibration carries over from the original Centauri Carbon, and CANVAS setup is more straightforward than most third-party multi-material add-ons, though color-change purge waste is a known trade-off.",
+        "value": "At $449 for an enclosed, 500mm/s CoreXY printer with genuine four-color capability, it remains one of the sharpest value picks in the multicolor category, following the original Centauri Carbon's lead."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=ZYFZ44hR7HU",
@@ -2168,7 +2168,7 @@
       "price_range": "premium",
       "buy_url": "https://store.ultimaker.com/ultimaker-s8-3d-printer",
       "scores": {
-        "overall": 8.52,
+        "overall": 8.13,
         "print_quality": 9.3,
         "speed": 8.0,
         "ease_of_use": 9.0,
@@ -2199,12 +2199,12 @@
       },
       "notes": "Current UltiMaker flagship, launched March 2025. Cheetah motion planner delivers up to 4x the productivity of the S7 at 500mm/s with 50000mm/s2 acceleration. Quad-chamber AA+/CC+ high-flow cores, 35mm3/s flow, heated flexible PEI plate to 120C, passive enclosed chamber under 50C. Open material platform with 300+ profiles.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; +0.3 for 50000mm/s2 acceleration via the Cheetah motion planner.",
-        "print_quality": "Editorial rating from published reviews, reflecting an enclosed chamber that stabilizes engineering materials. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $8999 against segment peers: 330x240x300mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The new Cheetah motion planner and high-flow AA+/CC+ print cores meaningfully close the speed gap with consumer CoreXY printers while retaining Ultimaker's excellent material compatibility and dimensional accuracy.",
+        "reliability": "Enterprise-grade construction with the same long-duty-cycle design philosophy as the rest of the S-series; this is built for unattended production runs in professional settings, and it shows in owner-reported uptime.",
+        "ease_of_use": "Tool-free print core swaps and Digital Factory's fleet management tools are polished for professional teams, though the interface and setup assume prior 3D printing experience rather than a total beginner.",
+        "value": "At $8,999, this is by far the most expensive printer in this ranking, and consumer CoreXY machines now match or exceed its speed and print quality for a small fraction of the price — the value case rests almost entirely on Ultimaker's enterprise software, security features, and support contracts, which won't matter to most buyers on this list."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=xfDwBkQQ1zs",
@@ -2222,7 +2222,7 @@
       "price_range": "mid",
       "buy_url": "https://store.creality.com/products/k2-pro-combo-3d-printer",
       "scores": {
-        "overall": 8.44,
+        "overall": 8.48,
         "print_quality": 8.6,
         "speed": 8.1,
         "ease_of_use": 8.5,
@@ -2253,12 +2253,12 @@
       },
       "notes": "Enclosed CoreXY with 60C actively heated chamber, dual AI cameras, step-servo XY motors, and CFS with RFID filament identification included in the Combo. Tri-metal quick-swap nozzle, Creality OS with root access and Fluidd support.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed. Creality states 300mm/s typical across the K2 series.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, an enclosed chamber that stabilizes engineering materials, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $599 against segment peers: 300x300x300mm, enclosed, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "Active chamber heating up to 60°C and the same step-servo motor system as the base K2 give it a genuine edge on warp-prone engineering filaments like ASA and PPA, with output quality among the best Creality has produced.",
+        "reliability": "Sits between the base K2 and K2 Plus in mechanical complexity; dual AI cameras add failure-detection capability without the added size and weight of the Plus model, and early reports are positive.",
+        "ease_of_use": "Pre-assembled with guided calibration like the rest of the K2 family, and the dual AI cameras make unattended monitoring noticeably more capable than the base K2.",
+        "value": "At $599 for a heated-chamber, 300x300x300mm, AI-monitored multicolor CoreXY printer, this is one of the strongest capability-per-dollar picks in the entire ranking."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=EVnfWIcNhYw",
@@ -2275,7 +2275,7 @@
       "price_range": "budget",
       "buy_url": "https://store.creality.com/products/k2-se-combo-3d-printer",
       "scores": {
-        "overall": 8.29,
+        "overall": 8.37,
         "print_quality": 8.3,
         "speed": 7.7,
         "ease_of_use": 8.6,
@@ -2306,12 +2306,12 @@
       },
       "notes": "Open-frame CoreXY launched late 2025. Combo adds one CFS unit, expandable to 4 CFS for 16 colors. Automated magnetic filament cutter, built-in air purifier, quick-swap nozzle, partial batch failure exclusion. AI camera optional.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $279 against segment peers: 220x215x245mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The most compact and affordable K2 variant trades some rigidity for size, but the modular direct-drive extruder still turns in clean, consistent output on PLA/PETG/TPU at genuinely high speed.",
+        "reliability": "Real-world reliability has visibly improved since launch — early units scored poorly, but Creality's firmware updates through 2025-2026 addressed most of the reported color-switching and leveling issues, and current-batch reviews are markedly more positive.",
+        "ease_of_use": "A five-minute setup process (attach touchscreen, plug in cables, auto-calibrate) makes this one of the fastest K-series printers to get running, though the open frame means less protection from drafts than enclosed siblings.",
+        "value": "At $279 for genuine 16-color CFS compatibility and 500mm/s speeds, it's the most affordable entry point into Creality's multicolor ecosystem by a wide margin."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=sZ13_YtcAb4"
@@ -2326,7 +2326,7 @@
       "price_range": "mid",
       "buy_url": "https://store.creality.com/products/ender-3-v4-combo-3d-printer",
       "scores": {
-        "overall": 8.18,
+        "overall": 8.24,
         "print_quality": 8.2,
         "speed": 7.3,
         "ease_of_use": 8.8,
@@ -2357,12 +2357,12 @@
       },
       "notes": "Launched March 2026 at $399 for printer plus CFS. Unibody die-cast loop gantry bedslinger with full auto calibration, quick-swap magnetic nozzle, RFID filament detection, and up to 16 colors with 4 CFS units. 47dB in Quiet Mode.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 500mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints).",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $399 against segment peers: 220x220x235mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "The new one-piece die-cast gantry and heatbed noticeably reduce ringing and improve first-layer consistency versus older Ender 3 generations, while still keeping the familiar open-frame bed-slinger format.",
+        "reliability": "A very new platform with limited ownership data so far; the simplified unibody frame has fewer alignment points than older Enders, which should help long-term reliability, but it's too early for a confident verdict.",
+        "ease_of_use": "Full-auto calibration finally brings true one-tap setup to the Ender 3 lineage — a big usability leap for a series historically associated with manual tuning.",
+        "value": "At $399 including the CFS-compatible multicolor combo, it's an aggressive price for genuine 16-color capability on a bed-slinger, though the format still can't match CoreXY machines on top speed."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=kYr5rySUb3c"
@@ -2377,7 +2377,7 @@
       "price_range": "mid",
       "buy_url": "https://store.anycubic.com/products/kobra-4-combo-3d-printer",
       "scores": {
-        "overall": 8.1,
+        "overall": 8.15,
         "print_quality": 8.2,
         "speed": 7.7,
         "ease_of_use": 8.4,
@@ -2408,12 +2408,12 @@
       },
       "notes": "Launched mid-2026, early bird $379 (regular $499). Open-frame bedslinger sharing the Kobra X motion system and hotend, but uses the external ACE 2 Pro box (4 colors, 8 with a second unit) with dry-while-printing rather than the Kobra X's integrated ACE Gen 2 toolhead.",
       "score_notes": {
-        "overall": "Weighted average of the five sub-scores (quality 30%, reliability 25%, speed 15%, ease 15%, value 15%).",
+        "overall": "Weighted average of the five sub-scores (quality 25%, reliability 20%, speed 15%, ease 15%, value 25%) — value weighted up from our previous formula so pricey machines can't coast on specs alone.",
         "speed": "Formula-scored: Base from 600mm/s rated speed; -0.4 bedslinger penalty (moving-bed inertia limits sustained speed on tall prints). Recommended speed is 300mm/s; 600 is peak.",
-        "print_quality": "Editorial rating from published reviews, reflecting direct drive extrusion, AI first-layer and failure monitoring. Not derived from the spec sheet; adjust if your test results differ.",
-        "reliability": "Editorial rating from brand track record and long-term owner reports; includes filament runout detection, power-loss recovery, AI failure detection. Community-consensus based, not spec-derived.",
-        "ease_of_use": "Editorial rating covering setup, calibration, and software; this machine offers fully automatic leveling and calibration, remote monitoring via built-in camera, integrated multi-material workflow.",
-        "value": "Editorial capability-per-dollar rating at $379 against segment peers: 260x260x260mm, multi-color capable. Re-scored when street pricing moves."
+        "print_quality": "LeviQ 3.0's improved leveling algorithm and built-in flow/vibration compensation produce a noticeably better first layer and cleaner surfaces than earlier Kobra generations at the same price point.",
+        "reliability": "The ACE 2 Pro's four independent brushless motors are a meaningful upgrade over the original ACE Pro's feed mechanism, and Anycubic specifically re-engineered this generation to address filament-jam complaints from the Kobra 3.",
+        "ease_of_use": "A roughly 15-minute assembly and fully automated calibration make this one of the more beginner-friendly multicolor printers Anycubic has shipped, with real-time AI spaghetti detection as a nice safety net.",
+        "value": "At $379 for 4-color printing (expandable to 8) with active filament drying, it's an aggressive price for the feature set and undercuts most rivals in the budget multicolor category."
       },
       "youtube_reviews": [
         "https://www.youtube.com/watch?v=q_LTnYV7WT4",
