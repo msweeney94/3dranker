@@ -692,7 +692,8 @@ function openDetail(name){
     </div></div>
     <div class="msec"><div class="msec-title">Features</div><div class="feat-grid">
       ${feats.map(([ico,lbl,val])=>`<div class="ftile${val?' yes':' no'}"><span class="ftile-ico">${ico}</span><span class="ftile-txt">${val?'✓':'-'} ${lbl}</span></div>`).join('')}
-    </div></div>`;
+    </div></div>
+    <div class="msec" style="display:none" aria-hidden="true" data-role="youtube-reviews">${(p.youtube_reviews||[]).map(u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`).join('')}</div>`;
   document.getElementById('detailModal').classList.add('open');
 }
 function renderComparePage(){renderSlots();renderCmpTable();}
