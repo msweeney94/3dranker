@@ -305,6 +305,17 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 /* Filament detail modal extras */
 .notes-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:12px;font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:4px}
 .mat-grid{display:flex;gap:5px;flex-wrap:wrap}
+.mat-select{width:100%;padding:9px 11px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r-md);color:var(--t1);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;margin-bottom:10px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23c9a84c'/></svg>");background-repeat:no-repeat;background-position:right 12px center}
+.mat-select:focus{outline:none;border-color:var(--gold-d)}
+.mat-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:12px}
+.mat-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.mat-card-name{font-size:14px;font-weight:800;color:var(--t1)}
+.mat-card-rating{display:flex;align-items:center;gap:5px;padding:3px 9px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:var(--r-pill)}
+.mat-card-rating .mcr-val{font-size:13px;font-weight:800;color:var(--gold-d)}
+.mat-card-rating .mcr-star{font-size:11px}
+.mat-card-note{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:10px}
+.mat-card-buy{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:var(--r-md);font-size:12px;font-weight:700;text-decoration:none;background:var(--grad-gold);color:#241a05;transition:opacity .15s}
+.mat-card-buy:hover{opacity:.88}
 
 #cardList{display:grid;grid-template-columns:1fr;gap:6px}
 
@@ -867,7 +878,7 @@ function renderFilCards(){
   if(!FS.filtered.length){ container.innerHTML = '<div class="empty-state"><div class="empty-ico">🧵</div><div class="empty-title">No brands found</div></div>'; return; }
   container.innerHTML = FS.filtered.map((b,i) => {
     const rank = i+1, top = rank<=3;
-    const matTags = b.materials.map(m => `<span class="mat-tag${PREMIUM_MATS.includes(m)?' premium':''}">${m}</span>`).join('');
+    const matTags = b.materials.map(m => `<span class="mat-tag${PREMIUM_MATS.includes(m.name)?' premium':''}">${m.name}</span>`).join('');
     return `
     <div class="fil-card${top?' top3':''}" onclick="openFilDetail('${b.slug}')">
       <div class="fil-grid">
@@ -904,7 +915,6 @@ function renderFilCards(){
 
 function openFilDetail(slug){
   const b = FDATA.brands.find(x => x.slug === slug); if(!b) return;
-  const matTags = b.materials.map(m => `<span class="mat-tag${PREMIUM_MATS.includes(m)?' premium':''}">${m}</span>`).join('');
   document.getElementById('detailTitle').textContent = b.name + ' Filament';
   document.getElementById('detailBody').innerHTML = `
     <div class="dhero">
@@ -926,10 +936,29 @@ function openFilDetail(slug){
     <div class="msec"><div class="msec-title">Scores</div><div class="scores-grid">
       ${Object.entries(b.scores).map(([k,v])=>`<div class="stile"><div class="st-lbl">${cap(k)}</div><div class="st-bar"><div class="st-fill" style="width:${v*10}%;background:${sc(v)}"></div></div><div class="st-val">${v.toFixed(1)}</div></div>`).join('')}
     </div></div>
-    <div class="msec"><div class="msec-title">Materials Supported</div><div class="mat-grid">${matTags}</div></div>
-    <div class="msec"><div class="msec-title">Notes</div><div class="notes-box">${b.notes}</div></div>
+    <div class="msec"><div class="msec-title">Filament Types</div>
+      <select class="mat-select" id="matSelect" onchange="renderMatCard('${b.slug}', this.value)">
+        ${b.materials.map(m=>`<option value="${m.name}"${PREMIUM_MATS.includes(m.name)?' data-premium="1"':''}>${m.name} — ${m.rating.toFixed(1)}/10${PREMIUM_MATS.includes(m.name)?' ⚙️':''}</option>`).join('')}
+      </select>
+      <div id="matCard"></div>
+    </div>
+    <div class="msec"><div class="msec-title">Brand Notes</div><div class="notes-box">${b.notes}</div></div>
   `;
+  renderMatCard(b.slug, b.materials[0].name);
   document.getElementById('detailModal').classList.add('open');
+}
+function renderMatCard(slug, matName){
+  const b = FDATA.brands.find(x => x.slug === slug); if(!b) return;
+  const m = b.materials.find(x => x.name === matName); if(!m) return;
+  document.getElementById('matCard').innerHTML = `
+    <div class="mat-card">
+      <div class="mat-card-top">
+        <span class="mat-card-name">${m.name}</span>
+        <span class="mat-card-rating"><span class="mcr-star">⭐</span><span class="mcr-val">${m.rating.toFixed(1)}</span></span>
+      </div>
+      <div class="mat-card-note">${m.note}</div>
+      <a class="mat-card-buy" href="${m.buy_url}" target="_blank" rel="noopener">🛒 Buy ${b.name} ${m.name}</a>
+    </div>`;
 }
 
 // Load data from external data.json, then boot the UI

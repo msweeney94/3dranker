@@ -2444,18 +2444,78 @@
       "rfid": true,
       "spool_material": "Plastic (reusable)",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PA",
-        "PC",
-        "PVA",
-        "PLA-CF",
-        "PETG-CF",
-        "PA-CF",
-        "PPS"
+        {
+          "name": "PLA",
+          "rating": 8.9,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 8.4,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.7,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 8.0,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.8,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+TPU+filament"
+        },
+        {
+          "name": "PA",
+          "rating": 7.6,
+          "note": "Tough, wear-resistant engineering nylon that excels at functional mechanical parts, but it's highly hygroscopic and needs thorough drying before and during printing. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PA+filament"
+        },
+        {
+          "name": "PC",
+          "rating": 7.4,
+          "note": "High-strength, heat-resistant engineering plastic for demanding functional parts; requires a hot enclosure and an all-metal hotend capable of 280°C+. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PC+filament"
+        },
+        {
+          "name": "PVA",
+          "rating": 7.2,
+          "note": "Water-soluble support material for dissolvable supports on complex overhangs; must stay sealed and dry or it degrades quickly. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PVA+filament"
+        },
+        {
+          "name": "PLA-CF",
+          "rating": 8.2,
+          "note": "Carbon-fiber-reinforced PLA for stiffer, more dimensionally stable parts with a matte finish; the abrasive fibers require a hardened steel nozzle. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PLA-CF+filament"
+        },
+        {
+          "name": "PETG-CF",
+          "rating": 8.1,
+          "note": "Carbon-fiber-reinforced PETG that combines PETG's toughness with added stiffness; abrasive and needs a hardened nozzle, but excellent for functional parts. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PETG-CF+filament"
+        },
+        {
+          "name": "PA-CF",
+          "rating": 8.3,
+          "note": "Carbon-fiber-reinforced nylon — one of the strongest, stiffest desktop-printable materials, popular for jigs, fixtures, and drone frames; needs a hardened nozzle and thorough drying. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PA-CF+filament"
+        },
+        {
+          "name": "PPS",
+          "rating": 7.4,
+          "note": "High-performance industrial-grade filament with excellent chemical and heat resistance; needs a very hot, all-metal hotend and a heated chamber — for advanced users only. Bambu Lab's RFID-tagged spools auto-configure AMS settings, and sealed packaging keeps it noticeably dry out of the box — though you pay a premium for that convenience.",
+          "buy_url": "https://www.amazon.com/s?k=Bambu+Lab+PPS+filament"
+        }
       ],
       "notes": "Optimized for Bambu printers. RFID tags for auto-detection on AMS. Exceptional out-of-box dryness with sealed packaging. Reusable plastic spools with cheaper cardboard-core refills ($19.99 PLA Basic refill vs $22.99 with spool)."
     },
@@ -2478,21 +2538,96 @@
       "rfid": false,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PA",
-        "PC",
-        "PVA",
-        "PLA-CF",
-        "PETG-CF",
-        "PA-CF",
-        "PEEK",
-        "PEI",
-        "PPS",
-        "PLA-ESD"
+        {
+          "name": "PLA",
+          "rating": 9.0,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 8.5,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.8,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 8.1,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.9,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+TPU+filament"
+        },
+        {
+          "name": "PA",
+          "rating": 7.7,
+          "note": "Tough, wear-resistant engineering nylon that excels at functional mechanical parts, but it's highly hygroscopic and needs thorough drying before and during printing. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PA+filament"
+        },
+        {
+          "name": "PC",
+          "rating": 7.5,
+          "note": "High-strength, heat-resistant engineering plastic for demanding functional parts; requires a hot enclosure and an all-metal hotend capable of 280°C+. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PC+filament"
+        },
+        {
+          "name": "PVA",
+          "rating": 7.3,
+          "note": "Water-soluble support material for dissolvable supports on complex overhangs; must stay sealed and dry or it degrades quickly. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PVA+filament"
+        },
+        {
+          "name": "PLA-CF",
+          "rating": 8.3,
+          "note": "Carbon-fiber-reinforced PLA for stiffer, more dimensionally stable parts with a matte finish; the abrasive fibers require a hardened steel nozzle. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PLA-CF+filament"
+        },
+        {
+          "name": "PETG-CF",
+          "rating": 8.2,
+          "note": "Carbon-fiber-reinforced PETG that combines PETG's toughness with added stiffness; abrasive and needs a hardened nozzle, but excellent for functional parts. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PETG-CF+filament"
+        },
+        {
+          "name": "PA-CF",
+          "rating": 8.4,
+          "note": "Carbon-fiber-reinforced nylon — one of the strongest, stiffest desktop-printable materials, popular for jigs, fixtures, and drone frames; needs a hardened nozzle and thorough drying. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PA-CF+filament"
+        },
+        {
+          "name": "PEEK",
+          "rating": 7.3,
+          "note": "Ultra-high-performance engineering plastic with exceptional heat and chemical resistance, used in aerospace/medical parts; requires specialized high-temp hardware most desktop printers don't have. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PEEK+filament"
+        },
+        {
+          "name": "PEI",
+          "rating": 7.3,
+          "note": "High-temperature engineering plastic (Ultem) with an excellent strength-to-weight ratio; like PEEK, it demands specialized high-temp printing hardware. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PEI+filament"
+        },
+        {
+          "name": "PPS",
+          "rating": 7.5,
+          "note": "High-performance industrial-grade filament with excellent chemical and heat resistance; needs a very hot, all-metal hotend and a heated chamber — for advanced users only. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PPS+filament"
+        },
+        {
+          "name": "PLA-ESD",
+          "rating": 8.0,
+          "note": "Static-dissipative PLA formulated for electronics enclosures and ESD-sensitive workbenches — a niche but well-executed specialty material. Polymaker's engineering-focused lineup (PolyLite, PolyMax, PolyTerra) is widely regarded as some of the most consistent, best-QC'd filament on the market, especially for advanced materials.",
+          "buy_url": "https://www.amazon.com/s?k=Polymaker+PLA-ESD+filament"
+        }
       ],
       "notes": "Industry-leading material range. PolyLite and PolySonic lines are community favorites. Excellent consistency and tight diameter tolerances. Hygroguard vacuum bags."
     },
@@ -2515,16 +2650,66 @@
       "rfid": true,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PA",
-        "PC",
-        "PETG-CF",
-        "PA-CF",
-        "Resin"
+        {
+          "name": "PLA",
+          "rating": 9.0,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 8.5,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.8,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 8.1,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.9,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+TPU+filament"
+        },
+        {
+          "name": "PA",
+          "rating": 7.7,
+          "note": "Tough, wear-resistant engineering nylon that excels at functional mechanical parts, but it's highly hygroscopic and needs thorough drying before and during printing. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+PA+filament"
+        },
+        {
+          "name": "PC",
+          "rating": 7.5,
+          "note": "High-strength, heat-resistant engineering plastic for demanding functional parts; requires a hot enclosure and an all-metal hotend capable of 280°C+. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+PC+filament"
+        },
+        {
+          "name": "PETG-CF",
+          "rating": 8.2,
+          "note": "Carbon-fiber-reinforced PETG that combines PETG's toughness with added stiffness; abrasive and needs a hardened nozzle, but excellent for functional parts. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+PETG-CF+filament"
+        },
+        {
+          "name": "PA-CF",
+          "rating": 8.4,
+          "note": "Carbon-fiber-reinforced nylon — one of the strongest, stiffest desktop-printable materials, popular for jigs, fixtures, and drone frames; needs a hardened nozzle and thorough drying. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+PA-CF+filament"
+        },
+        {
+          "name": "Resin",
+          "rating": 8.5,
+          "note": "SLA/LCD photopolymer resin for resin printers, not FDM filament — a separate product line for a different printing technology entirely. Prusament ships with a laser-measured ±0.02mm diameter tolerance and a printed QC report for every spool — among the tightest consistency in the industry.",
+          "buy_url": "https://www.amazon.com/s?k=Prusament+Resin+resin"
+        }
       ],
       "notes": "Gold standard for consistency — each spool has a QR code with measured diameter data. Made in EU. New spools ship with the open-source OpenPrintTag NFC tag (since late 2025); Prusa printer reader support rolling out from Q1 2026. PLA launched at $24.99 in 2018, now $29.99. Refills $26.99."
     },
@@ -2547,14 +2732,54 @@
       "rfid": false,
       "spool_material": "Cardboard",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PLA-CF",
-        "PETG-CF",
-        "Resin"
+        {
+          "name": "PLA",
+          "rating": 8.5,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 8.0,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.3,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.6,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.4,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+TPU+filament"
+        },
+        {
+          "name": "PLA-CF",
+          "rating": 7.8,
+          "note": "Carbon-fiber-reinforced PLA for stiffer, more dimensionally stable parts with a matte finish; the abrasive fibers require a hardened steel nozzle. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+PLA-CF+filament"
+        },
+        {
+          "name": "PETG-CF",
+          "rating": 7.7,
+          "note": "Carbon-fiber-reinforced PETG that combines PETG's toughness with added stiffness; abrasive and needs a hardened nozzle, but excellent for functional parts. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+PETG-CF+filament"
+        },
+        {
+          "name": "Resin",
+          "rating": 8.0,
+          "note": "SLA/LCD photopolymer resin for resin printers, not FDM filament — a separate product line for a different printing technology entirely. Overture is a reliable budget pick with unusually good bed adhesion and minimal warping for the price, though color consistency can vary slightly between batches.",
+          "buy_url": "https://www.amazon.com/s?k=Overture+Resin+resin"
+        }
       ],
       "notes": "Excellent value. Cardboard spools. Very popular on Amazon. Consistent diameter. Good out-of-box results, especially PLA and PETG."
     },
@@ -2577,14 +2802,54 @@
       "rfid": false,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PLA+",
-        "Wood",
-        "Metal Fill"
+        {
+          "name": "PLA",
+          "rating": 8.5,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 8.0,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.3,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.6,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.4,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+TPU+filament"
+        },
+        {
+          "name": "PLA+",
+          "rating": 8.3,
+          "note": "An enhanced PLA blend with better layer adhesion and impact resistance than standard PLA, while printing almost as easily. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+PLA%2B+filament"
+        },
+        {
+          "name": "Wood",
+          "rating": 7.0,
+          "note": "PLA blended with real wood fiber for a wood-like look and feel after sanding; more brittle and more prone to nozzle clogging than standard PLA. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+Wood+filament"
+        },
+        {
+          "name": "Metal Fill",
+          "rating": 6.9,
+          "note": "PLA infused with metal powder for added weight and a metallic finish after polishing; heavy, and the abrasive powder wears standard brass nozzles faster. Hatchbox built its reputation on dependable, no-surprises spools that print well straight out of the box — a longtime favorite for beginners in the US market.",
+          "buy_url": "https://www.amazon.com/s?k=Hatchbox+Metal+Fill+filament"
+        }
       ],
       "notes": "Long-time community staple. Reliable PLA. US-based support. Limited high-performance materials. Plastic spools. Solid value."
     },
@@ -2607,19 +2872,84 @@
       "rfid": false,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PA",
-        "PC",
-        "PVA",
-        "PEEK",
-        "PEI",
-        "Wood",
-        "Metal Fill",
-        "Silk"
+        {
+          "name": "PLA",
+          "rating": 8.2,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 7.7,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.0,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.3,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.1,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+TPU+filament"
+        },
+        {
+          "name": "PA",
+          "rating": 6.9,
+          "note": "Tough, wear-resistant engineering nylon that excels at functional mechanical parts, but it's highly hygroscopic and needs thorough drying before and during printing. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PA+filament"
+        },
+        {
+          "name": "PC",
+          "rating": 6.7,
+          "note": "High-strength, heat-resistant engineering plastic for demanding functional parts; requires a hot enclosure and an all-metal hotend capable of 280°C+. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PC+filament"
+        },
+        {
+          "name": "PVA",
+          "rating": 6.5,
+          "note": "Water-soluble support material for dissolvable supports on complex overhangs; must stay sealed and dry or it degrades quickly. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PVA+filament"
+        },
+        {
+          "name": "PEEK",
+          "rating": 6.5,
+          "note": "Ultra-high-performance engineering plastic with exceptional heat and chemical resistance, used in aerospace/medical parts; requires specialized high-temp hardware most desktop printers don't have. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PEEK+filament"
+        },
+        {
+          "name": "PEI",
+          "rating": 6.5,
+          "note": "High-temperature engineering plastic (Ultem) with an excellent strength-to-weight ratio; like PEEK, it demands specialized high-temp printing hardware. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+PEI+filament"
+        },
+        {
+          "name": "Wood",
+          "rating": 6.7,
+          "note": "PLA blended with real wood fiber for a wood-like look and feel after sanding; more brittle and more prone to nozzle clogging than standard PLA. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+Wood+filament"
+        },
+        {
+          "name": "Metal Fill",
+          "rating": 6.6,
+          "note": "PLA infused with metal powder for added weight and a metallic finish after polishing; heavy, and the abrasive powder wears standard brass nozzles faster. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+Metal+Fill+filament"
+        },
+        {
+          "name": "Silk",
+          "rating": 7.3,
+          "note": "PLA with a glossy, silk-like sheen prized for decorative prints; slightly weaker layer adhesion and more stringing than standard PLA. eSUN covers an enormous material range at low prices, though quality control varies more between batches than premium brands.",
+          "buy_url": "https://www.amazon.com/s?k=eSUN+Silk+filament"
+        }
       ],
       "notes": "Massive material selection. One of the oldest filament manufacturers. Budget-friendly. ABS and specialty materials are a strong point. Inconsistent dryness on arrival."
     },
@@ -2642,16 +2972,66 @@
       "rfid": false,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PA",
-        "Silk",
-        "Wood",
-        "Metal Fill",
-        "PLA+"
+        {
+          "name": "PLA",
+          "rating": 8.3,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 7.8,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.1,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.4,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.2,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+TPU+filament"
+        },
+        {
+          "name": "PA",
+          "rating": 7.0,
+          "note": "Tough, wear-resistant engineering nylon that excels at functional mechanical parts, but it's highly hygroscopic and needs thorough drying before and during printing. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+PA+filament"
+        },
+        {
+          "name": "Silk",
+          "rating": 7.4,
+          "note": "PLA with a glossy, silk-like sheen prized for decorative prints; slightly weaker layer adhesion and more stringing than standard PLA. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+Silk+filament"
+        },
+        {
+          "name": "Wood",
+          "rating": 6.8,
+          "note": "PLA blended with real wood fiber for a wood-like look and feel after sanding; more brittle and more prone to nozzle clogging than standard PLA. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+Wood+filament"
+        },
+        {
+          "name": "Metal Fill",
+          "rating": 6.7,
+          "note": "PLA infused with metal powder for added weight and a metallic finish after polishing; heavy, and the abrasive powder wears standard brass nozzles faster. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+Metal+Fill+filament"
+        },
+        {
+          "name": "PLA+",
+          "rating": 8.1,
+          "note": "An enhanced PLA blend with better layer adhesion and impact resistance than standard PLA, while printing almost as easily. Sunlu's filament is solidly budget-tier — fine for everyday printing, though the brand is arguably better known for its companion filament dryers than the filament itself.",
+          "buy_url": "https://www.amazon.com/s?k=Sunlu+PLA%2B+filament"
+        }
       ],
       "notes": "World's largest filament producer by volume. Very budget-friendly. Highly variable quality control. Popular for non-critical prints. Dry storage recommended before use."
     },
@@ -2674,13 +3054,48 @@
       "rfid": false,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PLA+",
-        "Silk"
+        {
+          "name": "PLA",
+          "rating": 8.6,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 8.1,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.4,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.7,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.5,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+TPU+filament"
+        },
+        {
+          "name": "PLA+",
+          "rating": 8.4,
+          "note": "An enhanced PLA blend with better layer adhesion and impact resistance than standard PLA, while printing almost as easily. Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+PLA%2B+filament"
+        },
+        {
+          "name": "Silk",
+          "rating": 7.7,
+          "note": "PLA with a glossy, silk-like sheen prized for decorative prints; slightly weaker layer adhesion and more stringing than standard PLA. Inland is Micro Center's in-house brand and consistently punches above its price — a favorite among budget-conscious makers who have a store nearby for easy returns.",
+          "buy_url": "https://www.amazon.com/s?k=Inland+%28Micro+Center%29+Silk+filament"
+        }
       ],
       "notes": "Micro Center house brand. Excellent value, especially in-store. Reliable PLA and PETG. Limited specialty materials. Good choice for high-volume printing on a budget."
     },
@@ -2703,14 +3118,54 @@
       "rfid": false,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "PLA-CF",
-        "PETG-CF",
-        "Silk"
+        {
+          "name": "PLA",
+          "rating": 8.2,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 7.7,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.0,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.3,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.1,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+TPU+filament"
+        },
+        {
+          "name": "PLA-CF",
+          "rating": 7.5,
+          "note": "Carbon-fiber-reinforced PLA for stiffer, more dimensionally stable parts with a matte finish; the abrasive fibers require a hardened steel nozzle. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+PLA-CF+filament"
+        },
+        {
+          "name": "PETG-CF",
+          "rating": 7.4,
+          "note": "Carbon-fiber-reinforced PETG that combines PETG's toughness with added stiffness; abrasive and needs a hardened nozzle, but excellent for functional parts. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+PETG-CF+filament"
+        },
+        {
+          "name": "Silk",
+          "rating": 7.3,
+          "note": "PLA with a glossy, silk-like sheen prized for decorative prints; slightly weaker layer adhesion and more stringing than standard PLA. Kexcelled is a newer overseas entrant with decent quality for the price, but it lacks the multi-year track record of more established brands.",
+          "buy_url": "https://www.amazon.com/s?k=Kexcelled+%28Tinmorry%29+Silk+filament"
+        }
       ],
       "notes": "Highly regarded in the community especially for PETG. Very tight diameter tolerances. Excellent print quality for the price."
     },
@@ -2733,23 +3188,58 @@
       "rfid": true,
       "spool_material": "Plastic",
       "materials": [
-        "PLA",
-        "PETG",
-        "ABS",
-        "ASA",
-        "TPU",
-        "Silk",
-        "PLA+"
+        {
+          "name": "PLA",
+          "rating": 8.4,
+          "note": "The default beginner-friendly material — easy to print with low warping and a huge color range, but limited heat resistance (~60°C). Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+PLA+filament"
+        },
+        {
+          "name": "PETG",
+          "rating": 7.9,
+          "note": "Tougher and more heat-resistant than PLA with strong layer adhesion, though it strings more and needs careful retraction tuning. Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+PETG+filament"
+        },
+        {
+          "name": "ABS",
+          "rating": 7.2,
+          "note": "Durable and heat-resistant but prone to warping — needs an enclosure and good ventilation due to fumes during printing. Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+ABS+filament"
+        },
+        {
+          "name": "ASA",
+          "rating": 7.5,
+          "note": "UV- and weather-resistant like ABS but with less warping, making it the better choice for outdoor parts and automotive trim. Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+ASA+filament"
+        },
+        {
+          "name": "TPU",
+          "rating": 7.3,
+          "note": "Flexible, rubber-like filament for gaskets, phone cases, and wearables; needs a direct-drive extruder and slower print speeds. Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+TPU+filament"
+        },
+        {
+          "name": "Silk",
+          "rating": 7.5,
+          "note": "PLA with a glossy, silk-like sheen prized for decorative prints; slightly weaker layer adhesion and more stringing than standard PLA. Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+Silk+filament"
+        },
+        {
+          "name": "PLA+",
+          "rating": 8.2,
+          "note": "An enhanced PLA blend with better layer adhesion and impact resistance than standard PLA, while printing almost as easily. Elegoo's filament line is newer and mainly positioned as a convenient companion purchase for owners of Elegoo's own printers, with solid but unremarkable performance.",
+          "buy_url": "https://www.amazon.com/s?k=Elegoo+Filament+PLA%2B+filament"
+        }
       ],
       "notes": "Solid budget option, especially for Elegoo printer owners. Good PLA quality. Now ships open-source RFID (NTAG213 NFC) tagged spools for auto-identification with the Centauri Carbon 2 CANVAS system, with a fully published tag data structure. Refills $13.19. Limited high-performance options."
     }
   ],
   "scoring_methodology": {
-    "overall": "Weighted average of the five sub-scores: print_quality 30%, reliability 25%, speed 15%, ease_of_use 15%, value 15%.",
+    "overall": "A weighted average of the five sub-scores below: print quality 25%, reliability 20%, speed 15%, ease of use 15%, and value 25%. We weight value fairly heavily on purpose — a printer that's merely good but wildly overpriced shouldn't outrank one that's nearly as capable for a fraction of the cost.",
     "speed": "Formula-based so identical claims are treated identically: 4.5 + 1.6 * log2(max_speed / 125), minus 0.4 for bedslinger kinematics (a moving bed cannot sustain rated speed on tall or heavy prints), plus documented bonuses for verified acceleration, flow rate, or purge-free toolchanging advantages. Capped at 9.6. Two printers with the same rated speed and the same kinematics receive the same score; any difference is stated in the note.",
-    "print_quality": "Editorial rating informed by published hands-on reviews and community consensus. Rationale per printer in score_notes.",
-    "reliability": "Editorial rating informed by published reviews, brand track record, and failure-prevention hardware. Rationale per printer in score_notes.",
-    "ease_of_use": "Editorial rating informed by setup, calibration automation, and software ecosystem. Rationale per printer in score_notes.",
-    "value": "Editorial rating of capability per dollar against segment peers at current pricing. Rationale per printer in score_notes."
+    "print_quality": "We look at how sharp, consistent, and dimensionally accurate output actually is in hands-on reviews and long-term owner reports, not what the spec sheet claims. Motion system, hotend design, and cooling all factor in — the per-printer note explains what's actually driving the number.",
+    "reliability": "This score reflects how a printer holds up over months of real use: brand track record, failure rates reported by owners, and hardware that prevents failed prints (jam detection, power-loss recovery, AI monitoring). Newer platforms with less ownership history are scored a bit more cautiously until the data catches up.",
+    "ease_of_use": "How much friction is there between unboxing and a good first print? We weigh setup time, calibration automation, and how forgiving the software and slicer are — machines that still need manual bed leveling or fiddly profile tuning score lower here even if their output quality is excellent.",
+    "value": "Capability relative to price, benchmarked against what else is available at a similar cost. A $300 printer with enclosed CoreXY performance rates higher here than a $9,000 machine with modest gains over cheaper rivals — this is deliberately the category that punishes overpriced hardware."
   }
 }
