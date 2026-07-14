@@ -206,6 +206,13 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 .spt-lbl{font-size:9px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px}
 .spt-val{font-size:12px;font-weight:600;color:var(--t1)}
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
+.yt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.yt-card{position:relative;display:block;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border);background:var(--bg3);text-decoration:none;transition:border-color .15s,transform .15s}
+.yt-card:hover{border-color:var(--gold-d);transform:translateY(-1px)}
+.yt-thumb-wrap{position:relative;width:100%;aspect-ratio:16/9;background:var(--bg4);overflow:hidden}
+.yt-thumb{width:100%;height:100%;object-fit:cover;display:block}
+.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;pointer-events:none}
+.yt-label{padding:6px 8px;font-size:11px;font-weight:600;color:var(--t2);display:flex;align-items:center;gap:4px}
 .ftile{display:flex;align-items:center;gap:6px;padding:7px 9px;border-radius:var(--r-md);border:1px solid var(--border);background:var(--bg3)}
 .ftile.yes{background:rgba(76,175,106,.07);border-color:rgba(76,175,106,.18)}
 .ftile.no{opacity:.4}
@@ -693,7 +700,9 @@ function openDetail(name){
     <div class="msec"><div class="msec-title">Features</div><div class="feat-grid">
       ${feats.map(([ico,lbl,val])=>`<div class="ftile${val?' yes':' no'}"><span class="ftile-ico">${ico}</span><span class="ftile-txt">${val?'✓':'-'} ${lbl}</span></div>`).join('')}
     </div></div>
-    <div class="msec" style="display:none" aria-hidden="true" data-role="youtube-reviews">${(p.youtube_reviews||[]).map(u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`).join('')}</div>`;
+    ${(p.youtube_reviews&&p.youtube_reviews.length)?`<div class="msec" data-role="youtube-reviews"><div class="msec-title">Video Reviews</div><div class="yt-grid">
+      ${p.youtube_reviews.map((u,i)=>{const m=u.match(/[?&]v=([^&]+)/);const vid=m?m[1]:'';const thumb=vid?`https://img.youtube.com/vi/${vid}/hqdefault.jpg`:'';return `<a class="yt-card" href="${u}" target="_blank" rel="noopener"><div class="yt-thumb-wrap">${thumb?`<img class="yt-thumb" src="${thumb}" alt="${p.name} review video ${i+1}" loading="lazy">`:''}<div class="yt-play">▶</div></div><div class="yt-label">▶ Review ${i+1}</div></a>`;}).join('')}
+    </div></div>`:''}`;
   document.getElementById('detailModal').classList.add('open');
 }
 function renderComparePage(){renderSlots();renderCmpTable();}
