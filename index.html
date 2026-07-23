@@ -13,17 +13,17 @@
 <meta name="theme-color" content="#1a1410">
 <title>3DRanker — The Comprehensive 3D Printer Ranking Site</title>
 <meta name="description" content="Unbiased rankings of the best 3D printers. Compare Bambu Lab, Prusa, Creality, Anycubic, Elegoo and more by speed, print quality, features, and value.">
-<meta name="keywords" content="best 3d printer, 3d printer comparison, bambu lab p1s review, prusa mk4s, creality k1 max, anycubic kobra, 3d printer rankings, fdm printer guide, 3d printer buying guide">
+<meta name="keywords" content="best 3d printer, 3d printer comparison, bambu lab p1s review, prusa mk4s, creality k1 max, anycubic kobra, qidi plus 4, elegoo centauri carbon, 3d printer rankings, fdm printer guide, 3d printer buying guide">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://3dranker.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://3dranker.netlify.app/">
 <meta property="og:title" content="3DRanker — The Comprehensive 3D Printer Ranking Site">
-<meta property="og:description" content="Unbiased rankings of 40+ 3D printers. Compare specs, features, and value across Bambu Lab, Prusa, Creality, Anycubic, and more.">
+<meta property="og:description" content="Unbiased rankings of 45+ 3D printers. Compare specs, features, and value across Bambu Lab, Prusa, Creality, Anycubic, and more.">
 <meta property="og:image" content="https://3dranker.netlify.app/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="3DRanker — The Comprehensive 3D Printer Ranking Site">
-<meta name="twitter:description" content="Unbiased rankings of 40+ 3D printers. Filter by brand, price, features. Compare side-by-side.">
+<meta name="twitter:description" content="Unbiased rankings of 45+ 3D printers. Filter by brand, price, features. Compare side-by-side.">
 <meta name="twitter:image" content="https://3dranker.netlify.app/og-image.jpg">
 <script type="application/ld+json">
 {
@@ -46,7 +46,7 @@
   "name": "Best 3D Printers",
   "description": "Expert-ranked list of top FDM 3D printers",
   "url": "https://3dranker.netlify.app/",
-  "numberOfItems": 40
+  "numberOfItems": 48
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,10 +112,9 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 .rank-col{display:flex;flex-direction:column;align-items:center;gap:4px}
 .rank-num{font-size:17px;font-weight:800;color:var(--t3);line-height:1}
 .pcard.top3 .rank-num{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.rank-medal{font-size:20px;line-height:1;margin-bottom:2px}
 .img-col{width:64px;height:64px;background:var(--bg3);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
 .img-col img{max-width:100%;max-height:100%;object-fit:contain;padding:5px}
-.img-ph{font-size:24px;opacity:.35}
+.img-ph{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--t3);opacity:.6}
 .info-col{display:flex;flex-direction:column;gap:5px;min-width:0}
 .card-top{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
 .pname{font-size:13px;font-weight:700;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -124,18 +123,11 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 .bt-prusa,.bt-prusa-research{background:rgba(201,120,30,.1);color:#8a5010;border-color:rgba(201,120,30,.2)}
 .bt-creality{background:rgba(50,120,220,.08);color:#2a5a9a;border-color:rgba(50,120,220,.15)}
 .bt-elegoo{background:rgba(140,80,200,.08);color:#6030a0;border-color:rgba(140,80,200,.15)}
-.bt-anycubic,.bt-flashforge,.bt-snapmaker,.bt-ultimaker,.bt-raise3d,.bt-artillery,.bt-sovol,.bt-voxelab{background:var(--bg3);color:var(--t2);border-color:var(--border)}
+.bt-anycubic,.bt-flashforge,.bt-snapmaker,.bt-ultimaker,.bt-raise3d,.bt-artillery,.bt-sovol,.bt-voxelab,.bt-qidi-tech{background:var(--bg3);color:var(--t2);border-color:var(--border)}
 .schips{display:flex;gap:3px;flex-wrap:wrap;margin-top:2px}
 .schip{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);font-size:10px;color:var(--t2);font-weight:500;white-space:nowrap}
-.fbadges{display:flex;gap:3px;flex-wrap:nowrap;overflow:hidden;margin-top:2px}
-.fbadge .b-lbl{display:none}
-@media(min-width:520px){.fbadge .b-lbl{display:inline}}
-.fbadge .b-ico{font-size:13px}
 .schip-speed{display:none}
 @media(min-width:440px){.schip-speed{display:inline-flex}}
-.fbadge{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;border-radius:var(--r-pill);font-size:10px;font-weight:700;white-space:nowrap;background:var(--bg4);color:var(--t3);border:1px solid var(--border)}
-.fbadge.on{background:rgba(201,168,76,.08);color:var(--gold-d);border-color:rgba(201,168,76,.2)}
-.fbadge.on-g{background:rgba(76,175,106,.08);color:#2d8a50;border-color:rgba(76,175,106,.15)}
 .sbars{display:none;gap:8px;flex-wrap:wrap}
 @media(min-width:600px){.sbars{display:flex}}
 .sbar{display:flex;flex-direction:column;gap:2px;min-width:44px}
@@ -223,7 +215,6 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 .ftile{display:flex;align-items:center;gap:6px;padding:7px 9px;border-radius:var(--r-md);border:1px solid var(--border);background:var(--bg3)}
 .ftile.yes{background:rgba(76,175,106,.07);border-color:rgba(76,175,106,.18)}
 .ftile.no{opacity:.4}
-.ftile-ico{font-size:13px}
 .ftile-txt{font-size:11px;font-weight:600;color:var(--t2)}
 .ftile.yes .ftile-txt{color:#2d8a50}
 .cmp-header{margin-bottom:16px}
@@ -338,12 +329,12 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
     <div style="position:relative">
       <button id="navMenuBtn" onclick="toggleNavMenu()" style="background:none;border:none;font-size:20px;cursor:pointer;padding:8px 12px;color:rgba(255,255,255,.8);transition:transform .2s;display:flex;align-items:center;justify-content:center">☰</button>
       <div id="navMenuDropdown" style="position:absolute;top:100%;right:0;background:rgba(26,20,16,.98);border:1px solid rgba(201,168,76,.3);border-radius:8px;min-width:180px;display:none;z-index:300;margin-top:4px;box-shadow:0 4px 12px rgba(0,0,0,.3)">
-        <button class="nav-menu-item active" id="tabRankings" onclick="showPage('rankings');toggleNavMenu()">🏆 Rankings</button>
-        <button class="nav-menu-item" id="tabCompare" onclick="showPage('compare');toggleNavMenu()">⚖️ Compare</button>
-        <button class="nav-menu-item" id="tabFilament" onclick="showPage('filament');toggleNavMenu()">🧵 Filament</button>
+        <button class="nav-menu-item active" id="tabRankings" onclick="showPage('rankings');toggleNavMenu()">Rankings</button>
+        <button class="nav-menu-item" id="tabCompare" onclick="showPage('compare');toggleNavMenu()">Compare</button>
+        <button class="nav-menu-item" id="tabFilament" onclick="showPage('filament');toggleNavMenu()">Filament</button>
       </div>
     </div>
-    <button id="themeBtn" onclick="toggleTheme()" style="background:none;border:none;font-size:20px;cursor:pointer;padding:8px 12px;color:rgba(255,255,255,.8);transition:transform .2s;display:flex;align-items:center;justify-content:center">🌙</button>
+    <button id="themeBtn" onclick="toggleTheme()" style="background:none;border:1px solid rgba(201,168,76,.3);border-radius:999px;font-size:12px;font-weight:600;cursor:pointer;padding:6px 14px;color:rgba(255,255,255,.8)">Dark</button>
   </div>
 </nav>
 <div class="page active" id="pageRankings">
@@ -354,7 +345,6 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 <div class="layout">
   <div class="controls">
     <div class="search-wrap">
-      <span style="color:var(--t3);font-size:13px">🔍</span>
       <input type="text" id="searchInp" class="search-inp" placeholder="Search printers…">
     </div>
     <div class="dd-wrap" id="ddBrand">
@@ -388,27 +378,27 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
       <button class="dd-btn" onclick="toggleDd('ddFeat')"><span id="ddFeatLbl">Features</span><span class="dd-dot" id="featDot" style="display:none"></span><span class="arr">▼</span></button>
       <div class="dd-menu" style="min-width:220px" id="ddFeatMenu">
         <div class="dd-sec">Printer Type</div>
-        <div class="feat-row" id="feat-enclosure" onclick="toggleFeat('enclosure')"><div class="feat-left"><span>📦</span>Enclosed</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-open_source" onclick="toggleFeat('open_source')"><div class="feat-left"><span>🔓</span>Open Source</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-direct_drive" onclick="toggleFeat('direct_drive')"><div class="feat-left"><span>⚙️</span>Direct Drive</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-multi_color" onclick="toggleFeat('multi_color')"><div class="feat-left"><span>🎨</span>Multi-Color</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-enclosure" onclick="toggleFeat('enclosure')"><div class="feat-left">Enclosed</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-open_source" onclick="toggleFeat('open_source')"><div class="feat-left">Open Source</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-direct_drive" onclick="toggleFeat('direct_drive')"><div class="feat-left">Direct Drive</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-multi_color" onclick="toggleFeat('multi_color')"><div class="feat-left">Multi-Color</div><div class="ftoggle"></div></div>
         <div class="dd-sec">Smart Features</div>
-        <div class="feat-row" id="feat-camera" onclick="toggleFeat('camera')"><div class="feat-left"><span>📷</span>Built-in Camera</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-ai_detection" onclick="toggleFeat('ai_detection')"><div class="feat-left"><span>🤖</span>AI Detection</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-air_filter" onclick="toggleFeat('air_filter')"><div class="feat-left"><span>💨</span>Air Filtration</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-silent_mode" onclick="toggleFeat('silent_mode')"><div class="feat-left"><span>🔇</span>Silent Mode</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-camera" onclick="toggleFeat('camera')"><div class="feat-left">Built-in Camera</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-ai_detection" onclick="toggleFeat('ai_detection')"><div class="feat-left">AI Detection</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-air_filter" onclick="toggleFeat('air_filter')"><div class="feat-left">Air Filtration</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-silent_mode" onclick="toggleFeat('silent_mode')"><div class="feat-left">Silent Mode</div><div class="ftoggle"></div></div>
         <div class="dd-sec">Reliability</div>
-        <div class="feat-row" id="feat-filament_runout" onclick="toggleFeat('filament_runout')"><div class="feat-left"><span>🧵</span>Filament Runout</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="feat-power_recovery" onclick="toggleFeat('power_recovery')"><div class="feat-left"><span>⚡</span>Power Recovery</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-filament_runout" onclick="toggleFeat('filament_runout')"><div class="feat-left">Filament Runout</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="feat-power_recovery" onclick="toggleFeat('power_recovery')"><div class="feat-left">Power Recovery</div><div class="ftoggle"></div></div>
       </div>
     </div>
   </div>
   <div class="results-bar">
-    <span class="res-count" id="resCount">Showing 40 printers</span>
+    <span class="res-count" id="resCount">Loading printers…</span>
     <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear filters</button>
   </div>
   <div class="card-list" id="cardList"></div>
-  <div id="emptyState" class="empty-state hidden"><div class="empty-ico">🔍</div><div class="empty-title">No printers found</div><div class="empty-sub">Try adjusting your filters.</div></div>
+  <div id="emptyState" class="empty-state hidden"><div class="empty-title">No printers found</div><div class="empty-sub">Try adjusting your filters.</div></div>
 </div>
 </div>
 <div class="page" id="pageCompare">
@@ -422,12 +412,11 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
 <div class="page" id="pageFilament">
 <div class="layout">
   <div style="margin-bottom:16px">
-    <h2 style="font-size:18px;font-weight:800;color:var(--t1);margin-bottom:3px">🧵 Filament Brand Rankings</h2>
+    <h2 style="font-size:18px;font-weight:800;color:var(--t1);margin-bottom:3px">Filament Brand Rankings</h2>
     <p style="font-size:12px;color:var(--t2)">Ranked by overall quality, consistency, dryness, spool quality, value, and material range. Expanding to per-filament rankings soon.</p>
   </div>
   <div class="fil-controls">
     <div class="search-wrap" style="max-width:220px">
-      <span style="color:var(--t3);font-size:13px">🔍</span>
       <input type="text" id="filSearch" class="search-inp" placeholder="Search brands…" oninput="applyFilFilters()">
     </div>
     <div class="dd-wrap" id="ddFilSort">
@@ -447,13 +436,13 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
     <div class="dd-wrap" id="ddFilFeat">
       <button class="dd-btn" onclick="toggleDd('ddFilFeat')"><span>Features</span><span class="dd-dot" id="filFeatDot" style="display:none"></span><span class="arr">▼</span></button>
       <div class="dd-menu" style="min-width:200px">
-        <div class="feat-row" id="filfeat-rfid" onclick="toggleFilFeat('rfid')"><div class="feat-left"><span>📡</span>RFID Support</div><div class="ftoggle"></div></div>
-        <div class="feat-row" id="filfeat-eco_spool" onclick="toggleFilFeat('eco_spool')"><div class="feat-left"><span>♻️</span>Eco Spool (Cardboard)</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="filfeat-rfid" onclick="toggleFilFeat('rfid')"><div class="feat-left">RFID Support</div><div class="ftoggle"></div></div>
+        <div class="feat-row" id="filfeat-eco_spool" onclick="toggleFilFeat('eco_spool')"><div class="feat-left">Eco Spool (Cardboard)</div><div class="ftoggle"></div></div>
       </div>
     </div>
   </div>
   <div class="results-bar">
-    <span class="res-count" id="filResCount">Showing 10 brands</span>
+    <span class="res-count" id="filResCount">Loading brands…</span>
     <button class="clear-btn" id="filClearBtn" onclick="clearFilFilters()" style="display:none">Clear filters</button>
   </div>
   <div id="filList"></div>
@@ -471,7 +460,6 @@ body{margin:0;padding:0;padding-top:60px;background:var(--bg);color:var(--t1);fo
     <div class="mhead"><span class="mhead-title">Select a Printer</span><button class="mclose" onclick="closeM('pickerModal')">✕</button></div>
     <div class="mbody">
       <div class="search-wrap" style="max-width:100%;margin-bottom:11px">
-        <span style="color:var(--t3)">🔍</span>
         <input type="text" id="pickerSearch" class="search-inp" placeholder="Search…" oninput="renderPicker()">
       </div>
       <div class="picker-grid" id="pickerGrid"></div>
@@ -512,8 +500,6 @@ const S={search:'',brand:'All',sort:'overall',price:'all',features:{},filtered:[
 let cmpSlots=[null,null,null,null],pickerIdx=0;
 
 
-;
-
 function showPage(p){
   document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
   document.querySelectorAll('.nav-menu-item').forEach(e=>e.classList.remove('active'));
@@ -541,8 +527,8 @@ function fmt(p){return p?'$'+p.toLocaleString():'N/A'}
 function cap(s){return s.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}
 function sc(v){return v>=8?'var(--grad-green)':v>=6?'var(--grad-amber)':'var(--grad-red)'}
 function imgEl(src,alt){
-  if(src) return `<img src="${src}" alt="${alt}" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')"><span class="img-ph" style="display:none">🖨️</span>`;
-  return `<span class="img-ph">🖨️</span>`;
+  if(src) return `<img src="${src}" alt="${alt}" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')"><span class="img-ph" style="display:none">3D</span>`;
+  return `<span class="img-ph">3D</span>`;
 }
 
 function toggleDd(id){
@@ -635,30 +621,19 @@ function renderCards(){
   empty.classList.add('hidden');
   list.innerHTML=S.filtered.map((p,i)=>{
     const rank=i+1,top=rank<=3,bc='bt-'+bSlug(p.brand),f=p.features||{};
-    const badges=[
-      f.enclosure||p.specs.enclosure==='Yes'?['📦','Enclosed']:'',
-      f.multi_color?['🎨','Colors']:'',
-      f.camera?['📷','Camera']:'',
-      f.ai_detection?['🤖','AI']:'',
-      f.air_filter?['💨','Filter']:'',
-      f.open_source?['🔓','Open']:'',
-      f.silent_mode?['🔇','Silent']:'',
-    ].filter(Boolean).slice(0,4).map(([ico,lbl])=>`<span class="fbadge on"><span class="b-ico">${ico}</span><span class="b-lbl">${lbl}</span></span>`).join('');
     return `
     <div class="pcard${top?' top3':''}${rank===1?' rank-1':''}" onclick="openDetail('${p.name.replace(/'/g,"\\'")}')">
       <div class="rank-col">
-        ${rank===1?'<div class="rank-medal">🥇</div>':rank===2?'<div class="rank-medal">🥈</div>':rank===3?'<div class="rank-medal">🥉</div>':''}
         <div class="rank-num">${rank}</div>
       </div>
       <div class="img-col">${imgEl(p.image,p.name)}</div>
       <div class="info-col">
         <div class="card-top"><span class="pname">${p.name}</span><span class="btag ${bc}">${p.brand}</span></div>
         <div class="schips">
-          <span class="schip">📐 ${p.specs.build_volume}</span>
-          <span class="schip">🌡️ ${p.specs.nozzle_temp}</span>
-          <span class="schip schip-speed">⚡ ${p.specs.max_speed||'—'}</span>
+          <span class="schip">${p.specs.build_volume}</span>
+          <span class="schip">${p.specs.nozzle_temp} nozzle</span>
+          <span class="schip schip-speed">${p.specs.max_speed||'—'}</span>
         </div>
-        <div class="fbadges">${badges}</div>
         <div class="sbars">
           ${['print_quality','speed','ease_of_use','reliability','value'].map(k=>`
           <div class="sbar">
@@ -682,11 +657,11 @@ function openDetail(name){
   const f=p.features||{};
   document.getElementById('detailTitle').textContent=p.name;
   const feats=[
-    ['📦','Enclosed',p.specs.enclosure==='Yes'],['🔓','Open Source',f.open_source],
-    ['📷','Camera',f.camera],['🤖','AI Detection',f.ai_detection],
-    ['💨','Air Filter',f.air_filter],['🎨','Multi-Color',f.multi_color],
-    ['⚙️','Direct Drive',f.direct_drive],['🔇','Silent Mode',f.silent_mode],
-    ['🧵','Filament Runout',f.filament_runout],['⚡','Power Recovery',f.power_recovery],
+    ['Enclosed',p.specs.enclosure==='Yes'],['Open Source',f.open_source],
+    ['Camera',f.camera],['AI Detection',f.ai_detection],
+    ['Air Filter',f.air_filter],['Multi-Color',f.multi_color],
+    ['Direct Drive',f.direct_drive],['Silent Mode',f.silent_mode],
+    ['Filament Runout',f.filament_runout],['Power Recovery',f.power_recovery],
   ];
   document.getElementById('detailBody').innerHTML=`
     <div class="dhero">
@@ -716,10 +691,10 @@ function openDetail(name){
       ${Object.entries(p.specs).map(([k,v])=>`<div class="sptile"><div class="spt-lbl">${cap(k)}</div><div class="spt-val">${v}</div></div>`).join('')}
     </div></div>
     <div class="msec"><div class="msec-title">Features</div><div class="feat-grid">
-      ${feats.map(([ico,lbl,val])=>`<div class="ftile${val?' yes':' no'}"><span class="ftile-ico">${ico}</span><span class="ftile-txt">${val?'✓':'-'} ${lbl}</span></div>`).join('')}
+      ${feats.map(([lbl,val])=>`<div class="ftile${val?' yes':' no'}"><span class="ftile-txt">${val?'✓':'—'} ${lbl}</span></div>`).join('')}
     </div></div>
     ${(p.youtube_reviews&&p.youtube_reviews.length)?`<div class="msec" data-role="youtube-reviews"><div class="msec-title">Video Reviews</div><div class="yt-grid">
-      ${p.youtube_reviews.map((u,i)=>{const m=u.match(/[?&]v=([^&]+)/);const vid=m?m[1]:'';const thumb=vid?`https://img.youtube.com/vi/${vid}/hqdefault.jpg`:'';return `<a class="yt-card" href="${u}" target="_blank" rel="noopener"><div class="yt-thumb-wrap">${thumb?`<img class="yt-thumb" src="${thumb}" alt="${p.name} review video ${i+1}" loading="lazy">`:''}<div class="yt-play">▶</div></div><div class="yt-label">▶ Review ${i+1}</div></a>`;}).join('')}
+      ${p.youtube_reviews.map((u,i)=>{const m=u.match(/[?&]v=([^&]+)/);const vid=m?m[1]:'';const thumb=vid?`https://img.youtube.com/vi/${vid}/hqdefault.jpg`:'';return `<a class="yt-card" href="${u}" target="_blank" rel="noopener"><div class="yt-thumb-wrap">${thumb?`<img class="yt-thumb" src="${thumb}" alt="${p.name} review video ${i+1}" loading="lazy">`:''}<div class="yt-play">▶</div></div><div class="yt-label">Review ${i+1}</div></a>`;}).join('')}
     </div></div>`:''}`;
   document.getElementById('detailModal').classList.add('open');
 }
@@ -730,7 +705,7 @@ function renderSlots(){
       <div class="slot-img">${imgEl(p.image,p.name)}</div>
       <div class="slot-name">${p.name}</div>
       <div class="slot-price">${fmt(p.price)}</div>
-      <button class="slot-rm" onclick="removeSlot(${i})">✕ Remove</button>
+      <button class="slot-rm" onclick="removeSlot(${i})">Remove</button>
     </div>`:`
     <div class="cslot empty" onclick="openPicker(${i})">
       <div class="slot-plus">+</div><div class="slot-hint">Add a printer</div>
@@ -760,7 +735,7 @@ function renderCmpTable(){
   const active=cmpSlots.filter(Boolean);
   const container=document.getElementById('compareTable');
   if(active.length<2){
-    container.innerHTML=`<div class="empty-state"><div class="empty-ico">⚖️</div><div class="empty-title">Add at least 2 printers</div><div class="empty-sub">Click the + slots above to get started.</div></div>`;
+    container.innerHTML=`<div class="empty-state"><div class="empty-title">Add at least 2 printers</div><div class="empty-sub">Click the + slots above to get started.</div></div>`;
     return;
   }
   let html=`<div class="cmp-tbl-wrap"><table class="cmp-tbl"><thead><tr><th class="rh">Metric</th>`;
@@ -781,10 +756,10 @@ function renderCmpTable(){
     html+=`</tr>`;
   });
   html+=`<tr class="cmp-sec-row"><td colspan="${active.length+1}">Features</td></tr>`;
-  [['enclosure','📦 Enclosed'],['open_source','🔓 Open Source'],['camera','📷 Camera'],
-   ['ai_detection','🤖 AI Detection'],['air_filter','💨 Air Filter'],['multi_color','🎨 Multi-Color'],
-   ['direct_drive','⚙️ Direct Drive'],['silent_mode','🔇 Silent Mode'],
-   ['filament_runout','🧵 Filament Runout'],['power_recovery','⚡ Power Recovery']
+  [['enclosure','Enclosed'],['open_source','Open Source'],['camera','Camera'],
+   ['ai_detection','AI Detection'],['air_filter','Air Filter'],['multi_color','Multi-Color'],
+   ['direct_drive','Direct Drive'],['silent_mode','Silent Mode'],
+   ['filament_runout','Filament Runout'],['power_recovery','Power Recovery']
   ].forEach(([k,lbl])=>{
     html+=`<tr><td class="rh">${lbl}</td>`;
     active.forEach(p=>{
@@ -824,7 +799,7 @@ function submitDisagree(e){
   window.location.href = 'mailto:feedback@3dranker.com?subject=' + subject + '&body=' + body;
   document.getElementById('disagreeBody').innerHTML = `
     <div class="dform-success">
-      <div class="dform-success-ico">✅</div>
+      
       <div class="dform-success-title">Thanks for the feedback</div>
       <div class="dform-success-sub">Your email app should have opened with your message pre-filled. If it did not open, email us directly at feedback@3dranker.com.</div>
     </div>`;
@@ -882,7 +857,7 @@ function clearFilFilters(){
 
 function renderFilCards(){
   const container = document.getElementById('filList');
-  if(!FS.filtered.length){ container.innerHTML = '<div class="empty-state"><div class="empty-ico">🧵</div><div class="empty-title">No brands found</div></div>'; return; }
+  if(!FS.filtered.length){ container.innerHTML = '<div class="empty-state"><div class="empty-title">No brands found</div></div>'; return; }
   container.innerHTML = FS.filtered.map((b,i) => {
     const rank = i+1, top = rank<=3;
     const matTags = b.materials.map(m => `<span class="mat-tag${PREMIUM_MATS.includes(m.name)?' premium':''}">${m.name}</span>`).join('');
@@ -894,9 +869,9 @@ function renderFilCards(){
         <div class="fil-info">
           <div class="fil-name">${b.name}</div>
           <div class="fil-meta">
-            <span class="fil-origin">🌍 ${b.origin}</span>
-            <span class="fil-rfid ${b.rfid?'yes':'no'}">${b.rfid?'📡 RFID':'No RFID'}</span>
-            <span class="fil-spool">${b.spool_material==='Cardboard'?'♻️':'🪣'} ${b.spool_material} Spool</span>
+            <span class="fil-origin">${b.origin}</span>
+            <span class="fil-rfid ${b.rfid?'yes':'no'}">${b.rfid?'RFID':'No RFID'}</span>
+            <span class="fil-spool">${b.spool_material} Spool</span>
           </div>
           <div class="fil-mats">${matTags}</div>
           <div class="fil-sbars">
@@ -929,9 +904,9 @@ function openFilDetail(slug){
       <div class="dmeta">
         <div class="dname">${b.name}</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0">
-          <span class="fil-origin">🌍 ${b.origin}</span>
-          <span class="fil-rfid ${b.rfid?'yes':'no'}">${b.rfid?'📡 RFID Tags':'No RFID'}</span>
-          <span class="fil-spool">${b.spool_material==='Cardboard'?'♻️':'🪣'} ${b.spool_material} Spool</span>
+          <span class="fil-origin">${b.origin}</span>
+          <span class="fil-rfid ${b.rfid?'yes':'no'}">${b.rfid?'RFID Tags':'No RFID'}</span>
+          <span class="fil-spool">${b.spool_material} Spool</span>
           <span class="fil-origin">Est. ${b.founded}</span>
         </div>
         <div class="dscore-row">
@@ -961,10 +936,10 @@ function renderMatCard(slug, matName){
     <div class="mat-card">
       <div class="mat-card-top">
         <span class="mat-card-name">${m.name}</span>
-        <span class="mat-card-rating"><span class="mcr-star">⭐</span><span class="mcr-val">${m.rating.toFixed(1)}</span></span>
+        <span class="mat-card-rating"><span class="mcr-val">${m.rating.toFixed(1)}</span></span>
       </div>
       <div class="mat-card-note">${m.note}</div>
-      <a class="mat-card-buy" href="${m.buy_url}" target="_blank" rel="noopener">🛒 Buy ${b.name} ${m.name}</a>
+      <a class="mat-card-buy" href="${m.buy_url}" target="_blank" rel="noopener">Buy ${b.name} ${m.name}</a>
     </div>`;
 }
 
@@ -992,13 +967,13 @@ function toggleTheme(){
   const newTheme=currentTheme==='light'?'dark':'light';
   html.setAttribute('data-theme',newTheme);
   localStorage.setItem('theme',newTheme);
-  document.getElementById('themeBtn').textContent=newTheme==='light'?'☀️':'🌙';
+  document.getElementById('themeBtn').textContent=newTheme==='light'?'Dark':'Light';
 }
 
 // Initialize theme on load
 const savedTheme=localStorage.getItem('theme')||'light';
 document.documentElement.setAttribute('data-theme',savedTheme);
-document.getElementById('themeBtn').textContent=savedTheme==='light'?'☀️':'🌙';
+document.getElementById('themeBtn').textContent=savedTheme==='light'?'Dark':'Light';
 
 </script>
 </body>
